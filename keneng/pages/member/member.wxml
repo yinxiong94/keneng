@@ -1,0 +1,85 @@
+<view class="db">
+  <view class="top">
+    <image src='/pages/img/bg1.png' lazy-load='true'></image>
+    <view class="top_box">
+      <view class="input">
+        <view class="fdj">
+          <image src='/pages/img/fdj.png' lazy-load='true'></image>
+        </view>
+        <input type='text' placeholder='请输入关键字'></input>
+        <image src='/pages/img/x.png'></image>
+      </view>
+      <view class="text">我的会员
+        <text>剩余配送订单</text>
+      </view>
+      <view class="num">15
+        <text>6</text>
+      </view>
+    </view>
+  </view>
+  <view class="item">
+    <view class="list">
+      <view class="left">
+        <image src='/pages/img/zheng.png'></image>
+      </view>
+      <view class="right">
+        <image src='/pages/img/tou.png'></image>
+        <view class="conter_1">
+          <view class="conter">
+            <view class="left_1">
+              张三
+            </view>
+            <view class="right_1">
+              <view class="yuan"></view>
+              <text>发起订单配送</text>
+            </view>
+          </view>
+          <view class="bottom">长沙市天心区九峰小区</view>
+        </view>
+        <view class="tel">13684596631</view>
+      </view>
+    </view>
+    <view class="list">
+      <view class="left">
+        <image src='/pages/img/zheng.png'></image>
+      </view>
+      <view class="right">
+        <image src='/pages/img/tou.png'></image>
+        <view class="conter_1">
+          <view class="conter">
+            <view class="left_1">
+              张三
+            </view>
+            <view class="right_1">
+              <view class="yuan"></view>
+              <text>发起订单配送</text>
+            </view>
+          </view>
+          <view class="bottom">长沙市天心区九峰小区</view>
+        </view>
+        <view class="tel">13684596631</view>
+      </view>
+    </view>
+    <view class="list">
+      <view class="left">
+        <image src='/pages/img/zheng.png'></image>
+      </view>
+      <view class="right">
+        <image src='/pages/img/tou.png'></image>
+        <view class="conter_1">
+          <view class="conter">
+            <view class="left_1">
+              张三
+            </view>
+            <view class="right_1">
+              <view class="yuan"></view>
+              <text>发起订单配送</text>
+            </view>
+          </view>
+          <view class="bottom">长沙市天心区九峰小区</view>
+        </view>
+        <view class="tel">13684596631</view>
+      </view>
+    </view>
+  </view>
+</view>

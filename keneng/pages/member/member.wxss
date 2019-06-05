@@ -1,0 +1,196 @@
+.db {
+  width: 750rpx;
+}
+
+.db .top {
+  width: 750rpx;
+  height: 284rpx;
+  position: relative;
+}
+
+.db .top image {
+  width: 750rpx;
+  height: 284rpx;
+}
+
+.db .top .top_box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 780rpx;
+  height: 284rpx;
+  padding-left: 56rpx;
+  box-sizing: border-box;
+}
+
+.db .top .top_box .input {
+  width: 640rpx;
+  height: 63rpx;
+  margin-top: 12rpx;
+  display: flex;
+  background-color: #fff;
+}
+
+.db .top .top_box .input .fdj {
+  width: 68rpx;
+  height: 32rpx;
+  border-right: 2px solid #e5e5e5;
+  margin-top: 15rpx;
+  position: relative;
+}
+
+.db .top .top_box .input .fdj image {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.db .top .top_box .input input {
+  height: 27rpx;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(183, 183, 185, 1);
+  margin-top: 4rpx;
+  margin-left: 23rpx;
+  flex: 1;
+}
+
+.db .top .top_box .input>image {
+  width: 27rpx;
+  height: 27rpx;
+  margin: 19rpx 28rpx 0 0;
+}
+
+.db .top .top_box .text {
+  height: 27rpx;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(253, 253, 254, 1);
+  opacity: 0.8;
+  line-height: 27rpx;
+  margin-top: 30rpx;
+}
+
+.db .top .top_box .text text {
+  margin-left: 62rpx;
+}
+
+.db .top .top_box .num {
+  height: 53rpx;
+  font-size: 72rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(253, 253, 254, 1);
+  line-height: 53rpx;
+  margin-top: 39rpx;
+}
+
+.db .top .top_box .num text {
+  margin-left: 99rpx;
+}
+
+.db .item {
+  box-sizing: border-box;
+  width: 750rpx;
+}
+
+.db .item .list {
+  display: flex;
+}
+
+.db .item .list .left {
+  height: 150rpx;
+  width: 54rpx;
+  position: relative;
+}
+
+.db .item .list .left>image {
+  width: 22rpx;
+  height: 22rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.db .item .list .right {
+  flex: 1;
+  height: 150rpx;
+  border-bottom: 1px solid #dadada;
+  margin-right: 30rpx;
+  display: flex;
+}
+
+.db .item .list .right image {
+  width: 95rpx;
+  height: 95rpx;
+  margin-top: 25rpx;
+}
+
+.db .item .list .right .conter_1 {
+  flex: 1;
+}
+
+.db .item .list .right .conter {
+  margin-left: 30rpx;
+  padding-top: 37rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.db .item .list .right .conter .left_1 {
+  height: 29rpx;
+  font-size: 30rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(67, 63, 61, 1);
+  line-height: 29rpx;
+}
+
+.db .item .list .right .conter .right_1 {
+  margin-left: 26rpx;
+  height: 29rpx;
+  display: flex;
+}
+
+.db .item .list .right .conter .right_1 .yuan {
+  width: 20rpx;
+  height: 20rpx;
+  background: rgba(142, 195, 31, 1);
+  border-radius: 50%;
+  margin-top: 5rpx;
+}
+
+.db .item .list .right .conter .right_1 text {
+  height: 25rpx;
+  font-size: 26rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(142, 195, 31, 1);
+  line-height: 25rpx;
+  margin-left: 4rpx;
+}
+
+.db .item .list .right .bottom {
+  height: 25rpx;
+  font-size: 25rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(131, 129, 128, 1);
+  margin-top: 18rpx;
+  margin-left: 30rpx;
+}
+
+.db .item .list .right .tel {
+  height: 150rpx;
+  line-height: 150rpx;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(93, 93, 93, 1);
+}

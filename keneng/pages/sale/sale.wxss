@@ -1,0 +1,74 @@
+.top {
+  width: 750rpx;
+  height: 1rpx;
+  background: rgba(203, 203, 203, 1);
+}
+
+.id {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: #ffd966;
+  line-height: 40rpx;
+  color: #fff;
+  font-size: 24rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}
+
+.id view {
+  width: 30%;
+  text-align: center;
+}
+
+.hyxq {
+  display: flex;
+  justify-content: space-between;
+  background: #fdf6e0;
+}
+
+.xm {
+  font-size: 24rpx;
+  text-align: center;
+  width: 30%;
+  height: 88rpx;
+  line-height: 44rpx;
+}
+
+.tel {
+  font-size: 20rpx;
+  line-height: 88rpx;
+  width: 30%;
+  text-align: center;
+}
+
+.hyxq:nth-child(2n) {
+  background: #fff2cc;
+}
+
+.input {
+  width: 711rpx;
+  height: 86rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 5px 10px 0px rgba(47, 129, 255, 0.13);
+  border-radius: 6rpx;
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 12rpx;
+}
+
+.input image {
+  width: 36rpx;
+  height: 36rpx;
+  padding: 25rpx 22rpx;
+}
+
+.input input {
+  height: 25rpx;
+  font-size: 26rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(172, 172, 172, 1);
+  margin-top: 14rpx;
+}
+
