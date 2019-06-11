@@ -1,0 +1,93 @@
+.db {
+  width: 750rpx;
+  background-color: #efeff4;
+}
+
+.db .from {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.db .from .title {
+  font-size: 36rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(29, 32, 35, 1);
+  margin-left: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.db .from .input {
+  display: flex;
+  height: 115rpx;
+  width: 690rpx;
+  margin: 0 auto;
+  border-bottom: 1px solid #ccc;
+}
+
+.db .from .input .left {
+  width: 167rpx;
+  height: 115rpx;
+  line-height: 115rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(29, 32, 35, 1);
+}
+
+.db .from .input>input {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 32rpx;
+  flex: 1;
+}
+
+.db .from .input>image {
+  width: 21rpx;
+  height: 21rpx;
+  margin-top: 48rpx;
+}
+
+.btn {
+  width: 690rpx;
+  height: 80rpx;
+  margin: 0 auto;
+  margin-top: 62rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background: rgba(142, 195, 31, 1);
+  border-radius: 10rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+.zzc {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 30;
+}
+
+.zzc .box {
+  width: 300rpx;
+  height: 110rpx;
+  text-align: center;
+  line-height: 110rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  position: absolute;
+  left: 50%;
+  top: 462rpx;
+  transform: translateX(-50%);
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(29, 32, 35, 1);
+}

@@ -1,0 +1,91 @@
+.db {
+  width: 750rpx;
+  border-top: 1px solid #ccc;
+  background-color: #efeff4;
+}
+
+.db .from {
+  background-color: #fff;
+}
+
+.from .input {
+  width: 690rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+}
+
+.from .input .left {
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 100rpx;
+}
+
+.from .input .right {
+  width: 500rpx;
+  display: flex;
+}
+
+.from .input .right input {
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 20rpx;
+  flex: 1;
+}
+
+.from .input .right image {
+  width: 18rpx;
+  height: 32rpx;
+  margin-top: 34rpx;
+}
+
+.from .coco {
+  width: 690rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.from .coco .left {
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 100rpx;
+}
+
+.from .coco .right {
+  width: 500rpx;
+  display: flex;
+}
+
+.from .coco .right textarea {
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 30rpx;
+  flex: 1;
+  height: 80rpx;
+}
+
+.btn {
+  width: 690rpx;
+  height: 80rpx;
+  background: rgba(142, 195, 31, 1);
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+  margin: 0 auto;
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  margin-top: 75rpx;
+}

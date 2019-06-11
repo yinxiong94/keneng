@@ -1,0 +1,89 @@
+.db {
+  width: 750rpx;
+  border-top: 1px solid #ccc;
+  background-color: #efeff4;
+}
+
+.db .item {
+  background-color: #fff;
+  width: 750rpx;
+  overflow: hidden;
+  margin-top: 20rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.db .item .item_1 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 34rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(29, 32, 35, 1);
+  margin-top: 40rpx;
+}
+
+.db .item .item_2 {
+  display: flex;
+  flex-direction: column;
+  font-size: 28rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(29, 32, 35, 1);
+  margin-top: 38rpx;
+  padding-bottom: 52rpx;
+  border-bottom: 1px solid #d5d5d5;
+}
+
+.db .item .item_2 text:nth-child(2) {
+  margin-top: 10rpx;
+}
+
+.db .item .item_3 {
+  display: flex;
+}
+
+.db .item .item_3 .left {
+  flex: 1;
+  display: flex;
+}
+
+.db .item .item_3 .left image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 40rpx;
+}
+
+.db .item .item_3 .left view {
+  font-size: 28rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(29, 32, 35, 1);
+  margin-top: 35rpx;
+  margin-left: 20rpx;
+}
+.db .item .item_3 .right{
+  flex: 1;
+  text-align: right;
+}
+.db .item .item_3 .right>image{
+  width: 32rpx;
+  height: 36rpx;
+  margin-top: 37rpx;
+}
+.db .item .item_3 .right>image:nth-child(2){
+  margin-left: 40rpx;
+}
+.btn {
+  width: 750rpx;
+  height: 110rpx; 
+  background: #8EC31F;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 110rpx;
+  margin-top: 356rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}

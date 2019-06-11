@@ -1,0 +1,29 @@
+<view class="db">
+  <view class="vip">
+    <image src='/pages/img/bg2.png'></image>
+    <view class="text_1">VIP</view>
+    <view class="text_2">会员福利</view>
+    <view class="text_3">开通会员可享受一年购米无忧</view>
+    <view class="text_4">￥2160</view>
+  </view>
+  <view class="mian">
+    <view class="title">会员卡权益</view>
+    <view class="list">
+      <image src='/pages/img/zheng.png' lazy-load='true'></image>
+      <view class="mi">无须再进行支付，即可终端取米</view>
+    </view>
+    <view class="list">
+      <image src='/pages/img/zheng.png' lazy-load='true'></image>
+      <view class="mi">一年送12次米</view>
+    </view>
+    <view class="list">
+      <image src='/pages/img/zheng.png' lazy-load='true'></image>
+      <view class="mi">享受会员特价活动</view>
+    </view>
+    <view class="list">
+      <image src='/pages/img/zheng.png' lazy-load='true'></image>
+      <view class="mi">等等的一些电子会员卡的权益说明</view>
+    </view>
+    <view class="btn">立即开通</view>
+  </view>
+</view>

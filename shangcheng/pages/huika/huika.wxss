@@ -1,0 +1,67 @@
+.vip {
+  width: 738rpx;
+  height: 330rpx;
+  position: relative;
+  margin-top: 90rpx;
+}
+
+.vip>image {
+  width: 738rpx;
+  height: 330rpx;
+}
+
+.vip .text_1 {
+  font-size: 80rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 60rpx;
+  left: 177rpx;
+  height: 137rpx;
+  line-height: 136rpx;
+}
+
+.vip .vip_text text {
+  font-size: 36rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 254, 1);
+}
+
+.vip .text_2 {
+  font-size: 38rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 254, 1);
+  position: absolute;
+  left: 344rpx;
+  top: 102rpx;
+}
+
+.vip .text_3 {
+  font-size: 36rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 230rpx;
+  width: 100%;
+  text-align: center;
+  line-height: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+.vip .text_3 view{
+  font-size: 70rpx;
+  margin-right: 20rpx;
+}
+.vip .text_4 {
+  font-size: 36rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 254, 1);
+  position: absolute;
+  top:106rpx;
+  right:72rpx;
+}

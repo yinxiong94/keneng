@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "pages/fail/fail",
+    "pages/payment/payment",
+    "pages/administration/administration",
+    "pages/receiving/receiving",
+    "pages/address/address",
+    "pages/order/order",
+    "pages/goods/goods",
+    "pages/details/details",
+    "pages/evaluation/evaluation",
+    "pages/request/request",
+    "pages/huika/huika",
+    "pages/open/open",
+    "pages/card/card",
+    "pages/mall/mall",
+    "pages/login/login",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

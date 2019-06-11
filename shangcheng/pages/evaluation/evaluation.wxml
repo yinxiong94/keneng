@@ -1,0 +1,41 @@
+<view class="db">
+  <view class="top">
+    <image src='/pages/img/tx.png' lazy-load='true'></image>
+    <view class="right">
+      <view class="name">包子</view>
+      <view class="time">40分钟(12:32送达)</view>
+    </view>
+  </view>
+  <view class="evaluation">
+    <view class="title">配送评价</view>
+    <view class="coco">
+      <view class="list">
+        <image src='/pages/img/pin1.png' lazy-load='true'></image>
+        <view>差</view>
+      </view>
+      <view class="list">
+        <image src='/pages/img/pin2.png' lazy-load='true'></image>
+        <view>中</view>
+      </view>
+      <view class="list">
+        <image src='/pages/img/pin3.png' lazy-load='true'></image>
+        <view>好</view>
+      </view>
+    </view>
+  </view>
+  <view class="upload">
+    <textarea maxlength="-1" placeholder='还有什么想说的吗？那就在这里写下来吧!'></textarea>
+    <view class="upload_img">
+      <view class="img">
+        <image class="img_1" src='/pages/img/img1.png'></image>
+        <image class="img_2" src='/pages/img/del.png'></image>
+      </view>
+      <view class="img">
+        <image class="img_1" src='/pages/img/jia.png'></image>
+      </view>
+      <view class="img">
+        <image class="img_1" src='/pages/img/jia.png'></image>
+      </view>
+    </view>
+  </view>
+</view>

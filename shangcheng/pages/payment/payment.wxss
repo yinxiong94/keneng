@@ -1,0 +1,94 @@
+.db {
+  width: 750rpx;
+}
+
+.coco {
+  position: relative;
+}
+
+.coco>image {
+  width: 750rpx;
+  height: 500rpx;
+}
+
+.coco .coco_2 {
+  width: 750rpx;
+  height: 500rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+.coco .coco_2>image {
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 80rpx;
+}
+
+.coco .coco_2 .t_1 {
+  height: 31rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 31rpx;
+  margin-top: 20rpx;
+}
+
+.coco .coco_2 .t_2 {
+  height: 36rpx;
+  font-size: 48rpx;
+  font-family: PingFangSC-Heavy;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 1);
+  margin-top: 30rpx;
+  line-height: 36rpx;
+}
+
+.coco .coco_2 .t_3 {
+  height: 24rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 24rpx;
+  margin-top: 60rpx;
+}
+
+.btn {
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  width: 660rpx;
+  margin: 0 auto;
+  margin-top: 80rpx;
+}
+
+.btn .left {
+  width: 300rpx;
+  height: 80rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 2px solid rgba(142, 195, 31, 1);
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(142, 195, 31, 1);
+  box-sizing: border-box;
+}
+
+.btn .right {
+  width: 300rpx;
+  height: 80rpx;
+  background: rgba(142, 195, 31, 1);
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
