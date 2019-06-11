@@ -1,0 +1,127 @@
+<view class="db">
+  <view class="top">
+    <image src='/pages/img/tao.png' lazy-load='true'></image>
+    <view class="paging">
+      1/5
+    </view>
+  </view>
+  <view class="pirce">
+    <view class="pirce_1">￥203</view>
+    <view class="pirce_2">￥698</view>
+  </view>
+  <view class="coco">
+    爆款18色眼影防水易上妆闪粉哑光珠光沙漠玫瑰彩妆盘 18色眼影盘
+  </view>
+  <view class="pin">
+    月销3409笔
+  </view>
+  <view class="hhh"></view>
+  <view class="service">
+    服务
+    <text>7天无理由 · 新品 · 72小时内发货</text>
+  </view>
+  <view class="hhh"></view>
+  <view class="evaluation">
+    <view class="title">
+      <view class="left">评价（1253）</view>
+      <view class="right">
+        <image class="img" src='/pages/img/xing.png' lazy-load='true'></image>
+        <text>4.5</text>
+        <image class="img1" src='/pages/img/right.png' lazy-load='true'></image>
+      </view>
+    </view>
+    <view class="reply">
+      <view class='reply_list'>
+        <view class="left">
+          <image src='/pages/img/tx11.png' lazy-load='true'></image>
+          <view class="text_1">
+            <view class="k1">无厘头</view>
+            <view class="k2">2019.5.12</view>
+          </view>
+        </view>
+        <view class="right">
+          <image src='/pages/img/xing.png' lazy-load='true'></image>
+          <text>4.5</text>
+        </view>
+      </view>
+      <view class="sentence">物流非常快，味道还可以下次继续光顾。</view>
+      <view class="i_1">
+        <image lazy-load='true' src='/pages/img/hetao.png'></image>
+        <image lazy-load='true' src='/pages/img/hetao.png'></image>
+      </view>
+      <view class="t_1">碧根果190ｇ／袋</view>
+      <view class="h_1">
+        回复：谢谢您的惠顾您的满意是我们最大的动力谢谢您的惠顾！您的满意是我们最大的动力！
+      </view>
+    </view>
+  </view>
+  <view class="hhh"></view>
+  <view class="like">
+    <view class="like_title">
+      <view class="left">猜你喜欢</view>
+      <view class="right">
+        <text>更多</text>
+        <image src='/pages/img/right11.png' lazy-load='true'></image>
+      </view>
+    </view>
+    <view class="like_item">
+      <view class="like_list">
+        <image src='/pages/img/he.png' lazy-load='true'></image>
+        <view class="like_name">百草味 1000g大核桃 1000g大核桃</view>
+        <view class="link_pirce">￥51.90</view>
+      </view>
+      <view class="like_list">
+        <image src='/pages/img/he.png' lazy-load='true'></image>
+        <view class="like_name">百草味 1000g大核桃 1000g大核桃</view>
+        <view class="link_pirce">￥51.90</view>
+      </view>
+    </view>
+  </view>
+  <view class="hhh"></view>
+  <view class="goods">
+    <view class="goods_title">商品详情</view>
+    <view class="goods_img">
+      <image src='/pages/img/goods.png' lazy-load='true'></image>
+      <image src='/pages/img/goods.png' lazy-load='true'></image>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="footer_1">
+      <image src='/pages/img/tousu.png' lazy-load='true'></image>
+      <view class="diso">客服</view>
+    </view>
+    <view class="footer_2">加入购物车</view>
+    <view class="footer_2">立即购买</view>
+  </view>
+  <view class="zzc">
+    <view class="zzc_mian">
+      <view class="zzc_d">
+        <image src='/pages/img/zzc.png' lazy-load='true'></image>
+        <view class="zzc_pirce">
+          <view class="zzc_t1">￥218.9</view>
+          <view class="zzc_t2">库存：1498</view>
+          <image src='/pages/img/quxiao.png' lazy-load='true'></image>
+        </view>
+      </view>
+      <view class="zzc_input">
+        <view class="left">配送区域</view>
+        <input type='text' placeholder='（配送地可能会影响库存，请正确选择）'></input>
+      </view>
+      <view class="zzc_input">
+        <view class="left">配送区域</view>
+        <view class="right">
+          <view class="y">
+            <image class="jia" src='/pages/img/jia1.png' lazy-load='true'></image>
+          </view>
+          <view class="y">
+            1
+          </view>
+          <view class="y">
+            <image class="jian" src='/pages/img/jian.png' lazy-load='true'></image>
+          </view>
+        </view>
+      </view>
+      <view class="btn">确定</view>
+    </view>
+  </view>
+</view>

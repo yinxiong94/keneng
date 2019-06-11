@@ -1,0 +1,83 @@
+.db {
+  width: 750rpx;
+  background: rgba(239, 239, 244, 1);
+  overflow: hidden;
+}
+
+.db .from {
+  background-color: #fff;
+  width: 690rpx;
+  height: 311rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  border-radius: 10rpx;
+  padding: 30rpx 30rpx;
+  box-sizing: border-box;
+}
+
+.db .from .s {
+  display: flex;
+  justify-content: space-between;
+}
+
+.db .from .s .left {
+  font-size: 32rpx;
+  font-family: PingFangSC-;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+}
+
+.db .from .s .right {
+  font-size: 28rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 164, 46, 1);
+  margin-top: 6rpx;
+}
+
+.db .from .s1 {
+  display: flex;
+  margin-top: 30rpx;
+}
+
+.db .from .s1 image {
+  width: 28rpx;
+  height: 36rpx;
+}
+
+.db .from .s1 .right {
+  flex: 1;
+  margin-left: 24rpx;
+  line-height: 36rpx;
+  height: 36rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(29, 32, 35, 1);
+}
+
+.db .from .remaining {
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(29, 32, 35, 1);
+  margin-top: 37rpx;
+}
+.db .from .remaining text{
+  font-size: 48rpx;
+  color: #FFA42E;
+}
+.btn {
+  width: 690rpx;
+  height: 80rpx;
+  margin: 0 auto;
+  margin-top: 385rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background: rgba(142, 195, 31, 1);
+  border-radius: 10rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
