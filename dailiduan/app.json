@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/personal/personal",
+    "pages/spxsdd/spxsdd",
+    "pages/want/want",
+    "pages/plan/plan",
+    "pages/mymember/mymember",
+    "pages/member/member",
+    "pages/extension/extension",
+    "pages/code/code",
+    "pages/cash/cash",
+    "pages/commission/commission",
+    "pages/basics/basics",
+    "pages/index/index",
+    "pages/administration/administration",
+    "pages/tixian/tixian"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#8EC31F",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的设备",
+        "iconPath": "pages/img/wdsb1.png",
+        "selectedIconPath": "pages/img/wdsb.png"
+      },
+      {
+        "pagePath": "pages/member/member",
+        "text": "我的会员",
+        "iconPath": "pages/img/myhy.png",
+        "selectedIconPath": "pages/img/myhy1.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人中心",
+        "iconPath": "pages/img/grzx1.png",
+        "selectedIconPath": "pages/img/grzx.png"
+      }
+    ]
+  }
+}

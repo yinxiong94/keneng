@@ -1,20 +1,20 @@
 {
   "pages": [
-    "pages/basics/basics",
-    "pages/code/code",
-    
-    "pages/sale/sale",
-    "pages/mymember/mymember",
-    "pages/administration/administration",
-    "pages/cash/cash",
-    "pages/tixian/tixian",
-    "pages/commission/commission",
-    "pages/plan/plan",
-    "pages/personal/personal",
-    "pages/member/member",
-    "pages/want/want",
-    "pages/extension/extension",
-    "pages/index/index"
+          "pages/mall/mall",
+      "pages/login/login",
+      "pages/fail/fail",
+      "pages/payment/payment",
+      "pages/address/address",
+      "pages/order/order",
+      "pages/goods/goods",
+      "pages/details/details",
+      "pages/evaluation/evaluation",
+      "pages/request/request",
+      "pages/huika/huika",
+      "pages/open/open",
+      "pages/card/card"
+   
+      
   ],
   "window": {
     "backgroundTextStyle": "light",
