@@ -1,0 +1,9 @@
+<view class="container">
+    <view class='cont_img'>
+      <view class='cont_img_text'>
+        <image src='../img/yinghangka .png'></image>
+        <text>亲，还没有绑定银行卡哦~</text>
+        <view class='cont_but'>绑定银行卡</view>
+      </view>
+    </view>
+</view>

@@ -21,7 +21,7 @@
       <text>·推荐</text>
     </view>
     <view class="item">
-      <view class="list">
+      <view class="list" wx:for="{{6}}">
         <image lazy-load='true' src='/pages/img/list1.png'></image>
         <view class="describe">支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉</view>
         <view class="pirce">
@@ -35,27 +35,6 @@
         </view>
         <view class="pirce_1">
           <view class="members">￥239</view>
-        </view>
-      </view>
-      <view class="list">
-        <image lazy-load='true' src='/pages/img/list1.png'></image>
-        <view class="describe">支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉</view>
-        <view class="pirce">
-          <view class="left">
-            <view class="text_11">￥
-              <text>299</text>
-            </view>
-            <view class="text_22">218人付款</view>
-          </view>
-          <view class="right">...</view>
-        </view>
-        <view class="pirce_1">
-          <view class="members">￥239</view>
-          <view class="right">会员价</view>
-        </view>
-        <view class="zzc">
-          <view class="like">看相似</view>
-          <view class="like_no">不喜欢</view>
         </view>
       </view>
     </view>

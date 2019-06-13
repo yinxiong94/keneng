@@ -1,0 +1,139 @@
+
+page{
+  background: #EFEFF4;
+}
+.container{
+  position: relative;
+}
+.cont_top{
+  background: url('http://r.photo.store.qq.com/psb?/V103fdTR0PY8oM/MbvjbHG4.eCp4HVYJU.tgRzbe9n1ZOqfAraYxUn9UZQ!/r/dFYBAAAAAAAA') no-repeat;
+  height: 500rpx;
+  background-size: 100% 500rpx;
+}
+.cont_tx{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 40rpx;
+}
+.tx{
+  border-radius: 50%;
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.cont_text{
+  font-weight: bold;
+  margin-top: 10rpx;
+}
+
+.cont_Myorder{
+  margin: 0 20rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  position: absolute;
+  bottom: 832rpx;
+  width: 95%;
+  box-shadow:  5rpx 10rpx 15rpx #DEE6D2;
+}
+.cont_Myorder_text{
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.cont_Myorder_text image{
+  width: 21rpx;
+  height: 21rpx;
+}
+
+.cont_Myorder_text text{
+  color: #3F454B;
+  font-size: 30rpx;
+}
+
+.cont_Myorder_text1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cont_Myorder_coin{
+  border-bottom: 1px solid #EFEFF4;
+  margin-top: 15rpx;
+}
+.cont_Myorder_list{
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  align-items: center;
+}
+.cont_Myorder_list image{
+  width: 41rpx;
+  height: 41rpx;
+}
+.cont_Myorder_list text{
+  font-size: 20rpx;
+  color: #3F454B;
+  margin-top: 10rpx;
+}
+.cont_Myorder_list1{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+/* 退出账户 */
+.cont_Signout{
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  margin: 0 20rpx;
+  margin-top: 31rpx;
+  margin-bottom: 31rpx;
+ 
+}
+.cont_Signout_text1{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cont_Signout_text1>image{
+  width: 21rpx;
+  height: 21rpx;
+}
+
+.cont_Signout_text text{
+  font-size: 24rpx;
+  color: #1D2023;
+}
+.cont_Signout_text{
+  display: flex;
+  align-items: center;
+ 
+}
+.cont_Signout_text image{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+}
+
+.cont_Signout_coso{
+  border-bottom: 1px solid #EFEFF4;
+  margin: 28rpx 0;
+}
+
+.cont_quit{
+  background: #fff;
+  font-size: 32rpx;
+  color: #1D2023;
+  margin: 0 20rpx;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx 0;
+}
+.cont_high{
+  height: 20rpx;
+}

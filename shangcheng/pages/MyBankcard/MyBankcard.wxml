@@ -1,0 +1,18 @@
+<view class='container'>
+  <view class="top">
+    <image src='/pages/img/bdyhk.png'></image>
+    <view class="bg">
+      <image src='/pages/img/jianshe.png'></image>
+      <view class="bank">
+        <view class="left">建设银行</view>
+        <view class="right">银行卡</view>
+      </view>
+    </view>
+    <view class="card">8256 8256 8256 8256</view>
+  </view>
+  <!--  -->
+  <view class='cont_bg'>
+    <view class='cont_but cont_but_bg'>更换绑卡</view>
+    <view class='cont_but cont_but_bk'>添加银行卡</view>
+  </view>
+</view>

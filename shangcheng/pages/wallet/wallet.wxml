@@ -1,0 +1,38 @@
+<view class="container">
+    <!-- 头部 -->
+    <view class='cont_top_bg'>
+        <view class='cont_top_text'>
+              <text>当前余额</text>
+        </view>
+        <view class='cont_top_money'>
+            <view class='money_text'>
+              <text class='money'>800.26</text>
+              <text class='yuan'>元</text>
+            </view>
+            <view class='money_tx yuan'>提现</view>
+        </view>
+    </view>
+    <!--  -->
+    <view class='cont_body'>
+          <text>佣金明细</text>
+    </view>
+    <!-- 明细 -->
+    <view class='cont_Detailed'>
+      <view class='cont_Detailed1' wx:for="{{6}}" wx:key="index">
+          <view class='cont_Detailed_img'>
+                <image src='../img/img1.png'></image>
+                <view class='cont_Detailed_name'>
+                    <text class='name'>浣熊</text>
+                    <text class='phone'>手机号：13232123232</text>
+                </view>
+          </view> 
+          <view class='cont_Detailed_date'>
+              <text class='cont_Detailed_date_money'>+106.2</text>
+              <view class='cont_Detailed_date_list'>
+                  <text class='cont_Detailed_date_list_text'>5/12</text>
+                  <text>9:50</text>
+              </view> 
+          </view>
+      </view>
+    </view>
+</view>

@@ -254,6 +254,7 @@
 
 .recommended .item .list .pirce .left .text_11 text {
   font-size: 36rpx;
+  font-weight: bold;
 }
 
 .recommended .item .list .pirce .left .text_22 {

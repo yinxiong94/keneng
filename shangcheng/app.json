@@ -1,20 +1,31 @@
 {
   "pages": [
-          "pages/mall/mall",
-      "pages/login/login",
-      "pages/fail/fail",
-      "pages/payment/payment",
-      "pages/address/address",
-      "pages/order/order",
-      "pages/goods/goods",
-      "pages/details/details",
-      "pages/evaluation/evaluation",
-      "pages/request/request",
-      "pages/huika/huika",
-      "pages/open/open",
-      "pages/card/card"
+    "pages/Complaint/Complaint",
+    "pages/Mynews/Mynews",
+    "pages/MyBankcard/MyBankcard",
+    "pages/Mybinding/Mybinding",
+    "pages/usedMyphone/usedMyphone",
+    "pages/binding/binding",
+    "pages/card/card",
+    "pages/open/open",
+    "pages/huika/huika",
+    "pages/goods/goods",
+    "pages/order/order",
+    "pages/fail/fail",
+    "pages/mall/mall",
+    "pages/spread/spread",
+    "pages/wallet/wallet",
+    "pages/Reflect/Reflect",
+    "pages/address/address",
+    "pages/request/request",
+    "pages/payment/payment",
+    "pages/details/details",
+    "pages/evaluation/evaluation",
    
-      
+    "pages/Myphone/Myphone",
+    "pages/login/login",
+    "pages/sort/sort"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

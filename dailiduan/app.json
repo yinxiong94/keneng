@@ -43,5 +43,6 @@
         "selectedIconPath": "pages/img/grzx.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

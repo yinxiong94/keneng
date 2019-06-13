@@ -1,0 +1,89 @@
+<view class="container">
+      <!-- 搜索 -->
+      <view class='cont_input'>
+          <image class='cont_shousuo' src='../img/sousuo.png'></image>
+          <input placeholder='搜索关键词'></input>
+      </view>
+      <!-- 选项卡 -->
+      <view class='cont1'>
+          <view class='cont1_title'>
+            <view>
+              <text class="menu1 {{menuTapCurrent==0?'borders':''}}" data-current="0" catchtap="menuTap">全部</text>
+              <view class="{{menuTapCurrent==0?'icon':''}}" wx:if="{{menuTapCurrent==0}}"></view>
+            </view>
+            <view>
+              <text class="menu1 {{menuTapCurrent==1?'borders':''}}" data-current="1" catchtap="menuTap">粮油</text>
+              <view class="{{menuTapCurrent==1?'icon':''}}" wx:if="{{menuTapCurrent==1}}"></view>
+            </view>
+            <view>
+              <text class="menu1 {{menuTapCurrent==2?'borders':''}}" data-current="2" catchtap="menuTap">蛋类</text>
+              <view class="{{menuTapCurrent==2?'icon':''}}" wx:if="{{menuTapCurrent==2}}"></view>
+            </view>
+            <view>
+              <text class="menu1 {{menuTapCurrent==3?'borders':''}}" data-current="3" catchtap="menuTap">家禽</text>
+              <view class="{{menuTapCurrent==3?'icon':''}}" wx:if="{{menuTapCurrent==3}}"></view>
+            </view>
+          </view>
+          <view class='cont1_top'  wx:if="{{menuTapCurrent==0}}" >
+            <view class="list" wx:for="{{6}}">
+                  <image lazy-load='true' src='/pages/img/yu.png'></image>
+                  <view class="describe">支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉</view>
+                  <view class="pirce">
+                    <view class="left">
+                      <view class="text_11">￥
+                        <text>299</text>
+                      </view>
+                      <view class="text_22">218人付款</view>
+                    </view>
+                    <view class="right">...</view>
+                  </view>
+            </view>
+          </view>
+           <view class='cont1_top' wx:elif="{{menuTapCurrent==1}}">
+            <view class="list" wx:for="{{6}}">
+                  <image lazy-load='true' src='/pages/img/yu.png'></image>
+                  <view class="describe">支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉</view>
+                  <view class="pirce">
+                    <view class="left">
+                      <view class="text_11">￥
+                        <text>299</text>
+                      </view>
+                      <view class="text_22">218人付款</view>
+                    </view>
+                    <view class="right">...</view>
+                  </view>
+            </view>
+          </view>
+          <view class='cont1_top' wx:elif="{{menuTapCurrent==2}}">
+            <view class="list" wx:for="{{6}}">
+                  <image lazy-load='true' src='/pages/img/yu.png'></image>
+                  <view class="describe">支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉</view>
+                  <view class="pirce">
+                    <view class="left">
+                      <view class="text_11">￥
+                        <text>299</text>
+                      </view>
+                      <view class="text_22">218人付款</view>
+                    </view>
+                    <view class="right">...</view>
+                  </view>
+            </view>
+          </view>
+          <view class='cont1_top' wx:elif="{{menuTapCurrent==3}}">
+            <view class="list" wx:for="{{6}}">
+                  <image lazy-load='true' src='/pages/img/yu.png'></image>
+                  <view class="describe">支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉</view>
+                  <view class="pirce">
+                    <view class="left">
+                      <view class="text_11">￥
+                        <text>299</text>
+                      </view>
+                      <view class="text_22">218人付款</view>
+                    </view>
+                    <view class="right">...</view>
+                  </view>
+            </view>
+          </view>
+
+      </view>
+</view>
