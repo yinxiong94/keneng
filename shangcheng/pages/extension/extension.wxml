@@ -1,0 +1,19 @@
+<!-- 我的推广 -->
+<view class="db">
+  <view class="item">
+    <image class="img1" src='/pages/img/tou.png'></image>
+    <view class="conter">
+      <view class="name">浣熊</view>
+      <view class="tel">手机号：15698736548</view>
+    </view>
+    <view class="item_btn">TA的下级</view>
+  </view>
+  <view class="item">
+    <image class="img1" src='/pages/img/tou.png'></image>
+    <view class="conter">
+      <view class="name">浣熊</view>
+      <view class="tel">手机号：15698736548</view>
+    </view>
+    <view class="item_btn">TA的下级</view>
+  </view>
+</view>

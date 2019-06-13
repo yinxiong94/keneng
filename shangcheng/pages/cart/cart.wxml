@@ -1,0 +1,82 @@
+<!-- 购物车 -->
+<view class="db">
+  <view class="null">
+    <view class="top">
+      <image src='/pages/img/kong.png' lazy-load='true'></image>
+      <view class="kk">亲，你的购物车还没有宝贝哦～</view>
+      <view class="btn" bindtap='handlGuang'>去逛逛吧</view>
+    </view>
+    <view class="biao">猜你喜欢</view>
+    <view class="null_item">
+      <view class="list">
+        <image lazy-load='true' src='/pages/img/list1.png'></image>
+        <view class="describe">支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉</view>
+        <view class="pirce">
+          <view class="left">
+            <view class="text_11">￥
+              <text>299</text>
+            </view>
+            <view class="text_22">218人付款</view>
+          </view>
+          <view class="right">...</view>
+        </view>
+        <view class="pirce_1">
+          <view class="members">￥239</view>
+          <view class="right">会员价</view>
+        </view>
+      </view>
+      <view class="list">
+        <image lazy-load='true' src='/pages/img/list1.png'></image>
+        <view class="describe">支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉</view>
+        <view class="pirce">
+          <view class="left">
+            <view class="text_11">￥
+              <text>299</text>
+            </view>
+            <view class="text_22">218人付款</view>
+          </view>
+          <view class="right">...</view>
+        </view>
+        <view class="pirce_1">
+          <view class="members">￥239</view>
+          <view class="right">会员价</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="item-box">
+    <view class="items">
+      <view wx:for="{{list}}" wx:key="{{index}}" class="item">
+        <view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" style="{{item.txtStyle}}" class="inner txt">
+          <image class="item-icon" mode="widthFix" src="{{item.icon}}"></image>{{item.txt}}</view>
+        <view data-index="{{index}}" bindtap="delItem" class="inner del">删除</view>
+      </view>
+    </view>
+  </view> -->
+  <!-- <view class="item-box">
+    <view class="list">
+      <view class="items" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style='{{item.txtStyle}}' data-index="{{index}}">
+        <image src='{{img}}' lazy-load='true' class="off" bindtap='Choice'></image>
+        <image src='/pages/img/yu.png' lazy-load='true' class="img"></image>
+        <view class="item">
+          <view class="item_title">夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......</view>
+          <view class="item_text1">颜色分类：酒红色；尺码：36</view>
+          <view class="pirce">
+            <view class="pirce_1">
+              <text>￥</text>299</view>
+            <view class="calculation">
+              <view class="left" bindtap='jian'>
+                <image src='/pages/img/jian.png' lazy-load='true' class="jian"></image>
+              </view>
+              <view class="conter">1</view>
+              <view class="left" bindtap='jia'>
+                <image src='/pages/img/jia1.png' lazy-load='true' class="jia"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="delete" catchtap='delOrder' data-index='{{index}}' data-order_id='{{item.order_id}}'>删除</view>
+    </view>
+  </view> -->
+</view>

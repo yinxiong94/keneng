@@ -1,0 +1,157 @@
+<!-- 我的订单 -->
+<view class="db">
+  <view class="nav">
+    <view class="nav_list">全部
+      <view class="xian"></view>
+    </view>
+    <view class="nav_list">待付款</view>
+    <view class="nav_list">待发货</view>
+    <view class="nav_list">待取货</view>
+    <view class="nav_list">待评价</view>
+    <view class="nav_list">售后</view>
+  </view>
+  <view class="mian" wx:if="{{off}}">
+    <image class='coco' src='/pages/img/coco11.png' lazy-load='true'></image>
+    <view class="ttc">亲，你还没有相关订单哦～</view>
+  </view>
+  <!-- 全部板块 -->
+  <!-- <view class="whole">
+    <view class="t_1">等待买家付款</view>
+    <view class="t_2">
+      <view class="t_2_list">
+        <image class='coco' src='/pages/img/yu.png' lazy-load='true'></image>
+        <view class="right">
+          <view class="right_title">夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......</view>
+          <view class="right_size">颜色分类：酒红色；尺码：36</view>
+          <view class="right_footer">
+            <view class="left">￥299</view>
+            <view class="right">x1</view>
+          </view>
+        </view>
+      </view>
+      <view class="t_3">
+        <text>运费：</text>
+        <view>
+          <text>￥</text>0</view>
+      </view>
+      <view class="t_4">
+        <view>
+          <text>￥</text>299</view>
+        <text class="t_4_1">共2件商品  合计：</text>
+      </view>
+      <view class="t_5">
+      <view class="t_5_btn" bindtap='payment'>付款</view> 
+        <view class="t_5_btn" bindtap='cancel'>取消订单</view>
+      </view>
+    </view>
+  </view>  -->
+  <!--  待付款 -->
+  <!-- <view class="whole">
+    <view class="t_1">等待买家付款</view>
+    <view class="t_2">
+      <view class="t_2_list">
+        <image class='coco' src='/pages/img/yu.png' lazy-load='true'></image>
+        <view class="right">
+          <view class="right_title">夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......</view>
+          <view class="right_size">颜色分类：酒红色；尺码：36</view>
+          <view class="right_footer">
+            <view class="left">￥299</view>
+            <view class="right">x1</view>
+          </view>
+        </view>
+      </view>
+      <view class="t_3">
+        <text>运费：</text>
+        <view>
+          <text>￥</text>0</view>
+      </view>
+      <view class="t_4">
+        <view>
+          <text>￥</text>299</view>
+        <text class="t_4_1">共2件商品  合计：</text>
+      </view>
+      <view class="t_5">
+        <view class="t_5_btn" bindtap='payment'>付款</view>
+        <view class="t_5_btn" bindtap='cancel'>取消订单</view>
+      </view>
+    </view>
+  </view> -->
+  <!--  待发货 -->
+  <!-- <view class="whole">
+    <view class="t_1">买家已付款</view>
+    <view class="t_2">
+      <view class="t_2_list">
+        <image class='coco' src='/pages/img/yu.png' lazy-load='true'></image>
+        <view class="right">
+          <view class="right_title">夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......</view>
+          <view class="right_size">颜色分类：酒红色；尺码：36</view>
+          <view class="right_footer">
+            <view class="left">￥299</view>
+            <view class="right">x1</view>
+          </view>
+        </view>
+      </view>
+      <view class="t_3">
+        <text>运费：</text>
+        <view>
+          <text>￥</text>0</view>
+      </view>
+      <view class="t_4">
+        <view>
+          <text>￥</text>299</view>
+        <text class="t_4_1">共2件商品  合计：</text>
+      </view>
+      <view class="t_5">
+        <view class="t_5_btn" bindtap='payment'>退款</view>
+      </view>
+    </view>
+  </view> -->
+  <!--  待评价 -->
+  <!-- <view class="whole">
+    <view class="t_1">交易成功</view>
+    <view class="t_2">
+      <view class="t_2_list">
+        <image class='coco' src='/pages/img/yu.png' lazy-load='true'></image>
+        <view class="right">
+          <view class="right_title">夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......</view>
+          <view class="right_size">颜色分类：酒红色；尺码：36</view>
+          <view class="right_footer">
+            <view class="left">￥299</view>
+            <view class="right">x1</view>
+          </view>
+        </view>
+      </view>
+      <view class="t_3">
+        <text>运费：</text>
+        <view>
+          <text>￥</text>0</view>
+      </view>
+      <view class="t_4">
+        <view>
+          <text>￥</text>299</view>
+        <text class="t_4_1">共2件商品  合计：</text>
+      </view>
+      <view class="t_5">
+        <view class="t_5_btn" bindtap='payment'>评价</view>
+        <view class="t_5_btn" bindtap='cancel'>查看物流</view>
+      </view>
+    </view>
+  </view> -->
+  <!--  售后 -->
+  <view class="whole">
+    <view class="t_1">交易成功</view>
+    <view class="t_2">
+      <view class="t_2_list">
+        <image class='coco' src='/pages/img/yu.png' lazy-load='true'></image>
+        <view class="right">
+          <view class="right_title">夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......</view>
+          <view class="right_size"><text>颜色分类：酒红色；尺码：36</text><text class="num">x1</text></view>
+        </view>
+      </view>
+      <view class="t_5">
+        <view class="t_5_btn" bindtap='payment'>查看详情</view>
+        <view class="t_5_btn" bindtap='cancel'>联系商家</view>
+      </view>
+    </view>
+  </view>
+</view>

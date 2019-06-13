@@ -1,15 +1,14 @@
-// pages/mall/mall.js
+// pages/ddxq/ddxq.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    falg:false,
-    isshow:0
+    off:false
   },
-  handlOpening:function(){
-    console.log("点击了开通");
+  payment:function(){
+    console.log("付款按钮被点击了")
   },
   /**
    * 生命周期函数--监听页面加载

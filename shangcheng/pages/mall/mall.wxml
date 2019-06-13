@@ -1,20 +1,21 @@
+<!-- 柯能商城 -->
 <view class="db">
   <view class="mian">
-    <view class="top">
+    <view class="top"> 
       <view class="input">
         <image src='/pages/img/fdj.png'></image>
         <input type='text' placeholder='搜索关键词'></input>
       </view>
     </view>
-    <image src='/pages/img/bg1.png'></image>
+    <image src='/pages/img/bg11.png'></image>
   </view>
   <view class="vip">
     <image src='/pages/img/bg2.png'></image>
     <view class="text_1">VIP</view>
     <view class="text_2">会员福利</view>
-    <view class="text_3"><view>12</view>次送米</view>
-    <view class="text_4">￥2160</view>
-    <view class="kaitong">立即开通</view>
+    <view class="text_3"><view wx:if="{{falg}}">12</view>开通会员可享受一年购米无忧!</view>
+    <view class="text_4" wx:if="{{falg}}">￥2160</view>
+    <view class="kaitong" bindtap='handlOpening'>立即开通</view>
   </view>
   <view class="recommended">
     <view class="title">为你
@@ -35,6 +36,7 @@
         </view>
         <view class="pirce_1">
           <view class="members">￥239</view>
+          <view class="right">会员价</view>
         </view>
       </view>
       <view class="list">
@@ -53,7 +55,7 @@
           <view class="members">￥239</view>
           <view class="right">会员价</view>
         </view>
-        <view class="zzc">
+        <view class="zzc" wx:if="{{isshow==1}}">
           <view class="like">看相似</view>
           <view class="like_no">不喜欢</view>
         </view>

@@ -1,3 +1,4 @@
+<!-- 会员卡 -->
 <view class="db">
   <view class="vip">
     <image src='/pages/img/bg2.png'></image>

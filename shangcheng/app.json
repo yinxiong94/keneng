@@ -1,20 +1,27 @@
 {
   "pages": [
-          "pages/mall/mall",
-      "pages/login/login",
-      "pages/fail/fail",
-      "pages/payment/payment",
-      "pages/address/address",
-      "pages/order/order",
-      "pages/goods/goods",
-      "pages/details/details",
-      "pages/evaluation/evaluation",
-      "pages/request/request",
-      "pages/huika/huika",
-      "pages/open/open",
-      "pages/card/card"
-   
-      
+    "pages/extension/extension",
+    "pages/sale/sale",
+    "pages/tkyy/tkyy",
+    "pages/tuikuan/tuikuan",
+    "pages/refund/refund",
+    "pages/ddxq/ddxq",
+    "pages/cart/cart",
+    "pages/card/card",
+    "pages/logistics/logistics",
+    "pages/dingdan/dingdan",
+    "pages/mall/mall",
+    "pages/details/details",
+    "pages/evaluation/evaluation",
+    "pages/login/login",
+    "pages/fail/fail",
+    "pages/payment/payment",
+    "pages/address/address",
+    "pages/order/order",
+    "pages/goods/goods",
+    "pages/request/request",
+    "pages/huika/huika",
+    "pages/open/open"
   ],
   "window": {
     "backgroundTextStyle": "light",
