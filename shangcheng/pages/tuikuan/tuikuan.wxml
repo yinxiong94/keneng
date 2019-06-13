@@ -1,15 +1,15 @@
-<!-- 退货申请 -->
+<!-- 退货 -->
 <view class="db">
   <view class="conter">
     <view class="list">
       <image class="img1" src='/pages/img/tui1.png' lazy-load='true'></image>
       <view class="right">
         <view class="title">
-          <text class="title_1">古庄主 营养有机米 绿色无污染</text>
+          <view class="title_1">夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......</view>
           <text class="title_2">￥299</text>
         </view>
         <view class="classification">
-          <text class="title_1">颜色分类：酒红色；尺码：36</text>
+          <view class="title_1">颜色分类：酒红色；尺码：36</view>
           <text class="title_2">x1</text>
         </view>
       </view>
@@ -34,7 +34,7 @@
       </view>
     </view>
   </view>
-  <view class="pirce">
+  <view class="pirce margin">
     退款金额
     <text>￥299</text>
   </view>

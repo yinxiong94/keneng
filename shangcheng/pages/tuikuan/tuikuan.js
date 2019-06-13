@@ -1,16 +1,13 @@
-// pages/mall/mall.js
+// pages/tuikuan/tuikuan.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    falg:false,
-    isshow:0
+
   },
-  handlOpening:function(){
-    console.log("点击了开通");
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

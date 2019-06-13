@@ -1,3 +1,4 @@
+<!-- 配送评价 -->
 <view class="db">
   <view class="top">
     <image src='/pages/img/tx.png' lazy-load='true'></image>

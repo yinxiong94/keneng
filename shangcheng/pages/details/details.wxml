@@ -1,3 +1,4 @@
+<!-- 商品详情 -->
 <view class="db">
   <view class="top">
     <image src='/pages/img/tao.png' lazy-load='true'></image>
