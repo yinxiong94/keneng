@@ -1,5 +1,6 @@
-page{
-  background-color: #EFEFF4;
+.db {
+  width: 750rpx;
+  background-color: #efeff4;
 }
 
 .db .from {
@@ -14,7 +15,6 @@ page{
   color: rgba(29, 32, 35, 1);
   margin-left: 30rpx;
   margin-bottom: 20rpx;
-  margin-top: 40rpx;
 }
 
 .db .from .input {

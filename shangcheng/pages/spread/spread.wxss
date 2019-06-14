@@ -1,14 +1,14 @@
-.container{
+.container {
   padding: 39rpx 39rpx 0 39rpx;
 }
 
-.cont_gj{
+.cont_gj {
   background: url('http://m.qpic.cn/psb?/V103fdTR0PY8oM/h422s4rK2uewwaUt.tMU0i3Oqtlw*F2I64uC3b6i2.I!/b/dL4AAAAAAAAA&bo=nAICBAAAAAADF6o!&rf=viewer_4') no-repeat;
   background-size: 90% 1026rpx;
   height: 1026rpx;
 }
 
-.cont_text{
+.cont_text {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,46 +18,51 @@
   /* border: 1px solid red; */
 }
 
-.cont_text_size{
+.cont_text_size {
   font-size: 42rpx;
 }
-.cont_text_color{
-  color: #8EC31F;
+
+.cont_text_color {
+  color: #8ec31f;
   margin-bottom: 40rpx;
 }
-.cont_img{
+
+.cont_img {
   width: 663rpx;
   height: 2rpx;
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   margin-top: 16rpx;
 }
-.cont_img image{
+
+.cont_img image {
   width: 569rpx;
   height: 2rpx;
 }
 
-.cont_text1_color{
-  color: #FF533C;
+.cont_text1_color {
+  color: #ff533c;
   margin-right: 63rpx;
   height: 150rpx;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.cont_img_ma{
+
+.cont_img_ma {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 63rpx;
 }
-.cont_img_ma image{
+
+.cont_img_ma image {
   width: 366rpx;
   height: 366rpx;
 }
 
-.cont_bnt{
+.cont_bnt {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,10 +70,10 @@
   height: 180rpx;
 }
 
-.cont_bnt_text{
+.cont_bnt_text {
   color: #fff;
   font-size: 32rpx;
-  background: #8EC31F;
+  background: #8ec31f;
   width: 403rpx;
   height: 92rpx;
   border-radius: 10rpx;
@@ -76,4 +81,3 @@
   justify-content: center;
   align-items: center;
 }
-

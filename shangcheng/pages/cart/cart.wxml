@@ -43,8 +43,17 @@
         </view>
       </view>
     </view>
-  </view> -->
- <view class="item-box" wx:for="{{6}}" wx:key="index" >
+  </view>
+  <view class="item-box">
+    <view class="items">
+      <view wx:for="{{list}}" wx:key="{{index}}" class="item">
+        <view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" style="{{item.txtStyle}}" class="inner txt">
+          <image class="item-icon" mode="widthFix" src="{{item.icon}}"></image>{{item.txt}}</view>
+        <view data-index="{{index}}" bindtap="delItem" class="inner del">删除</view>
+      </view>
+    </view>
+  </view>  -->
+      <view class="item-box" wx:for="{{6}}" wx:key="index" >
       <slide-delete  bindaction="handleSlideDelete">
         <view class="list">
           <view class="items" >
@@ -75,16 +84,4 @@
         </view>
         </slide-delete>
       </view>
-          <view class="footer">
-            <image src='/pages/img/quan1.png'></image>
-            <view class="left">
-              <text>全选</text>
-            </view>
-            <view class="conter">
-              <text>合计金额：</text>
-              <view class="conter_pirce">
-                <text>￥</text>299</view>
-            </view>
-            <view class="footer_btn">结算(1)</view>
-          </view>
-        </view>
+</view>

@@ -8,9 +8,8 @@ Page({
 
   },
   checkboxChange(e){
-    console.log(e.detail.value.length)
     if (e.detail.value.length==1){
-      
+        
     }
   },
   

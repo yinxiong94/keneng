@@ -7,11 +7,7 @@ Page({
   data: {
 
   },
-  handYhka:function(){
-    wx.navigateTo({
-      url: '../Mybinding/Mybinding',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

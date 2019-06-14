@@ -56,7 +56,7 @@
     </view>
   </view>  -->
   <!--  待付款 -->
-  <view class="whole" wx:if="{{menuTapCurrent==1}}" bindtap='handwait'>
+  <view class="whole" wx:if="{{menuTapCurrent==1}}">
     <view class="t_1">等待买家付款</view>
     <view class="t_2">
       <view class="t_2_list">
@@ -87,7 +87,7 @@
     </view>
   </view>
   <!--  待发货 -->
-  <view class="whole" wx:if="{{menuTapCurrent==2}}" bindtap='handDdxqOne'>
+  <view class="whole" wx:if="{{menuTapCurrent==2}}">
     <view class="t_1">买家已付款</view>
     <view class="t_2">
       <view class="t_2_list" wx:for="{{2}}">
@@ -117,7 +117,7 @@
     </view>
   </view>
   <!-- 待收货 -->
-  <view class="whole" wx:if="{{menuTapCurrent==3}}" bindtap='handDdxqTow'>
+  <view class="whole" wx:if="{{menuTapCurrent==3}}">
     <view class="t_1">卖家已发货</view>
     <view class="t_2">
       <view class="t_2_list">
@@ -148,7 +148,7 @@
     </view>
   </view>
   <!--  待评价 -->
-  <view class="whole" wx:if="{{menuTapCurrent==4}}" bindtap='handDdxqTow'>
+  <view class="whole" wx:if="{{menuTapCurrent==4}}">
     <view class="t_1">交易成功</view>
     <view class="t_2">
       <view class="t_2_list">
@@ -173,13 +173,13 @@
         <text class="t_4_1">共2件商品  合计：</text>
       </view>
       <view class="t_5">
-        <view class="t_5_btn" bindtap='handPinjia'>评价</view>
+        <view class="t_5_btn" bindtap='payment'>评价</view>
         <view class="t_5_btn" bindtap='cancel'>查看物流</view>
       </view>
     </view>
   </view>
   <!--  售后 -->
-  <view class="whole" wx:if="{{menuTapCurrent==5}}" bindtap='handCheng'>
+  <view class="whole" wx:if="{{menuTapCurrent==5}}">
     <view class="t_1">交易成功</view>
     <view class="t_2">
       <view class="t_2_list">
@@ -195,7 +195,7 @@
         </view>
       </view>
       <view class="t_5">
-        <view class="t_5_btn">查看详情</view>
+        <view class="t_5_btn" bindtap='payment'>查看详情</view>
         <view class="t_5_btn" bindtap='cancel'>联系商家</view>
       </view>
     </view>

@@ -132,7 +132,7 @@
 .btn {
   width: 690rpx;
   height: 80rpx;
-  background:rgba(142,195,31,1);
+  background: rgba(251, 192, 14, 1);
   border-radius: 10rpx;
   text-align: center;
   line-height: 80rpx;

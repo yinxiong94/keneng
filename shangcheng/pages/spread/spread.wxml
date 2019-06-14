@@ -1,25 +1,25 @@
 <view class="container" style="background:url('http://m.qpic.cn/psb?/V103fdTR0PY8oM/vrPNSds99yYUFAB*k8Mh2XMirOqdtNX5kNuEzXbos3Q!/b/dD4BAAAAAAAA&bo=8QK2BAAAAAADRyM!&rf=viewer_4') no-repeat;width: 100%; height:{{height}}px;background-size: 100% {{height}}px;">
-    <view class='cont_gj'>
-         <!-- 推荐更多 -->
-         <view class='cont_text'>
-            <view class='cont_text_size cont_text_color'>引荐更多用户</view>
-            <view class='cont_text_size'>获得更多佣金</view>
-         </view>
-         <!-- 分割线 -->
-        <view class='cont_img'>
-            <image src='../img/fengxin.png'></image>
-        </view>
-        <!-- 二维码推广 -->
-        <view class='cont_text1_color cont_text_size'>
-            二维码推广
-        </view>
-        <!-- 二维码 -->
-        <view class='cont_img_ma'>
-            <image src='{{url}}'></image>
-        </view>
-        <!-- 保存 -->
-        <view class='cont_bnt' data-url='{{url}}' bindlongpress="saveImg">
-              <view class='cont_bnt_text'>长按保存至相册</view>
-        </view>
+  <view class='cont_gj'>
+    <!-- 推荐更多 -->
+    <view class='cont_text'>
+      <view class='cont_text_size cont_text_color'>引荐更多用户</view>
+      <view class='cont_text_size'>获得更多佣金</view>
     </view>
+    <!-- 分割线 -->
+    <view class='cont_img'>
+      <image src='../img/fengxin.png'></image>
+    </view>
+    <!-- 二维码推广 -->
+    <view class='cont_text1_color cont_text_size'>
+      二维码推广
+    </view>
+    <!-- 二维码 -->
+    <view class='cont_img_ma'>
+      <image src='{{url}}'></image>
+    </view>
+    <!-- 保存 -->
+    <view class='cont_bnt' data-url='{{url}}' bindlongpress="saveImg">
+      <view class='cont_bnt_text'>长按保存至相册</view>
+    </view>
+  </view>
 </view>

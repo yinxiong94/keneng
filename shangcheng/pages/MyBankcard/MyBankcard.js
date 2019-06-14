@@ -1,4 +1,4 @@
-// pages/publish/publish.js
+// pages/MyBankcard/MyBankcard.js
 Page({
 
   /**

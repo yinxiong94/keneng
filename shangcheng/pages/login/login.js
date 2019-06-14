@@ -8,7 +8,7 @@ Page({
 
   },
   handlIndex:function(){
-    wx.switchTab({
+    wx:wx.navigateTo({
       url: '../mall/mall'
     })
   },

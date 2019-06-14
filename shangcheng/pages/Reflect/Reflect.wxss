@@ -19,6 +19,7 @@ page{
   display: flex;
   justify-content: space-evenly;
   padding: 30rpx 0;
+  position: relative;
 }
 .cont_bg_but{
   color: #1D2023;
@@ -132,4 +133,20 @@ page{
 .cont_buttext{
   display: flex;
   justify-content: center;
+}
+
+.cont_bg_but .cont_bg_gou{
+  width: 39rpx;
+  height: 38rpx;
+  position: absolute;
+  top: 87rpx;
+  left: 308rpx;
+}
+
+.cont_bg_but .cont_bg_gou1{
+  width: 39rpx;
+  height: 38rpx;
+  position: absolute;
+  top: 87rpx;
+  left: 654rpx;
 }

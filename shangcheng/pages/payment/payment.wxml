@@ -11,6 +11,6 @@
   </view>
   <view class="btn">
   <view class="left">查看订单</view>
-  <view class="right" bindtap='handIndex'>返回首页</view>
+  <view class="right">返回首页</view>
   </view>
 </view>

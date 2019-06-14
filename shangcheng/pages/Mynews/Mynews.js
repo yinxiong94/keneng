@@ -5,43 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
- 
+
   },
-  handJump:function(){
-    wx.navigateTo({
-      url: '../dingdan/dingdan',
-    })
-  },
-  handTel: function () {
-    wx.navigateTo({
-      url: '../Myphone/Myphone',
-    })
-  },
-  handTgm:function(){
-    wx.navigateTo({
-      url: '../spread/spread',
-    })
-  },
-  handWdqb:function(){
-    wx.navigateTo({
-      url: '../wallet/wallet',
-    })
-  },
-  handTsjy: function () {
-    wx.navigateTo({
-      url: '../Complaint/Complaint',
-    })
-  },
-  handYhka: function () {
-    wx.navigateTo({
-      url: '../binding/binding',
-    })
-  },
-  handWdtg: function () {
-    wx.navigateTo({
-      url: '../extension/extension',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

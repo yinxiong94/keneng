@@ -16,5 +16,5 @@
     <text>其他</text>
     <image src='/pages/img/quan1.png' lazy-load='true'></image>
   </view>
-  <view class="btn" bindtap='handTkcg'>确定</view>
+  <view class="btn">确定</view>
 </view>
