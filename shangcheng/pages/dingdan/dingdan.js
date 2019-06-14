@@ -5,7 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    off:false
+    off:false,
+    menuTapCurrent: 0,  //默认选择第1个
+  },
+  // 选项卡
+  menuTap:function(e){
+    this.setData({
+      menuTapCurrent: e.currentTarget.dataset.current
+    })
   },
   payment:function(){
     console.log("付款被点击了")

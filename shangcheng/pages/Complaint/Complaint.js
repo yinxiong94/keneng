@@ -5,9 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInput:0
   },
-
+  bindWordLimit(e){
+    this.setData({
+      userInput: e.detail.value.length
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,7 +1,9 @@
+.container{
+  padding: 20rpx;
+}
 .cont_area textarea{
   font-size: 28rpx;
-  background: #EFEFF4;
-  width: 95%;
+  width: 95%; 
   height: 400rpx;
   padding-top: 20rpx;
   padding-left: 20rpx;
@@ -10,8 +12,8 @@
 }
 
 .cont_area{
-    background: #fff;
-    padding: 20rpx;
+    background: #EFEFF4;
+    padding-bottom: 20rpx;
     border-radius: 10rpx;
 }
 
@@ -24,7 +26,6 @@
   color: #fff;
   width:690rpx;
   height:80rpx;
-  background:rgba(213,213,213,1);
   border-radius:10rpx;
   display: flex;
   justify-content: center;
@@ -37,3 +38,22 @@
   justify-content: center;
   margin-top: 40rpx;
 }
+
+.cont_area_text{
+  color: #999999;
+  font-size: 28rpx;
+}
+
+.cont_area_text{
+  text-align: right;
+  padding-right: 20rpx;
+}
+
+.cont_but_color{
+  background: #8EC31F;
+}
+
+.cont_but_color1{
+  background:rgba(213,213,213,1);
+}
+ 

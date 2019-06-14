@@ -15,7 +15,6 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.7.1",
 	"appid": "wxfacfc9a34535692e",
-
 	"projectname": "keneng",
 	"debugOptions": {
 		"hidedInDevtools": []

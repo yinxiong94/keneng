@@ -1,26 +1,24 @@
 {
   "pages": [
+    "pages/Myphone/Myphone",
+    "pages/usedMyphone/usedMyphone",
+    "pages/dingdan/dingdan",
     "pages/Complaint/Complaint",
     "pages/Mynews/Mynews",
     "pages/MyBankcard/MyBankcard",
     "pages/Mybinding/Mybinding",
-    "pages/usedMyphone/usedMyphone",
     "pages/binding/binding",
     "pages/huika/huika",
     "pages/goods/goods",
     "pages/order/order",
     "pages/fail/fail",
-
     "pages/spread/spread",
     "pages/wallet/wallet",
     "pages/Reflect/Reflect",
     "pages/address/address",
     "pages/request/request",
     "pages/payment/payment",
-   
-    "pages/Myphone/Myphone",
     "pages/sort/sort",
-    
     "pages/extension/extension",
     "pages/sale/sale",
     "pages/tkyy/tkyy",
@@ -30,7 +28,6 @@
     "pages/cart/cart",
     "pages/card/card",
     "pages/logistics/logistics",
-    "pages/dingdan/dingdan",
     "pages/mall/mall",
     "pages/details/details",
     "pages/evaluation/evaluation",
