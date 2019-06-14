@@ -57,7 +57,11 @@
       <slide-delete  bindaction="handleSlideDelete">
         <view class="list">
           <view class="items" >
-            <image src='{{img}}' lazy-load='true' class="off" bindtap='Choice'></image>
+            <checkbox-group bindchange="checkboxChange">
+              <label class="checkbox">
+                <checkbox/>
+              </label>
+            </checkbox-group>
             <image src='/pages/img/yu.png' lazy-load='true' class="img"></image>
             <view class="item">
               <view class="item_title">夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......</view>

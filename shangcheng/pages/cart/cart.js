@@ -5,9 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-      
+
   },
- 
+  checkboxChange(e){
+    console.log(e.detail.value.length)
+    if (e.detail.value.length==1){
+      
+    }
+  },
   
   jian:function(){
     console.log("减少");
