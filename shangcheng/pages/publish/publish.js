@@ -1,11 +1,11 @@
-// pages/fill/fill.js
+// pages/publish/publish.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    iftrue: false,
+
   },
 
   /**

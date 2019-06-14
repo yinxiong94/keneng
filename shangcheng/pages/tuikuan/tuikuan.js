@@ -1,13 +1,17 @@
 // pages/tuikuan/tuikuan.js
 Page({
-
+ 
   /**
    * 页面的初始数据
    */
   data: {
 
   },
-
+  handTui:function(){
+    wx.navigateTo({
+      url: '../tkyy/tkyy',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

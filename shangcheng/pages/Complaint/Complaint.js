@@ -8,6 +8,7 @@ Page({
     userInput:0
   },
   bindWordLimit(e){
+    console.log(e.detail.value.length);
     this.setData({
       userInput: e.detail.value.length
     })

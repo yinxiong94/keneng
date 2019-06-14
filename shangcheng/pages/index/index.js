@@ -10,7 +10,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   handlTel:function(){
-    wx:wx.navigateTo({
+    wx.navigateTo({
       url: '../login/login'
     })
   },

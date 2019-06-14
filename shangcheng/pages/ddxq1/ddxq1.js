@@ -1,13 +1,15 @@
-// pages/MyBankcard/MyBankcard.js
+// pages/ddxq/ddxq.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    off:false
   },
-
+  payment:function(){
+    console.log("付款按钮被点击了")
+  },
   /**
    * 生命周期函数--监听页面加载
    */

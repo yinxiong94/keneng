@@ -1,0 +1,33 @@
+<view class="from">
+  <view class="tel">
+    <text class="name">麦兜啊</text>
+    <text class="tel_1">15689531265</text>
+  </view>
+  <view class="dizhi">广东省深圳市南山区</view>
+  <view class="dizhi_1">桃园路田厦金牛广场A座702</view>
+  <view class="footer">
+    <image src='/pages/img/quan1.png' lazy-load='true'></image>
+    <view class="left">设为默认地址</view>
+    <view class="right">
+      <image class="bianji" src='/pages/img/bianji.png' lazy-load='true'></image>
+      <image class="shan" src='/pages/img/shan.png' lazy-load='true'></image>
+    </view>
+  </view>
+</view>
+<view class="from">
+  <view class="tel">
+    <text class="name">麦兜啊</text>
+    <text class="tel_1">15689531265</text>
+  </view>
+  <view class="dizhi">广东省深圳市南山区</view>
+  <view class="dizhi_1">桃园路田厦金牛广场A座702</view>
+  <view class="footer">
+    <image src='/pages/img/zheng.png' lazy-load='true'></image>
+    <view class="left">设为默认地址</view>
+    <view class="right">
+      <image class="bianji" src='/pages/img/bianji.png' lazy-load='true'></image>
+      <image class="shan" src='/pages/img/shan.png' lazy-load='true'></image>
+    </view>
+  </view>
+</view>
+<view class="footer_btn" bindtap='handResult'>新增收货地址</view>

@@ -1,3 +1,6 @@
+page{
+  background-color: #EFEFF4;
+}
 .vip {
   width: 738rpx;
   height: 330rpx;

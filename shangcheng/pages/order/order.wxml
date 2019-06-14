@@ -1,14 +1,14 @@
 <!-- 填写订单 -->
 <view class="db">
   <view class="top">
-    <image class="dizhi" src='/pages/img/dizhi3.png' lazy-load='true'></image>
+    <image class="dizhi" src='/pages/img/tx.png' lazy-load='true'></image>
     <view class="right">
       <view class="right_1">
         <text>麦兜啊</text> 15698324568</view>
       <view class="right_2">田厦金牛广场702</view>
       <view class="right_3"> 广东省深圳市南山区</view>
     </view>
-    <image class="jian" src='/pages/img/right11.png' lazy-load='true'></image>
+    <image class="jian" src='/pages/img/right11.png' lazy-load='true' bindtap='handDizhi'></image>
   </view>
   <view class="order">
     <view class="item">
@@ -78,6 +78,6 @@
       <view>
         <text>￥</text>299</view>
     </view>
-    <view class='right' bindtap='handDizhi'>提交订单</view>
+    <view class='right' bindtap='handZhifu'>提交订单</view>
   </view>
 </view>
