@@ -1,5 +1,11 @@
 {
   "pages": [
+    "pages/Reflect/Reflect",
+    "pages/Mybinding/Mybinding",
+    "pages/MyBankcard/MyBankcard",
+    "pages/binding/binding",
+    "pages/dingdan/dingdan",
+    "pages/Complaint/Complaint",
     "pages/cart/cart",
     "pages/index/index",
     "pages/open/open",
@@ -7,19 +13,14 @@
     "pages/mall/mall",
     "pages/Myphone/Myphone",
     "pages/usedMyphone/usedMyphone",
-    "pages/dingdan/dingdan",
-    "pages/Complaint/Complaint",
     "pages/Mynews/Mynews",
-    "pages/MyBankcard/MyBankcard",
-    "pages/Mybinding/Mybinding",
-    "pages/binding/binding",
     "pages/huika/huika",
     "pages/goods/goods",
     "pages/order/order",
     "pages/fail/fail",
     "pages/spread/spread",
     "pages/wallet/wallet",
-    "pages/Reflect/Reflect",
+   
     "pages/address/address",
     "pages/request/request",
     "pages/payment/payment",
@@ -34,7 +35,6 @@
     "pages/details/details",
     "pages/evaluation/evaluation",
     "pages/login/login"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",

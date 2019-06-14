@@ -6,10 +6,12 @@
             <view class='cont_bg_but cont_bg_rad'>
                 <image src='../img/weixzhif.png'></image>
                 <text>微信支付</text>
+                <image class='cont_bg_gou' src='../img/gou.png'></image>
             </view>
             <view class='cont_bg_but'>
                 <image src='../img/yingnagka.png'></image>
                 <text>银行卡</text>
+                <image class='cont_bg_gou1' src='../img/gou.png'></image>
             </view>
         </view>
     </view>

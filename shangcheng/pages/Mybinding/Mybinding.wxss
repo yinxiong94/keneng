@@ -30,7 +30,7 @@
 }
 .cont_name text{
   color: #999999;
-  padding-left: 20rpx;
+  padding-left: 19rpx;
   padding-right: 100rpx;
  
 }
@@ -96,4 +96,9 @@
   display: flex;
   justify-content: center;
   margin-top: 100rpx;
+}
+
+.cont_name_flex{
+  display: flex;
+  justify-content: space-around；
 }
