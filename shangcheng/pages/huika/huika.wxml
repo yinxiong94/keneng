@@ -1,6 +1,6 @@
 <!-- 会员卡 -->
 <view class="db">
-  <view class="vip">
+  <view class="vip" bindtap='delivery'>
     <image src='/pages/img/bg2.png'></image>
     <view class="text_1">VIP</view>
     <view class="text_2">会员福利</view>
@@ -8,4 +8,4 @@
       <view>12</view>次送米</view>
     <view class="text_4">￥2160</view>
   </view>
-</view>
+</view> 

@@ -1,9 +1,11 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/cart/cart",
     "pages/open/open",
     "pages/card/card",
     "pages/mall/mall",
+    
     "pages/Myphone/Myphone",
     "pages/usedMyphone/usedMyphone",
     "pages/dingdan/dingdan",

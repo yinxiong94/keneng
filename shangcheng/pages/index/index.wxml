@@ -1,0 +1,6 @@
+<view class="db">
+  <image src='/pages/img/tx.png' lazy-load='true'></image>
+  <view class="name">大米</view>
+  <view class="btn">微信登陆</view>
+  <view class="login" bindtap='handlTel'>手机号登录/注册</view>
+</view>

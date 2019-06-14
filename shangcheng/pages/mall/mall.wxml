@@ -22,7 +22,7 @@
       <text>·推荐</text>
     </view>
     <view class="item">
-      <view class="list" wx:for="{{6}}">
+      <view class="list" bindtap='handDetails'>
         <image lazy-load='true' src='/pages/img/list1.png'></image>
         <view class="describe">支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉</view>
         <view class="pirce">
@@ -39,7 +39,6 @@
           <view class="right">会员价</view>
         </view>
       </view>
-
       <view class="list">
         <image lazy-load='true' src='/pages/img/list1.png'></image>
         <view class="describe">支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉</view>
@@ -61,6 +60,6 @@
           <view class="like_no">不喜欢</view>
         </view>
       </view>
-</view>
+    </view>
   </view>
 </view>

@@ -5,7 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    off:false
+  },
+  handlVip:function(){
+    wx:wx.navigateTo({
+      url: '../huika/huika'
+    })
   },
 
   /**

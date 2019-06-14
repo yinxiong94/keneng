@@ -14,7 +14,11 @@
       <view class="right">18765255140</view>
     </view>
     <view class="remaining">剩余
-      <text>11</text>次送米</view>
+      <text>11</text>次送米
+    </view>
+    <view class="btn">
+      <view class="pin" bindtap='handlPin'>评价</view>
+      <view class="shou">确认收货</view>
+    </view>
   </view>
-  <view class="btn" bindtap='handlQqps'>提交请求</view>
 </view>

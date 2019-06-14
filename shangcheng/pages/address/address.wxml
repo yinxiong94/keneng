@@ -2,5 +2,5 @@
 <view class="db">
   <image src='/pages/img/address.png' lazy-load='true'></image>
   <view class="qin">亲，你还没有添加地址哦~</view>
-  <view class="btn">添加地址</view>
+  <view class="btn" bindtap='handAdd'>添加地址</view>
 </view>

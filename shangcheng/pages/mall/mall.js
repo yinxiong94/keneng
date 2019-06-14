@@ -9,7 +9,14 @@ Page({
     isshow:0
   },
   handlOpening:function(){
-    console.log("点击了开通");
+    wx:wx.navigateTo({
+      url: '../card/card'
+    })
+  },
+  handDetails:function(){
+    wx: wx.navigateTo({
+      url: '../goods/goods'
+    })
   },
   /**
    * 生命周期函数--监听页面加载
