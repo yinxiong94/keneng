@@ -1,10 +1,8 @@
 page {
   background-color: #efeff4;
 }
-
 .db {
   width: 750rpx;
-  overflow: hidden;
 }
 
 .null {
@@ -87,6 +85,9 @@ page {
   overflow: hidden;
   background-color: #fff;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .null_item .list .zzc {
@@ -218,6 +219,7 @@ page {
 }
 
 .item-box {
+  margin-top: 20rpx;
   width: 750rpx;
   height: 320rpx;
   overflow: hidden;
@@ -234,6 +236,7 @@ page {
   margin-top: 20rpx;
   border-radius: 10rpx;
   box-sizing: border-box;
+ 
 }
 
 .item-box .list .delete {
@@ -253,7 +256,7 @@ page {
 
 .item-box .items {
   width: 710rpx;
-  height: 320rpx;
+  height: 270rpx;
   margin: 0 auto;
   background-color: #fff;
   display: flex;
@@ -263,6 +266,7 @@ page {
   top: 0;
   left: 0rpx;
   z-index: 5;
+  align-items: center;
 }
 
 .item-box .items .off {
@@ -276,6 +280,7 @@ page {
   height: 219rpx;
   margin-left: 20rpx;
   margin-top: 50rpx;
+  border-radius: 10rpx;
 }
 
 .item-box .items .item {
@@ -385,6 +390,7 @@ page {
   padding-left: 30rpx;
   box-sizing: border-box;
   background-color: #fff;
+  z-index: 99;
 }
 
 .footer .left {
@@ -443,3 +449,34 @@ page {
   font-weight: 400;
   color: rgba(255, 255, 255, 1);
 }
+/*checkbox 整体大小  */
+checkbox {
+  width: 25rpx;
+  height: 90rpx;
+  margin-top: 86rpx;
+}
+/*checkbox 选项框大小  */
+checkbox .wx-checkbox-input {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border:1px solid #D5D5D5;
+}
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #8EC31F;
+}
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  font-size: 15rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  border: none;
+}
+

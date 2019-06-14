@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/cart/cart",
     "pages/index/index",
     "pages/dingdan/dingdan",
     "pages/publish/publish",
@@ -7,6 +8,9 @@
     "pages/payment/payment",
     "pages/administration/administration",
     "pages/fille/fille",
+    "pages/open/open",
+    "pages/card/card",
+    "pages/mall/mall",
     "pages/Myphone/Myphone",
     "pages/usedMyphone/usedMyphone",
     "pages/Complaint/Complaint",
@@ -27,18 +31,14 @@
     "pages/tkyy/tkyy",
     "pages/tuikuan/tuikuan",
     "pages/refund/refund",
-    "pages/card/card",
+    "pages/ddxq/ddxq",
     "pages/logistics/logistics",
-    "pages/mall/mall",
     "pages/details/details",
     "pages/evaluation/evaluation",
     "pages/login/login",
-    "pages/cart/cart",
-    "pages/ddxq/ddxq",
     "pages/ddxq1/ddxq1",
     "pages/ddxq2/ddxq2",
     "pages/After/After",
-    "pages/open/open",
     "pages/xjtg/xjtg"
   ],
   "window": {
