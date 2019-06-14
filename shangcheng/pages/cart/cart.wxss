@@ -1,8 +1,11 @@
-.db {
-  width: 750rpx;
-  background-color: #efeff4;
-  overflow: hidden;
+page{
+   background-color: #efeff4;
 }
+/* .db {
+  width: 750rpx;
+ 
+  overflow: hidden;
+} */
 
 .null {
   width: 750rpx;
@@ -215,6 +218,7 @@
 
 
 .item-box {
+  margin-top: 20rpx;
   width: 750rpx;
   height: 320rpx;
   overflow: hidden;
@@ -230,6 +234,7 @@
   padding-top: 20rpx;
   border-radius: 10rpx;
   box-sizing: border-box;
+ 
 }
 
 .item-box .list .delete {
@@ -259,6 +264,7 @@
   top: 0;
   left: 0rpx;
   z-index: 5;
+  
 }
 
 .item-box .items .off {
