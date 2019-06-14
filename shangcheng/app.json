@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/Myphone/Myphone",
     "pages/usedMyphone/usedMyphone",
     "pages/dingdan/dingdan",
