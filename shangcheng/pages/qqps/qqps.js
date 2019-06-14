@@ -1,4 +1,4 @@
-// pages/huika/huika.js
+// pages/qqps/qqps.js
 Page({
 
   /**
@@ -7,9 +7,9 @@ Page({
   data: {
 
   },
-  delivery:function(){
-    wx:wx.navigateTo({
-      url: '../request/request' 
+  handlPin:function(){
+    wx.navigateTo({
+      url: '../evaluation/evaluation'
     })
   },
   /**

@@ -1,70 +1,10 @@
+page {
+  background-color: #efeff4;
+}
+
 .db {
   width: 100%;
-  background-color: #efeff4;
   overflow: hidden;
-}
-
-.top {
-  width: 710rpx;
-  height: 230rpx;
-  margin: 0 auto;
-  background-color: #fff;
-  margin-top: 20rpx;
-  border-radius: 10rpx;
-  display: flex;
-}
-
-.top .img {
-  width: 60rpx;
-  height: 60rpx;
-  margin-top: 85rpx;
-  margin-left: 30rpx;
-}
-
-.top .img1 {
-  width: 21rpx;
-  height: 21rpx;
-  margin-top: 105rpx;
-  margin-right: 30rpx;
-}
-
-.top .conter {
-  flex: 1;
-  margin-left: 30rpx;
-  margin-top: 43rpx;
-}
-
-.top .conter .coco {
-  color: #1d2023;
-  font-size: 28rpx;
-  font-family: PingFangSC;
-  font-weight: 400;
-  height: 26rpx;
-  line-height: 26rpx;
-}
-
-.top .conter .coco text {
-  color: #999;
-}
-
-.top .conter .coco_1 {
-  height: 31rpx;
-  font-size: 32rpx;
-  font-family: PingFangSC;
-  font-weight: 400;
-  color: rgba(29, 32, 35, 1);
-  margin-top: 30rpx;
-  line-height: 31rpx;
-}
-
-.top .conter .coco_2 {
-  height: 27rpx;
-  font-size: 28rpx;
-  font-family: PingFangSC;
-  font-weight: 400;
-  color: #999;
-  line-height: 27rpx;
-  margin-top: 30rpx;
 }
 
 .xinxi {
@@ -77,68 +17,6 @@
   padding-top: 10rpx;
 }
 
-.xinxi .list {
-  display: flex;
-  width: 650rpx;
-  margin: 0 auto;
-  margin-top: 30rpx;
-}
-
-.xinxi .list image {
-  width: 219rpx;
-  height: 220rpx;
-}
-
-.xinxi .list .right {
-  flex: 1;
-  margin-left: 30rpx;
-}
-
-.xinxi .list .right .title {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  font-size: 28rpx;
-  font-family: PingFangSC;
-  font-weight: 400;
-  color: rgba(29, 32, 35, 1);
-}
-
-.xinxi .list .right .color {
-  font-size: 22rpx;
-  font-family: PingFangSC;
-  font-weight: 400;
-  color: rgba(153, 153, 153, 1);
-  height: 21rpx;
-  line-height: 21rpx;
-  margin-top: 19rpx;
-}
-
-.xinxi .list .right .pirce {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 60rpx;
-}
-
-.xinxi .list .right .pirce .text_1 {
-  height: 28rpx;
-  line-height: 28rpx;
-  font-size: 26rpx;
-  font-family: PingFangSC;
-  font-weight: 400;
-  color: rgba(255, 83, 60, 1);
-}
-
-.xinxi .list .right .pirce .text_2 {
-  height: 28rpx;
-  line-height: 28rpx;
-  font-size: 28rpx;
-  font-family: Adobe Heiti Std R;
-  font-weight: normal;
-  color: rgba(29, 32, 35, 1);
-}
-
 .xinxi .total {
   width: 650rpx;
   height: 90rpx;
@@ -148,28 +26,35 @@
   justify-content: space-between;
 }
 
-.xinxi .total .left {
-  flex: 1;
-  font-size: 28rpx;
-  font-family: PingFangSC;
-  font-weight: bold;
-  color: rgba(63, 69, 75, 1);
-  height: 90rpx;
-  line-height: 90rpx;
-  display: flex;
+.xinxi .total:nth-child(1) {
+  border-top: 0;
 }
 
-.xinxi .total .left textarea {
-  flex: 1;
+.xinxi .total .left {
+  width: 150rpx;
   font-size: 28rpx;
   font-family: PingFangSC;
   font-weight: bold;
-  color: rgba(63, 69, 75, 1);
+  color: rgba(153, 153, 153, 1);
+  height: 90rpx;
+  display: flex;
+  overflow: hidden;
+  line-height: 90rpx;
+}
+
+.xinxi .total textarea {
+  font-size: 28rpx;
+  font-family: PingFangSC;
+  font-weight: bold;
+  color: rgba(153, 153, 153, 1);
   margin-top: 31rpx;
   margin-left: 40rpx;
+  width: 500rpx;
+  height: 58rpx;
+  line-height: 0;
 }
 
-.xinxi .total .right {
+.xinxi .total input {
   flex: 1;
   font-size: 24rpx;
   font-family: PingFangSC;
@@ -232,4 +117,19 @@
   font-weight: 400;
   color: rgba(255, 255, 255, 1);
   line-height: 98rpx;
+}
+
+.btn {
+  width: 690rpx;
+  height: 80rpx;
+  background: rgba(142, 195, 31, 1);
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  margin: 0 auto;
+  margin-top: 50rpx;
 }

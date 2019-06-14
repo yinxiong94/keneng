@@ -1,0 +1,44 @@
+.db {
+  width: 750rpx;
+  text-align: center;
+}
+
+.db>image {
+  width: 110rpx;
+  height: 110rpx;
+  margin-top: 180rpx;
+}
+
+.db .name {
+  height: 34rpx;
+  font-size: 36rpx;
+  font-family: PingFangSC-;
+  font-weight: 500;
+  color: rgba(29, 32, 35, 1);
+  margin-top: 40rpx;
+  line-height: 34rpx;
+}
+
+.db .btn {
+  width: 690rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  margin: 0 auto;
+  background: rgba(142, 195, 31, 1);
+  border-radius: 10rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  margin-top: 180rpx;
+}
+
+.db .login {
+  height: 26rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(96, 105, 114, 1);
+  margin-top: 60rpx;
+}

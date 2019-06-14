@@ -122,7 +122,7 @@
           </view>
         </view>
       </view>
-      <view class="btn">确定</view>
+      <view class="btn" bindtap='handTxdd'>确定</view>
     </view>
   </view>
 </view>

@@ -78,6 +78,6 @@
       <view>
         <text>￥</text>299</view>
     </view>
-    <view class='right'>提交订单</view>
+    <view class='right' bindtap='handDizhi'>提交订单</view>
   </view>
 </view>
