@@ -39,4 +39,7 @@
       </view>
     </view>
   </view>
+  <view class="btn">
+  发表评论
+  </view>
 </view>

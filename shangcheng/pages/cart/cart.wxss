@@ -1,11 +1,11 @@
-page{
-   background-color: #efeff4;
+page {
+  background-color: #efeff4;
 }
-/* .db {
+
+.db {
   width: 750rpx;
- 
   overflow: hidden;
-} */
+}
 
 .null {
   width: 750rpx;
@@ -87,10 +87,8 @@ page{
   overflow: hidden;
   background-color: #fff;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
+
 .null_item .list .zzc {
   position: absolute;
   left: 0;
@@ -219,9 +217,7 @@ page{
   line-height: 28rpx;
 }
 
-
 .item-box {
-  margin-top: 20rpx;
   width: 750rpx;
   height: 320rpx;
   overflow: hidden;
@@ -235,9 +231,9 @@ page{
   background-color: #fff;
   margin: 0 auto;
   padding-top: 20rpx;
+  margin-top: 20rpx;
   border-radius: 10rpx;
   box-sizing: border-box;
- 
 }
 
 .item-box .list .delete {
@@ -257,7 +253,7 @@ page{
 
 .item-box .items {
   width: 710rpx;
-  height: 270rpx;
+  height: 320rpx;
   margin: 0 auto;
   background-color: #fff;
   display: flex;
@@ -267,7 +263,6 @@ page{
   top: 0;
   left: 0rpx;
   z-index: 5;
-  align-items: center;
 }
 
 .item-box .items .off {
@@ -281,7 +276,6 @@ page{
   height: 219rpx;
   margin-left: 20rpx;
   margin-top: 50rpx;
-  border-radius: 10rpx;
 }
 
 .item-box .items .item {
@@ -381,33 +375,71 @@ page{
   transform: translate(-50%, -50%);
 }
 
-/*checkbox 整体大小  */
-checkbox {
-  width: 25rpx;
-  height: 90rpx;
-  margin-top: 86rpx;
+.footer {
+  display: flex;
+  width: 750rpx;
+  height: 98rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  background-color: #fff;
 }
-/*checkbox 选项框大小  */
-checkbox .wx-checkbox-input {
-  width: 30rpx;
-  height: 30rpx;
-  border-radius: 50%;
-  border:1px solid #D5D5D5;
+
+.footer .left {
+  height: 98rpx;
+  margin-left: 14rpx;
 }
-/*checkbox选中后样式  */
-checkbox .wx-checkbox-input.wx-checkbox-input-checked {
-  background: #8EC31F;
+
+.footer>image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-top: 31rpx;
 }
-/*checkbox选中后图标样式  */
-checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
-  width: 28rpx;
-  height: 28rpx;
-  line-height: 28rpx;
+
+.footer .left text {
+  line-height: 98rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.footer .conter {
+  height: 98rpx;
+  line-height: 98rpx;
+  flex: 1;
+  margin-left: 133rpx;
+  display: flex;
+}
+
+.footer .conter>text {
+  font-size: 28rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(29, 32, 35, 1);
+}
+
+.footer .conter .conter_pirce {
+  font-size: 36rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: #ff533c;
+}
+
+.footer .conter .conter_pirce text {
+  font-size: 28rpx;
+}
+
+.footer .footer_btn {
+  width: 220rpx;
+  height: 98rpx;
   text-align: center;
-  font-size: 15rpx;
-  color: #fff;
-  background: transparent;
-  transform: translate(-50%, -50%) scale(1);
-  -webkit-transform: translate(-50%, -50%) scale(1);
-  border: none;
+  line-height: 98rpx;
+  background: rgba(142, 195, 31, 1);
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
 }

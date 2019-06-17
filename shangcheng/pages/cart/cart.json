@@ -1,6 +1,4 @@
 {
-  "usingComponents": {
-    "slide-delete": "../components/slide-delete/index"
-  },
+  "usingComponents": {},
   "navigationBarTitleText": "购物车"
 }

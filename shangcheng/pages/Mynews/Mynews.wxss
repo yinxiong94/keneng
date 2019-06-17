@@ -2,13 +2,11 @@
 page{
   background: #EFEFF4;
 }
-.container{
-  position: relative;
-}
 .cont_top{
-  background: url('http://r.photo.store.qq.com/psb?/V103fdTR0PY8oM/MbvjbHG4.eCp4HVYJU.tgRzbe9n1ZOqfAraYxUn9UZQ!/r/dFYBAAAAAAAA') no-repeat;
+  background: url('http://m.qpic.cn/psb?/V11QWGHg0l6wht/sjBfm0PaEOhjcbDPnaGkRUAdQ81HdbkQ3H0Pjyan1Z0!/b/dMUAAAAAAAAA&bo=ZQTuAgAAAAADB68!&rf=viewer_4') no-repeat;
   height: 500rpx;
   background-size: 100% 500rpx;
+  position: relative;
 }
 .cont_tx{
   display: flex;
@@ -32,7 +30,7 @@ page{
   background: #fff;
   border-radius: 20rpx;
   position: absolute;
-  bottom: 832rpx;
+  bottom: -68rpx;
   width: 95%;
   box-shadow:  5rpx 10rpx 15rpx #DEE6D2;
 }
@@ -89,7 +87,7 @@ page{
   border-radius: 20rpx;
   padding: 20rpx;
   margin: 0 20rpx;
-  margin-top: 31rpx;
+  margin-top: 102rpx;
   margin-bottom: 31rpx;
  
 }

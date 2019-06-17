@@ -19,7 +19,6 @@ page{
   display: flex;
   justify-content: space-evenly;
   padding: 30rpx 0;
-  position: relative;
 }
 .cont_bg_but{
   color: #1D2023;
@@ -32,16 +31,22 @@ page{
   align-items: center;
   border-radius: 8rpx;
   border:5rpx solid rgba(204,204,204,1);
+  position: relative;
 }
-.cont_bg_but image{
+.cont_bg_but .img1{
   width: 39rpx;
   height: 39rpx;
   margin-right: 25rpx;
 }
-
-.cont_bg_rad{
+.gouxuan{
+  width: 20rpx;
+  height: 20rpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   border:5rpx solid rgba(255,83,60,1);
 }
+
 
 .cont_tx_bg{
   margin-top: 20rpx;
@@ -133,20 +138,4 @@ page{
 .cont_buttext{
   display: flex;
   justify-content: center;
-}
-
-.cont_bg_but .cont_bg_gou{
-  width: 39rpx;
-  height: 38rpx;
-  position: absolute;
-  top: 87rpx;
-  left: 308rpx;
-}
-
-.cont_bg_but .cont_bg_gou1{
-  width: 39rpx;
-  height: 38rpx;
-  position: absolute;
-  top: 87rpx;
-  left: 654rpx;
 }

@@ -7,7 +7,17 @@ Page({
   data: {
 
   },
-
+  on:function(e){
+    var that = this;
+    console.log(e.target.dataset.current)
+    if (this.data.currentTab === e.target.dataset.current) {
+      return false;
+    } else {
+      that.setData({
+        currentTab: e.target.dataset.current
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */

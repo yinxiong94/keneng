@@ -12,6 +12,11 @@ Page({
       url: '../address/address'
     })
   },
+  handZhifu:function(){
+    wx: wx.navigateTo({
+      url: '../payment/payment'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

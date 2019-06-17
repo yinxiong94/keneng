@@ -1,124 +1,124 @@
 <view class='container'>
-    <!-- 头像 -->
-    <view class='cont_top'>
-      <view class='cont_tx'>
-        <image src='../img/tx.jpeg' class='tx'></image>
-        <view class='cont_text'>浣熊</view>
-      </view>
+  <!-- 头像 -->
+  <view class='cont_top'>
+    <view class='cont_tx'>
+      <image src='../img/tx.jpeg' class='tx'></image>
+      <view class='cont_text'>浣熊</view>
     </view>
     <!-- 我的订单 -->
     <view class='cont_Myorder'>
-        <view class='cont_Myorder_text'> 
-          <view class='cont_Myorder_text1'>
-            <text>我的订单</text>
-            <image src='../img/youjux.png'></image>
+      <view class='cont_Myorder_text'>
+        <view class='cont_Myorder_text1'>
+          <text>我的订单</text>
+          <image src='../img/youjux.png' bindtap='handJump'></image>
+        </view>
+        <view class='cont_Myorder_coin'></view>
+        <view class='cont_Myorder_list1'>
+          <view class='cont_Myorder_list'>
+            <image src='../img/fukuang.png'></image>
+            <text>待付款</text>
           </view>
-          <view class='cont_Myorder_coin'></view>
-          <view class='cont_Myorder_list1'>
-            <view class='cont_Myorder_list'>
-                <image src='../img/fukuang.png'></image>
-                <text>待付款</text>
-            </view>
 
-            <view class='cont_Myorder_list'>
-                <image src='../img/daifah.png'></image>
-                <text>待发货</text>
-            </view>
+          <view class='cont_Myorder_list'>
+            <image src='../img/daifah.png'></image>
+            <text>待发货</text>
+          </view>
 
-            <view class='cont_Myorder_list'>
-                <image src='../img/quhuo.png'></image>
-                <text>待取货</text>
-            </view>
+          <view class='cont_Myorder_list'>
+            <image src='../img/quhuo.png'></image>
+            <text>待取货</text>
+          </view>
 
-            <view class='cont_Myorder_list'>
-                <image src='../img/pingja.png'></image>
-                <text>待评价</text>
-            </view>
+          <view class='cont_Myorder_list'>
+            <image src='../img/pingja.png'></image>
+            <text>待评价</text>
+          </view>
 
-            <view class='cont_Myorder_list'>
-                <image src='../img/shouhou.png'></image>
-                <text>售后</text>
-            </view>
+          <view class='cont_Myorder_list'>
+            <image src='../img/shouhou.png'></image>
+            <text>售后</text>
           </view>
         </view>
+      </view>
     </view>
-    <!-- 退出账户 -->
-    <view class='cont_Signout' bindtap='handWdtg'>
-      <view class='cont_Signout_text1' >
-        <view class='cont_Signout_text'>
-          <image src='../img/tuiguang .png'></image>
-          <text>我的推广</text>
-        </view>
-        <image src='../img/youjux.png'></image>
+  </view>
+  <!-- 退出账户 -->
+  <view class='cont_Signout'>
+    <view class='cont_Signout_text1'>
+      <view class='cont_Signout_text'>
+        <image src='../img/tuiguang .png'></image>
+        <text>我的推广</text>
       </view>
-      <view class='cont_Signout_coso'></view>
-
-      <view class='cont_Signout_text1' bindtap='handWdqb'>
-        <view class='cont_Signout_text'>
-          <image src='../img/tuiguang .png'></image>
-          <text>我的钱包</text>
-        </view>
-        <image src='../img/youjux.png'></image>
-      </view>
-      <view class='cont_Signout_coso'></view>
-
-      <view class='cont_Signout_text1' bindtap='handTgm'>
-        <view class='cont_Signout_text'>
-          <image src='../img/tuiguang .png'></image>
-          <text>我的推荐码</text>
-        </view>
-        <image src='../img/youjux.png'></image>
-      </view>
-      <view class='cont_Signout_coso'></view>
-
-      <view class='cont_Signout_text1'>
-        <view class='cont_Signout_text'>
-          <image src='../img/tuiguang .png'></image>
-          <text>我的地址</text>
-        </view>
-        <image src='../img/youjux.png'></image>
-      </view>
-      <view class='cont_Signout_coso'></view>
-
-      <view class='cont_Signout_text1' bindtap='handYhka'>
-        <view class='cont_Signout_text'>
-          <image src='../img/tuiguang .png'></image>
-          <text>银行卡</text>
-        </view>
-        <image src='../img/youjux.png'></image>
-      </view>
-
+      <image src='../img/youjux.png' bindtap='handWdtg'></image>
     </view>
+    <view class='cont_Signout_coso'></view>
 
-    <view class='cont_Signout'>
-      <view class='cont_Signout_text1' bindtap='handTel'>
-        <view class='cont_Signout_text'>
-          <image src='../img/tuiguang .png'></image>
-          <text>修改手机号</text>
-        </view>
-        <image src='../img/youjux.png'></image>
+    <view class='cont_Signout_text1'>
+      <view class='cont_Signout_text'>
+        <image src='../img/pirce.png'></image>
+        <text>我的钱包</text>
       </view>
-      <view class='cont_Signout_coso'></view>
+      <image src='../img/youjux.png' bindtap='handWdqb'></image>
+    </view>
+    <view class='cont_Signout_coso'></view>
 
-      <view class='cont_Signout_text1'>
-        <view class='cont_Signout_text'>
-          <image src='../img/tuiguang .png'></image>
-          <text>我的会员卡</text>
-        </view>
-        <image src='../img/youjux.png'></image>
+    <view class='cont_Signout_text1'>
+      <view class='cont_Signout_text'>
+        <image src='../img/wxm.png'></image>
+        <text>我的推荐码</text>
       </view>
-      <view class='cont_Signout_coso'></view>
+      <image src='../img/youjux.png' bindtap='handTgm'></image>
+    </view>
+    <view class='cont_Signout_coso'></view>
 
-      <view class='cont_Signout_text1' bindtap='handTsjy'>
-        <view class='cont_Signout_text'>
-          <image src='../img/tuiguang .png'></image>
-          <text>投诉建议及评价</text>
-        </view>
-        <image src='../img/youjux.png'></image>
+    <view class='cont_Signout_text1'>
+      <view class='cont_Signout_text'>
+        <image src='../img/dizhilv.png'></image>
+        <text>我的地址</text>
       </view>
+      <image src='../img/youjux.png'></image>
+    </view>
+    <view class='cont_Signout_coso'></view>
 
+    <view class='cont_Signout_text1'>
+      <view class='cont_Signout_text'>
+        <image src='../img/yinhangka.png'></image>
+        <text>银行卡</text>
+      </view>
+      <image src='../img/youjux.png' bindtap='handYhka'></image>
     </view>
 
-    <view class='cont_quit'>退出账户</view>
-    <view class='cont_high'></view>
+  </view>
+
+  <view class='cont_Signout'>
+    <view class='cont_Signout_text1'>
+      <view class='cont_Signout_text'>
+        <image src='../img/tel11.png'></image>
+        <text>修改手机号</text>
+      </view>
+      <image src='../img/youjux.png' bindtap='handTel'></image>
+    </view>
+    <view class='cont_Signout_coso'></view>
+
+    <view class='cont_Signout_text1'>
+      <view class='cont_Signout_text'>
+        <image src='../img/hyk.png'></image>
+        <text>我的会员卡</text>
+      </view>
+      <image src='../img/youjux.png'></image>
+    </view>
+    <view class='cont_Signout_coso'></view>
+
+    <view class='cont_Signout_text1'>
+      <view class='cont_Signout_text'>
+        <image src='../img/tousu1.png'></image>
+        <text>投诉建议及评价</text>
+      </view>
+      <image src='../img/youjux.png' bindtap='handTsjy'></image>
+    </view>
+
+  </view>
+
+  <view class='cont_quit'>退出账户</view>
+  <view class='cont_high'></view>
 </view>

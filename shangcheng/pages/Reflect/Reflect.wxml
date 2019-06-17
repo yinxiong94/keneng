@@ -3,15 +3,22 @@
     <view class='cont_bg'>
         <view class='cont_bg_text'>体现方式</view>
         <view class='cont_bg_tx'>
-            <view class='cont_bg_but cont_bg_rad'>
-                <image src='../img/weixzhif.png'></image>
+            <view 
+            class='cont_bg_but {{currentTab==0 ? "gouxuan":""}}'
+            bindtap='on'
+            data-current='0'
+            >
+                <image class="img1" src='../img/weixzhif.png'></image>
                 <text>微信支付</text>
-                <image class='cont_bg_gou' src='../img/gou.png'></image>
+                <image class="gouxuan" src='../img/gouxuan1.png'></image>
             </view>
-            <view class='cont_bg_but'>
-                <image src='../img/yingnagka.png'></image>
+            <view
+            class='cont_bg_but {{currentTab==0 ? "gouxuan":""}}'
+            bindtap='on'
+            data-current='1'
+            >
+                <image class="img1" src='../img/yingnagka.png'></image>
                 <text>银行卡</text>
-                <image class='cont_bg_gou1' src='../img/gou.png'></image>
             </view>
         </view>
     </view>

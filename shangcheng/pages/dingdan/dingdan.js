@@ -14,12 +14,41 @@ Page({
       menuTapCurrent: e.currentTarget.dataset.current
     })
   },
+  handPinjia:function(){
+    wx.navigateTo({
+      url: '../publish/publish',
+    })
+  },
+  handDdxqOne: function(){
+    wx.navigateTo({
+      url: '../ddxq1/ddxq1',
+    })
+  },
+  handDdxqTow: function () {
+    wx.navigateTo({
+      url: '../ddxq2/ddxq2',
+    })
+  },
   payment:function(){
-    console.log("付款被点击了")
+    wx.navigateTo({
+      url: '../tuikuan/tuikuan',
+    })
+  },
+  handCheng: function () {
+    wx.navigateTo({
+      url: '../After/After',
+    })
   },
   cancel: function () {
-    console.log("付款被点击了")
+    wx.navigateTo({
+      url: '../logistics/logistics',
+    })
   },  
+  handwait:function(){
+    wx.navigateTo({
+      url: '../ddxq/ddxq',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

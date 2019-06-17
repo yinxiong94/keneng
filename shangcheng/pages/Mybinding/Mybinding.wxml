@@ -27,7 +27,7 @@
         <text>手机号码</text>
         <input placeholder='请输入手机号码'></input>
     </view>
-    <view class='cont_name cont_name_bottom cont_name_flex'>
+    <view class='cont_name cont_name_bottom'>
         <text>短信验证</text>
         <input placeholder='请输入验证码'></input>
         <view class='cont_button'>获取验证码</view>

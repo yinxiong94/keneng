@@ -1,7 +1,7 @@
 <!-- 退款/售后 -->
 <view class="db">
   <view class="top">
-    <image lazy-load='true' src="/pages/img/bg33.png"></image>
+    <image lazy-load='true' src="/pages/img/bg66.png"></image>
     <view class="title">
       <text class="text_1">退款中</text>
       <text class="text_2">商家正在核实退款中</text>
@@ -39,6 +39,10 @@
   <view class="input">
     申请时间：
     <text>2018-11-18    13:16</text>
+  </view>
+    <view class="input">
+    退款编号：
+    <text>6598945133000</text>
   </view>
   <view class="btn">返回首页</view>
 </view>
