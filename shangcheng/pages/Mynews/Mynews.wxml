@@ -44,30 +44,30 @@
   </view>
   <!-- 退出账户 -->
   <view class='cont_Signout'>
-    <view class='cont_Signout_text1'>
+    <view class='cont_Signout_text1' bindtap='handWdtg'>
       <view class='cont_Signout_text'>
         <image src='../img/tuiguang .png'></image>
         <text>我的推广</text>
       </view>
-      <image src='../img/youjux.png' bindtap='handWdtg'></image>
+      <image src='../img/youjux.png'></image>
     </view>
     <view class='cont_Signout_coso'></view>
 
-    <view class='cont_Signout_text1'>
+    <view class='cont_Signout_text1' bindtap='handWdqb'>
       <view class='cont_Signout_text'>
         <image src='../img/pirce.png'></image>
         <text>我的钱包</text>
       </view>
-      <image src='../img/youjux.png' bindtap='handWdqb'></image>
+      <image src='../img/youjux.png'></image>
     </view>
     <view class='cont_Signout_coso'></view>
 
-    <view class='cont_Signout_text1'>
+    <view class='cont_Signout_text1' bindtap='handTgm'>
       <view class='cont_Signout_text'>
         <image src='../img/wxm.png'></image>
         <text>我的推荐码</text>
       </view>
-      <image src='../img/youjux.png' bindtap='handTgm'></image>
+      <image src='../img/youjux.png'></image>
     </view>
     <view class='cont_Signout_coso'></view>
 
@@ -80,23 +80,23 @@
     </view>
     <view class='cont_Signout_coso'></view>
 
-    <view class='cont_Signout_text1'>
+    <view class='cont_Signout_text1' bindtap='handYhka'>
       <view class='cont_Signout_text'>
         <image src='../img/yinhangka.png'></image>
         <text>银行卡</text>
       </view>
-      <image src='../img/youjux.png' bindtap='handYhka'></image>
+      <image src='../img/youjux.png'></image>
     </view>
 
   </view>
 
   <view class='cont_Signout'>
-    <view class='cont_Signout_text1'>
+    <view class='cont_Signout_text1' bindtap='handTel'>
       <view class='cont_Signout_text'>
         <image src='../img/tel11.png'></image>
         <text>修改手机号</text>
       </view>
-      <image src='../img/youjux.png' bindtap='handTel'></image>
+      <image src='../img/youjux.png'></image>
     </view>
     <view class='cont_Signout_coso'></view>
 
@@ -109,12 +109,12 @@
     </view>
     <view class='cont_Signout_coso'></view>
 
-    <view class='cont_Signout_text1'>
+    <view class='cont_Signout_text1' bindtap='handTsjy'>
       <view class='cont_Signout_text'>
         <image src='../img/tousu1.png'></image>
         <text>投诉建议及评价</text>
       </view>
-      <image src='../img/youjux.png' bindtap='handTsjy'></image>
+      <image src='../img/youjux.png'></image>
     </view>
 
   </view>
