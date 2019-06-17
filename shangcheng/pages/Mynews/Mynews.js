@@ -5,7 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
- 
+    id:'0'
+  },
+  handOut:function(){
+    console.log("退出账号")
+  },
+  handTarget:function(e){
+    console.log(e.currentTarget.dataset.current);
+    this.setData({
+      id: e.currentTarget.dataset.current
+    })
+    console.log(this.data.id);
+    wx.navigateTo({
+      url: '../dingdan/dingdan?id='+ this.data.id,
+    })
   },
   handJump:function(){
     wx.navigateTo({

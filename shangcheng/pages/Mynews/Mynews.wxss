@@ -89,7 +89,9 @@ page{
   margin: 0 20rpx;
   margin-top: 102rpx;
   margin-bottom: 31rpx;
- 
+}
+.cont_Signout:nth-child(3){
+  margin-top: 30rpx;
 }
 .cont_Signout_text1{
   display: flex;

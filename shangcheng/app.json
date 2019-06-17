@@ -1,9 +1,10 @@
 {
   "pages": [
     "pages/Mynews/Mynews",
-    "pages/dingdan/dingdan",
+    "pages/mall/mall",
     "pages/index/index",
     "pages/Reflect/Reflect",
+    "pages/dingdan/dingdan",
     "pages/publish/publish",
     "pages/fail/fail",
     "pages/payment/payment",
@@ -29,7 +30,6 @@
     "pages/refund/refund",
     "pages/card/card",
     "pages/logistics/logistics",
-    "pages/mall/mall",
     "pages/details/details",
     "pages/evaluation/evaluation",
     "pages/login/login",
