@@ -1,7 +1,5 @@
-.db {
-  width: 750rpx;
+page {
   background: rgba(239, 239, 244, 1);
-  overflow: hidden;
 }
 
 .db .from {
@@ -63,10 +61,12 @@
   color: rgba(29, 32, 35, 1);
   margin-top: 37rpx;
 }
-.db .from .remaining text{
+
+.db .from .remaining text {
   font-size: 48rpx;
-  color: #FFA42E;
+  color: #ffa42e;
 }
+
 .btn {
   width: 690rpx;
   height: 80rpx;

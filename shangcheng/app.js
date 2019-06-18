@@ -33,7 +33,37 @@ App({
       }
     })
   },
+  postData: function (url, data) {
+    var that = this;
+    return new Promise(function (resolve, reject) {
+      wx.request({
+        url: getApp().globalData.http + url,
+        data: data,
+        method: "Get",
+        header: {
+          "Content-Type": "application/json;charset=UTF-8",
+        },
+        success: function (res) {
+          resolve(res.data);
+        },
+        fail: function (res) {
+          reject(res);
+        },
+      })
+    });
+  },
+  getuser: function () {
+    var data = new Object;
+    data.action = 'GetUserInfo';
+    data.userid = app.globalData.userid;
+    app.postData('GetUserData.ashx', data).then(res => {
+      app.globalData.userInfo = res.Result;
+    })
+  },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    http: "http://192.168.1.155:9999/API/",
+    userid: "",
+    code: ""
   }
 })

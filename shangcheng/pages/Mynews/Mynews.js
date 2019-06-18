@@ -1,18 +1,94 @@
 // pages/Mynews/Mynews.js
+var app = getApp();
+var that;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    id:'0'
   },
 
+  userlogin(){
+    app.postData("GetUserData.ashx",{
+      action:"GetUserInfo",
+      userid: app.globalData.userid
+    }).then(res=>{
+      that.setData({
+        UserImg: res.Result.UserImg,
+        NickName: res.Result.NickName
+      })
+      wx.setStorage({
+        key: 'UserImg',
+        data: res.Result.UserImg,
+      })
+      wx.setStorage({
+        key: 'NickName',
+        data: res.Result.NickName,
+      })
+    })
+  },
+
+
+
+
+
+  // 跳转
+  handOut:function(){
+    console.log("退出账号")
+  },
+  handTarget:function(e){
+    console.log(e.currentTarget.dataset.current);
+    this.setData({
+      id: e.currentTarget.dataset.current
+    })
+    console.log(this.data.id);
+    wx.navigateTo({
+      url: '../dingdan/dingdan?id='+ this.data.id,
+    })
+  },
+  handJump:function(){
+    wx.navigateTo({
+      url: '../dingdan/dingdan',
+    })
+  },
+  handTel: function () {
+    wx.navigateTo({
+      url: '../Myphone/Myphone',
+    })
+  },
+  handTgm:function(){
+    wx.navigateTo({
+      url: '../spread/spread',
+    })
+  },
+  handWdqb:function(){
+    wx.navigateTo({
+      url: '../wallet/wallet',
+    })
+  },
+  handTsjy: function () {
+    wx.navigateTo({
+      url: '../Complaint/Complaint',
+    })
+  },
+  handYhka: function () {
+    wx.navigateTo({
+      url: '../binding/binding',
+    })
+  },
+  handWdtg: function () {
+    wx.navigateTo({
+      url: '../extension/extension',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    that=this;
+    that.userlogin()
   },
 
   /**

@@ -11,7 +11,8 @@
     <view class="pirce_2">￥698</view>
   </view>
   <view class="coco">
-    爆款18色眼影防水易上妆闪粉哑光珠光沙漠玫瑰彩妆盘 18色眼影盘
+    爆款18色眼影防水易上妆闪粉哑光珠光沙漠玫瑰彩妆盘 18色眼影盘klhjkljkljkljkjljkjlkjkjlkjklj
+    爆款18色眼影防水易上妆闪粉哑光珠光沙漠玫瑰彩妆盘 18色眼影盘klhjkljkljkljkjljkjlkjkjlkjklj
   </view>
   <view class="pin">
     月销3409笔
@@ -94,7 +95,7 @@
     <view class="footer_2">加入购物车</view>
     <view class="footer_2">立即购买</view>
   </view>
-  <view class="zzc">
+  <view class="zzc" wx:if="{{off}}">
     <view class="zzc_mian">
       <view class="zzc_d">
         <image src='/pages/img/zzc.png' lazy-load='true'></image>

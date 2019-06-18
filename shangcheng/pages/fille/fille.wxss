@@ -1,0 +1,135 @@
+page {
+  background-color: #efeff4;
+}
+
+.db {
+  width: 100%;
+  overflow: hidden;
+}
+
+.xinxi {
+  width: 710rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  overflow: hidden;
+  padding-top: 10rpx;
+}
+
+.xinxi .total {
+  width: 650rpx;
+  height: 90rpx;
+  border-top: 1px solid #ccc;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.xinxi .total:nth-child(1) {
+  border-top: 0;
+}
+
+.xinxi .total .left {
+  width: 150rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC;
+  font-weight: bold;
+  color: rgba(153, 153, 153, 1);
+  height: 90rpx;
+  display: flex;
+  overflow: hidden;
+  line-height: 90rpx;
+}
+
+.xinxi .total textarea {
+  font-size: 28rpx;
+  font-family: PingFangSC;
+  font-weight: bold;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 31rpx;
+  margin-left: 40rpx;
+  width: 500rpx;
+  height: 58rpx;
+  line-height: 0;
+}
+
+.xinxi .total input {
+  flex: 1;
+  font-size: 24rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 83, 60, 1);
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: right;
+  display: flex;
+}
+
+.xinxi .total .right .xuan {
+  width: 100rpx;
+  height: 40rpx;
+  font-size: 24rpx;
+  background-color: #fbc00e;
+  text-align: center;
+  line-height: 40rpx;
+  border-radius: 20rpx;
+  margin-top: 25rpx;
+  color: #fff;
+}
+
+.xinxi .total .jian {
+  width: 12rpx;
+  height: 22rpx;
+  margin-left: 24rpx;
+  margin-top: 35rpx;
+}
+
+.footer {
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.footer .left {
+  flex: 50%;
+  background-color: #fff;
+  height: 98rpx;
+  line-height: 98rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(29, 32, 35, 1);
+}
+
+.footer .left text {
+  color: #ff533c;
+  margin-left: 40rpx;
+}
+
+.footer .right {
+  width: 50%;
+  height: 98rpx;
+  background: rgba(251, 192, 14, 1);
+  text-align: center;
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 98rpx;
+}
+
+.btn {
+  width: 690rpx;
+  height: 80rpx;
+  background: rgba(142, 195, 31, 1);
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  margin: 0 auto;
+  margin-top: 50rpx;
+}

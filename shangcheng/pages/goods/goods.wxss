@@ -65,6 +65,10 @@
   font-family: PingFangSC-Heavy;
   font-weight: 800;
   color: rgba(29, 32, 35, 1);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .pin {

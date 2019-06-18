@@ -5,9 +5,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    currentTab:0
   },
-
+  on:function(e){
+    console.log(e.currentTarget.dataset.current)
+    this.setData({
+      current: e.currentTarget.dataset.current
+    })
+    // var that = this;
+    // console.log(e.target.dataset.current)
+    // if (this.data.currentTab === e.target.dataset.current) {
+    //   return false;
+    // } else {
+    //   that.setData({
+    //     currentTab: e.target.dataset.current
+    //   })
+    // }
+  },
   /**
    * 生命周期函数--监听页面加载
    */

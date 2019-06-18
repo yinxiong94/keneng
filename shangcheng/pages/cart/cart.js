@@ -5,14 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    array: [],
+    delBtnWidth: 130,
+    img: "/pages/img/zheng.png",
+    off:false,
   },
-  checkboxChange(e){
-    if (e.detail.value.length==1){
-        
-    }
-  },
-  
   jian:function(){
     console.log("减少");
   },

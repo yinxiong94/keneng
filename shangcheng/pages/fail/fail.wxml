@@ -3,10 +3,9 @@
   <view class="coco">
     <image src='/pages/img/bg3.png' lazy-load='true'></image>
     <view class="coco_2">
-      <image src='/pages/img/yes.png' lazy-load='true'></image>
-      <view class="t_1">支付成功</view>
-      <view class="t_2">¥1688</view>
-      <view class="t_3">商家正在打包，请耐心等待哦~</view>
+      <image src='/pages/img/shibai.png' lazy-load='true'></image>
+      <view class="t_1">支付失败</view>
+      <view class="t_3">请重新支付，以便店家确认订单信息超时订单将会取消~</view>
     </view>
   </view>
   <view class="btn">

@@ -57,5 +57,5 @@
       </view>
     </view>
   </view>
-  <view class="btn">申请</view>
+  <view class="btn" bindtap='handTui'>申请</view>
 </view>

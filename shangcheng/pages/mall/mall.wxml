@@ -7,7 +7,7 @@
         <input type='text' placeholder='搜索关键词'></input>
       </view>
     </view>
-    <image src='/pages/img/bg11.png'></image>
+        <image src='/pages/img/bg11.png'></image>
   </view>
   <view class="vip">
     <image src='/pages/img/bg2.png'></image>

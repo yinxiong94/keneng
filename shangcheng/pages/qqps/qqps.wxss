@@ -1,9 +1,6 @@
-.db {
-  width: 750rpx;
-  background: rgba(239, 239, 244, 1);
-  overflow: hidden;
+page{
+  background-color: #EFEFF4;
 }
-
 .db .from {
   background-color: #fff;
   width: 690rpx;

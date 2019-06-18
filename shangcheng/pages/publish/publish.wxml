@@ -1,0 +1,25 @@
+<view class="top">
+  <image class="tx" src='/pages/img/img1.png'></image>
+  <view class="right">
+    <text class="pin">商品评价</text>
+    <image class="xing" src='/pages/img/xing11.png'></image>
+    <image class="xing" src='/pages/img/xing11.png'></image>
+    <image class="xing" src='/pages/img/xing11.png'></image>
+    <image class="xing" src='/pages/img/xing11.png'></image>
+    <image class="xing" src='/pages/img/kxing.png'></image>
+    <text class="pin1">4</text>
+  </view>
+</view>
+<view class="mian">
+  <textarea placeholder='宝贝满足你的期待吗？说说你的使用心得，分享给想买的他们吧'></textarea>
+  <view class="image">
+    <view class="list">
+      <image class="img1" src='/pages/img/img1.png' lazy-load='true'></image>
+      <image class="del" src='/pages/img/del.png' lazy-load='true'></image>
+    </view>
+    <view class="list">
+      <image class="img1" src='/pages/img/tianjia.png' lazy-load='true'></image>
+    </view>
+  </view>
+</view>
+<view class="btn">发表评论</view>

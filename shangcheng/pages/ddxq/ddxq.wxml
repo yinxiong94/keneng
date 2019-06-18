@@ -5,16 +5,6 @@
     <view class="wait">等待买家付款</view>
     <view class="wait_time">剩余23小时59分自动关闭</view>
   </view>
-  <view class="package" wx:if="{{off}}">
-    <view class="package_a">
-      <image class="fahuo" src='/pages/img/fahuo.png' lazy-load='true'></image>
-      <view class="right">
-        <view class="right_see">包裹正在等待揽收</view>
-        <view class="right_don">包裹正在等待揽收</view>
-      </view>
-      <image src='/pages/img/right.png' lazy-load='true' class="jiantou"></image>
-    </view>
-  </view>
   <view class="mian">
     <view class="mian_a">
       <image src='/pages/img/dizhi2.png' lazy-load='true'></image>
@@ -64,7 +54,6 @@
     <view class="dh">
       <view class="dh_btn">联系卖家</view>
       <view class="dh_btn">拨打电话</view>
-      <view class="dh_btn_1" wx:if="{{off}}">联系客服</view>
     </view>
   </view>
   <view class="biao">猜你喜欢</view>

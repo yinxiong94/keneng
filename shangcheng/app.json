@@ -1,40 +1,45 @@
 {
   "pages": [
-    "pages/Reflect/Reflect",
-    "pages/Mybinding/Mybinding",
-    "pages/MyBankcard/MyBankcard",
-    "pages/binding/binding",
-    "pages/dingdan/dingdan",
-    "pages/Complaint/Complaint",
-    "pages/cart/cart",
     "pages/index/index",
-    "pages/open/open",
-    "pages/card/card",
+    "pages/Mynews/Mynews",
     "pages/mall/mall",
+    "pages/Reflect/Reflect",
+    "pages/dingdan/dingdan",
+    "pages/publish/publish",
+    "pages/fail/fail",
+    "pages/payment/payment",
+    "pages/administration/administration",
+    "pages/fille/fille",
     "pages/Myphone/Myphone",
     "pages/usedMyphone/usedMyphone",
-    "pages/Mynews/Mynews",
+    "pages/Complaint/Complaint",
+    "pages/Mybinding/Mybinding",
+    "pages/binding/binding",
     "pages/huika/huika",
     "pages/goods/goods",
     "pages/order/order",
-    "pages/fail/fail",
     "pages/spread/spread",
     "pages/wallet/wallet",
-   
     "pages/address/address",
     "pages/request/request",
-    "pages/payment/payment",
     "pages/sort/sort",
     "pages/extension/extension",
     "pages/sale/sale",
     "pages/tkyy/tkyy",
     "pages/tuikuan/tuikuan",
     "pages/refund/refund",
-    "pages/ddxq/ddxq",
+    "pages/card/card",
     "pages/logistics/logistics",
     "pages/details/details",
     "pages/evaluation/evaluation",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/cart/cart",
+    "pages/ddxq/ddxq",
+    "pages/ddxq1/ddxq1",
+    "pages/ddxq2/ddxq2",
+    "pages/After/After",
+    "pages/open/open",
+    "pages/xjtg/xjtg"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -42,5 +47,33 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/mall/mall",
+        "text": "首页",
+        "iconPath": "/pages/img/index1.png",
+        "selectedIconPath": "/pages/img/index.png"
+      },
+      {
+        "pagePath": "pages/sort/sort",
+        "text": "分类",
+        "iconPath": "/pages/img/fenlei1.png",
+        "selectedIconPath": "/pages/img/fenlei.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "/pages/img/cart1.png",
+        "selectedIconPath": "/pages/img/cart.png"
+      },
+      {
+        "pagePath": "pages/Mynews/Mynews",
+        "text": "我的",
+        "iconPath": "/pages/img/My1.png",
+        "selectedIconPath": "/pages/img/My.png"
+      }
+    ]
+  }
 }

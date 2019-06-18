@@ -1,5 +1,4 @@
-.db {
-  width: 750rpx;
+page {
   background-color: #efeff4;
 }
 
@@ -107,30 +106,50 @@
   line-height: 26rpx;
   width: 100%;
 }
-.upload .upload_img{
+
+.upload .upload_img {
   height: 180rpx;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
-.upload .upload_img .img{
+
+.upload .upload_img .img {
   position: relative;
   margin-right: 33rpx;
   width: 180rpx;
   height: 180rpx;
   margin-bottom: 20rpx;
 }
-.upload .upload_img .img:nth-child(3n){
+
+.upload .upload_img .img:nth-child(3n) {
   margin-right: 0;
 }
-.upload .upload_img .img .img_1{
+
+.upload .upload_img .img .img_1 {
   width: 180rpx;
   height: 180rpx;
 }
-.upload .upload_img .img .img_2{
+
+.upload .upload_img .img .img_2 {
   width: 36rpx;
   height: 36rpx;
-  position:absolute;
+  position: absolute;
   right: -16rpx;
-  top:-16rpx;
+  top: -16rpx;
+}
+
+.btn {
+  width: 690rpx;
+  height: 80rpx;
+  background: rgba(142, 195, 31, 1);
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  margin: 0 auto;
+  margin-top: 50rpx;
 }
