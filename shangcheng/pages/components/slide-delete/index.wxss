@@ -1,5 +1,6 @@
 .wrap {
   position: relative;
+  margin: 20rpx;
 }
 
 .wrap .content {
