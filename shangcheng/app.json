@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/Mynews/Mynews",
     "pages/mall/mall",
-    "pages/index/index",
     "pages/Reflect/Reflect",
     "pages/dingdan/dingdan",
     "pages/publish/publish",
@@ -16,7 +16,6 @@
     "pages/Mybinding/Mybinding",
     "pages/binding/binding",
     "pages/huika/huika",
-    "pages/goods/goods",
     "pages/order/order",
     "pages/spread/spread",
     "pages/wallet/wallet",

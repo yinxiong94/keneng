@@ -9,27 +9,6 @@ Page({
     delBtnWidth: 130,
     img: "/pages/img/zheng.png",
     off:false,
-
-  },
-  touchS: function(e) {
-    if (e.touches.length == 1) {
-      this.setData({
-        startX: e.touches[0].clientX
-      })
-    }
-  },
-  Choice: function() {
-    if (this.data.off) {
-      this.data.off = false;
-      this.setData({
-        img: "/pages/img/zheng.png"
-      })
-    } else {
-      this.data.off = true;
-      this.setData({
-        img: "/pages/img/quan1.png"
-      })
-    }
   },
   jian:function(){
     console.log("减少");

@@ -411,6 +411,7 @@
   font-weight: 400;
   color: rgba(29, 32, 35, 1);
   line-height: 28rpx;
+  margin-bottom: -30rpx;
 }
 
 .goods .goods_img {
@@ -419,8 +420,8 @@
 }
 
 .goods .goods_img image {
-  width: 750rpx;
-  height: 320rpx;
+  width: 750rpx !important;
+  height: 320rpx !important;
 }
 
 image {
@@ -567,4 +568,19 @@ image {
   font-weight: 400;
   color: rgba(255, 255, 255, 1);
   margin-top: 246rpx;
+}
+.swiper {
+  width: 750rpx;
+  height: 700rpx;
+  position: absolute;
+  overflow: hidden;
+  top: 0rpx;
+  left: 0rpx;
+  border-radius: 10rpx;
+}
+
+.swiper .img_11 {
+  width: 750rpx;
+  height: 700rpx;
+  position: absolute;
 }

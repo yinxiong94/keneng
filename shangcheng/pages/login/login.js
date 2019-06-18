@@ -9,6 +9,11 @@ Page({
     count: 60,  //倒计时时间
     code: '获取验证码',
   },
+  handCeto:function(){
+    wx.switchTab({
+      url: '../mall/mall',
+    })
+  },
   // 获取用户输入的手机号码
   Input_iphone(e) {
     let that = this;

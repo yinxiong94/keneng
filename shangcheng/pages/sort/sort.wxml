@@ -25,7 +25,7 @@
             </view>
           </view>
           <view class='cont1_top'  wx:if="{{menuTapCurrent==0}}" >
-            <view class="list" wx:for="{{6}}">
+            <view class="list" wx:for="{{4}}" wx:key="index">
                   <image lazy-load='true' src='/pages/img/yu.png'></image>
                   <view class="describe">支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉</view>
                   <view class="pirce">
@@ -40,7 +40,7 @@
             </view>
           </view>
            <view class='cont1_top' wx:elif="{{menuTapCurrent==1}}">
-            <view class="list" wx:for="{{6}}">
+            <view class="list" wx:for="{{7}}" wx:key="index">
                   <image lazy-load='true' src='/pages/img/yu.png'></image>
                   <view class="describe">支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉</view>
                   <view class="pirce">
@@ -55,7 +55,7 @@
             </view>
           </view>
           <view class='cont1_top' wx:elif="{{menuTapCurrent==2}}">
-            <view class="list" wx:for="{{6}}">
+            <view class="list" wx:for="{{4}}" wx:key="index">
                   <image lazy-load='true' src='/pages/img/yu.png'></image>
                   <view class="describe">支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉</view>
                   <view class="pirce">
@@ -70,7 +70,7 @@
             </view>
           </view>
           <view class='cont1_top' wx:elif="{{menuTapCurrent==3}}">
-            <view class="list" wx:for="{{6}}">
+            <view class="list" wx:for="{{2}}" wx:key="index">
                   <image lazy-load='true' src='/pages/img/yu.png'></image>
                   <view class="describe">支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉</view>
                   <view class="pirce">

@@ -1,11 +1,19 @@
 // pages/goods/goods.js
+var app = getApp();
+const WxParse = require('../../wxParse/wxParse.js');
+var that;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    off:false
+    off:false,
+    sid:"",
+    list:[]
+  },
+  handCart:function(){
+    console.log('加入购物车');
   },
   handTxdd:function(){
     wx:wx.navigateTo({
@@ -16,7 +24,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    that = this
+    that.setData({
+      sid: options.id
+    })
+    app.postData("GetIndexData.ashx", {
+      action: "GetDetails",
+      goodsid: that.data.sid
+    }).then(res => {
+      that.setData({
+        list: res.Result
+      })
+      let article = that.data.list.desc;
+      WxParse.wxParse('article', 'html', article, that, 5);
+    })
+    
   },
 
   /**

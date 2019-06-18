@@ -1,4 +1,6 @@
 // pages/Mynews/Mynews.js
+var app = getApp();
+var that;
 Page({
 
   /**
@@ -7,6 +9,32 @@ Page({
   data: {
     id:'0'
   },
+
+  userlogin(){
+    app.postData("GetUserData.ashx",{
+      action:"GetUserInfo",
+      userid: app.globalData.userid
+    }).then(res=>{
+      that.setData({
+        UserImg: res.Result.UserImg,
+        NickName: res.Result.NickName
+      })
+      wx.setStorage({
+        key: 'UserImg',
+        data: res.Result.UserImg,
+      })
+      wx.setStorage({
+        key: 'NickName',
+        data: res.Result.NickName,
+      })
+    })
+  },
+
+
+
+
+
+  // 跳转
   handOut:function(){
     console.log("退出账号")
   },
@@ -59,7 +87,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    that=this;
+    that.userlogin()
   },
 
   /**
