@@ -47,7 +47,15 @@
   <view class="item-box">
     <view class="list">
       <view class="items" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style='{{item.txtStyle}}' data-index="{{index}}">
-        <image src='{{img}}' lazy-load='true' class="off" bindtap='Choice'></image>
+        <view class="items_left">
+          <checkbox-group bindchange="checkboxChange">
+            <label wx:for="{{1}}">
+              <checkbox value="{{index}}"></checkbox>
+              <view>{{item.name}}</view>
+              <!-- 其他布局代码 -->
+            </label>
+          </checkbox-group>
+        </view>
         <image src='/pages/img/yu.png' lazy-load='true' class="img"></image>
         <view class="item">
           <view class="item_title">夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......</view>
@@ -71,7 +79,15 @@
     </view>
   </view>
   <view class="footer">
-    <image src='/pages/img/quan1.png'></image>
+    <view class="coco">
+      <checkbox-group bindchange="checkboxChange">
+        <label class="input" wx:for="{{1}}">
+          <checkbox value="{{index}}"></checkbox>
+          <view>{{item.name}}</view>
+          <!-- 其他布局代码 -->
+        </label>
+      </checkbox-group>
+    </view>
     <view class="left">
       <text>全选</text>
     </view>
