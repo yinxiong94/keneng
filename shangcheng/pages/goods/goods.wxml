@@ -1,21 +1,26 @@
 <!-- 商品详情 -->
 <view class="db">
   <view class="top">
-    <image src='/pages/img/tao.png' lazy-load='true'></image>
+    <swiper class="swiper">
+      <block wx:for="{{list.piclist}}" wv:key="{{list.goodsid}}">
+        <swiper-item>
+          <image class="img_11" src='{{item.url}}' lazy-load='true'></image>
+        </swiper-item>
+      </block>
+    </swiper>
     <view class="paging">
       1/5
     </view>
   </view>
   <view class="pirce">
-    <view class="pirce_1">￥203</view>
-    <view class="pirce_2">￥698</view>
+    <view class="pirce_1">￥{{list.saleprice}}</view>
+    <view class="pirce_2">￥{{list.marketprice}}</view>
   </view>
   <view class="coco">
-    爆款18色眼影防水易上妆闪粉哑光珠光沙漠玫瑰彩妆盘 18色眼影盘klhjkljkljkljkjljkjlkjkjlkjklj
-    爆款18色眼影防水易上妆闪粉哑光珠光沙漠玫瑰彩妆盘 18色眼影盘klhjkljkljkljkjljkjlkjkjlkjklj
+    {{list.goodsname}}
   </view>
   <view class="pin">
-    月销3409笔
+    月销{{list.salesnnum}}笔
   </view>
   <view class="hhh"></view>
   <view class="service">
@@ -82,9 +87,9 @@
   <view class="hhh"></view>
   <view class="goods">
     <view class="goods_title">商品详情</view>
+    <import src="../../wxParse/wxParse.wxml" />
     <view class="goods_img">
-      <image src='/pages/img/goods.png' lazy-load='true'></image>
-      <image src='/pages/img/goods.png' lazy-load='true'></image>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
     </view>
   </view>
   <view class="footer">
@@ -92,7 +97,7 @@
       <image src='/pages/img/tousu.png' lazy-load='true'></image>
       <view class="diso">客服</view>
     </view>
-    <view class="footer_2">加入购物车</view>
+    <view class="footer_2" bindtap='handCart'>加入购物车</view>
     <view class="footer_2">立即购买</view>
   </view>
   <view class="zzc" wx:if="{{off}}">

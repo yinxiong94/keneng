@@ -12,5 +12,5 @@
     </view>
     <input type='text' placeholder='请输入验证码'></input>
   </view>
-  <view class="btn" >登陆</view>
+  <view class="btn" bindtap='handCeto'>登陆</view>
 </view>
