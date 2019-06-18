@@ -9,7 +9,7 @@
       </block>
     </swiper>
     <view class="paging">
-      1/5
+      1/{{length}}
     </view>
   </view>
   <view class="pirce">

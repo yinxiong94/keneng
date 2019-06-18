@@ -10,7 +10,8 @@ Page({
   data: {
     off:false,
     sid:"",
-    list:[]
+    list:[],
+    length:''
   },
   handCart:function(){
     console.log('加入购物车');
@@ -37,6 +38,9 @@ Page({
       })
       let article = that.data.list.desc;
       WxParse.wxParse('article', 'html', article, that, 5);
+      that.setData({
+        length: that.data.list.piclist.length
+      })
     })
     
   },
