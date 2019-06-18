@@ -1,11 +1,13 @@
 .wrap {
   position: relative;
+  margin: 20rpx;
 }
 
 .wrap .content {
   position: relative;
   z-index: 1;
   background: #fff;
+  /* margin: 10rpx; */
 }
 
 .wrap .content.animate {
