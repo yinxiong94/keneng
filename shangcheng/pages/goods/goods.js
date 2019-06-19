@@ -18,7 +18,12 @@ Page({
     that.setData({ current: e.detail.current+=1})
   },
   handCart:function(){
-    console.log('加入购物车');
+    app.postData("GetIndexData.ashx",{
+      action:"GetDetails",
+      goodsid: that.data.sid
+    }).then(res =>{
+      console.log(res);
+    })
   },
   handTxdd:function(){
     wx:wx.navigateTo({
