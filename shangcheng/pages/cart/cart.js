@@ -1,5 +1,6 @@
 // pages/gwc/gwc.js
-const app = getApp()
+const app = getApp();
+var that;
 Page({
 
   /**
@@ -158,25 +159,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    var a = wx.getStorageSync('Token');
-    var timespan = new Date().getTime();
-    var nonce = Math.floor((Math.random() + Math.floor(Math.random() * 9 + 1)) * Math.pow(10, 10 - 1));
-    var signature = [timespan, nonce, a.signId, a.signToken].sort().join('').toUpperCase();
-    // 轮播图
-    wx.request({
-      url: app.globalData.url + '/api/product/ProductCartInfo',
-      method: "POST",
-      header: { 'content-type': 'application/json', signKey: a.signId, timespan: timespan, nonce: nonce, signature: signature },
-      data: { openId: app.globalData.openId },
-      success(res) {
-        var ff = [];
-        for (var i = 0; i < res.data.result.length; i++) {
-          ff.push(res.data.result[i].productNum)
-        }
-        that.setData({ list: res.data.result, count: ff })
-
-      }
+    that=this;
+    app.postData("GetShoppingData.ashx", {
+      action: "AddShopping",
+      UserId: app.globalData.userid
+    }).then(res => {
+      console.log(res);
     })
   },
 
@@ -191,26 +179,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this;
-    var a = wx.getStorageSync('Token');
-    var timespan = new Date().getTime();
-    var nonce = Math.floor((Math.random() + Math.floor(Math.random() * 9 + 1)) * Math.pow(10, 10 - 1));
-    var signature = [timespan, nonce, a.signId, a.signToken].sort().join('').toUpperCase();
-    // 轮播图
-    wx.request({
-      url: app.globalData.url + '/api/product/ProductCartInfo',
-      method: "POST",
-      header: { 'content-type': 'application/json', signKey: a.signId, timespan: timespan, nonce: nonce, signature: signature },
-      data: { openId: app.globalData.openId },
-      success(res) {
-        var ff = [];
-        for (var i = 0; i < res.data.result.length; i++) {
-          ff.push(res.data.result[i].productNum)
-        }
-        that.setData({ list: res.data.result, count: ff })
-
-      }
-    })
+    
   },
 
   /**
