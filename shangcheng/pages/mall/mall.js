@@ -30,6 +30,7 @@ Page({
     app.postData("GetIndexData.ashx", {
       action: "GetIndexGoods"
     }).then(res => {
+      console.log(res)
       that.setData({
         list: res.Result
       })

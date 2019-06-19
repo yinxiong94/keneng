@@ -1,15 +1,15 @@
 <!-- 商品详情 -->
 <view class="db">
   <view class="top">
-    <swiper class="swiper">
-      <block wx:for="{{list.piclist}}" wv:key="{{list.goodsid}}">
+    <swiper class="swiper" bindchange="aaa">
+      <block wx:for="{{list.piclist}}" wx:key="index">
         <swiper-item>
           <image class="img_11" src='{{item.url}}' data-index="{{index}}" lazy-load='true' bind:touchstart='handClick' bind:touchend='stopRecord'></image>
         </swiper-item>
       </block>
     </swiper>
     <view class="paging">
-      1/{{length}}
+      {{current}}/{{length}}
     </view>
   </view>
   <view class="pirce">

@@ -13,7 +13,7 @@ Page({
   userlogin(){
     app.postData("GetUserData.ashx",{
       action:"GetUserInfo",
-      userid: app.globalData.userid
+      userid:app.globalData.userid
     }).then(res=>{
       that.setData({
         UserImg: res.Result.UserImg,
@@ -30,13 +30,20 @@ Page({
     })
   },
 
-
-
-
-
   // 跳转
   handOut:function(){
-    console.log("退出账号")
+    wx.clearStorageSync();
+    wx.showToast({
+      title: '退出成功',
+      duration: 2000,
+      success(res) { 
+        setTimeout(function(){
+          wx.redirectTo({
+            url: '/pages/index/index',
+          })
+        },2000)    
+      }
+    })   
   },
   handTarget:function(e){
     console.log(e.currentTarget.dataset.current);

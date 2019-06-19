@@ -8,7 +8,7 @@
       </view>
     </view>
     <swiper class="swiper">
-      <block wx:for="{{send}}">
+      <block wx:for="{{send}}" wx:key="index">
         <swiper-item>
           <image class="img_11" src='{{item.campic}}'></image>
         </swiper-item>
@@ -28,7 +28,7 @@
     <view class="title">为你
       <text>· 推荐</text>
     </view>
-    <view class="item" wx:for='{{list}}' wx:key="list.goodsid" bindtap='handDetails' data-goodsid='{{item.goodsid}}'>
+    <view class="item" wx:for='{{list}}' wx:key="{{list.goodsid}}" bindtap='handDetails' data-goodsid='{{item.goodsid}}'>
       <view class="list" >
         <image lazy-load='true' src='{{item.goodspic}}'></image>
         <view class="describe">{{item.goodsname}}</view>

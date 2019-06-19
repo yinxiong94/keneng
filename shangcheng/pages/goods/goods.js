@@ -11,7 +11,14 @@ Page({
     off:false,
     sid:"",
     list:[],
-    length:'',
+    length: '',
+    current:1
+  },
+  aaa:function(e){
+    that.setData({ current: e.detail.current+=1})
+  },
+  handCart:function(){
+    console.log('加入购物车');
   },
   handTxdd:function(){
     wx:wx.navigateTo({
@@ -31,8 +38,11 @@ Page({
       goodsid: that.data.sid
     }).then(res => {
       that.setData({
-        list: res.Result
+        list: res.Result,
+        urlLength:res.Result.piclist.length
       })
+      console.log(that.data.urlLength)
+      console.log(that.data.list)
       let article = that.data.list.desc;
       WxParse.wxParse('article', 'html', article, that, 5);
       that.setData({
