@@ -47,11 +47,11 @@
   <view class="item-box">
     <slide-delete>
       <view class="list">
-        <view class="items" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style='{{item.txtStyle}}' data-index="{{index}}">
+        <view class="items">
           <view class="items_left">
             <checkbox-group >
               <label>
-                <checkbox data-productNum="{{count[index]}}" data-productPrice="{{item.productPrice}}"  bindtap='change' data-ind='{{index}}' checked='{{checked[index]}}'></checkbox>
+                <checkbox   bindtap='change' data-ind='0' checked='{{checked[0]}}'></checkbox>
                 <!-- 其他布局代码 -->
               </label>
             </checkbox-group>
@@ -84,7 +84,7 @@
 
   <view class="footer">
     <view class="coco">
-      <checkbox-group bindchange="checkboxChange">
+      <checkbox-group>
         <label class="input" >
           <checkbox bindtap='all' checked='{{c}}'></checkbox>
           <!-- <view>{{item.name}}</view> -->
