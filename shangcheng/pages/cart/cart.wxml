@@ -45,46 +45,49 @@
     </view>
   </view> -->
   <view class="item-box">
-  <slide-delete>
-    <view class="list">
-      <view class="items" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style='{{item.txtStyle}}' data-index="{{index}}">
-        <view class="items_left">
-          <checkbox-group bindchange="checkboxChange">
-            <label wx:for="{{1}}">
-              <checkbox value="{{index}}"></checkbox>
-              <view>{{item.name}}</view>
-              <!-- 其他布局代码 -->
-            </label>
-          </checkbox-group>
-        </view>
-        <image src='/pages/img/yu.png' lazy-load='true' class="img"></image>
-        <view class="item">
-          <view class="item_title">夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......</view>
-          <view class="item_text1">颜色分类：酒红色；尺码：36</view>
-          <view class="pirce">
-            <view class="pirce_1">
-              <text>￥</text>299</view>
-            <view class="calculation">
-              <view class="left" bindtap='jian'>
-                <image src='/pages/img/jian.png' lazy-load='true' class="jian"></image>
-              </view>
-              <view class="conter">1</view>
-              <view class="left" bindtap='jia'>
-                <image src='/pages/img/jia1.png' lazy-load='true' class="jia"></image>
+    <slide-delete>
+      <view class="list">
+        <view class="items">
+          <view class="items_left">
+            <checkbox-group >
+              <label>
+                <checkbox   bindtap='change' data-ind='0' checked='{{checked[0]}}'></checkbox>
+                <!-- 其他布局代码 -->
+              </label>
+            </checkbox-group>
+          </view>
+          <image src='/pages/img/yu.png' lazy-load='true' class="img"></image>
+          <view class="item">
+            <view class="item_title">夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......</view>
+            <view class="item_text1">颜色分类：酒红色；尺码：36</view>
+            <view class="pirce">
+              <view class="pirce_1">
+                <text>￥</text>299</view>
+              <view class="calculation">
+                <view class="left" bindtap='jian' data-id="{{index}}" data-uid="{{item.productCartId}}">
+                  <image src='/pages/img/jian.png' lazy-load='true' class="jian"></image>
+                </view>
+                <view class="conter">1</view>
+                <view class="left" bindtap='jia' data-id="{{index}}" data-uid="{{item.productCartId}}">
+                  <image src='/pages/img/jia1.png' lazy-load='true' class="jia"></image>
+                </view>
               </view>
             </view>
           </view>
         </view>
+        <!-- <view class="delete" catchtap='delOrder' data-index='{{index}}' data-order_id='{{item.order_id}}'>删除</view> -->
       </view>
-    </view>
     </slide-delete>
   </view>
+
+
+
   <view class="footer">
     <view class="coco">
-      <checkbox-group bindchange="checkboxChange">
-        <label class="input" wx:for="{{1}}">
-          <checkbox value="{{index}}"></checkbox>
-          <view>{{item.name}}</view>
+      <checkbox-group>
+        <label class="input" >
+          <checkbox bindtap='all' checked='{{c}}'></checkbox>
+          <!-- <view>{{item.name}}</view> -->
           <!-- 其他布局代码 -->
         </label>
       </checkbox-group>
@@ -97,6 +100,6 @@
       <view class="conter_pirce">
         <text>￥</text>299</view>
     </view>
-    <view class="footer_btn">结算(1)</view>
+    <view class="footer_btn" bindtap='nowshop'>结算(1)</view>
   </view>
 </view>

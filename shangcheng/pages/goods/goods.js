@@ -16,9 +16,15 @@ Page({
   },
   aaa:function(e){
     that.setData({ current: e.detail.current+=1})
+    console.log(e.detail.current);
   },
   handCart:function(){
-    console.log('加入购物车');
+    app.postData("GetIndexData.ashx",{
+      action:"GetDetails",
+      goodsid: that.data.sid
+    }).then(res =>{
+      console.log(res);
+    })
   },
   handTxdd:function(){
     wx:wx.navigateTo({
@@ -41,17 +47,13 @@ Page({
         list: res.Result,
         urlLength:res.Result.piclist.length
       })
-      console.log(that.data.urlLength)
-      console.log(that.data.list)
       let article = that.data.list.desc;
       WxParse.wxParse('article', 'html', article, that, 5);
       that.setData({
         length: that.data.list.piclist.length
       })
     })
-    
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

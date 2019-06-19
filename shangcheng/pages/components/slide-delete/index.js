@@ -1,3 +1,4 @@
+const app = getApp()
 Component({
   /**
    * 组件的属性列表
@@ -113,12 +114,32 @@ Component({
     /**
      * 组件操作事件（此示例只有删除事件，可根据需要增加其他事件）
      */
-    handleAction({ currentTarget: { dataset: data } }) {
-      this.triggerEvent('action', {
-        type: data.type,
-        id: this.data.pid
+    handleAction(e){
+
+      // 轮播图
+      wx.request({
+        url: app.globalData.url + '/api/Product/ProductCartDel',
+        method: "POST",
+        header: { 'content-type': 'application/json', signKey: a.signId, timespan: timespan, nonce: nonce, signature: signature },
+        data: { productCartId: b },
+        success(res) {
+          // 轮播图
+          wx.request({
+            url: app.globalData.url + 'GetShoppingData.ashx',
+            method: "POST",
+            // header: { 'content-type': 'application/json', signKey: a.signId, timespan: timespan, nonce: nonce, signature: signature },
+            data: { openId: app.globalData.userid },
+            success(res) {
+              var ff = [];
+              for (var i = 0; i < res.data.result.length; i++) {
+                ff.push(res.data.result[i].productNum)
+              }
+              that.setData({ list: res.data.result, count: ff })
+            }
+          })
+        }
       })
-    }
+    },
   },
 
   ready() {
