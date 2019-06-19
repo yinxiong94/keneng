@@ -11,10 +11,7 @@ Page({
     off:false,
     sid:"",
     list:[],
-    length:''
-  },
-  handCart:function(){
-    console.log('加入购物车');
+    length:'',
   },
   handTxdd:function(){
     wx:wx.navigateTo({
@@ -42,9 +39,7 @@ Page({
         length: that.data.list.piclist.length
       })
     })
-    
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

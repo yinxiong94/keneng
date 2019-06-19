@@ -4,7 +4,7 @@
     <swiper class="swiper">
       <block wx:for="{{list.piclist}}" wv:key="{{list.goodsid}}">
         <swiper-item>
-          <image class="img_11" src='{{item.url}}' lazy-load='true'></image>
+          <image class="img_11" src='{{item.url}}' data-index="{{index}}" lazy-load='true' bind:touchstart='handClick' bind:touchend='stopRecord'></image>
         </swiper-item>
       </block>
     </swiper>
@@ -19,7 +19,7 @@
   <view class="coco">
     {{list.goodsname}}
   </view>
-  <view class="pin">
+  <view class="pin">   
     月销{{list.salesnnum}}笔
   </view>
   <view class="hhh"></view>
