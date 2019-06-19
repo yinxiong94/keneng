@@ -2,7 +2,7 @@
 <view class="db">
   <view class="top">
     <swiper class="swiper" bindchange="aaa">
-      <block wx:for="{{list.piclist}}" wv:key="{{list.goodsid}}">
+      <block wx:for="{{list.piclist}}" wx:key="index">
         <swiper-item>
           <image class="img_11" src='{{item.url}}' lazy-load='true'></image>
         </swiper-item>
