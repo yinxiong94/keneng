@@ -38,6 +38,10 @@ Page({
     data.signature = app.globalData.userData.signature;
     app.postData('GetUserData.ashx', data).then(res => {
       app.globalData.userid = res.Result;
+      wx.setStorage({
+        key: 'login',
+        data: res
+      })
     })
   },
   /**
@@ -48,10 +52,10 @@ Page({
     wx.login({
       success: res => {
         app.globalData.code = res.code
-        wx.getSetting({
-          success: res => {
-            if (res.authSetting['scope.userInfo']) {
-              wx.getUserInfo({
+        wx.getStorage({
+          key: 'login',
+          success: function(res) {
+            wx.getUserInfo({
                 success: res => {
                   app.globalData.userData = res;
                   that.login();
@@ -60,8 +64,7 @@ Page({
                   })
                 }
               })
-            }
-          }
+          },
         })
       }
     })
