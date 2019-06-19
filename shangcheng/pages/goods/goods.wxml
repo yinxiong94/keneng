@@ -2,14 +2,14 @@
 <view class="db">
   <view class="top">
     <swiper class="swiper">
-      <block wx:for="{{list.piclist}}" wv:key="{{list.goodsid}}">
+      <block wx:for="{{list.piclist}}" wx:key="index">
         <swiper-item>
           <image class="img_11" src='{{item.url}}' lazy-load='true'></image>
         </swiper-item>
       </block>
     </swiper>
     <view class="paging">
-      1/5
+      1/{{urlLength}}
     </view>
   </view>
   <view class="pirce">

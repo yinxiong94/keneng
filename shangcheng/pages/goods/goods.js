@@ -33,8 +33,11 @@ Page({
       goodsid: that.data.sid
     }).then(res => {
       that.setData({
-        list: res.Result
+        list: res.Result,
+        urlLength:res.Result.piclist.length
       })
+      console.log(that.data.urlLength)
+      console.log(that.data.list)
       let article = that.data.list.desc;
       WxParse.wxParse('article', 'html', article, that, 5);
     })
