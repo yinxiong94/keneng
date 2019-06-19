@@ -29,7 +29,6 @@
   bottom: 40rpx;
   right: 30rpx;
 }
-
 .pirce {
   height: 102rpx;
   width: 690rpx;

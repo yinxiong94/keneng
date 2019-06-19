@@ -25,7 +25,7 @@ Page({
       })
       wx.setStorage({
         key: 'NickName',
-        data: res.Result.NickName,
+        data: res.Result.NickName,  
       })
     })
   },

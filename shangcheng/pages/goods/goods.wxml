@@ -98,7 +98,7 @@
       <view class="diso">客服</view>
     </view>
     <view class="footer_2" bindtap='handCart'>加入购物车</view>
-    <view class="footer_2">立即购买</view>
+    <view class="footer_2 red">立即购买</view>
   </view>
   <view class="zzc" wx:if="{{off}}">
     <view class="zzc_mian">
