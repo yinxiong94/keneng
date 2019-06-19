@@ -1,7 +1,7 @@
 <!-- 商品详情 -->
 <view class="db">
   <view class="top">
-    <swiper class="swiper">
+    <swiper class="swiper" bindchange="aaa">
       <block wx:for="{{list.piclist}}" wv:key="{{list.goodsid}}">
         <swiper-item>
           <image class="img_11" src='{{item.url}}' lazy-load='true'></image>
@@ -9,7 +9,7 @@
       </block>
     </swiper>
     <view class="paging">
-      1/5
+      {{current}}/{{length}}
     </view>
   </view>
   <view class="pirce">
