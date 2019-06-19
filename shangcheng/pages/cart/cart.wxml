@@ -45,6 +45,7 @@
     </view>
   </view> -->
   <view class="item-box">
+  <slide-delete>
     <view class="list">
       <view class="items" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style='{{item.txtStyle}}' data-index="{{index}}">
         <view class="items_left">
@@ -75,8 +76,8 @@
           </view>
         </view>
       </view>
-      <view class="delete" catchtap='delOrder' data-index='{{index}}' data-order_id='{{item.order_id}}'>删除</view>
     </view>
+    </slide-delete>
   </view>
   <view class="footer">
     <view class="coco">
