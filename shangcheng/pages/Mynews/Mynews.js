@@ -36,7 +36,7 @@ Page({
 
   // 跳转
   handOut:function(){
-    console.log("退出账号")
+   wx.clearStorage()
   },
   handTarget:function(e){
     console.log(e.currentTarget.dataset.current);
