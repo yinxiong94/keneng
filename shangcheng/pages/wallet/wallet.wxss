@@ -1,0 +1,109 @@
+.cont_top_bg{
+  background: url('http://r.photo.store.qq.com/psb?/V103fdTR0PY8oM/RUHXaY1hEEEFYlcycNWeWsCTBg6U5knktZH5.jiHbpM!/r/dL4AAAAAAAAA') no-repeat;
+  height: 300rpx;
+  background-size: 100% 300rpx;
+}
+.cont_top_text{
+  padding-top:70rpx;
+  margin-left:40rpx;
+}
+.cont_top_text text{
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.cont_top_money{
+  display: flex;
+  justify-content: space-between;
+  margin:0 40rpx;
+  padding-top: 24rpx;
+  color: #fff;
+  align-items: center;
+}
+
+.money{
+  font-size: 76rpx;
+}
+
+.yuan{
+  font-size: 32rpx;
+}
+
+.money_tx{
+  background: #BBDB79;
+  width: 120rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cont_body{
+  background: #EFEFF4;
+  color: #1D2023;
+  font-size: 32rpx;
+  height: 118rpx;
+}
+
+.cont_body text{
+  padding-top: 56rpx;
+  display: block;
+  padding-left: 30rpx;
+}
+.cont_Detailed{
+  padding: 0 20rpx;
+}
+.cont_Detailed1{
+  height: 135rpx;
+  border-bottom: 1px solid #EEEEEE;
+  display: flex;
+  justify-content:space-between;
+}
+.cont_Detailed_img{
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.cont_Detailed_img image{
+  border-radius: 50%;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.cont_Detailed_name{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  margin-left: 20rpx;
+}
+
+.cont_Detailed_name .name{
+  color: #1D2023;
+  font-size: 32rpx;
+}
+
+.cont_Detailed_name .phone{
+  color: #999999;
+  font-size: 24rpx;
+}
+.cont_Detailed_date{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.cont_Detailed_date .cont_Detailed_date_money{
+    color: #FFA42E;
+    font-size: 38rpx;
+}
+
+.cont_Detailed_date .cont_Detailed_date_list{
+  color: #999999;
+  font-size: 24rpx;
+}
+
+.cont_Detailed_date .cont_Detailed_date_list .cont_Detailed_date_list_text{
+  margin-right: 20rpx;
+  margin-left: 7rpx;
+}
