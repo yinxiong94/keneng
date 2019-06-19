@@ -16,6 +16,7 @@ Page({
   },
   aaa:function(e){
     that.setData({ current: e.detail.current+=1})
+    console.log(e.detail.current);
   },
   handCart:function(){
     app.postData("GetIndexData.ashx",{
@@ -46,8 +47,6 @@ Page({
         list: res.Result,
         urlLength:res.Result.piclist.length
       })
-      console.log(that.data.urlLength)
-      console.log(that.data.list)
       let article = that.data.list.desc;
       WxParse.wxParse('article', 'html', article, that, 5);
       that.setData({

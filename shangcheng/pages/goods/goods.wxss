@@ -86,9 +86,13 @@
 }
 
 .footer {
-  display: flex;
+  position: fixed;
+  bottom: 0;
+  left:0;
   width: 750rpx;
   height: 98rpx;
+  display: flex;
+  background-color: #fff;
 }
 
 .footer .footer_1 {
@@ -148,6 +152,7 @@
 
 .footer .footer_2:nth-child(3) {
   background: rgba(142, 195, 31, 1);
+  color: #fff
 }
 
 .evaluation {
