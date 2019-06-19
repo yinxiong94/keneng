@@ -10,7 +10,12 @@ Page({
   data: {
     off:false,
     sid:"",
-    list:[]
+    list:[],
+    length: '',
+    current:1
+  },
+  aaa:function(e){
+    that.setData({ current: e.detail.current+=1})
   },
   handCart:function(){
     console.log('加入购物车');
@@ -40,6 +45,9 @@ Page({
       console.log(that.data.list)
       let article = that.data.list.desc;
       WxParse.wxParse('article', 'html', article, that, 5);
+      that.setData({
+        length: that.data.list.piclist.length
+      })
     })
     
   },
