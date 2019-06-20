@@ -27,7 +27,7 @@ Page({
     for (var i = 0; i < that.data.shoplist.Result.shoplist.length; i++) {
       if (this.data.checked[i] === true) {
         aaa += ","
-        aaa += that.data.shoplist.Result.shoplist[i].productCartId;
+        aaa += that.data.shoplist.Result.shoplist[i].shoppingid;
       }
     }
     this.setData({
@@ -93,16 +93,16 @@ Page({
       ['count[' + e.currentTarget.dataset.id + ']']: a
     })
     var price1 = 0;
-      var sum = 0;
-      for (var i = 0; i < that.data.shoplist.Result.shoplist.length; i++) {
-        if (this.data.checked[i] == true) {
-          sum += that.data.shoplist.Result.shoplist[i].price * this.data.count[i]
-        }
-        that.setData({
-          productPrice: sum
-        })
+    var sum = 0;
+    for (var i = 0; i < that.data.shoplist.Result.shoplist.length; i++) {
+      if (this.data.checked[i] == true) {
+        sum += that.data.shoplist.Result.shoplist[i].price * this.data.count[i]
       }
-    
+      that.setData({
+        productPrice: sum
+      })
+    }
+
     if (a != 1) {
       app.postData("GetShoppingData.ashx", {
         action: "AddShopping",
@@ -111,7 +111,7 @@ Page({
         userid: app.globalData.userid,
         shoppingid: b
       }).then(res => {
-        console.log(res)
+
       })
     }
   },
@@ -143,13 +143,13 @@ Page({
       userid: app.globalData.userid,
       shoppingid: b
     }).then(res => {
-      console.log(res)
+
     })
   },
   // 单选
   change: function(e) {
     var c = e.target.dataset.ind;
-    console.log(c)
+
     var a = e.target.dataset.productprice;
     var b = e.target.dataset.productnum;
     var sum = 0;

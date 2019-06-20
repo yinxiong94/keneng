@@ -12,27 +12,15 @@
   </view>
   <view class="order">
     <view class="item">
-      <view class="list">
-        <image src='/pages/img/list1.png' lazy-load='true'></image>
+      <view class="list" wx:for="{{detailsdlist.detailsdlist}}">
+        <image src='{{item.goodspic}}' lazy-load='true'></image>
         <view class="right">
-          <view class="right_title">夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......</view>
-          <view class="right_Label">颜色分类：酒红色；尺码：36</view>
+          <view class="right_title">{{item.goodsname}}</view>
+          <!-- <view class="right_Label">颜色分类：酒红色；尺码：36</view> -->
           <view class="pirce">
             <view class='text_1'>
-              <text>￥</text>299</view>
-            <text class='text_2'>x1</text>
-          </view>
-        </view>
-      </view>
-      <view class="list">
-        <image src='/pages/img/list1.png' lazy-load='true'></image>
-        <view class="right">
-          <view class="right_title">夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......</view>
-          <view class="right_Label">颜色分类：酒红色；尺码：36</view>
-          <view class="pirce">
-            <view class='text_1'>
-              <text>￥</text>299</view>
-            <text class='text_2'>x1</text>
+              <text>￥</text>{{item.goodsprice}}</view>
+            <text class='text_2'>x{{item.goodsnum}}</text>
           </view>
         </view>
       </view>

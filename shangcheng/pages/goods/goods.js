@@ -12,18 +12,21 @@ Page({
     sid:"",
     list:[],
     length: '',
-    current:1
+    current:1,
+    count:1
   },
   aaa:function(e){
     that.setData({ current: e.detail.current+=1})
    
   },
   handCart:function(){
+    that = this
+   
     app.postData("GetShoppingData.ashx",{
       action:"AddShopping",
       goodsid: that.data.sid,
       userid: app.globalData.userid,
-      shoppingnum: 1
+      shoppingnum:1
     }).then(res =>{
       console.log(res);
       if (res.Result==1){

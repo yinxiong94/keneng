@@ -1,11 +1,14 @@
 // pages/order/order.js
+const app=getApp();
+var that;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    shoppingid:"",
+    detailsdlist:[]
   },
   handDizhi:function(){
     wx:wx.navigateTo({
@@ -17,11 +20,27 @@ Page({
       url: '../payment/payment'
     })
   },
+  loadmore:function(){
+    that = this
+    app.postData("GetShoppingData.ashx",{
+      action:"Submit",
+      userid: app.globalData.userid,
+      shopppingid: that.data.shoppingid
+    }).then(res=>{
+      console.log(res)
+      that.setData({
+        detailsdlist: res.Result
+        
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      that=this;
+    that.setData({ shoppingid:options.ddd})
+    that.loadmore()
   },
 
   /**
