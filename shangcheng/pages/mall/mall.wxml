@@ -28,8 +28,8 @@
     <view class="title">为你
       <text>· 推荐</text>
     </view>
-    <view class="item" wx:for='{{list}}' wx:key="{{list.goodsid}}" bindtap='handDetails' data-goodsid='{{item.goodsid}}'>
-      <view class="list" >
+    <view class="item">
+      <view class="list" wx:for='{{list}}' wx:key="{{list.goodsid}}" bindtap='handDetails' data-goodsid='{{item.goodsid}}'>
         <image lazy-load='true' src='{{item.goodspic}}'></image>
         <view class="describe">{{item.goodsname}}</view>
         <view class="pirce">
