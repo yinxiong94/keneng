@@ -145,8 +145,16 @@ Page({
     }).then(res => {
       console.log(res);
     })
+    that.handCart()
   },
-
+  // 获取购物车商品
+  handCart: function () {
+    app.postData("GetShoppingData.ashx", {
+      userid: app.globalData.userid,
+    }).then(res => {
+      console.log(res);
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

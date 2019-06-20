@@ -26,6 +26,11 @@ Page({
       shoppingnum: 1
     }).then(res =>{
       console.log(res);
+      wx.showToast({
+        title: '加入购物成功',
+        icon:'none',
+        duration:2000
+      })
     })
   },
   handTxdd:function(){
