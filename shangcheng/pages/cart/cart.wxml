@@ -64,11 +64,11 @@
               <view class="pirce_1">
                 <text>￥</text>{{item.price}}</view>
               <view class="calculation">
-                <view class="left" bindtap='jian' data-id="{{index}}" data-uid="{{item.shoppingid}}">
+                <view class="left" bindtap='jian' data-id="{{index}}" data-uid="{{item.shoppingid}}" data-goodsid='{{item.goodsid}}' data-price='{{item.price}}'>
                   <image src='/pages/img/jian.png' lazy-load='true' class="jian"></image>
                 </view>
                 <view class="conter">{{count[index]}}</view>
-                  <view class="left" bindtap='jia' data-id="{{index}}" data-uid="{{item.shoppingid}}">
+                  <view class="left" bindtap='jia' data-id="{{index}}" data-uid="{{item.shoppingid}}" data-goodsid='{{item.goodsid}}' data-price='{{item.price}}'>
                     <image src='/pages/img/jia1.png' lazy-load='true' class="jia" ></image>
                   </view>
               </view>
