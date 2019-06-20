@@ -14,7 +14,9 @@ Page({
     b: 0,
     c: false,
     count: [],
-    fid: ""
+    fid: "",
+    shoppingid:"",
+    shoplist:[]
   },
   bindtouchstart:function(e){
     console.log(e.currentTarget.dataset.shoppingid)
