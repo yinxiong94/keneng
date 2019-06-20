@@ -21,7 +21,9 @@ Page({
   handCart:function(){
     app.postData("GetIndexData.ashx",{
       action:"GetDetails",
-      goodsid: that.data.sid
+      goodsid: that.data.sid,
+      userid: app.globalData.userid,
+      shoppingnum: 1
     }).then(res =>{
       console.log(res);
     })
