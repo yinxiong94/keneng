@@ -44,8 +44,8 @@
       </view>
     </view>
   </view> -->
-  <view class="item-box">
-    <slide-delete>
+  <view class="item-box" wx:for="{{shoplist}}" wx:key="index">
+    <slide-delete data-shoppingid="{{item.shoppingid}}" bindtouchstart="bindtouchstart" bindtap="bb">
       <view class="list">
         <view class="items">
           <view class="items_left">
@@ -56,18 +56,18 @@
               </label>
             </checkbox-group>
           </view>
-          <image src='/pages/img/yu.png' lazy-load='true' class="img"></image>
+          <image src='{{item.pdpic}}' lazy-load='true' class="img"></image>
           <view class="item">
-            <view class="item_title">夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......</view>
+            <view class="item_title">{{item.goodsname}}</view>
             <view class="item_text1">颜色分类：酒红色；尺码：36</view>
             <view class="pirce">
               <view class="pirce_1">
-                <text>￥</text>299</view>
+                <text>￥</text>{{item.price}}</view>
               <view class="calculation">
                 <view class="left" bindtap='jian' data-id="{{index}}" data-uid="{{item.productCartId}}">
                   <image src='/pages/img/jian.png' lazy-load='true' class="jian"></image>
                 </view>
-                <view class="conter">1</view>
+                <view class="conter">{{item.num}}</view>
                 <view class="left" bindtap='jia' data-id="{{index}}" data-uid="{{item.productCartId}}">
                   <image src='/pages/img/jia1.png' lazy-load='true' class="jia"></image>
                 </view>

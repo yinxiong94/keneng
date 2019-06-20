@@ -16,6 +16,15 @@ Page({
     count: [],
     fid: ""
   },
+  bindtouchstart:function(e){
+    console.log(e.currentTarget.dataset.shoppingid)
+    this.setData({
+      shoppingid: e.currentTarget.dataset.shoppingid
+    })
+  },
+  bb:function(e){
+    console.log(e+"uid")
+  },
   // 购买结算
   nowshop: function () {
     var aaa = "";
@@ -139,20 +148,19 @@ Page({
 
   onLoad: function (options) {
     that=this;
-    app.postData("GetShoppingData.ashx", {
-      action: "Query",
-      userid: app.globalData.userid
-    }).then(res => {
-      console.log(res);
-    })
     that.handCart()
   },
   // 获取购物车商品
   handCart: function () {
+    that = this;
     app.postData("GetShoppingData.ashx", {
-      userid: app.globalData.userid,
+      action: "Query",
+      userid: app.globalData.userid
     }).then(res => {
-      console.log(res);
+      console.log(res.Result.shoplist);
+      that.setData({
+        shoplist: res.Result.shoplist
+      })
     })
   },
   /**
