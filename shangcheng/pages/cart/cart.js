@@ -155,6 +155,7 @@ Page({
   // 获取购物车商品
   handCart: function () {
     that = this;
+    console.log(app.globalData.userid)
     app.postData("GetShoppingData.ashx", {
       action: "Query",
       userid: app.globalData.userid
