@@ -425,7 +425,7 @@
 
 .goods .goods_img image {
   width: 750rpx !important;
-  height: 320rpx !important;
+  height: 708rpx !important;
 }
 
 image {
