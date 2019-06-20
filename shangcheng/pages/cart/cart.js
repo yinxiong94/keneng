@@ -140,8 +140,8 @@ Page({
   onLoad: function (options) {
     that=this;
     app.postData("GetShoppingData.ashx", {
-      action: "AddShopping",
-      UserId: app.globalData.userid
+      action: "Query",
+      userid: app.globalData.userid
     }).then(res => {
       console.log(res);
     })

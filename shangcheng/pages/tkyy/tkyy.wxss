@@ -1,7 +1,10 @@
+page {
+  background-color: #efeff4;
+}
+
 .db {
   width: 750rpx;
   border-top: 1px solid #ccc;
-  background-color: #efeff4;
 }
 
 .db .from {

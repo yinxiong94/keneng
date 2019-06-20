@@ -1,6 +1,9 @@
+page {
+  background: rgba(239, 239, 244, 1);
+}
+
 .db {
   width: 750rpx;
-  background: rgba(239, 239, 244, 1);
   padding-top: 20rpx;
 }
 
