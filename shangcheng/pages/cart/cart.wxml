@@ -44,14 +44,14 @@
       </view>
     </view>
   </view> -->
-  <view class="item-box" wx:for="{{shoplist}}" wx:key="index">
-    <slide-delete data-shoppingid="{{item.shoppingid}}" bindtouchstart="bindtouchstart" bindtap="bb">
+  <view class="item-box" wx:for="{{shoplist.Result.shoplist}}" wx:key="index">
+    <slide-delete  paramAtoB='{{item.shoppingid}}' >
       <view class="list">
         <view class="items">
           <view class="items_left">
             <checkbox-group >
               <label>
-                <checkbox   bindtap='change' data-ind='0' checked='{{checked[0]}}'></checkbox>
+                <checkbox   bindtap='change' data-ind='{{index}}' checked='{{checked[index]}}' data-productNum="{{count[index]}}" data-productPrice="{{item.price}}"></checkbox>
                 <!-- 其他布局代码 -->
               </label>
             </checkbox-group>
@@ -64,13 +64,13 @@
               <view class="pirce_1">
                 <text>￥</text>{{item.price}}</view>
               <view class="calculation">
-                <view class="left" bindtap='jian' data-id="{{index}}" data-uid="{{item.productCartId}}">
+                <view class="left" bindtap='jian' data-id="{{index}}" data-uid="{{item.shoppingid}}">
                   <image src='/pages/img/jian.png' lazy-load='true' class="jian"></image>
                 </view>
-                <view class="conter">{{item.num}}</view>
-                <view class="left" bindtap='jia' data-id="{{index}}" data-uid="{{item.productCartId}}">
-                  <image src='/pages/img/jia1.png' lazy-load='true' class="jia"></image>
-                </view>
+                <view class="conter">{{count[index]}}</view>
+                  <view class="left" bindtap='jia' data-id="{{index}}" data-uid="{{item.shoppingid}}">
+                    <image src='/pages/img/jia1.png' lazy-load='true' class="jia" ></image>
+                  </view>
               </view>
             </view>
           </view>
@@ -98,8 +98,8 @@
     <view class="conter">
       <text>合计金额：</text>
       <view class="conter_pirce">
-        <text>￥</text>299</view>
+        <text>￥</text>{{productPrice}}</view>
     </view>
-    <view class="footer_btn" bindtap='nowshop'>结算(1)</view>
+    <view class="footer_btn" bindtap='nowshop'>结算({{d}})</view>
   </view>
 </view>

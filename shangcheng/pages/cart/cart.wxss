@@ -158,6 +158,7 @@ page {
 
 .null_item .list .pirce .left {
   display: flex;
+  
 }
 
 .null_item .list .pirce .left .text_11 {
@@ -480,3 +481,7 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
   width: 50rpx;
 }
 
+.text_jia{
+  color: #EFEFF4;
+  
+}
