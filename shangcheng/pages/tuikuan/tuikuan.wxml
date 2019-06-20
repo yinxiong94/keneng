@@ -21,7 +21,6 @@
           <text>￥299</text>
         </view>
         <view class="right">
-          <image src='/pages/img/right.png' lazy-load='true'></image>
         </view>
       </view>
       <view class="item_li">
@@ -29,7 +28,7 @@
           退款原因
         </view>
         <view class="right">
-          <image src='/pages/img/right.png' lazy-load='true'></image>
+          <image src='/pages/img/you11.png' lazy-load='true'></image>
         </view>
       </view>
     </view>

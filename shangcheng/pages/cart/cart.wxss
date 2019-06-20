@@ -278,6 +278,7 @@ page {
   height: 219rpx;
   margin-left: 20rpx;
   margin-top: 50rpx;
+  border-radius: 10rpx;
 }
 
 .item-box .items .item {

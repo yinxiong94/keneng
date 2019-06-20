@@ -34,6 +34,7 @@ Page({
       that.setData({
         list: res.Result
       })
+      
     })
     app.postData("GetIndexData.ashx", {
       action: "getBanner"

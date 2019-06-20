@@ -16,14 +16,29 @@ Page({
   },
   aaa:function(e){
     that.setData({ current: e.detail.current+=1})
-    console.log(e.detail.current);
+   
   },
   handCart:function(){
-    app.postData("GetIndexData.ashx",{
-      action:"GetDetails",
-      goodsid: that.data.sid
+    app.postData("GetShoppingData.ashx",{
+      action:"AddShopping",
+      goodsid: that.data.sid,
+      userid: app.globalData.userid,
+      shoppingnum: 1
     }).then(res =>{
       console.log(res);
+      if (res.Result==1){
+      wx.showToast({
+        title: '加入购物车成功',
+        icon:'none',
+        duration:2000
+      })
+      }else{
+        wx.showToast({
+          title: '加入购物车失败',
+          icon: 'none',
+          duration: 2000
+        })
+      }
     })
   },
   handTxdd:function(){
