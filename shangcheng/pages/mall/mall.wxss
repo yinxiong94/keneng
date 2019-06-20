@@ -229,6 +229,7 @@ page {
   margin-top: 10rpx;
   padding: 0 13rpx 0 20rpx;
   box-sizing: border-box;
+  height: 38rpx;
 }
 
 .recommended .item .list .pirce {
