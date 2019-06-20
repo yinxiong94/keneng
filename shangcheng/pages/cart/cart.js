@@ -148,21 +148,31 @@ Page({
 
   onLoad: function (options) {
     that=this;
-    that.handCart()
-  },
-  // 获取购物车商品
-  handCart: function () {
-    that = this;
+// <<<<<<< HEAD
+// =======
+//     // 获取用户购物车功能
     app.postData("GetShoppingData.ashx", {
       action: "Query",
       userid: app.globalData.userid
-    }).then(res => {
-      console.log(res.Result.shoplist);
-      that.setData({
-        shoplist: res.Result.shoplist
-      })
+    }).then(res => { 
+      console.log(res);
     })
+// >>>>>>> 8ca43da66596aba5c2bf3a18129f1b34abc493ee
+    // that.handCart()
   },
+  // 获取购物车商品
+  // handCart: function () {
+  //   that = this;
+  //   app.postData("GetShoppingData.ashx", {
+  //     action: "Query",
+  //     userid: app.globalData.userid
+  //   }).then(res => {
+  //     console.log(res.Result.shoplist);
+  //     that.setData({
+  //       shoplist: res.Result.shoplist
+  //     })
+  //   })
+  // },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

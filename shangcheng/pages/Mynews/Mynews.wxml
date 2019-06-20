@@ -2,8 +2,8 @@
   <!-- 头像 -->
   <view class='cont_top'>
     <view class='cont_tx'>
-      <image src='../img/tx.jpeg' class='tx'></image>
-      <view class='cont_text'>浣熊</view>
+      <image src='{{UserImg}}' class='tx'></image>
+      <view class='cont_text'>{{NickName}}</view>
     </view>
     <!-- 我的订单 -->
     <view class='cont_Myorder'>
