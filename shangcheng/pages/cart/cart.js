@@ -139,10 +139,11 @@ Page({
 
   onLoad: function (options) {
     that=this;
+    // 获取用户购物车功能
     app.postData("GetShoppingData.ashx", {
       action: "Query",
       userid: app.globalData.userid
-    }).then(res => {
+    }).then(res => { 
       console.log(res);
     })
   },
