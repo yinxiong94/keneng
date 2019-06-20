@@ -1,7 +1,6 @@
 .db {
   width: 750rpx;
 }
-
 .top {
   width: 750rpx;
   height: 700rpx;

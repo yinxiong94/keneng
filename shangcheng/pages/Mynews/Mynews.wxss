@@ -85,7 +85,7 @@ page{
 .cont_Signout{
   background: #fff;
   border-radius: 20rpx;
-  padding: 20rpx;
+  padding:0 20rpx;
   margin: 0 20rpx;
   margin-top: 102rpx;
   margin-bottom: 31rpx;
@@ -97,6 +97,7 @@ page{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 28rpx 0
 }
 .cont_Signout_text1>image{
   width: 21rpx;
@@ -120,7 +121,6 @@ page{
 
 .cont_Signout_coso{
   border-bottom: 1px solid #EFEFF4;
-  margin: 28rpx 0;
 }
 
 .cont_quit{

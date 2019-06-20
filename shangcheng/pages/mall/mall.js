@@ -27,6 +27,7 @@ Page({
    */
   onLoad: function(options) {
     that = this;
+    console.log(app.globalData.userid)
     app.postData("GetIndexData.ashx", {
       action: "GetIndexGoods"
     }).then(res => {

@@ -1,3 +1,6 @@
+page{
+  background: #efeff4
+}
 .db {
   width: 750rpx;
   border-top: 1px solid #ccc;
