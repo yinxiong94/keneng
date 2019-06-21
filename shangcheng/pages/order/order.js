@@ -8,9 +8,10 @@ Page({
    */
   data: {
     shoppingid:"",
-    detailsdlist:[],
+    detailsdlist:{},
     sid:"",
     sum:0, //商品总金额
+    id:"0"
   },
 
   handDizhi:function(){
@@ -25,10 +26,24 @@ Page({
     })
   },
 
-  // 购物车
-    loadmore() {
-      that = this
-      if (that.data.shoppingid !== undefined){
+  // 判断是在购物车提交还是立即提交
+  loadmemo(){   
+    that = this
+      if(that.data.id == "0"){
+        console.log("goodsid")
+        app.postData("GetShoppingData.ashx", {
+          action: "Submit",
+          userid: app.globalData.userid,
+          goodsid: that.data.sid
+        }).then(res => {
+          // console.log(res.Result.detailsdlist)
+          that.setData({
+            detailsdlist: res.Result
+          })
+        })
+       
+      }else{
+        console.log("shopppingid")
           app.postData("GetShoppingData.ashx", {
             action: "Submit",
             userid: app.globalData.userid,
@@ -39,58 +54,55 @@ Page({
             })
           })
       }
-      // that.handjj()
-    },
-  
-  
+    
+  },
 
-  // 立即购买
-  handgm(){
-    that = this
-    app.postData("GetShoppingData.ashx",{
-      action:"Submit",
-      userid: app.globalData.userid,
-      goodsid:that.data.sid
-    }).then(res=>{
-      console.log(res.Result)
+  loadmore(options) {
+    if (that.data.id == 0) {
       that.setData({
-        detailsdlist: res.Result
+        sid: options.sid,
       })
-    })
-    that.handjj()
+    } else {
+      that.setData({
+        shoppingid: options.ddd,
+      })
+    }
+         
+},
+  
+
+  handgm(){
+    console.log(this.data.detailsdlist)
+    
   },
 
-  // 购物车金额计算
-  handjj(){
-    that = this
-    // console.log(that.data.detailsdlist)
-    // that.setData({
-    //   sum: that.data.detailsdlist.detailsdlist.goodsprice * that.data.detailsdlist.detailsdlist.goodnum
-    // })
-  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     that=this;
-    console.log(options.ddd)
-    that.setData({ shoppingid: options.ddd, sid:options.sid})
-    that.loadmore()
-    that.handgm()
+    that.setData({
+      id: options.id,
+    })
+    that.loadmore(options)
+    // that.handgm()
+    that.loadmemo()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    that.handgm()
   },
 
   /**

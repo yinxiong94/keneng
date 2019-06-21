@@ -7,6 +7,6 @@
   </view>
   <view class='cont_text'>每一条建议我们都会认真对待。</view>
   <view class="cont_but1">
-    <view class="cont_but  {{userInput!=0?'cont_but_color':'cont_but_color1'}}">提交</view>
+    <view class="cont_but  {{userInput!=0?'cont_but_color':'cont_but_color1'}}" bindtap="bindtaphang">提交</view>
   </view>
 </view>

@@ -41,7 +41,7 @@ Page({
       })
     } else {
       wx.navigateTo({
-        url: '/pages/order/order?ddd=' + this.data.fid,
+        url: '/pages/order/order?ddd=' + this.data.fid+'&id='+1,
       })
     }
 

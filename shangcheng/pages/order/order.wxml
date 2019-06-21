@@ -31,7 +31,7 @@
         <text>￥{{sum}}</text>
       </view>
     </view>
-    <view class="discount">
+    <!-- <view class="discount">
       <text class="send">活动满减：</text>
       <view class="the">
         <text>￥0</text>
@@ -43,7 +43,7 @@
         <text>-￥20</text>
         <image src='/pages/img/right.png' lazy-load='true'></image>
       </view>
-    </view>
+    </view> -->
     <view class="discount">
       <text class="send">运费：</text>
       <view class="the">
@@ -61,6 +61,7 @@
       </view>
     </view>
   </view>
+  <view style='height:150rpx;'></view>
   <view class="footer">
     <view class='left'>实付金额:
       <view>
