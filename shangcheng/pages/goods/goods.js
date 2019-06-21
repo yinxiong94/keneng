@@ -13,15 +13,18 @@ Page({
     list:[],
     length: '',
     current:1,
-    count:1
+    count:1,
+    shoplist:[]
   },
   aaa:function(e){
     that.setData({ current: e.detail.current+=1})
    
   },
+
+
+  // 加入购物车
   handCart:function(){
     that = this
-   
     app.postData("GetShoppingData.ashx",{
       action:"AddShopping",
       goodsid: that.data.sid,
@@ -44,6 +47,12 @@ Page({
       }
     })
   },
+  // 立即购买
+  handgm(){
+   wx.navigateTo({
+     url: '/pages/order/order?sid=' + that.data.sid,
+   })
+  },
   handTxdd:function(){
     wx:wx.navigateTo({
       url: '../order/order'
@@ -53,6 +62,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+  
     that = this
     that.setData({
       sid: options.id
@@ -71,6 +81,7 @@ Page({
         length: that.data.list.piclist.length
       })
     })
+  
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

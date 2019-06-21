@@ -8,18 +8,22 @@ Page({
    */
   data: {
     shoppingid:"",
-    detailsdlist:[]
+    detailsdlist:[],
+    sid:"",
   },
+
   handDizhi:function(){
     wx:wx.navigateTo({
       url: '../address/address'
     })
   },
+
   handZhifu:function(){
     wx: wx.navigateTo({
       url: '../payment/payment'
     })
   },
+
   loadmore:function(){
     that = this
     app.postData("GetShoppingData.ashx",{
@@ -30,7 +34,20 @@ Page({
       console.log(res)
       that.setData({
         detailsdlist: res.Result
-        
+      })
+    })
+  },
+
+  handgm(){
+    that = this
+    app.postData("GetShoppingData.ashx",{
+      action:"Submit",
+      userid: app.globalData.userid,
+      goodsid:that.data.sid
+    }).then(res=>{
+      console.log(res.Result)
+      that.setData({
+        detailsdlist: res.Result
       })
     })
   },
@@ -38,9 +55,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      that=this;
-    that.setData({ shoppingid:options.ddd})
+    that=this;
+    that.setData({ shoppingid: options.ddd, sid:options.sid})
     that.loadmore()
+    that.handgm()
   },
 
   /**
