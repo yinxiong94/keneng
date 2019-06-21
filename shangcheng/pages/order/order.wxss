@@ -1,6 +1,8 @@
+page{
+  background: rgba(239, 239, 244, 1);
+}
 .db {
   width: 750rpx;
-  background: rgba(239, 239, 244, 1);
   overflow: hidden;
 }
 
@@ -91,6 +93,7 @@
 .order .item .list image {
   width: 219rpx;
   height: 219rpx;
+  border-radius: 10rpx;
 }
 
 .order .item .list .right {
@@ -213,6 +216,9 @@
 .footer {
   height: 98rpx;
   display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
   margin-top: 20rpx;
 }
 
