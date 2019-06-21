@@ -45,7 +45,7 @@
     </view>
   </view> -->
   <view class="item-box" wx:for="{{shoplist}}" wx:key="index">
-    <slide-delete data-shoppingid="{{item.shoppingid}}" bindtouchstart="bindtouchstart" bindtap="bb">
+    <slide-delete paramAtoB='{{item.shoppingid}}' data-shoppingid="{{item.shoppingid}}" bindtouchstart="bindtouchstart" bindtap="bb" data-id="{{index}}" >
       <view class="list">
         <view class="items">
           <view class="items_left">

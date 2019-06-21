@@ -1,26 +1,42 @@
 const app = getApp()
+
 Component({
   /**
    * 组件的属性列表
    */
-  properties: {
-    pid: {
-      type: Number,
-      value: 0,
-      observer(newVal) {
-        if(newVal) {
-          this.setData({
-              animate: true
-          }, () => {
-              this.setData({
-                  translateX: 0
-              })
-          })
-        }
-      }
-    }
+  // properties: {
+  //   pid: {
+  //     type: Number,
+  //     value: 0,
+  //     observer(newVal) {
+  //       if(newVal) {
+  //         this.setData({
+  //             animate: true
+  //         }, () => {
+  //             this.setData({
+  //                 translateX: 0
+  //             })
+  //         })
+  //       }
+  //     }
+  //   }
+  // },
+  properties: {                       // 组件的属性列表
+    title: {
+      type: String,
+      value: '学记'
+    },
+    bgColor: {
+      type: String,
+      value: '#fff'
+    },
+    color: String,
+    backShow: {
+      type: Boolean,
+      value: true
+    },
+    paramAtoB: String
   },
-
   /**
    * 组件的初始数据
    */
@@ -115,7 +131,24 @@ Component({
      * 组件操作事件（此示例只有删除事件，可根据需要增加其他事件）
      */
       handleAction(e){
-      //  console.log(e)
+        var shoppingid=e.currentTarget.dataset.shoppingid;
+        console.log(shoppingid,app.globalData.userid)
+        app.postData("GetShoppingData.ashx",{
+          action:"DelGoods",
+          shoppingid: shoppingid
+        }).then(res=>{
+          wx.showToast({
+            title: '删除成功',
+            duration:2000,
+            success(res){
+              setTimeout(function(){
+                wx.reLaunch({
+                  url: '/pages/cart/cart',
+                })
+              },2000)              
+            }
+          })         
+        })
       },
   },
 

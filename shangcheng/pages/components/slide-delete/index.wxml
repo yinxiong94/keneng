@@ -8,7 +8,7 @@
       <slot/>
   </view>
   <view class="action-wrap">
-      <view class="action del" bindtap="handleAction" data-shoppingid="{{item.shoppingid}}">
+      <view class="action del" bindtap="handleAction" data-shoppingid="{{paramAtoB}}">
           <text>删除</text>
       </view>
   </view>
