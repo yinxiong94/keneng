@@ -1,6 +1,6 @@
 <!-- 购物车 -->
 <view class="db">
-  <!-- <view class="null">
+  <view class="null" wx:if="{{show}}">
     <view class="top">
       <image src='/pages/img/kong.png' lazy-load='true'></image>
       <view class="kk">亲，你的购物车还没有宝贝哦～</view>
@@ -43,7 +43,7 @@
         </view>
       </view>
     </view>
-  </view> -->
+  </view>
   <view class="item-box" wx:for="{{shoplist.Result.shoplist}}" wx:key="index">
     <slide-delete  paramAtoB='{{item.shoppingid}}' >
       <view class="list">
