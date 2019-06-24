@@ -4,7 +4,7 @@
     <swiper class="swiper" bindchange="aaa">
       <block wx:for="{{list.piclist}}" wx:key="index">
         <swiper-item>
-          <image class="img_11" src='{{item.url}}' data-index="{{index}}" lazy-load='true' ></image>
+          <image class="img_11" src='{{item.url}}' data-index="{{index}}" lazy-load='true'></image>
         </swiper-item>
       </block>
     </swiper>
@@ -13,13 +13,13 @@
     </view>
   </view>
   <view class="pirce">
-    <view class="pirce_1">￥{{list.saleprice}}</view>
     <view class="pirce_2">￥{{list.marketprice}}</view>
+    <view class="pirce_1"><view class="huiyuan">会员价</view><text>￥{{list.saleprice}}</text></view>
   </view>
   <view class="coco">
     {{list.goodsname}}
   </view>
-  <view class="pin">   
+  <view class="pin">
     月销{{list.salesnnum}}笔
   </view>
   <view class="hhh"></view>

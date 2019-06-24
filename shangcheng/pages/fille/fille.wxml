@@ -3,22 +3,28 @@
   <view class="xinxi">
     <view class="total">
       <view class="left">收货人</view>
-      <input type='text' password=''></input>
+      <input type='text' bindinput="bindName" name="username" value="{{name}}"></input>
     </view>
     <view class="total">
       <view class="left">手机号码</view>
-      <input type='text' password=''></input>
+      <input type='text' bindinput="bindTel" name="userTel" value="{{tel}}"></input>
     </view>
-    <view class="total">
-      <view class="left">所在地区</view>
-      <input type='text' password=''></input>
-      <image class="jian" src="/pages/img/right.png" lazy-load='true'></image>
-    </view>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="total">
+        <view class="left">所在地区</view>
+        <view class="right">
+          <view class="picker">
+            {{region[0]}}，{{region[1]}}，{{region[2]}}
+          </view>
+        </view>
+        <image class="jian" src="/pages/img/right.png" lazy-load='true'></image>
+      </view>
+    </picker>
     <view class="total">
       <view class="left">
         <text>详细地址：</text>
       </view>
-      <textarea placeholder='如道路、门牌号、小区、楼栋号、单元室等'></textarea>
+      <textarea placeholder='如道路、门牌号、小区、楼栋号、单元室等' bindinput="bindInput" value='{{coco}}'></textarea>
     </view>
   </view>
   <view class="btn" bindtap='handBtn'>保存</view>

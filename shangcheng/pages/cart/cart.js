@@ -17,7 +17,8 @@ Page({
     fid: "",
     shoppingid: "",
     shoplist: [],
-    d: 0
+    d: 0,
+    show:false
   },
 
   // 购买结算
@@ -41,7 +42,7 @@ Page({
       })
     } else {
       wx.navigateTo({
-        url: '/pages/order/order?ddd=' + this.data.fid,
+        url: '/pages/order/order?ddd=' + this.data.fid+'&id='+1,
       })
     }
 
@@ -192,36 +193,47 @@ Page({
     }
   },
 
+
+
+  // 购物车中是否是数据
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     that = this;
-
+  
   },
   // 获取购物车商品
   handCart: function() {
     that = this;
-    app.postData("GetShoppingData.ashx", {
-      action: "Query",
-      userid: app.globalData.userid
-    }).then(res => {
-      console.log(res)
-      var ff = [];
-      for (var i = 0; i < res.Result.shoplist.length; i++) {
-        ff.push(res.Result.shoplist[i].num)
-      }
-      that.setData({
-        shoplist: res,
-        count: ff
-      })
-    })
+      app.postData("GetShoppingData.ashx", {
+        action: "Query",
+        userid: app.globalData.userid
+      }).then(res => {
+        if (res.Result!=null){
+            var ff = [];
+              for (var i = 0; i < res.Result.shoplist.length; i++) {
+                ff.push(res.Result.shoplist[i].num)
+              }
+            that.setData({
+              shoplist: res,
+              count: ff,
+              show: false,
+            })
+          }else{
+            that.setData({
+              show: true,
+            })
+          }
+
+        })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+   
   },
 
   /**

@@ -252,7 +252,7 @@ page {
 }
 
 .recommended .item .list .pirce .left .text_11 text {
-  font-size: 32rpx;
+  font-size: 30rpx;
   font-weight: bold;
 }
 

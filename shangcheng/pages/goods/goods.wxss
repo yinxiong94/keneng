@@ -4,6 +4,7 @@ page{
 .db {
   width: 750rpx;
 }
+
 .top {
   width: 750rpx;
   height: 700rpx;
@@ -31,30 +32,45 @@ page{
   bottom: 40rpx;
   right: 30rpx;
 }
+
 .pirce {
   height: 102rpx;
   width: 690rpx;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
 }
 
 .pirce .pirce_1 {
-  font-size: 32rpx;
   font-family: PingFangSC;
   font-weight: 400;
   color: rgba(255, 83, 60, 1);
-  line-height: 102rpx;
-  height: 102rpx;
+  font-size: 26rpx;
+  display: flex;
 }
 
+.pirce .pirce_1 .huiyuan {
+  width: 74rpx;
+  height: 28rpx;
+  background: linear-gradient(127deg, rgba(142, 195, 31, 1) 0%, rgba(193, 231, 113, 1) 100%);
+  border-radius: 5rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  margin-top: 6rpx;
+  text-align: center;
+  line-height: 28rpx;
+}
+.pirce .pirce_1 text{
+  margin-left: 20rpx;
+}
 .pirce .pirce_2 {
-  text-decoration: line-through;
-  font-size: 26rpx;
+  font-size: 32rpx;
   font-family: PingFangSC;
   font-weight: 400;
   color: rgba(96, 105, 114, 1);
-  line-height: 106rpx;
-  margin-left: 35rpx;
+  height: 60rpx;
 }
 
 .coco {
@@ -89,7 +105,7 @@ page{
 .footer {
   position: fixed;
   bottom: 0;
-  left:0;
+  left: 0;
   width: 750rpx;
   height: 98rpx;
   display: flex;
@@ -153,7 +169,7 @@ page{
 
 .footer .footer_2:nth-child(3) {
   background: rgba(142, 195, 31, 1);
-  color: #fff
+  color: #fff;
 }
 
 .evaluation {
@@ -415,7 +431,7 @@ page{
   font-size: 30rpx;
   font-family: PingFangSC;
   font-weight: 500;
-  color: #1D2023;
+  color: #1d2023;
   line-height: 28rpx;
 }
 
@@ -574,6 +590,7 @@ image {
   color: rgba(255, 255, 255, 1);
   margin-top: 246rpx;
 }
+
 .swiper {
   width: 750rpx;
   height: 700rpx;

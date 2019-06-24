@@ -8,10 +8,21 @@ Page({
     userInput:0
   },
   bindWordLimit(e){
-    console.log(e.detail.value.length);
+    // console.log(e.detail.value.length);
     this.setData({
       userInput: e.detail.value.length
     })
+  },
+
+  bindtaphang(){
+    if(this.data.userInput>0){
+
+    }else{
+      wx.showToast({
+        title: '不能为空',
+
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载

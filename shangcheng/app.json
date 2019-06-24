@@ -1,7 +1,8 @@
 {
   "pages": [
-    
     "pages/index/index",
+    "pages/administration/administration",
+    "pages/fille/fille",
     "pages/Mynews/Mynews",
     "pages/mall/mall",
     "pages/Reflect/Reflect",
@@ -10,8 +11,6 @@
     "pages/fail/fail",
     "pages/goods/goods",
     "pages/payment/payment",
-    "pages/administration/administration",
-    "pages/fille/fille",
     "pages/Myphone/Myphone",
     "pages/usedMyphone/usedMyphone",
     "pages/Complaint/Complaint",
@@ -21,7 +20,6 @@
     "pages/order/order",
     "pages/spread/spread",
     "pages/wallet/wallet",
-    "pages/address/address",
     "pages/request/request",
     "pages/sort/sort",
     "pages/extension/extension",
