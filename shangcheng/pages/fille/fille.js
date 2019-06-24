@@ -33,7 +33,7 @@ Page({
   handBtn: function() {
     that = this;
     console.log(that.data.id);
-    if (that.data.id.length < 0) {
+    if (that.data.id == 'undefined') {
       app.postData("GetShoppingData.ashx", {
         action: "AddAress",
         userid: app.globalData.userid,
@@ -79,9 +79,13 @@ Page({
    */
   onLoad: function(options) {
     that = this;
-    console.log(options);
     let item = [];
-    if (options.id.length > 0) {
+    console.log(options.id);
+    console.log(options)
+    if (options.id === 'undefined') {
+      console.log(2);
+    }else{
+      console.log(1);
       item.push(options.province);
       item.push(options.city);
       item.push(options.region);
@@ -94,7 +98,6 @@ Page({
         id: options.id
       })
     }
-    console.log(options);
   },
 
   /**

@@ -7,11 +7,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id:'0'
+    id:'0',
+    send:0
   },
   handSend:function(){
     wx.navigateTo({
-      url: '../administration/administration',
+      url: '/pages/administration/administration?send=0',
     })
   },
   userlogin(){

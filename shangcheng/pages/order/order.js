@@ -76,7 +76,7 @@ Page({
     that.loadmore()
     that.handgm()
     console.log(options);
-    if (options.id.length == 0) {
+    if (options.id == 0) {
       that.setData({
         off: 0
       })
