@@ -80,10 +80,9 @@ Page({
   onLoad: function(options) {
     that = this;
     let item = [];
-    console.log(options.id);
-    console.log(options)
+    console.log(options);
     if (options.id === 'undefined') {
-      console.log(2);
+      return
     }else{
       console.log(1);
       item.push(options.province);

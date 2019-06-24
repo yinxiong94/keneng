@@ -17,7 +17,7 @@ Page({
   },
   handAdd:function(e){
     wx.navigateTo({
-      url: '../fille/fille'
+      url: '../fille/fille?id=' + 'undefined'
     })
   },
   edit: function(e) {
@@ -46,6 +46,11 @@ Page({
     that.setData({
       list: s
     })
+    if(that.data.list.length == '0'){
+      that.setData({
+        num: 0
+      })
+    }
     // console.log(that.data.list);
   },
   handDefault: function(e) {
