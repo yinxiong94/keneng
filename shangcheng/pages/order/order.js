@@ -12,6 +12,7 @@ Page({
     sid:"",
     sum:0, //商品总金额
     id:"0",
+    goodsprice:[]
   },
 
   handDizhi: function () {
@@ -63,8 +64,19 @@ Page({
             that.setData({
               detailsdlist: res.Result
             })
-              
-              
+            
+           var list = that.data.detailsdlist.detailsdlist
+          //  console.log(list)
+            list.forEach(item=>{
+              console.log(item.goodsprice)
+              console.log(item.goodsnum + item.goodsnum)
+              // var  sum = item.goodsprice * item.goodsnum
+              // that.setData({
+              //   sum:sum ,
+              //   goodsprice: item.goodsprice,
+              // })
+            })
+            // console.log(that.data.goodsprice)
           })
       }
   
@@ -72,7 +84,6 @@ Page({
 
   handgm(options){
     that = this
-    console.log(options)
     if(options.id == 0){
         that.setData({
           sid: options.sid
@@ -95,7 +106,6 @@ Page({
     that.setData({ id:options.id })
     that.handgm(options)
     that.loadmore()
-    
     // console.log(options);
     if (options.id.length == 0) {
       that.setData({
