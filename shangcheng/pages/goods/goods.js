@@ -50,7 +50,7 @@ Page({
   // 立即购买
   handgm(){
    wx.navigateTo({
-     url: '/pages/order/order?sid=' + that.data.sid,
+     url: '/pages/order/order?sid=' + that.data.sid+"&id="+"0",
    })
   },
   handTxdd:function(){
