@@ -1,27 +1,82 @@
 // pages/order/order.js
+const app=getApp();
+var that;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    shoppingid:"",
+    detailsdlist:[],
+    sid:"",
+    sum:0, //商品总金额
   },
+
   handDizhi:function(){
     wx:wx.navigateTo({
       url: '../address/address'
     })
   },
+
   handZhifu:function(){
     wx: wx.navigateTo({
       url: '../payment/payment'
     })
   },
+
+  // 购物车
+    loadmore() {
+      that = this
+      if (that.data.shoppingid !== undefined){
+          app.postData("GetShoppingData.ashx", {
+            action: "Submit",
+            userid: app.globalData.userid,
+            shopppingid: that.data.shoppingid
+          }).then(res => {
+            that.setData({
+              detailsdlist: res.Result
+            })
+          })
+      }
+      // that.handjj()
+    },
+  
+  
+
+  // 立即购买
+  handgm(){
+    that = this
+    app.postData("GetShoppingData.ashx",{
+      action:"Submit",
+      userid: app.globalData.userid,
+      goodsid:that.data.sid
+    }).then(res=>{
+      console.log(res)
+      that.setData({
+        detailsdlist: res.Result
+      })
+    })
+    that.handjj()
+  },
+
+  // 购物车金额计算
+  handjj(){
+    that = this
+    // console.log(that.data.detailsdlist)
+    // that.setData({
+    //   sum: that.data.detailsdlist.detailsdlist.goodsprice * that.data.detailsdlist.detailsdlist.goodnum
+    // })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    that=this;
+    console.log(options.ddd)
+    that.setData({ shoppingid: options.ddd, sid:options.sid})
+    that.loadmore()
+    that.handgm()
   },
 
   /**
