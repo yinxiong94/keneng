@@ -158,7 +158,6 @@ page {
 
 .null_item .list .pirce .left {
   display: flex;
-  
 }
 
 .null_item .list .pirce .left .text_11 {
@@ -228,13 +227,12 @@ page {
   position: relative;
   width: 710rpx;
   height: 320rpx;
-  overflow: hidden;
   background-color: #fff;
   margin: 0 auto;
   padding-top: 20rpx;
   margin-top: 20rpx;
-  border-radius: 10rpx;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .item-box .list .delete {
@@ -258,16 +256,20 @@ page {
   margin: 0 auto;
   background-color: #fff;
   display: flex;
-  box-sizing: border-box;
   padding: 0 30rpx;
   position: absolute;
   top: 0;
   left: 0rpx;
   z-index: 5;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  overflow: hidden;
 }
-.item-box .items .items_left{
+
+.item-box .items .items_left {
   width: 50rpx;
 }
+
 .item-box .items .off {
   width: 36rpx;
   height: 36rpx;
@@ -296,7 +298,7 @@ page {
   color: rgba(29, 32, 35, 1);
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 2;   
   overflow: hidden;
 }
 
@@ -448,41 +450,51 @@ page {
   font-weight: 400;
   color: rgba(255, 255, 255, 1);
 }
-checkbox .wx-checkbox-input{
-   border-radius: 50%;/* 圆角 */
-   width: 36rpx; /* 背景的宽 */
-   height: 36rpx; /* 背景的高 */
-   margin-top: 141rpx;
+
+checkbox .wx-checkbox-input {
+  border-radius: 50%; /* 圆角 */
+  width: 36rpx; /* 背景的宽 */
+  height: 36rpx; /* 背景的高 */
+  margin-top: 141rpx;
 }
+
 /* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
-checkbox .wx-checkbox-input.wx-checkbox-input-checked{
-   border: none;
-   background: rgba(142, 195, 31, 1);
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border: none;
+  background: rgba(142, 195, 31, 1);
 }
+
 /* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
-checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
-   border-radius: 50%;/* 圆角 */
-   width: 36rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
-   height: 36rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
-   line-height: 36rpx;
-   text-align: center;
-   font-size:26rpx; /* 对勾大小 30rpx */
-   color:#fff; /* 对勾颜色 白色 */
-   background: transparent;
-   transform:translate(-50%, -50%) scale(1);
-   -webkit-transform:translate(-50%, -50%) scale(1);
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%; /* 圆角 */
+  width: 36rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 36rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 36rpx;
+  text-align: center;
+  font-size: 26rpx; /* 对勾大小 30rpx */
+  color: #fff; /* 对勾颜色 白色 */
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
 }
-.input .wx-checkbox-input{
-   border-radius: 50%;/* 圆角 */
-   width: 36rpx; /* 背景的宽 */
-   height: 36rpx; /* 背景的高 */
-   margin-top: 31rpx;
+
+.input .wx-checkbox-input {
+  border-radius: 50%; /* 圆角 */
+  width: 36rpx; /* 背景的宽 */
+  height: 36rpx; /* 背景的高 */
+  margin-top: 31rpx;
 }
-.coco{
+
+.coco {
   width: 50rpx;
 }
 
-.text_jia{
-  color: #EFEFF4;
-  
+.text_jia {
+  color: #efeff4;
+}
+
+.pdd {
+  height: 110rpx;
 }

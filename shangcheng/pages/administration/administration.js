@@ -12,12 +12,12 @@ Page({
   },
   handResult: function() {
     wx.navigateTo({
-      url: '../fille/fille'
+      url: '../fille/fille?id=' + 'undefined'
     })
   },
   handAdd:function(e){
     wx.navigateTo({
-      url: '../fille/fille'
+      url: '../fille/fille?id=' + 'undefined'
     })
   },
   edit: function(e) {
@@ -35,19 +35,23 @@ Page({
   // 删除
   del: function(e) {
     that = this;
-    console.log(e.currentTarget.dataset.del);
     app.postData("GetShoppingData.ashx", {
       action: "DelAddress",
       addressid: that.data.list[e.currentTarget.dataset.del].addressid
     }).then(res => {
-      console.log(res);
+      // console.log(res);
     })
     let s = that.data.list;
     s.splice(e.currentTarget.dataset.del, 1);
     that.setData({
       list: s
     })
-    console.log(that.data.list);
+    if(that.data.list.length == '0'){
+      that.setData({
+        num: 0
+      })
+    }
+    // console.log(that.data.list);
   },
   handDefault: function(e) {
     that = this;
@@ -58,6 +62,9 @@ Page({
     let region = that.data.list[e.currentTarget.dataset.index].region;
     let useraddress = that.data.list[e.currentTarget.dataset.index].useraddress;
     let province = that.data.list[e.currentTarget.dataset.index].province;
+    if(that.data.send == '0'){
+      return
+    }
     wx.navigateTo({
       url: '../order/order?id=' + addressid + '&city=' + city + '&username=' + username + '&usertel=' + usertel + '&region=' + region + '&useraddress=' + useraddress + '&province=' + province,
     })
@@ -66,7 +73,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    console.log(options.send);
+    that = this;
+    that.setData({
+      send: options.send
+    })
   },
 
   /**

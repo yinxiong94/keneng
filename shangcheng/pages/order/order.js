@@ -7,12 +7,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    shoppingid:"",
-    detailsdlist:{},
-    sid:"",
-    sum:0, //商品总金额
-    id:"0",
-    goodsprice:[]
+    shoppingid: "",
+    detailsdlist: [],
+    sid: "",
+    sum: 0, //商品总金额
+    off: 0
   },
 
   handDizhi: function () {
@@ -30,84 +29,54 @@ Page({
   // 购物车
   loadmore() {
     that = this
-      if(that.data.id == "0"){
-        console.log("goodsid")
-        app.postData("GetShoppingData.ashx", {
-          action: "Submit",
-          userid: app.globalData.userid,
-          goodsid: that.data.sid
-        }).then(res => {
-        
-          that.setData({
-            detailsdlist: res.Result
-          })
-          // console.log(that.data.detailsdlist.detailsdlist)
-          that.data.detailsdlist.detailsdlist.forEach(item=>{
-            // console.log(item)
-            let goodsprice = item.goodsprice
-            let goodsnum = item.goodsnum
-            let sum = goodsprice * goodsnum
-            console.log(sum)
-            that.setData({
-              sum:sum
-            })
-          })
-        })
-       
-      }else{
-        console.log("shopppingid")
-          app.postData("GetShoppingData.ashx", {
-            action: "Submit",
-            userid: app.globalData.userid,
-            shopppingid: that.data.shoppingid
-          }).then(res => {
-            that.setData({
-              detailsdlist: res.Result
-            })
-            
-           var list = that.data.detailsdlist.detailsdlist
-          //  console.log(list)
-            list.forEach(item=>{
-              console.log(item.goodsprice)
-              console.log(item.goodsnum + item.goodsnum)
-              // var  sum = item.goodsprice * item.goodsnum
-              // that.setData({
-              //   sum:sum ,
-              //   goodsprice: item.goodsprice,
-              // })
-            })
-            // console.log(that.data.goodsprice)
-          })
-      }
-  
-  },
-
-  handgm(options){
-    that = this
-    if(options.id == 0){
+    if (that.data.shoppingid !== undefined) {
+      app.postData("GetShoppingData.ashx", {
+        action: "Submit",
+        userid: app.globalData.userid,
+        shopppingid: that.data.shoppingid
+      }).then(res => {
         that.setData({
-          sid: options.sid
+          detailsdlist: res.Result
         })
-    }else{
-      that.setData({
-        shoppingid:options.ddd
       })
     }
+    that.handjj()
   },
 
 
 
+  // 立即购买
+  handgm() {
+    that = this
+    app.postData("GetShoppingData.ashx", {
+      action: "Submit",
+      userid: app.globalData.userid,
+      goodsid: that.data.sid
+    }).then(res => {
+      that.setData({
+        detailsdlist: res.Result
+      })
+    })
+    that.handjj()
+  },
 
+  // 购物车金额计算
+  handjj() {
+    that = this
+    // that.setData({
+    //   sum: that.data.detailsdlist.detailsdlist.goodsprice * that.data.detailsdlist.detailsdlist.goodnum
+    // })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     that = this;
-    that.setData({ id:options.id })
-    that.handgm(options)
+    that.setData({ shoppingid: options.ddd, sid: options.sid })
     that.loadmore()
-    // console.log(options);
-    if (options.id.length == 0) {
+    that.handgm()
+    console.log(options);
+    if (options.id == 0) {
       that.setData({
         off: 0
       })
@@ -119,7 +88,6 @@ Page({
         coco: options
       })
     }
-
     // app.postData("GetShoppingData.ashx", {
     //   action: "AddAress",
     //   addressid: that.data.addressid
@@ -138,9 +106,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-
-  onShow: function () {
-
+  onShow: function (options) {
   },
 
   /**

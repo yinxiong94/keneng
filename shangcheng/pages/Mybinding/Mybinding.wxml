@@ -13,13 +13,12 @@
     </view>
      <view class='cont_sf cont_kh'>
         <text>请输入银行卡号</text>
-        <text class='cont_yh'>查看支持银行</text>
     </view>
     <view class='cont_name cont_name_bottom'>
         <text>银行卡号</text>
         <input placeholder='请输入银行卡号'></input>
     </view>
-    <view class='cont_sr cont_kh cont_name_bottom'>
+    <view class='cont_sr cont_kh cont_name_bottom' bindtap='handYh'>
         <text>中国工商银行</text>
         <image src='../img/jiantou.png'></image>
     </view>
