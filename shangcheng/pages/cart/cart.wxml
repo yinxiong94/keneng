@@ -80,7 +80,7 @@
     </slide-delete>
   </view>
   <view class="pdd"></view>
-  <view class="footer">
+  <view class="footer" wx:if="{{!show}}">
     <view class="coco">
       <checkbox-group>
         <label class="input">

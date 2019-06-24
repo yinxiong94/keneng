@@ -10,7 +10,9 @@ Page({
     count: 60, //倒计时时间
     code: '获取验证码',
   },
-
+  handYh:function(){
+    console.log('选择银行');
+  },
   // 获取用户输入的手机号码
   Input_iphone(e) {
     that = this

@@ -31,7 +31,6 @@ Page({
       userid: app.globalData.userid,
       shoppingnum:1
     }).then(res =>{
-      console.log(res);
       if (res.Result==1){
       wx.showToast({
         title: '加入购物车成功',

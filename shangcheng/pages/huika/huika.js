@@ -1,4 +1,5 @@
 // pages/huika/huika.js
+var that;
 Page({
 
   /**
@@ -8,6 +9,10 @@ Page({
 
   },
   delivery:function(){
+    that = this;
+    if(that.data.send =='0'){
+      return
+    }
     wx:wx.navigateTo({
       url: '../request/request' 
     })
@@ -16,9 +21,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    that = this;
+    that.setData({
+      send: options.send
+    })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -10,6 +10,11 @@ Page({
     id:'0',
     send:0
   },
+  handVip:function(){
+    wx.navigateTo({
+      url: '/pages/huika/huika?send=0',
+    })
+  },
   handSend:function(){
     wx.navigateTo({
       url: '/pages/administration/administration?send=0',

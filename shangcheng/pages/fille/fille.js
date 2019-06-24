@@ -10,7 +10,7 @@ Page({
     index: 0,
     multiIndex: [0, 0, 0],
     region: ['广东省', '广州市', '海珠区'],
-    customItem: '全部'
+    // customItem: '全部'
   },
   bindName(e) {
     console.log(e.detail.value);
