@@ -8,7 +8,6 @@ Page({
     currentTab:0
   },
   on:function(e){
-    console.log(e.currentTarget.dataset.current)
     this.setData({
       currentTab: e.currentTarget.dataset.current
     })

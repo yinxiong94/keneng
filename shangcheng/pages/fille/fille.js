@@ -13,13 +13,13 @@ Page({
     // customItem: '全部'
   },
   bindName(e) {
-    console.log(e.detail.value);
+ 
     this.setData({
       name: e.detail.value
     })
   },
   bindTel(e) {
-    console.log(e.detail.value);
+   
     this.setData({
       tel: e.detail.value
     })
