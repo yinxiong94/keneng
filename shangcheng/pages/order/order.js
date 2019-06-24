@@ -1,5 +1,5 @@
 // pages/order/order.js
-const app=getApp();
+const app = getApp();
 var that;
 Page({
 
@@ -11,23 +11,24 @@ Page({
     detailsdlist:{},
     sid:"",
     sum:0, //商品总金额
-    id:"0"
+    id:"0",
+
   },
 
-  handDizhi:function(){
-    wx:wx.navigateTo({
-      url: '../address/address'
+  handDizhi: function () {
+    wx: wx.navigateTo({
+      url: '../administration/administration'
     })
   },
 
-  handZhifu:function(){
+  handZhifu: function () {
     wx: wx.navigateTo({
       url: '../payment/payment'
     })
   },
 
-  // 判断是在购物车提交还是立即提交
-  loadmemo(){   
+  // 购物车
+  loadmore() {
     that = this
       if(that.data.id == "0"){
         console.log("goodsid")
@@ -36,9 +37,20 @@ Page({
           userid: app.globalData.userid,
           goodsid: that.data.sid
         }).then(res => {
-          // console.log(res.Result.detailsdlist)
+        
           that.setData({
             detailsdlist: res.Result
+          })
+          // console.log(that.data.detailsdlist.detailsdlist)
+          that.data.detailsdlist.detailsdlist.forEach(item=>{
+            // console.log(item)
+            let goodsprice = item.goodsprice
+            let goodsnum = item.goodsnum
+            let sum = goodsprice * goodsnum
+            console.log(sum)
+            that.setData({
+              sum:sum
+            })
           })
         })
        
@@ -52,56 +64,68 @@ Page({
             that.setData({
               detailsdlist: res.Result
             })
+              
+              
           })
       }
+  
   },
 
-  loadmore(options) {
-    if (that.data.id == 0) {
+  handgm(options){
+    that = this
+    console.log(options)
+    if(options.id == 0){
+        that.setData({
+          sid: options.sid
+        })
+    }else{
       that.setData({
-        sid: options.sid,
-      })
-    } else {
-      that.setData({
-        shoppingid: options.ddd,
+        shoppingid:options.ddd
       })
     }
-         
-},
-  
-
-  handgm(){
-    console.log(this.data.detailsdlist)
-    
   },
+
+
 
   
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    that=this;
-    that.setData({
-      id: options.id,
-    })
-    that.loadmore(options)
-    // that.handgm()
-    that.loadmemo()
+    that = this;
+    that.setData({ id:options.id })
+    that.handgm(options)
+    that.loadmore()
+    
+    // console.log(options);
+
+
+    
+    if (options.id.length == 0) {
+      that.setData({
+        off: 0
+      })
+    } else {
+      that.setData({
+        off: 1
+      })
+      that.setData({
+        coco: options
+      })
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
-    
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    that.handgm()
   },
 
   /**

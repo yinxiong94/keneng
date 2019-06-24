@@ -9,7 +9,11 @@ Page({
   data: {
     id:'0'
   },
-
+  handSend:function(){
+    wx.navigateTo({
+      url: '../administration/administration',
+    })
+  },
   userlogin(){
     app.postData("GetUserData.ashx",{
       action:"GetUserInfo",

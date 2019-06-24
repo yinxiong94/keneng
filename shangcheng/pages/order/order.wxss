@@ -1,6 +1,7 @@
-page{
+page {
   background: rgba(239, 239, 244, 1);
 }
+
 .db {
   width: 750rpx;
   overflow: hidden;
@@ -27,6 +28,16 @@ page{
 .db .top .right {
   flex: 1;
   margin-left: 30rpx;
+}
+
+.db .top .right_111 {
+  flex: 1;
+  margin-left: 30rpx;
+  line-height: 230rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
 }
 
 .db .top .right .right_1 {
@@ -243,7 +254,8 @@ page{
   color: #ff533c;
   margin-left: 30rpx;
 }
-.footer .left  view text{
+
+.footer .left  view text {
   font-size: 24rpx;
 }
 

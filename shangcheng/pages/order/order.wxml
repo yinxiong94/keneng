@@ -2,13 +2,14 @@
 <view class="db">
   <view class="top">
     <image class="dizhi" src='/pages/img/tx.png' lazy-load='true'></image>
-    <view class="right">
+    <view class="right" wx:if="{{off==1}}">
       <view class="right_1">
-        <text>麦兜啊</text> 15698324568</view>
-      <view class="right_2">田厦金牛广场702</view>
-      <view class="right_3"> 广东省深圳市南山区</view>
+        <text>{{coco.username}}</text> {{coco.usertel}}</view>
+      <view class="right_2">{{coco.useraddress}}</view>
+      <view class="right_3"> {{coco.province}}{{coco.city}}{{coco.region}}</view>
     </view>
-    <image class="jian" src='/pages/img/right11.png' lazy-load='true' bindtap='handDizhi'></image>
+    <view class="right_111" wx:if="{{off==0}}" bindtap='handDizhi'>选择收货地址</view>
+    <image wx:if="{{off==1}}" class="jian" src='/pages/img/right11.png' lazy-load='true' bindtap='handDizhi'></image>
   </view>
   <view class="order">
     <view class="item">
