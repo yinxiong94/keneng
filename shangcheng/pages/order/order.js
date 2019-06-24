@@ -11,11 +11,12 @@ Page({
     detailsdlist:[],
     sid:"",
     sum:0, //商品总金额
+    off:0
   },
 
   handDizhi:function(){
     wx:wx.navigateTo({
-      url: '../address/address'
+      url: '../administration/administration'
     })
   },
 
@@ -39,7 +40,7 @@ Page({
             })
           })
       }
-      // that.handjj()
+      that.handjj()
     },
   
   
@@ -52,7 +53,6 @@ Page({
       userid: app.globalData.userid,
       goodsid:that.data.sid
     }).then(res=>{
-      console.log(res.Result)
       that.setData({
         detailsdlist: res.Result
       })
@@ -63,7 +63,6 @@ Page({
   // 购物车金额计算
   handjj(){
     that = this
-    // console.log(that.data.detailsdlist)
     // that.setData({
     //   sum: that.data.detailsdlist.detailsdlist.goodsprice * that.data.detailsdlist.detailsdlist.goodnum
     // })
@@ -73,10 +72,28 @@ Page({
    */
   onLoad: function (options) {
     that=this;
-    console.log(options.ddd)
     that.setData({ shoppingid: options.ddd, sid:options.sid})
     that.loadmore()
     that.handgm()
+    console.log(options);
+    if (options.id.length == 0){
+      that.setData({
+        off: 0
+      })
+    }else{
+      that.setData({
+        off: 1
+      })
+      that.setData({
+        coco: options
+      })
+    }
+    // app.postData("GetShoppingData.ashx", {
+    //   action: "AddAress",
+    //   addressid: that.data.addressid
+    // }).then(res => {
+    //   console.log(res)
+    // })
   },
 
   /**
@@ -89,8 +106,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
+  onShow: function (options) {
   },
 
   /**

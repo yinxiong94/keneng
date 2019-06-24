@@ -389,6 +389,7 @@ page {
   padding-left: 30rpx;
   box-sizing: border-box;
   background-color: #fff;
+  z-index: 99;
 }
 
 .footer .left {
