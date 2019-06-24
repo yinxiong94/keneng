@@ -64,6 +64,7 @@ App({
     userInfo: null,
     http: "http://mfapi.hncoon.com/API/",
     userid: "",
-    code: ""
+    code: "",
+    shoppingid:""
   }
 })
