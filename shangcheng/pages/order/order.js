@@ -12,7 +12,6 @@ Page({
     sid:"",
     sum:0, //商品总金额
     id:"0",
-
   },
 
   handDizhi: function () {
@@ -87,7 +86,7 @@ Page({
 
 
 
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -98,9 +97,6 @@ Page({
     that.loadmore()
     
     // console.log(options);
-
-
-    
     if (options.id.length == 0) {
       that.setData({
         off: 0
@@ -113,6 +109,13 @@ Page({
         coco: options
       })
     }
+
+    // app.postData("GetShoppingData.ashx", {
+    //   action: "AddAress",
+    //   addressid: that.data.addressid
+    // }).then(res => {
+    //   console.log(res)
+    // })
   },
 
   /**
@@ -125,7 +128,9 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
+
   onShow: function () {
+
   },
 
   /**
