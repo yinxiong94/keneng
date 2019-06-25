@@ -14,22 +14,44 @@ Page({
     off: 0
   },
 
-  handDizhi: function () {
+  handDizhi: function() {
     wx: wx.navigateTo({
       url: '../administration/administration'
     })
   },
 
-  handZhifu: function () {
+  handZhifu: function() {
     wx: wx.navigateTo({
       url: '../payment/payment'
     })
   },
 
-  // 购物车
+
+
   loadmore() {
     that = this
-    if (that.data.shoppingid !== undefined) {
+    if (that.data.id == "0") {
+      console.log("goodsid")
+      app.postData("GetShoppingData.ashx",{
+          action: "Submit",
+          userid: app.globalData.userid,
+          goodsid: that.data.sid
+        }).then(res => {
+          that.setData({
+            detailsdlist: res.Result
+          })
+          that.data.detailsdlist.detailsdlist.forEach(item => {
+            let goodsprice = item.goodsprice
+            let goodsnum = item.goodsnum
+            let sum = goodsprice * goodsnum
+            console.log(sum)
+            that.setData({
+              sum: sum
+            })
+          })
+        })
+
+    } else {
       app.postData("GetShoppingData.ashx", {
         action: "Submit",
         userid: app.globalData.userid,
@@ -38,44 +60,38 @@ Page({
         that.setData({
           detailsdlist: res.Result
         })
+    })
+    }
+  },
+
+
+
+
+  handgm(options) {
+    that = this
+    if (options.id == 0) {
+      that.setData({
+        sid: options.sid
+      })
+    } else {
+      that.setData({
+        shoppingid: options.ddd
       })
     }
-    that.handjj()
   },
 
-
-
-  // 立即购买
-  handgm() {
-    that = this
-    app.postData("GetShoppingData.ashx", {
-      action: "Submit",
-      userid: app.globalData.userid,
-      goodsid: that.data.sid
-    }).then(res => {
-      that.setData({
-        detailsdlist: res.Result
-      })
-    })
-    that.handjj()
-  },
-
-  // 购物车金额计算
-  handjj() {
-    that = this
-    // that.setData({
-    //   sum: that.data.detailsdlist.detailsdlist.goodsprice * that.data.detailsdlist.detailsdlist.goodnum
-    // })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     that = this;
-    that.setData({ shoppingid: options.ddd, sid: options.sid })
+    that.setData({
+      id:options.id
+    })
+    that.handgm(options)
     that.loadmore()
-    that.handgm()
-    console.log(options);
+
+
     if (options.id == 0) {
       that.setData({
         off: 0
@@ -99,48 +115,47 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function (options) {
-  },
+  onShow: function(options) {},
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

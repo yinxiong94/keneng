@@ -34,7 +34,7 @@ Page({
     this.setData({
       fid: aaa.substr(1)
     })
-    if (that.data.shoplist.Result.shoplist.length == 0) {
+    if (this.data.fid.length == 0) {
       wx.showToast({
         title: '请选择商品',
         duration: 2000,
