@@ -11,7 +11,8 @@ Page({
     detailsdlist: [],
     sid: "",
     sum: 0, //商品总金额
-    off: 0
+    off: false,
+    ffo:false
   },
 
   handDizhi: function() {
@@ -20,13 +21,42 @@ Page({
     })
   },
 
-  handZhifu: function() {
-    wx: wx.navigateTo({
-      url: '../payment/payment'
+
+  // 获取地址
+  site(){
+    that = this
+    app.postData("GetShoppingData.ashx",{
+      action: "GetAddressList",
+      userid: app.globalData.userid
+    }).then(res=>{
+      console.log(res)
+      that.setData({
+        coco:res.Result[0]
+      })
+      var site =  [];
+      site.push(res.Result[0].city)
+      site.push(res.Result[0].province)
+      site.push(res.Result[0].region)
+      site.push(res.Result[0].useraddress)
+      site = site.join().replace(/,/g, "")
+      console.log(site)
+      that.setData({
+        site: site
+      })
+      // console.log(this.data.coco.length)
+      if (this.data.coco.length == 0){
+        that.setData({
+          off:true,
+          ffo:false
+        })
+      }else{
+        that.setData({
+          off: false,
+          ffo:true
+        })
+      }
     })
   },
-
-
 
   loadmore() {
     that = this
@@ -65,7 +95,22 @@ Page({
   },
 
 
-
+  // 提交订单
+  submit(){
+    that = this
+    app.postData("GetShoppingData.ashx",{
+      action:'Pay',
+      orderid: that.data.detailsdlist.OrderId,
+      username:that.data.coco.username,
+      usertel: that.data.coco.usertel,
+      address: that.data.site
+    }).then(res=>{
+      console.log(res)
+      wx.navigateTo({
+        url: '../payment/payment'
+      })
+    })
+  },
 
   handgm(options) {
     that = this
@@ -90,26 +135,7 @@ Page({
     })
     that.handgm(options)
     that.loadmore()
-
-
-    if (options.id == 0) {
-      that.setData({
-        off: 0
-      })
-    } else {
-      that.setData({
-        off: 1
-      })
-      that.setData({
-        coco: options
-      })
-    }
-    // app.postData("GetShoppingData.ashx", {
-    //   action: "AddAress",
-    //   addressid: that.data.addressid
-    // }).then(res => {
-    //   console.log(res)
-    // })
+    that.site()
   },
 
   /**
