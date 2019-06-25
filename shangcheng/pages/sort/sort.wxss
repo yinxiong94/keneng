@@ -154,7 +154,7 @@ page{
 }
 
  .list .pirce .left .text_11 text {
-  font-size: 36rpx;
+  font-size: 26rpx;
   font-weight: bold;
 }
 

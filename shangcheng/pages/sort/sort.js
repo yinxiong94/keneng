@@ -1,5 +1,6 @@
 // pages/sort/sort.js
-const app = getApp();
+var app = getApp();
+var that
 Page({
 
   /**
@@ -7,18 +8,84 @@ Page({
    */
   data: {
     menuTapCurrent:0,  //默认选择第1个
+    list:[],
+    pagenum: 1, //初始页默认值为1
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-  },
-  menuTap(e){
-    this.setData({
-      menuTapCurrent: e.target.dataset.current
+    that =this
+    app.postData("GetGoodsData.ashx", {
+      action: "GetTypeList"
+    }).then(res => {
+      that.setData({
+        list: res.Result
+      })
     })
+  },
+  handDetails: function (e) {
+    wx.navigateTo({
+      url: '../goods/goods?id=' + e.currentTarget.dataset.goodsid
+    })
+    console.log(e)
+  },
+
+  menuTap(e){
+    that = this
+    that.setData({
+      menuTapCurrent: e.currentTarget.dataset.current,
+      typeid: e.currentTarget.dataset.typeid
+    })
+    if (that.data.menuTapCurrent != 0) {
+      app.postData("GetGoodsData.ashx", {
+        action: "GetGoodsList",
+        typeid: that.data.typeid,
+        Pid: that.data.pagenum,
+        pagesize:4
+      }).then(res => {
+        that.setData({
+         ListView:res.Result
+        })
+      })
+    } else {
+      app.postData("GetGoodsData.ashx", {
+        action: "GetGoodsList",
+        Pid: that.data.pagenum,
+        pagesize: 4
+      }).then(res => {
+        that.setData({
+          ListView: res.Result
+        })
+      })
+    }
+  },
+
+  refer() {
+    that = this
+    if (that.data.menuTapCurrent!=0){
+      app.postData("GetGoodsData.ashx", {
+        action: "GetGoodsList",
+        typeid: that.data.typeid,
+        Pid: that.data.pagenum,
+        pagesize: 4
+      }).then(res => {
+        that.setData({
+          ListView: res.Result
+        })
+      })
+    }else{
+      app.postData("GetGoodsData.ashx", {
+        action: "GetGoodsList",
+        Pid: that.data.pagenum,
+        pagesize: 4
+      }).then(res => {
+        that.setData({
+          ListView: res.Result
+        })
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -31,6 +98,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    that = this
+    that.refer()
   },
 
   /**
@@ -58,7 +127,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    var that = this;
+    var pagenum = that.data.pagenum + 1; //获取当前页数并+1
+    that.setData({
+      pagenum: pagenum, //更新当前页数
+    })
+    that.menuTap()
   },
 
   /**
