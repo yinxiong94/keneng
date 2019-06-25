@@ -39,7 +39,6 @@ Page({
       site.push(res.Result[0].region)
       site.push(res.Result[0].useraddress)
       site = site.join().replace(/,/g, "")
-      console.log(site)
       that.setData({
         site: site
       })
@@ -61,7 +60,6 @@ Page({
   loadmore() {
     that = this
     if (that.data.id == "0") {
-      console.log("goodsid")
       app.postData("GetShoppingData.ashx",{
           action: "Submit",
           userid: app.globalData.userid,
@@ -74,7 +72,6 @@ Page({
             let goodsprice = item.goodsprice
             let goodsnum = item.goodsnum
             let sum = goodsprice * goodsnum
-            console.log(sum)
             that.setData({
               sum: sum
             })
@@ -105,7 +102,6 @@ Page({
       usertel: that.data.coco.usertel,
       address: that.data.site
     }).then(res=>{
-      console.log(res)
       wx.navigateTo({
         url: '../payment/payment'
       })
