@@ -63,8 +63,8 @@ Page({
         console.log(res);
       })
     }
-    wx.navigateTo({
-      url: '../administration/administration'
+    wx.navigateBack({
+      delta: 1
     })
   },
 

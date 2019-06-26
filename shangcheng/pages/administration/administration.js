@@ -54,7 +54,7 @@ Page({
     }
     // console.log(that.data.list);
   },
-  
+
   handDefault: function(e) {
     that = this;
     // 修改为默认地址
@@ -124,7 +124,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function(options) {
-   
+    this.scrl()
   },
 
   /**

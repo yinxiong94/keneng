@@ -11,8 +11,8 @@ Page({
     detailsdlist: [],
     sid: "",
     sum: 0, //商品总金额
-    off: false,
-    ffo:false
+    off: true,
+    ffo: false
   },
 
   handDizhi: function() {
@@ -21,69 +21,60 @@ Page({
     })
   },
 
-
   // 获取地址
-  site(){
+  site() {
     that = this
-    app.postData("GetShoppingData.ashx",{
+    app.postData("GetShoppingData.ashx", {
       action: "GetAddressList",
       userid: app.globalData.userid
-    }).then(res=>{
-      // console.log(res)
-      res.Result.forEach(item=>{
-        // console.log(item)
-        if (item.isdefault == 1){
-          console.log(item)
-          that.setData({
-            coco: item
-          })
-        }
-      })
-      // var site =  [];
-      // site.push(res.Result[0].city)
-      // site.push(res.Result[0].province)
-      // site.push(res.Result[0].region)
-      // site.push(res.Result[0].useraddress)
-      // site = site.join().replace(/,/g, "")
-      // that.setData({ 
-      //   site: site
-      // })
-      console.log(that.data.coco)
-      // console.log(this.data.coco.length)
-      if (this.data.coco.length == 0){
+    }).then(res => {
+      console.log(res)
+      if (res.Result.length==0){
         that.setData({
-          off:true,
-          ffo:false
-        })
-      }else{
-        that.setData({
-          off: false,
-          ffo:true
+          off: true,
+          ffo: false
         })
       }
+      res.Result.forEach(item => {
+        console.log(item)
+        if (item.isdefault == 1) {
+          that.setData({
+            coco: item,
+            off:false,
+            ffo: true
+          })
+        }
+          // console.log(item)
+          // that.setData({
+          //   off: false,
+          //   ffo: true
+          // })
+        
+      })
+     
     })
   },
 
   loadmore() {
     that = this
     if (that.data.id == "0") {
-      app.postData("GetShoppingData.ashx",{
-          action: "Submit",
-          userid: app.globalData.userid,
-          goodsid: that.data.sid
-        }).then(res => {
+      app.postData("GetShoppingData.ashx", {
+        action: "Submit",
+        userid: app.globalData.userid,
+        goodsid: that.data.sid
+      }).then(res => {
+        that.setData({
+          detailsdlist: res.Result
+        })
+        that.data.detailsdlist.detailsdlist.forEach(item => {
+          let goodsprice = item.goodsprice
+          let goodsnum = item.goodsnum
+          let sum = goodsprice * goodsnum
           that.setData({
-            detailsdlist: res.Result
-          })
-          that.data.detailsdlist.detailsdlist.forEach(item => {
-            let goodsprice = item.goodsprice
-            let goodsnum = item.goodsnum
-            let sum = goodsprice * goodsnum
-            that.setData({
-              sum: sum
-            })
+            sum: sum
           })
         })
+      })
 
     } else {
       app.postData("GetShoppingData.ashx", {
@@ -94,21 +85,21 @@ Page({
         that.setData({
           detailsdlist: res.Result
         })
-    })
+      })
     }
   },
 
 
   // 提交订单
-  submit(){
+  submit() {
     that = this
-    app.postData("GetShoppingData.ashx",{
-      action:'Pay',
+    app.postData("GetShoppingData.ashx", {
+      action: 'Pay',
       orderid: that.data.detailsdlist.OrderId,
-      username:that.data.coco.username,
+      username: that.data.coco.username,
       usertel: that.data.coco.usertel,
       address: that.data.site
-    }).then(res=>{
+    }).then(res => {
       wx.navigateTo({
         url: '../payment/payment'
       })
@@ -135,10 +126,11 @@ Page({
   onLoad: function(options) {
     that = this;
     that.setData({
-      id:options.id
+      id: options.id
     })
     that.handgm(options)
     that.loadmore()
+    that.site()
   },
 
   /**
@@ -152,7 +144,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    console.log(this.data.backPageParam)
     this.site()
   },
 
@@ -160,7 +151,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-    this.site()
+    
   },
 
   /**
