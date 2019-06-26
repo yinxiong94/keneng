@@ -11,8 +11,8 @@ Page({
     detailsdlist: [],
     sid: "",
     sum: 0, //商品总金额
-    off: false,
-    ffo: true
+    off: true,
+    ffo: false
   },
 
   handDizhi: function() {
@@ -20,6 +20,7 @@ Page({
       url: '../administration/administration'
     })
   },
+
   // 获取地址
   site() {
     that = this
@@ -27,11 +28,20 @@ Page({
       action: "GetAddressList",
       userid: app.globalData.userid
     }).then(res => {
+      console.log(res)
+      if (res.Result.length==0){
+        that.setData({
+          off: true,
+          ffo: false
+        })
+      }
       res.Result.forEach(item => {
+        console.log(item)
         if (item.isdefault == 1) {
-          console.log(item)
           that.setData({
-            coco: item
+            coco: item,
+            off:false,
+            ffo: true
           })
           console.log(that.data.coco)
           if (this.data.coco.length == 0) {
@@ -46,6 +56,12 @@ Page({
             })
           }
         }
+          // console.log(item)
+          // that.setData({
+          //   off: false,
+          //   ffo: true
+          // })
+        
       })
     })
   },
@@ -125,6 +141,7 @@ Page({
     })
     that.handgm(options)
     that.loadmore()
+    that.site()
   },
 
   /**
@@ -145,7 +162,6 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-    this.site()
   },
 
   /**
