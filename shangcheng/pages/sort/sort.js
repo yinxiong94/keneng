@@ -26,7 +26,6 @@ Page({
     })
   },
   handDetails: function (e) {
-    console.log(e.currentTarget.dataset.goodsid);
     wx.navigateTo({
       url: '../goods/goods?id=' + e.currentTarget.dataset.goodsid
     })
@@ -46,9 +45,8 @@ Page({
         Pid: that.data.pagenum,
         pagesize:4
       }).then(res => {
-        console.log(res);
         that.setData({
-         ListView:res.Result,
+         ListView:res.Result
         })
       })
     } else {
@@ -57,7 +55,6 @@ Page({
         Pid: that.data.pagenum,
         pagesize: 4
       }).then(res => {
-        console.log(res);
         that.setData({
           ListView: res.Result
         })
@@ -131,10 +128,7 @@ Page({
    */
   onReachBottom: function () {
     var that = this;
-    // //获取当前页数并+1
-    if(that.data.ListView.length%4 != 0){
-      var pagenum = that.data.pagenum + 1;
-    }
+    var pagenum = that.data.pagenum + 1; //获取当前页数并+1
     that.setData({
       pagenum: pagenum, //更新当前页数
     })

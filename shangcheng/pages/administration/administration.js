@@ -54,18 +54,9 @@ Page({
     }
     // console.log(that.data.list);
   },
+  
   handDefault: function(e) {
     that = this;
-    // let addressid = that.data.list[e.currentTarget.dataset.index].addressid;
-    // let city = that.data.list[e.currentTarget.dataset.index].city;
-    // let username = that.data.list[e.currentTarget.dataset.index].username;
-    // let usertel = that.data.list[e.currentTarget.dataset.index].usertel;
-    // let region = that.data.list[e.currentTarget.dataset.index].region;
-    // let useraddress = that.data.list[e.currentTarget.dataset.index].useraddress;
-    // let province = that.data.list[e.currentTarget.dataset.index].province;
-    // if(that.data.send == '0'){
-    //   return
-    // }
     // 修改为默认地址
     app.postData("GetShoppingData.ashx", {
       action: "UpdateDefault",
@@ -92,10 +83,7 @@ Page({
       delta: 1
     })
     
-  
-    // wx.navigateTo({
-    //   url: '../order/order?id=' + addressid + '&city=' + city + '&username=' + username + '&usertel=' + usertel + '&region=' + region + '&useraddress=' + useraddress + '&province=' + province,
-    // })
+
   },
 
   // 获取地址

@@ -56,13 +56,12 @@ Page({
     wx:wx.navigateTo({
       url: '../order/order'
     })
-  }, 
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     that = this
-    console.log(options.id);
     that.setData({
       sid: options.id
     })
@@ -70,7 +69,6 @@ Page({
       action: "GetDetails",
       goodsid: that.data.sid
     }).then(res => {
-      console.log(res);
       that.setData({
         list: res.Result,
         urlLength:res.Result.piclist.length
@@ -81,6 +79,7 @@ Page({
         length: that.data.list.piclist.length
       })
     })
+  
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

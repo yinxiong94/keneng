@@ -11,79 +11,43 @@ Page({
     detailsdlist: [],
     sid: "",
     sum: 0, //商品总金额
-    OrderId: "",
-    coco: [],
     off: false,
-    ffo:false
+    ffo: true
   },
 
   handDizhi: function() {
-    wx.navigateTo({
+    wx: wx.navigateTo({
       url: '../administration/administration'
     })
   },
   // 获取地址
-  site(){
+  site() {
     that = this
-    app.postData("GetShoppingData.ashx",{
+    app.postData("GetShoppingData.ashx", {
       action: "GetAddressList",
       userid: app.globalData.userid
-    }).then(res=>{
-      // console.log(res)
-      res.Result.forEach(item=>{
-        // console.log(item)
-        if (item.isdefault == 1){
+    }).then(res => {
+      res.Result.forEach(item => {
+        if (item.isdefault == 1) {
           console.log(item)
           that.setData({
             coco: item
           })
+          console.log(that.data.coco)
+          if (this.data.coco.length == 0) {
+            that.setData({
+              off: true,
+              ffo: false
+            })
+          } else {
+            that.setData({
+              off: false,
+              ffo: true
+            })
+          }
         }
       })
-      var site =  [];
-      site.push(res.Result[0].city)
-      site.push(res.Result[0].province)
-      site.push(res.Result[0].region)
-      site.push(res.Result[0].useraddress)
-      site = site.join().replace(/,/g, "")
-      that.setData({ 
-        site: site
-      })
-      // console.log(this.data.coco.length)
-      if (this.data.coco.length == 0){
-        that.setData({
-          off:true,
-          ffo:false
-        })
-      }else{
-        that.setData({
-          off: false,
-          ffo:true
-        })
-      }
     })
-    console.log(that.data.detailsdlist);
-  },
-  handZhifu: function() {
-    that = this;
-    console.log(that.data.detailsdlist);
-    // let OrderId = that.data.detailsdlist.OrderId;
-    // let username = that.data.coco.username;
-    // let usertel = that.data.coco.usertel;
-    // let address = that.data.coco.province + that.data.coco.city + that.data.coco.region + that.data.coco.useraddress;
-    // app.postData("GetShoppingData.ashx", {
-    //   action: "Pay",
-    //   orderid: OrderId,
-    //   username: username,
-    //   usertel: usertel,
-    //   address: address
-    // }).then(res => {
-    //   console.log(res);
-    //   // if (res == '1') {
-    //   //   wx: wx.navigateTo({
-    //   //     url: '../payment/payment'
-    //   //   })
-    //   // }
-    // })
   },
 
   loadmore() {
@@ -94,16 +58,9 @@ Page({
         userid: app.globalData.userid,
         goodsid: that.data.sid
       }).then(res => {
-        wx.setStorageSync({
-          key: "item",
-          data: res.Result
-        })
         that.setData({
-          detailsdlist: res.Result,
-          OrderId: res.Result.OrderId
-        });
-        console.log(1);
-        console.log(that.data.detailsdlist);
+          detailsdlist: res.Result
+        })
         that.data.detailsdlist.detailsdlist.forEach(item => {
           let goodsprice = item.goodsprice
           let goodsnum = item.goodsnum
@@ -113,18 +70,13 @@ Page({
           })
         })
       })
-      console.log('loadmore');
-      console.log(that.data.detailsdlist);
+
     } else {
       app.postData("GetShoppingData.ashx", {
         action: "Submit",
         userid: app.globalData.userid,
         shopppingid: that.data.shoppingid
       }).then(res => {
-        // wx.setStorageSync({
-        //   key: "item",
-        //   data: res.Result
-        // })
         that.setData({
           detailsdlist: res.Result
         })
@@ -134,15 +86,15 @@ Page({
 
 
   // 提交订单
-  submit(){
+  submit() {
     that = this
-    app.postData("GetShoppingData.ashx",{
-      action:'Pay',
+    app.postData("GetShoppingData.ashx", {
+      action: 'Pay',
       orderid: that.data.detailsdlist.OrderId,
-      username:that.data.coco.username,
+      username: that.data.coco.username,
       usertel: that.data.coco.usertel,
       address: that.data.site
-    }).then(res=>{
+    }).then(res => {
       wx.navigateTo({
         url: '../payment/payment'
       })
@@ -151,7 +103,7 @@ Page({
 
 
   handgm(options) {
-    that = this;
+    that = this
     if (options.id == 0) {
       that.setData({
         sid: options.sid
@@ -171,23 +123,8 @@ Page({
     that.setData({
       id: options.id
     })
-    that.handgm(options);
-    if (options.id == 0) {
-      that.loadmore();
-      that.handCache();
-      // console.log(1);
-      // console.log(that.data.detailsdlist);
-      that.setData({
-        off: 0
-      })
-    } else{
-      that.setData({
-        off: 1,
-        coco: options
-      })
-      that.handCache();
-    }
-  
+    that.handgm(options)
+    that.loadmore()
   },
 
   /**
@@ -200,14 +137,15 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function(options) {
+  onShow: function() {
+    this.site()
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-
+    this.site()
   },
 
   /**
@@ -221,7 +159,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-
+    
   },
 
   /**

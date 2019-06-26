@@ -78,6 +78,7 @@ page {
   width: 21rpx;
   height: 21rpx;
   margin-top: 105rpx;
+  
 }
 
 .order {

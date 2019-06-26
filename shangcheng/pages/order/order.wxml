@@ -9,7 +9,7 @@
       <view class="right_3"> {{coco.province}}{{coco.city}}{{coco.region}}</view>
     </view>
     <view class="right_111" wx:if="{{off}}" bindtap='handDizhi'>选择收货地址</view>
-    <image class="jian" src='/pages/img/right11.png' lazy-load='true' bindtap='handDizhi'></image>
+    <!-- <image class="jian" src='/pages/img/right11.png' lazy-load='true' bindtap='handDizhi'></image> -->
   </view>
   <view class="order">
     <view class="item">
