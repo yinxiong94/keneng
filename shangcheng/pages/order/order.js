@@ -39,15 +39,16 @@ Page({
           })
         }
       })
-      var site =  [];
-      site.push(res.Result[0].city)
-      site.push(res.Result[0].province)
-      site.push(res.Result[0].region)
-      site.push(res.Result[0].useraddress)
-      site = site.join().replace(/,/g, "")
-      that.setData({ 
-        site: site
-      })
+      // var site =  [];
+      // site.push(res.Result[0].city)
+      // site.push(res.Result[0].province)
+      // site.push(res.Result[0].region)
+      // site.push(res.Result[0].useraddress)
+      // site = site.join().replace(/,/g, "")
+      // that.setData({ 
+      //   site: site
+      // })
+      console.log(that.data.coco)
       // console.log(this.data.coco.length)
       if (this.data.coco.length == 0){
         that.setData({
@@ -159,7 +160,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-
+    this.site()
   },
 
   /**
