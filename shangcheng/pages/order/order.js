@@ -11,7 +11,6 @@ Page({
     detailsdlist: [],
     sid: "",
     sum: 0, //商品总金额
-
     OrderId: "",
     coco: [],
     off: false,
