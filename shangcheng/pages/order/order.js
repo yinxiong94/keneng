@@ -28,7 +28,6 @@ Page({
       action: "GetAddressList",
       userid: app.globalData.userid
     }).then(res => {
-      console.log(res)
       if (res.Result.length==0){
         that.setData({
           off: true,
@@ -36,7 +35,6 @@ Page({
         })
       }
       res.Result.forEach(item => {
-        console.log(item)
         if (item.isdefault == 1) {
           that.setData({
             coco: item,
@@ -55,6 +53,20 @@ Page({
               ffo: true
             })
           }
+          var site = []
+          site.push(item.city)
+          site.push(item.province)
+          site.push(item.region)
+          site.push(item.useraddress)
+          site = site.join().replace(/,/g, "")
+          that.setData({
+            site : site
+          })
+        } else if (item.isdefault !== 1){
+          that.setData({
+            off: true,
+            ffo: false
+          })
         }
           // console.log(item)
           // that.setData({
@@ -66,6 +78,7 @@ Page({
     })
   },
 
+//商品详情和价格
   loadmore() {
     that = this
     if (that.data.id == "0") {
@@ -104,17 +117,25 @@ Page({
   // 提交订单
   submit() {
     that = this
-    app.postData("GetShoppingData.ashx", {
-      action: 'Pay',
-      orderid: that.data.detailsdlist.OrderId,
-      username: that.data.coco.username,
-      usertel: that.data.coco.usertel,
-      address: that.data.site
-    }).then(res => {
-      wx.navigateTo({
-        url: '../payment/payment'
+    if (that.data.off !== true){
+      app.postData("GetShoppingData.ashx", {
+        action: 'Pay',
+        orderid: that.data.detailsdlist.OrderId,
+        username: that.data.coco.username,
+        usertel: that.data.coco.usertel,
+        address: that.data.site
+      }).then(res => {
+        wx.navigateTo({
+          url: '../payment/payment'
+        })
       })
-    })
+    }else{
+        wx.showToast({
+          title: '小主收货地址不能为空哦~',
+          icon: 'none',
+          duration: 2000
+        })
+    }
   },
 
 

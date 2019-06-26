@@ -92,7 +92,6 @@ Page({
       action: "GetAddressList",
       userid: app.globalData.userid
     }).then(res => {
-      console.log(res.Result)
       that.setData({
         list: res.Result,
         num: res.Result.length
