@@ -16,7 +16,7 @@
       <view class="dizhi_1">{{item.useraddress}}</view>
       <view class="footer">
         <view class="coco">
-          <radio bindtap='all' checked='{{c}}' bindtap='handDefault' data-index="{{index}}"></radio>
+          <radio bindtap='all' checked="{{item.isdefault}}" bindtap='handDefault' data-index="{{index}}"></radio>
         </view>
         <view class="left">设为默认地址</view>
         <view class="right">

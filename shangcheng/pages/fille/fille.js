@@ -2,7 +2,6 @@
 const app = getApp();
 var that;
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -13,7 +12,6 @@ Page({
     // customItem: '全部'
   },
   bindName(e) {
- 
     this.setData({
       name: e.detail.value
     })
@@ -24,6 +22,8 @@ Page({
       tel: e.detail.value
     })
   },
+
+  
   bindRegionChange: function(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
