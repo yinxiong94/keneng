@@ -29,9 +29,15 @@ Page({
       action: "GetAddressList",
       userid: app.globalData.userid
     }).then(res=>{
-      console.log(res)
-      that.setData({
-        coco:res.Result[0]
+      // console.log(res)
+      res.Result.forEach(item=>{
+        // console.log(item)
+        if (item.isdefault == 1){
+          console.log(item)
+          that.setData({
+            coco: item
+          })
+        }
       })
       var site =  [];
       site.push(res.Result[0].city)
@@ -39,7 +45,7 @@ Page({
       site.push(res.Result[0].region)
       site.push(res.Result[0].useraddress)
       site = site.join().replace(/,/g, "")
-      that.setData({
+      that.setData({ 
         site: site
       })
       // console.log(this.data.coco.length)
@@ -108,6 +114,7 @@ Page({
     })
   },
 
+
   handgm(options) {
     that = this
     if (options.id == 0) {
@@ -131,7 +138,6 @@ Page({
     })
     that.handgm(options)
     that.loadmore()
-    that.site()
   },
 
   /**
@@ -144,7 +150,10 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function(options) {},
+  onShow: function() {
+    console.log(this.data.backPageParam)
+    this.site()
+  },
 
   /**
    * 生命周期函数--监听页面隐藏

@@ -9,6 +9,7 @@ Page({
   data: {
     num: 0,
     list: []
+  
   },
   handResult: function() {
     wx.navigateTo({
@@ -55,29 +56,73 @@ Page({
   },
   handDefault: function(e) {
     that = this;
-    let addressid = that.data.list[e.currentTarget.dataset.index].addressid;
-    let city = that.data.list[e.currentTarget.dataset.index].city;
-    let username = that.data.list[e.currentTarget.dataset.index].username;
-    let usertel = that.data.list[e.currentTarget.dataset.index].usertel;
-    let region = that.data.list[e.currentTarget.dataset.index].region;
-    let useraddress = that.data.list[e.currentTarget.dataset.index].useraddress;
-    let province = that.data.list[e.currentTarget.dataset.index].province;
-    if(that.data.send == '0'){
-      return
-    }
-    wx.navigateTo({
-      url: '../order/order?id=' + addressid + '&city=' + city + '&username=' + username + '&usertel=' + usertel + '&region=' + region + '&useraddress=' + useraddress + '&province=' + province,
+    // let addressid = that.data.list[e.currentTarget.dataset.index].addressid;
+    // let city = that.data.list[e.currentTarget.dataset.index].city;
+    // let username = that.data.list[e.currentTarget.dataset.index].username;
+    // let usertel = that.data.list[e.currentTarget.dataset.index].usertel;
+    // let region = that.data.list[e.currentTarget.dataset.index].region;
+    // let useraddress = that.data.list[e.currentTarget.dataset.index].useraddress;
+    // let province = that.data.list[e.currentTarget.dataset.index].province;
+    // if(that.data.send == '0'){
+    //   return
+    // }
+    // 修改为默认地址
+    app.postData("GetShoppingData.ashx", {
+      action: "UpdateDefault",
+      addressid: that.data.list[e.currentTarget.dataset.index].addressid,
+      userid: app.globalData.userid
+    }).then(res => {
+      console.log(res)
+    })
+    that.scrl()
+    var pages = getCurrentPages();
+    var currPage = pages[pages.length - 1];   //当前页面
+    var prevPage = pages[pages.length - 2];  //上一个页面
+    //直接调用上一个页面对象的setData()方法，把数据存到上一个页面中去
+    prevPage.setData({
+      addressid : that.data.list[e.currentTarget.dataset.index].addressid,
+      city : that.data.list[e.currentTarget.dataset.index].city,
+      username : that.data.list[e.currentTarget.dataset.index].username,
+      usertel : that.data.list[e.currentTarget.dataset.index].usertel,
+      region : that.data.list[e.currentTarget.dataset.index].region,
+      useraddress : that.data.list[e.currentTarget.dataset.index].useraddress,
+      province : that.data.list[e.currentTarget.dataset.index].province
+    });
+    wx.navigateBack({
+      delta: 1
+    })
+    
+  
+    // wx.navigateTo({
+    //   url: '../order/order?id=' + addressid + '&city=' + city + '&username=' + username + '&usertel=' + usertel + '&region=' + region + '&useraddress=' + useraddress + '&province=' + province,
+    // })
+  },
+
+  // 获取地址
+  scrl(){
+    that = this;
+    app.postData("GetShoppingData.ashx", {
+      action: "GetAddressList",
+      userid: app.globalData.userid
+    }).then(res => {
+      console.log(res.Result)
+      that.setData({
+        list: res.Result,
+        num: res.Result.length
+      })
+
     })
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(options.send);
     that = this;
     that.setData({
       send: options.send
     })
+    that.scrl()
   },
 
   /**
@@ -91,18 +136,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function(options) {
-    that = this;
-    app.postData("GetShoppingData.ashx", {
-      action: "GetAddressList",
-      userid: app.globalData.userid
-    }).then(res => {
-      this.setData({
-        num: res.Result.length
-      })
-      this.setData({
-        list: res.Result
-      })
-    })
+   
   },
 
   /**
