@@ -11,16 +11,22 @@ Page({
     region: ['广东省', '广州市', '海珠区'],
     // customItem: '全部'
   },
+
+  // 收货人
   bindName(e) {
     this.setData({
       name: e.detail.value
     })
+    
   },
+
+  // 手机号码
   bindTel(e) {
-   
     this.setData({
       tel: e.detail.value
     })
+   
+
   },
 
   
@@ -29,10 +35,50 @@ Page({
     this.setData({
       region: e.detail.value
     })
+   
   },
+  
+
+  judge(){
+   
+  },
+
   handBtn: function() {
     that = this;
-    console.log(that.data.id);
+    if (that.data.name == undefined) {
+      wx.showToast({
+        title: '小主姓名不能为空哦~',
+        icon: "none",
+        duration: 2000
+      })
+      return
+    }
+    if (!(/^1[3-9]\d{9}$/).test(that.data.tel)) {
+      wx.showToast({
+        title: '小主手机号码不正确哦~',
+        icon: "none",
+        duration: 2000
+      })
+      return
+    }
+    if (that.data.region == undefined) {
+      wx.showToast({
+        title: '小主所在不能为空哦~',
+        icon: "none",
+        duration: 2000
+      })
+      return
+    }
+    if (that.data.address == undefined) {
+      wx.showToast({
+        title: '小主收货地址不能为空哦~',
+        icon: "none",
+        duration: 2000
+      })
+      return
+    }
+    // console.log(that.data.name )
+    // console.log(that.data.id);
     if (that.data.id == 'undefined') {
       app.postData("GetShoppingData.ashx", {
         action: "AddAress",
@@ -48,6 +94,38 @@ Page({
         console.log(res);
       })
     }else{
+      if (that.data.name == undefined) {
+        wx.showToast({
+          title: '小主姓名不能为空哦~',
+          icon: "none",
+          duration: 2000
+        })
+        return
+      }
+      if (!(/^1[3-9]\d{9}$/).test(that.data.tel)) {
+        wx.showToast({
+          title: '小主手机号码不正确哦~',
+          icon: "none",
+          duration: 2000
+        })
+        return
+      }
+      if (that.data.region == undefined) {
+        wx.showToast({
+          title: '小主所在不能为空哦~',
+          icon: "none",
+          duration: 2000
+        })
+        return
+      }
+      if (that.data.address == undefined) {
+        wx.showToast({
+          title: '小主收货地址不能为空哦~',
+          icon: "none",
+          duration: 2000
+        })
+        return
+      }
       app.postData("GetShoppingData.ashx", {
         action: "AddAress",
         userid: app.globalData.userid,
@@ -63,6 +141,7 @@ Page({
         console.log(res);
       })
     }
+
     wx.navigateBack({
       delta: 1
     })
@@ -73,6 +152,7 @@ Page({
     this.setData({
       address: e.detail.value
     })
+    
   },
   /**
    * 生命周期函数--监听页面加载
