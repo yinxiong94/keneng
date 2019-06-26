@@ -16,11 +16,10 @@ Page({
   },
 
   handDizhi: function() {
-    wx: wx.navigateTo({
+    wx.navigateTo({
       url: '../administration/administration'
     })
   },
-
   // 获取地址
   site() {
     that = this
@@ -53,6 +52,29 @@ Page({
       })
      
     })
+    console.log(that.data.detailsdlist);
+  },
+  handZhifu: function() {
+    that = this;
+    console.log(that.data.detailsdlist);
+    // let OrderId = that.data.detailsdlist.OrderId;
+    // let username = that.data.coco.username;
+    // let usertel = that.data.coco.usertel;
+    // let address = that.data.coco.province + that.data.coco.city + that.data.coco.region + that.data.coco.useraddress;
+    // app.postData("GetShoppingData.ashx", {
+    //   action: "Pay",
+    //   orderid: OrderId,
+    //   username: username,
+    //   usertel: usertel,
+    //   address: address
+    // }).then(res => {
+    //   console.log(res);
+    //   // if (res == '1') {
+    //   //   wx: wx.navigateTo({
+    //   //     url: '../payment/payment'
+    //   //   })
+    //   // }
+    // })
   },
 
   loadmore() {
@@ -75,13 +97,16 @@ Page({
           })
         })
       })
-
     } else {
       app.postData("GetShoppingData.ashx", {
         action: "Submit",
         userid: app.globalData.userid,
         shopppingid: that.data.shoppingid
       }).then(res => {
+        // wx.setStorageSync({
+        //   key: "item",
+        //   data: res.Result
+        // })
         that.setData({
           detailsdlist: res.Result
         })
@@ -108,7 +133,7 @@ Page({
 
 
   handgm(options) {
-    that = this
+    that = this;
     if (options.id == 0) {
       that.setData({
         sid: options.sid
@@ -131,6 +156,7 @@ Page({
     that.handgm(options)
     that.loadmore()
     that.site()
+
   },
 
   /**

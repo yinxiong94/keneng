@@ -121,6 +121,7 @@ page{
 }
 
  .list .describe {
+  height: 38rpx;
   font-size: 28rpx;
   font-family: PingFangSC;
   font-weight: 400;
