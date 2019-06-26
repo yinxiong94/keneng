@@ -28,7 +28,6 @@ Page({
       action: "GetAddressList",
       userid: app.globalData.userid
     }).then(res => {
-      console.log(res)
       if (res.Result.length==0){
         that.setData({
           off: true,
@@ -36,7 +35,6 @@ Page({
         })
       }
       res.Result.forEach(item => {
-        console.log(item)
         if (item.isdefault == 1) {
           that.setData({
             coco: item,
@@ -51,6 +49,11 @@ Page({
           site = site.join().replace(/,/g, "")
           that.setData({
             site : site
+          })
+        } else if (item.isdefault !== 1){
+          that.setData({
+            off: true,
+            ffo: false
           })
         }
           // console.log(item)
