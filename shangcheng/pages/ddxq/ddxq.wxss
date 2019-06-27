@@ -1,5 +1,8 @@
-.db {
+page {
   background-color: #efeff4;
+}
+
+.db {
   padding-bottom: 100rpx;
 }
 
@@ -513,11 +516,13 @@
   height: 60rpx;
   margin-top: 40rpx;
 }
-.package .package_a .jiantou{
+
+.package .package_a .jiantou {
   width: 21rpx;
   height: 21rpx;
   margin-top: 60rpx;
 }
+
 .package .package_a .right {
   margin-left: 30rpx;
   flex: 1;

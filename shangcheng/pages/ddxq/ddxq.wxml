@@ -9,24 +9,24 @@
     <view class="mian_a">
       <image src='/pages/img/dizhi2.png' lazy-load='true'></image>
       <view class="right">
-        <view class="name">麦兜啊
-          <text>15698324568</text>
+        <view class="name">{{list.TakeName}}
+          <text>{{list.Tel}}</text>
         </view>
-        <view class="dizhi">广东省深圳市南山区田厦金牛广场702</view>
+        <view class="dizhi">{{list.Address}}</view>
       </view>
     </view>
   </view>
   <view class="whole_item">
     <view class="whole">
-      <view class="t_2">
+      <view class="t_2" wx:for="{{list.detailsdlist}}" wx:key="index">
         <view class="t_2_list">
-          <image class='coco' src='/pages/img/yu.png' lazy-load='true'></image>
+          <image class='coco' src='{{item.goodspic}}' lazy-load='true'></image>
           <view class="right">
-            <view class="right_title">夏季新款反绒真皮裹带高跟鞋侧镂空宴会尖头细跟......</view>
+            <view class="right_title">{{item.goodsname}}</view>
             <view class="right_size">颜色分类：酒红色；尺码：36</view>
             <view class="right_footer">
-              <view class="left">￥299</view>
-              <view class="right">x1</view>
+              <view class="left">￥{{item.goodsprice}}</view>
+              <view class="right">x{{item.goodsnum}}</view>
             </view>
           </view>
         </view>
@@ -43,14 +43,14 @@
     <view class="freight_1">
       <text>实付款：</text>
       <view class="pirce">
-        <text>￥</text>299</view>
+        <text>￥</text>{{list.TotalPrice}}</view>
     </view>
   </view>
   <view class="xinxi">
     <view class="xinxi_title">订单信息</view>
-    <view class="ddh">订单号：2654246524989516913</view>
-    <view class="ddh">创建时间：2018-11-18 13:16</view>
-    <view class="ddh">成交时间：2018-11-18 13:16</view>
+    <view class="ddh">订单号：{{list.OrderNo}}</view>
+    <view class="ddh">创建时间：{{list.OrderDate}}</view>
+    <view class="ddh">成交时间：{{list.ZhiFuTime == null?'':'list.ZhiFuTime'}}</view>
     <view class="dh">
       <view class="dh_btn">联系卖家</view>
       <view class="dh_btn">拨打电话</view>
