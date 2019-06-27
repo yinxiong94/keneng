@@ -136,13 +136,13 @@ page{
 .footer .footer_2 {
   width: 305rpx;
   height: 98rpx;
-  background: rgba(238, 238, 238, 1);
+  background: #b7d05f;
   text-align: center;
   line-height: 98rpx;
   font-size: 32rpx;
   font-family: PingFangSC;
   font-weight: 400;
-  color: rgba(153, 153, 153, 1);
+  color: #fff;
 }
 
 .hhh {
