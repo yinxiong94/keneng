@@ -1,8 +1,5 @@
-page {
-  background-color: #efeff4;
-}
-
 .db {
+  background-color: #efeff4;
   padding-bottom: 100rpx;
 }
 
@@ -19,7 +16,7 @@ page {
 
 .top .wait {
   position: absolute;
-  top: 50rpx;
+  top: 72rpx;
   margin-left: 60rpx;
   height: 36rpx;
   font-size: 38rpx;
@@ -105,7 +102,7 @@ page {
 .whole_item .freight {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: 30rpx;
 }
 
 .whole_item .freight_1 {
@@ -516,13 +513,11 @@ page {
   height: 60rpx;
   margin-top: 40rpx;
 }
-
-.package .package_a .jiantou {
+.package .package_a .jiantou{
   width: 21rpx;
   height: 21rpx;
   margin-top: 60rpx;
 }
-
 .package .package_a .right {
   margin-left: 30rpx;
   flex: 1;
