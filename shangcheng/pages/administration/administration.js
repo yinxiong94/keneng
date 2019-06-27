@@ -65,25 +65,23 @@ Page({
     }).then(res => {
       console.log(res)
     })
-    that.scrl()
+    
+    
+  },
+  
+  // 返回
+  superior(e){
+    console.log(e.currentTarget.dataset.addressid)
     var pages = getCurrentPages();
     var currPage = pages[pages.length - 1];   //当前页面
     var prevPage = pages[pages.length - 2];  //上一个页面
     //直接调用上一个页面对象的setData()方法，把数据存到上一个页面中去
     prevPage.setData({
-      addressid : that.data.list[e.currentTarget.dataset.index].addressid,
-      city : that.data.list[e.currentTarget.dataset.index].city,
-      username : that.data.list[e.currentTarget.dataset.index].username,
-      usertel : that.data.list[e.currentTarget.dataset.index].usertel,
-      region : that.data.list[e.currentTarget.dataset.index].region,
-      useraddress : that.data.list[e.currentTarget.dataset.index].useraddress,
-      province : that.data.list[e.currentTarget.dataset.index].province
+      addressid: e.currentTarget.dataset.addressid,
     });
     wx.navigateBack({
       delta: 1
     })
-    
-
   },
 
   // 获取地址

@@ -9,7 +9,7 @@ Page({
   data: {
     menuTapCurrent:0,  //默认选择第1个
     list:[],
-    pagenum: 1, //初始页默认值为1
+    pagenum: 2, //初始页默认值为1
   },
 
   /**
@@ -38,23 +38,27 @@ Page({
       menuTapCurrent: e.currentTarget.dataset.current,
       typeid: e.currentTarget.dataset.typeid
     })
+    console.log(that.data.typeid)
     if (that.data.menuTapCurrent != 0) {
+      console.log(1)
       app.postData("GetGoodsData.ashx", {
         action: "GetGoodsList",
         typeid: that.data.typeid,
-        Pid: that.data.pagenum,
-        pagesize:4
+        Pid: 1,
+        pagesize: that.data.pagenum
       }).then(res => {
         that.setData({
          ListView:res.Result
         })
       })
     } else {
+      console.log(2)
       app.postData("GetGoodsData.ashx", {
         action: "GetGoodsList",
-        Pid: that.data.pagenum,
-        pagesize: 4
+        Pid: 1,
+        pagesize: that.data.pagenum
       }).then(res => {
+        console.log(res)
         that.setData({
           ListView: res.Result
         })
@@ -64,12 +68,13 @@ Page({
 
   refer() {
     that = this
+    console.log(that.data.typeid)
     if (that.data.menuTapCurrent!=0){
       app.postData("GetGoodsData.ashx", {
         action: "GetGoodsList",
         typeid: that.data.typeid,
-        Pid: that.data.pagenum,
-        pagesize: 4
+        Pid: 1,
+        pagesize: that.data.pagenum
       }).then(res => {
         that.setData({
           ListView: res.Result
@@ -78,9 +83,10 @@ Page({
     }else{
       app.postData("GetGoodsData.ashx", {
         action: "GetGoodsList",
-        Pid: that.data.pagenum,
-        pagesize: 4
+        Pid: 1,
+        pagesize: that.data.pagenum
       }).then(res => {
+        console.log(res)
         that.setData({
           ListView: res.Result
         })
@@ -128,11 +134,11 @@ Page({
    */
   onReachBottom: function () {
     var that = this;
-    var pagenum = that.data.pagenum + 1; //获取当前页数并+1
+    var pagenum = that.data.pagenum + 4; //获取当前页数并+1
     that.setData({
       pagenum: pagenum, //更新当前页数
     })
-    that.menuTap()
+    // that.menuTap()
   },
 
   /**

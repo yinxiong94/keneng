@@ -8,12 +8,15 @@
   <view class="mian" wx:if="{{num>0}}">
 
     <view class="from" wx:for="{{list}}" wx:key="{{index}}">
-      <view class="tel">
-        <text class="name">{{item.username}}</text>
-        <text class="tel_1">{{item.usertel}}</text>
+      <view bindtap='superior' data-addressid='{{item.addressid}}'>
+        <view class="tel">
+          <text class="name">{{item.username}}</text>
+          <text class="tel_1">{{item.usertel}}</text>
+        </view>
+        <view class="dizhi">{{item.province}}{{item.city}}{{item.region}}</view>
+        <view class="dizhi_1">{{item.useraddress}}</view>
       </view>
-      <view class="dizhi">{{item.province}}{{item.city}}{{item.region}}</view>
-      <view class="dizhi_1">{{item.useraddress}}</view>
+
       <view class="footer">
         <view class="coco">
           <radio bindtap='all' checked="{{item.isdefault}}" bindtap='handDefault' data-index="{{index}}"></radio>

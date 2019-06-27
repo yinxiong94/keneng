@@ -24,6 +24,7 @@ Page({
   // 获取地址
   site() {
     that = this
+    
     app.postData("GetShoppingData.ashx", {
       action: "GetAddressList",
       userid: app.globalData.userid
@@ -34,36 +35,45 @@ Page({
           ffo: false
         })
       }
-      res.Result.forEach(item => {
-        if (item.isdefault == 1) {
-          that.setData({
-            coco: item,
-            off:false,
-            ffo: true
-          })
-          var site = []
-          site.push(item.city)
-          site.push(item.province)
-          site.push(item.region)
-          site.push(item.useraddress)
-          site = site.join().replace(/,/g, "")
-          that.setData({
-            site : site
-          })
-        } else if (item.isdefault !== 1){
-          that.setData({
-            off: true,
-            ffo: false
-          })
-        }
-          // console.log(item)
-          // that.setData({
-          //   off: false,
-          //   ffo: true
-          // })
-        
-      })
-     
+      if (this.data.addressid == undefined ){
+        res.Result.forEach(item => {
+          if (item.isdefault == 1) {
+            that.setData({
+              coco: item,
+              off:false,
+              ffo: true
+            })
+            var site = []
+            site.push(item.city)
+            site.push(item.province)
+            site.push(item.region)
+            site.push(item.useraddress)
+            site = site.join().replace(/,/g, "")
+            that.setData({
+              site : site
+            })
+          }
+        })
+      }else{
+        res.Result.forEach(item => {
+          if (item.addressid == this.data.addressid) {
+            that.setData({
+              coco: item,
+              off: false,
+              ffo: true
+            })
+            var site = []
+            site.push(item.city)
+            site.push(item.province)
+            site.push(item.region)
+            site.push(item.useraddress)
+            site = site.join().replace(/,/g, "")
+            that.setData({
+              site: site
+            })
+          }
+        })
+      }
     })
   },
 
@@ -166,6 +176,8 @@ Page({
    */
   onShow: function() {
     this.site()
+
+    console.log(this.data.addressid)
   },
 
   /**

@@ -106,9 +106,9 @@ Page({
 
     if (a != 1) {
       app.postData("GetShoppingData.ashx", {
-        action: "AddShopping",
+        action: "DelGoods",
         goodsid: goodsid,
-        shoppingnum: that.data.count[d],
+        shoppingnum: 1,
         userid: app.globalData.userid,
         shoppingid: b
       }).then(res => {
@@ -116,6 +116,8 @@ Page({
       })
     }
   },
+
+
   // 加
   jia: function(e) {
     that = this;
@@ -140,7 +142,7 @@ Page({
     app.postData("GetShoppingData.ashx", {
       action: "AddShopping",
       goodsid: goodsid,
-      shoppingnum: that.data.count[d],
+      shoppingnum: 1,
       userid: app.globalData.userid,
       shoppingid: b
     }).then(res => {
