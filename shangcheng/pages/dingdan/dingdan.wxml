@@ -25,7 +25,7 @@
     <view class="ttc">亲，你还没有相关订单哦～</view>
   </view>
   <!-- 全部板块 -->
-  <view class="whole" wx:if="{{menuTapCurrent==-1}}" bindtap='handwait' wx:for="{{list}}" wx:key="index" data-index='{{index}}'>
+  <view class="whole" wx:if="{{menuTapCurrent==-1}}" catchtap='handwait' wx:for="{{list}}" wx:key="index" data-index='{{index}}'>
     <view class="t_1">{{item.OrderStatus}}</view>
     <view class="t_2" wx:for="{{item.detailsdlist}}" wx:for-item="list" wx:key="id">
       <view class="t_2_list">
@@ -51,26 +51,26 @@
       <text class="t_4_1">共{{item.ProductSumNum}}件商品  合计：</text>
     </view>
     <view class="t_5" wx:if="{{item.OrderStatus=='待付款'}}">
-      <view class="t_5_btn" bindtap='payment'>付款</view>
-      <view class="t_5_btn" bindtap='cancel'>取消订单</view>
+      <view class="t_5_btn" catchtap='payment'>付款</view>
+      <view class="t_5_btn" catchtap='abolish'   data-OrderId='{{item.OrderId}}'>取消订单</view>
     </view>
     <view class="t_5" wx:if="{{item.OrderStatus=='待收货'}}">
-      <view class="t_5_btn" bindtap='payment'>确认收货</view>
-      <view class="t_5_btn" bindtap='cancel'>查看物流</view>
+      <view class="t_5_btn" catchtap='payment'>确认收货</view>
+      <view class="t_5_btn" catchtap='cancel'>查看物流</view>
     </view>
     <view class="t_5" wx:if="{{item.OrderStatus=='已收货'}}">
-      <view class="t_5_btn" bindtap='handPinjia'>评价</view>
-      <view class="t_5_btn" bindtap='payment'>确认收货</view>
+      <view class="t_5_btn" catchtap='handPinjia'>评价</view>
+      <view class="t_5_btn" catchtap='payment'>确认收货</view>
     </view>
     <view class="t_5" wx:if="{{item.OrderStatus=='待退货'}}">
-      <view class="t_5_btn" bindtap='payment'>退款</view>
+      <view class="t_5_btn" catchtap='payment'>退款</view>
     </view>
     <view class="t_5" wx:if="{{item.OrderStatus=='已退货'}}">
-      <view class="t_5_btn" bindtap='handPinjia'>评价</view>
+      <view class="t_5_btn" catchtap='handPinjia'>评价</view>
     </view>
   </view>
   <!--  待付款 -->
-  <view class="whole" wx:if="{{menuTapCurrent==0}}" bindtap='handwait' wx:for="{{list}}" wx:key="index" data-index='{{index}}'>
+  <view class="whole" wx:if="{{menuTapCurrent==0}}"  wx:for="{{list}}" wx:key="index" data-index='{{index}}'>
     <view class="t_1">{{item.OrderStatus}}</view>
     <view class="t_2" wx:for="{{item.detailsdlist}}" wx:for-item="list" wx:key="id">
       <view class="t_2_list">
@@ -96,13 +96,13 @@
       <text class="t_4_1">共{{item.ProductSumNum}}件商品  合计：</text>
     </view>
     <view class="t_5">
-      <view class="t_5_btn" bindtap='payment'>付款</view>
-      <view class="t_5_btn" bindtap='cancel'>取消订单</view>
+      <view class="t_5_btn" catchtap='payment'>付款</view>
+      <view class="t_5_btn" catchtap='abolish'>取消订单</view>
     </view>
 
   </view>
   <!--  待发货 -->
-  <view class="whole" wx:if="{{menuTapCurrent==1}}" bindtap='handwait' wx:for="{{list}}" wx:key="index" data-index='{{index}}'>
+  <view class="whole" wx:if="{{menuTapCurrent==1}}" catchtap='handwait' wx:for="{{list}}" wx:key="index" data-index='{{index}}'>
     <view class="t_1">{{item.OrderStatus}}</view>
     <view class="t_2" wx:for="{{item.detailsdlist}}" wx:for-item="list" wx:key="id">
       <view class="t_2_list">
@@ -128,12 +128,12 @@
       <text class="t_4_1">共{{item.ProductSumNum}}件商品  合计：</text>
     </view>
     <view class="t_5">
-      <view class="t_5_btn" bindtap='payment'>确认收货</view>
-      <view class="t_5_btn" bindtap='cancel'>查看物流</view>
+      <view class="t_5_btn" catchtap='payment'>确认收货</view>
+      <view class="t_5_btn" catchtap='cancel'>查看物流</view>
     </view>
   </view>
   <!-- 已收货 -->
-  <view class="whole" wx:if="{{menuTapCurrent==2}}" bindtap='handwait' wx:for="{{list}}" wx:key="index" data-index='{{index}}'>
+  <view class="whole" wx:if="{{menuTapCurrent==2}}" catchtap='handwait' wx:for="{{list}}" wx:key="index" data-index='{{index}}'>
     <view class="t_1">{{item.OrderStatus}}</view>
     <view class="t_2" wx:for="{{item.detailsdlist}}" wx:for-item="list" wx:key="id">
       <view class="t_2_list">
@@ -159,12 +159,12 @@
       <text class="t_4_1">共{{item.ProductSumNum}}件商品  合计：</text>
     </view>
     <view class="t_5">
-      <view class="t_5_btn" bindtap='handPinjia'>评价</view>
-      <view class="t_5_btn" bindtap='payment'>确认收货</view>
+      <view class="t_5_btn" catchtap='handPinjia'>评价</view>
+      <view class="t_5_btn" catchtap='payment'>确认收货</view>
     </view>
   </view>
   <!--  待退货 -->
-  <view class="whole" wx:if="{{menuTapCurrent==3}}" bindtap='handwait' wx:for="{{list}}" wx:key="index" data-index='{{index}}'>
+  <view class="whole" wx:if="{{menuTapCurrent==3}}" catchtap='handwait' wx:for="{{list}}" wx:key="index" data-index='{{index}}'>
     <view class="t_1">{{item.OrderStatus}}</view>
     <view class="t_2" wx:for="{{item.detailsdlist}}" wx:for-item="list" wx:key="id">
       <view class="t_2_list">
@@ -190,11 +190,11 @@
       <text class="t_4_1">共{{item.ProductSumNum}}件商品  合计：</text>
     </view>
     <view class="t_5">
-      <view class="t_5_btn" bindtap='payment'>退款</view>
+      <view class="t_5_btn" catchtap='payment'>退款</view>
     </view>
   </view>
   <!--  售后 -->
-  <view class="whole" wx:if="{{menuTapCurrent==4}}" bindtap='handwait' wx:for="{{list}}" wx:key="index" data-index='{{index}}'>
+  <view class="whole" wx:if="{{menuTapCurrent==4}}" catchtap='handwait' wx:for="{{list}}" wx:key="index" data-index='{{index}}'>
     <view class="t_1">{{item.OrderStatus}}</view>
     <view class="t_2" wx:for="{{item.detailsdlist}}" wx:for-item="list" wx:key="id">
       <view class="t_2_list">
@@ -220,7 +220,7 @@
       <text class="t_4_1">共{{item.ProductSumNum}}件商品  合计：</text>
     </view>
     <view class="t_5">
-      <view class="t_5_btn" bindtap='handPinjia'>评价</view>
+      <view class="t_5_btn" catchtap='handPinjia'>评价</view>
     </view>
   </view>
 </view>

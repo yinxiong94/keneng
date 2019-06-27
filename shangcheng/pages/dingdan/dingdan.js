@@ -34,6 +34,16 @@ Page({
       })
       console.log(that.data.foo)
     }
+    
+
+    that.setData({
+      menuTapCurrent: e.currentTarget.dataset.current
+    })
+    
+  },
+
+  // beg
+  beg(){
     app.postData("GetOrderData.ashx", {
       action: "GetUserOrders",
       userid: app.globalData.userid,
@@ -43,25 +53,18 @@ Page({
     }).then(res => {
       console.log(res);
       that.setData({
-        list:res.Result
+        list: res.Result
       })
-      if (res.Result.length == 0){
+      if (res.Result.length == 0) {
         that.setData({
-          off:false
+          off: false
         })
-      }else{
+      } else {
         off: true
       }
     })
-
-    that.setData({
-      menuTapCurrent: e.currentTarget.dataset.current
-    })
-    
   },
-
-
- 
+  
 
   handPinjia:function(){
     wx.navigateTo({
@@ -92,13 +95,38 @@ Page({
       url: '../ddxq/ddxq?id=' + orderid,
     })
   },
+
+
+  // 取消订单
+  abolish(e){
+    that = this 
+    console.log(e)
+    var orderid = e.currentTarget.dataset.orderid
+    wx.showModal({
+      title: '取消订单',
+      content: '您确认取消订单吗？',
+      success(res) {
+        if (res.confirm) {
+          app.postData("GetOrderData.ashx",{
+            action: "Cancel",
+            orderid: orderid
+          }).then(res=>{
+            console.log(res)
+            that.beg()
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
 
   onLoad: function(options) {
     that=this;
-    that.menuTap();
+    that.beg();
     this.setData({
       menuTapCurrent: options.id,
 
@@ -155,7 +183,7 @@ Page({
     that.setData({
       psize: pagenum, //更新当前页数
     })
-   
+    // that.menuTap()
   },
 
   /**
