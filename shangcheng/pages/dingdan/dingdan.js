@@ -33,7 +33,25 @@ Page({
         foo: w,
       })
     }
+    that.beg();
   },
+
+  // beg
+  beg(){
+    app.postData("GetOrderData.ashx", {
+      action: "GetUserOrders",
+      userid: app.globalData.userid,
+      pid: that.data.pageNum,
+      psize: that.data.psize,
+      status: that.data.status
+    }).then(res => {
+      that.setData({
+        list: res.Result
+      })
+    })
+  },
+  
+
   handPinjia:function(){
     wx.navigateTo({
       url: '../publish/publish',
@@ -93,7 +111,7 @@ Page({
 
   onLoad: function(options) {
     that=this;
-    // that.beg();
+    console.log(options);
     if (options.off == 'false'){
       that.menuTap();
     }else{
@@ -103,8 +121,6 @@ Page({
       })
       that.menuTap();
     }
-    
-  
   },
 
   /**
@@ -120,10 +136,6 @@ Page({
 
   onShow: function () {
     that = this
-    that.setData({
-      menuTapCurrent: -1,
-    })
-
   },
 
   /**
