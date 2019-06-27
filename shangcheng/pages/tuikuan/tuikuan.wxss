@@ -249,5 +249,5 @@ page {
 .ui_uploader_item_icon{
     position: absolute;
     left: 154rpx;
-    top: 48rpx;
+    top: 41rpx;
 }

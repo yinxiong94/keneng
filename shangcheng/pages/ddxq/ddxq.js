@@ -7,7 +7,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    off:false
+    off:false,
+    images: [],
+    ContentValue: "",
+    showUpload: true
+
   },
   payment:function(){
     console.log("付款按钮被点击了")
