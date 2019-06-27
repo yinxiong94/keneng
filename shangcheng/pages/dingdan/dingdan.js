@@ -1,6 +1,6 @@
 // pages/dingdan/dingdan.js
-const app = getApp();
-var that;
+const app = getApp()
+var that
 Page({
 
   /**
@@ -14,8 +14,10 @@ Page({
     status: -1,
     list:[],
     foo:1
-
   },
+
+   // 获取用户订单信息
+ 
   // 选项卡
   menuTap: function(e) {
     that = this;
@@ -31,19 +33,8 @@ Page({
         foo: w,
       })
     }
-    app.postData("GetOrderData.ashx", {
-      action: "GetUserOrders",
-      userid: app.globalData.userid,
-      pid: that.data.pageNum,
-      psize: that.data.psize,
-      status: that.data.status
-    }).then(res => {
-      that.setData({
-        list:res.Result
-      })
-    })
   },
-  handPinjia: function() {
+  handPinjia:function(){
     wx.navigateTo({
       url: '../publish/publish',
     })
@@ -71,12 +62,38 @@ Page({
       url: '../ddxq/ddxq?id=' + orderid,
     })
   },
+
+
+  // 取消订单
+  abolish(e){
+    that = this 
+    console.log(e)
+    var orderid = e.currentTarget.dataset.orderid
+    wx.showModal({
+      title: '取消订单',
+      content: '您确认取消订单吗？',
+      success(res) {
+        if (res.confirm) {
+          app.postData("GetOrderData.ashx",{
+            action: "Cancel",
+            orderid: orderid
+          }).then(res=>{
+            console.log(res)
+            that.beg()
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
+
   onLoad: function(options) {
     that=this;
-    console.log(options);
+    // that.beg();
     if (options.off == 'false'){
       that.menuTap();
     }else{
@@ -87,6 +104,7 @@ Page({
       that.menuTap();
     }
     
+  
   },
 
   /**
@@ -99,8 +117,12 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
-    that = this;
+
+  onShow: function () {
+    that = this
+    that.setData({
+      menuTapCurrent: -1,
+    })
 
   },
 
@@ -129,7 +151,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-
+    var that = this;
+    var pagenum = that.data.pagenum + 4; //获取当前页数并+4
+    that.setData({
+      psize: pagenum, //更新当前页数
+    })
+    // that.menuTap()
   },
 
   /**
