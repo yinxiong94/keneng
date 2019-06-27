@@ -22,15 +22,14 @@ Page({
     if (that.data.foo > 1){
       let index = e.currentTarget.dataset.current;
       that.setData({
-        status: index
+        status: index,
+        menuTapCurrent: index
       })
     }else{
       let w = that.data.foo + 1
-      console.log(w)
       that.setData({
-        foo: w
+        foo: w,
       })
-      console.log(that.data.foo)
     }
     app.postData("GetOrderData.ashx", {
       action: "GetUserOrders",
@@ -39,13 +38,9 @@ Page({
       psize: that.data.psize,
       status: that.data.status
     }).then(res => {
-      console.log(res);
       that.setData({
         list:res.Result
       })
-    })
-    that.setData({
-      menuTapCurrent: e.currentTarget.dataset.current
     })
   },
   handPinjia: function() {
@@ -72,7 +67,6 @@ Page({
     that= this;
     let index = e.currentTarget.dataset.index;
     let orderid = that.data.list[index].OrderId;
-    console.log(orderid);
     wx.navigateTo({
       url: '../ddxq/ddxq?id=' + orderid,
     })
@@ -82,10 +76,17 @@ Page({
    */
   onLoad: function(options) {
     that=this;
-    that.menuTap();
-    this.setData({
-      menuTapCurrent: options.id,
-    })
+    console.log(options);
+    if (options.off == 'false'){
+      that.menuTap();
+    }else{
+      that.setData({
+        menuTapCurrent: options.id,
+        status: options.id
+      })
+      that.menuTap();
+    }
+    
   },
 
   /**
