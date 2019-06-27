@@ -108,6 +108,16 @@ page {
   margin-top: 70rpx;
 }
 
+.item image {
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.item {
+  display: flex;
+  padding-top: 65rpx;
+  margin-right: 20rpx;
+}
 .flutter .zp {
   display: flex;
   justify-content: space-between;

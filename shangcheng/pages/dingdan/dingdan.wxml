@@ -60,7 +60,6 @@
     </view>
     <view class="t_5" wx:if="{{item.OrderStatus=='已收货'}}">
       <view class="t_5_btn" catchtap='handPinjia'>评价</view>
-      <view class="t_5_btn" catchtap='payment'>确认收货</view>
     </view>
     <view class="t_5" wx:if="{{item.OrderStatus=='待退货'}}">
       <view class="t_5_btn" catchtap='refund'  data-OrderId='{{item.OrderId}}'>退款</view>
@@ -70,7 +69,7 @@
     </view>
   </view>
   <!--  待付款 -->
-  <view class="whole" wx:if="{{menuTapCurrent==0}}"  wx:for="{{list}}" wx:key="index" data-index='{{index}}'>
+  <view class="whole" wx:if="{{menuTapCurrent==0}}"  wx:for="{{list}}" wx:key="index" data-index='{{index}}' catchtap='handwait'>
     <view class="t_1">{{item.OrderStatus}}</view>
     <view class="t_2" wx:for="{{item.detailsdlist}}" wx:for-item="list" wx:key="id">
       <view class="t_2_list">
@@ -160,7 +159,6 @@
     </view>
     <view class="t_5">
       <view class="t_5_btn" catchtap='handPinjia'>评价</view>
-      <view class="t_5_btn" catchtap='payment'>确认收货</view>
     </view>
   </view>
   <!--  待退货 -->
