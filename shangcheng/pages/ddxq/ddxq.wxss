@@ -19,7 +19,8 @@ page {
 
 .top .wait {
   position: absolute;
-  top: 50rpx;
+  top: 50%;
+  transform: translateY(-50%);
   margin-left: 60rpx;
   height: 36rpx;
   font-size: 38rpx;
