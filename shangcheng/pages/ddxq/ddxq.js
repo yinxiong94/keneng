@@ -9,7 +9,10 @@ Page({
   data: {
     off: false,
     orderStatus: 0,
-    liste: []
+    liste: [],
+    images: [],
+    ContentValue: "",
+    showUpload: true
   },
   payment: function() {
     console.log("付款按钮被点击了")

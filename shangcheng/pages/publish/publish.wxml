@@ -12,12 +12,19 @@
 <view class="mian">
   <textarea placeholder='宝贝满足你的期待吗？说说你的使用心得，分享给想买的他们吧'></textarea>
   <view class="image">
-    <view class="list">
-      <image class="img1" src='/pages/img/img1.png' lazy-load='true'></image>
-      <image class="del" src='/pages/img/del.png' lazy-load='true'></image>
-    </view>
-    <view class="list">
-      <image class="img1" src='/pages/img/tianjia.png' lazy-load='true'></image>
+   <view class='flutter'>
+        <view class="zp" wx:for="{{images}}" wx:key="index">
+          <view class="zp_1_1">
+              <icon class='ui_uploader_item_icon' bindtap='clearImg' data-index="{{index}}" type="clear" size="20" color="red"/>
+              <image src='{{item}}' bindtap='showImg'  data-index="{{index}}"></image>
+          </view>
+        </view>
+        <view class="zp" catchtap='chooseImage' wx:if="{{showUpload}}">
+          <view class="zp_1">
+          <image src='/pages/img/xj.png'></image>
+          <view class="tj">添加图片</view>
+          </view>
+        </view>
     </view>
   </view>
 </view>

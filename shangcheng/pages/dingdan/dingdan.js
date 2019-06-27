@@ -34,6 +34,9 @@ Page({
       })
     }
     that.beg();
+    that.setData({
+      menuTapCurrent: e.currentTarget.dataset.current
+    })
   },
 
   // beg
@@ -57,11 +60,7 @@ Page({
       url: '../publish/publish',
     })
   },
-  payment: function() {
-    wx.navigateTo({
-      url: '../tuikuan/tuikuan',
-    })
-  },
+ 
   handCheng: function() {
     wx.navigateTo({
       url: '../After/After',
@@ -81,8 +80,14 @@ Page({
       url: '../ddxq/ddxq?id=' + orderid,
     })
   },
-
-
+  // 退款
+  refund(e){
+    console.log(e.currentTarget.dataset.orderid)
+    var orderid = e.currentTarget.dataset.orderid
+    wx.navigateTo({
+      url: '../tuikuan/tuikuan?orderid=' + orderid,
+    })
+  },
   // 取消订单
   abolish(e){
     that = this 
@@ -97,8 +102,10 @@ Page({
             action: "Cancel",
             orderid: orderid
           }).then(res=>{
-            console.log(res)
-            that.beg()
+            if (res.Result>0){
+              console.log(res)
+              that.beg()
+            }
           })
         } else if (res.cancel) {
           console.log('用户点击取消')
@@ -169,7 +176,7 @@ Page({
     that.setData({
       psize: pagenum, //更新当前页数
     })
-    // that.menuTap()
+    // that.beg()
   },
 
   /**
