@@ -25,7 +25,6 @@ Page({
     })
   },
   bindRegionChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       region: e.detail.value
     })
@@ -33,7 +32,7 @@ Page({
   handBtn: function() {
     that = this;
     console.log(that.data.id);
-    if (that.data.id.length < 0) {
+    if (that.data.id.length <0) {
       app.postData("GetShoppingData.ashx", {
         action: "AddAress",
         userid: app.globalData.userid,
@@ -79,7 +78,6 @@ Page({
    */
   onLoad: function(options) {
     that = this;
-    console.log(options);
     let item = [];
     if (options.id.length > 0) {
       item.push(options.province);

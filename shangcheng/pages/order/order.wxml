@@ -1,6 +1,6 @@
 <!-- 填写订单 -->
 <view class="db">
-  <view class="top">
+  <view class="top" bindtap='handDizhi'>
     <image class="dizhi" src='/pages/img/tx.png' lazy-load='true'></image>
     <view class="right" wx:if="{{off==1}}">
       <view class="right_1">
@@ -9,7 +9,7 @@
       <view class="right_3"> {{coco.province}}{{coco.city}}{{coco.region}}</view>
     </view>
     <view class="right_111" wx:if="{{off==0}}" bindtap='handDizhi'>选择收货地址</view>
-    <image wx:if="{{off==1}}" class="jian" src='/pages/img/right11.png' lazy-load='true' bindtap='handDizhi'></image>
+    <image wx:if="{{off==1}}" class="jian" src='/pages/img/right11.png' lazy-load='true' ></image>
   </view>
   <view class="order">
     <view class="item">
