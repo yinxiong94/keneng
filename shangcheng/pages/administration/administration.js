@@ -54,6 +54,7 @@ Page({
     }
     // console.log(that.data.list);
   },
+
   handDefault: function(e) {
     that = this;
     // 修改为默认地址

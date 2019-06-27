@@ -1,6 +1,6 @@
 <!-- 填写订单 -->
 <view class="db">
-  <view class="top" bindtap='handDizhi'>
+  <view class="top">
     <image class="dizhi" src='/pages/img/tx.png' lazy-load='true'></image>
     <view class="right" wx:if="{{ffo}}">
       <view class="right_1">

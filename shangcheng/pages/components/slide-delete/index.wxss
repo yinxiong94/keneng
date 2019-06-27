@@ -23,8 +23,6 @@
   right: 0;
 }
 
-
-
 .wrap .action {
   display: flex;
   width: 120rpx;

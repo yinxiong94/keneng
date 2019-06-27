@@ -13,18 +13,6 @@
       <image src='/pages/img/tel.png' lazy-load='true'></image>
       <view class="right">18765255140</view>
     </view>
-    <view class="kimi">
-    <text>请选择份数  30kg/份</text>
-      <view class="calculation">
-        <view class="left" bindtap='jian' data-id="{{index}}">
-          <image src='/pages/img/jian.png' lazy-load='true' class="jian"></image>
-        </view>
-        <view class="conter">1</view>
-        <view class="left" bindtap='jia'>
-          <image src='/pages/img/jia1.png' lazy-load='true' class="jia"></image>
-        </view>
-      </view>
-    </view>
     <view class="remaining">剩余
       <text>11</text>次送米</view>
   </view>
