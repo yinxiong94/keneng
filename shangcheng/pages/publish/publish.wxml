@@ -2,12 +2,11 @@
   <image class="tx" src='/pages/img/img1.png'></image>
   <view class="right">
     <text class="pin">商品评价</text>
-    <image class="xing" src='/pages/img/xing11.png'></image>
-    <image class="xing" src='/pages/img/xing11.png'></image>
-    <image class="xing" src='/pages/img/xing11.png'></image>
-    <image class="xing" src='/pages/img/xing11.png'></image>
-    <image class="xing" src='/pages/img/kxing.png'></image>
-    <text class="pin1">4</text>
+    <view class="item">
+      <image bindtap='starClick' src='{{item.lightImg}}' lazy-load='true' wx:for="{{stars}}" data-index='{{index}}' wx:key="index" wx:if="{{item.flag==1}}"></image>
+      <image bindtap='starClick' src='{{item.blackImg}}' lazy-load='true' data-index='{{index}}' wx:for="{{stars}}" wx:key="index" wx:if="{{item.flag==2}}"></image>
+    </view>
+    <text class="pin1">{{score}}</text>
   </view>
 </view>
 <view class="mian">

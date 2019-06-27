@@ -73,6 +73,7 @@ Page({
     })
   },
   handwait: function(e) {
+    console.log(1111);
     that= this;
     let index = e.currentTarget.dataset.index;
     let orderid = that.data.list[index].OrderId;
