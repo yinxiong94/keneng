@@ -11,25 +11,96 @@ Page({
     detailsdlist: [],
     sid: "",
     sum: 0, //商品总金额
-    off: 0
+    off: true,
+    ffo: false
   },
 
-  handDizhi: function () {
+  handDizhi: function() {
     wx: wx.navigateTo({
       url: '../administration/administration'
     })
   },
 
-  handZhifu: function () {
-    wx: wx.navigateTo({
-      url: '../payment/payment'
+  // 获取地址
+  site() {
+    that = this
+    app.postData("GetShoppingData.ashx", {
+      action: "GetAddressList",
+      userid: app.globalData.userid
+    }).then(res => {
+      if (res.Result.length==0){
+        that.setData({
+          off: true,
+          ffo: false
+        })
+      }
+      res.Result.forEach(item => {
+        if (item.isdefault == 1) {
+          that.setData({
+            coco: item,
+            off:false,
+            ffo: true
+          })
+          console.log(that.data.coco)
+          if (this.data.coco.length == 0) {
+            that.setData({
+              off: true,
+              ffo: false
+            })
+          } else {
+            that.setData({
+              off: false,
+              ffo: true
+            })
+          }
+          var site = []
+          site.push(item.city)
+          site.push(item.province)
+          site.push(item.region)
+          site.push(item.useraddress)
+          site = site.join().replace(/,/g, "")
+          that.setData({
+            site : site
+          })
+        } else if (item.isdefault !== 1){
+          that.setData({
+            off: true,
+            ffo: false
+          })
+        }
+          // console.log(item)
+          // that.setData({
+          //   off: false,
+          //   ffo: true
+          // })
+        
+      })
     })
   },
 
-  // 购物车
+//商品详情和价格
   loadmore() {
     that = this
-    if (that.data.shoppingid !== undefined) {
+    if (that.data.id == "0") {
+      app.postData("GetShoppingData.ashx", {
+        action: "Submit",
+        userid: app.globalData.userid,
+        goodsid: that.data.sid
+      }).then(res => {
+        that.setData({
+          detailsdlist: res.Result
+        })
+        that.data.detailsdlist.detailsdlist.forEach(item => {
+          let goodsprice = item.goodsprice
+          let goodsnum = item.goodsnum
+          let sum = goodsprice * goodsnum
+          that.setData({
+            sum: sum
+          })
+        })
+      })
+
+    } else {
       app.postData("GetShoppingData.ashx", {
         action: "Submit",
         userid: app.globalData.userid,
@@ -40,107 +111,105 @@ Page({
         })
       })
     }
-    that.handjj()
   },
 
 
-
-  // 立即购买
-  handgm() {
+  // 提交订单
+  submit() {
     that = this
-    app.postData("GetShoppingData.ashx", {
-      action: "Submit",
-      userid: app.globalData.userid,
-      goodsid: that.data.sid
-    }).then(res => {
-      that.setData({
-        detailsdlist: res.Result
+    if (that.data.off !== true){
+      app.postData("GetShoppingData.ashx", {
+        action: 'Pay',
+        orderid: that.data.detailsdlist.OrderId,
+        username: that.data.coco.username,
+        usertel: that.data.coco.usertel,
+        address: that.data.site
+      }).then(res => {
+        wx.navigateTo({
+          url: '../payment/payment'
+        })
       })
-    })
-    that.handjj()
+    }else{
+        wx.showToast({
+          title: '小主收货地址不能为空哦~',
+          icon: 'none',
+          duration: 2000
+        })
+    }
   },
 
-  // 购物车金额计算
-  handjj() {
+
+  handgm(options) {
     that = this
-    // that.setData({
-    //   sum: that.data.detailsdlist.detailsdlist.goodsprice * that.data.detailsdlist.detailsdlist.goodnum
-    // })
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    that = this;
-    that.setData({ shoppingid: options.ddd, sid: options.sid })
-    that.loadmore()
-    that.handgm()
-    console.log(options);
-    if (options.id.length == 0) {
+    if (options.id == 0) {
       that.setData({
-        off: 0
+        sid: options.sid
       })
     } else {
       that.setData({
-        off: 1
-      })
-      that.setData({
-        coco: options
+        shoppingid: options.ddd
       })
     }
-    // app.postData("GetShoppingData.ashx", {
-    //   action: "AddAress",
-    //   addressid: that.data.addressid
-    // }).then(res => {
-    //   console.log(res)
-    // })
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {
+    that = this;
+    that.setData({
+      id: options.id
+    })
+    that.handgm(options)
+    that.loadmore()
+    that.site()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function (options) {
+  onShow: function() {
+    this.site()
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
+  onHide: function() {
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-
+  onPullDownRefresh: function() {
+    
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

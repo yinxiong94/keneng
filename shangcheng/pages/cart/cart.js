@@ -49,35 +49,35 @@ Page({
   },
   // 选中所有
   all: function() {
-    this.data.b += 1;
-    if (this.data.b % 2 != 0) {
-      var a = 0;
-      for (var i = 0; i < this.data.shoplist.Result.shoplist.length; i++) {
+      this.data.b += 1;
+      if (this.data.b % 2 != 0) {
+        var a = 0;
+        for (var i = 0; i < this.data.shoplist.Result.shoplist.length; i++) {
+          this.setData({
+            ['checked[' + i + ']']: true,
+            ['ind[' + i + ']']: 1
+          })
+          a += this.data.shoplist.Result.shoplist[i].price * this.data.count[i]
+        }
         this.setData({
-          ['checked[' + i + ']']: true,
-          ['ind[' + i + ']']: 1
+          productPrice: a,
+          c: true,
+          d: this.data.shoplist.Result.shoplist.length
         })
-        a += this.data.shoplist.Result.shoplist[i].price * this.data.count[i]
-      }
-      this.setData({
-        productPrice: a,
-        c: true,
-        d: this.data.shoplist.Result.shoplist.length
-      })
-    } else {
-      for (var i = 0; i < this.data.shoplist.Result.shoplist.length; i++) {
+      } else {
+        for (var i = 0; i < this.data.shoplist.Result.shoplist.length; i++) {
+          this.setData({
+            ['checked[' + i + ']']: false,
+            ['ind[' + i + ']']: 0
+          })
+        }
         this.setData({
-          ['checked[' + i + ']']: false,
-          ['ind[' + i + ']']: 0
+          productPrice: 0,
+          c: false,
+          ind: [],
+          d: 0
         })
       }
-      this.setData({
-        productPrice: 0,
-        c: false,
-        ind: [],
-        d: 0
-      })
-    }
   },
   // 减
   jian: function(e) {
@@ -224,9 +224,12 @@ Page({
           }else{
             that.setData({
               show: true,
+              shoplist: "", 
+              productPrice: 0, 
+              c: false, 
+              d: 0
             })
           }
-
         })
   },
   /**

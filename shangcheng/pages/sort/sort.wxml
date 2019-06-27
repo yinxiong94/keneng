@@ -8,38 +8,33 @@
       <view class='cont1'>
           <view class='cont1_title'>
             <view>
-              <text class="menu1 {{menuTapCurrent==0?'borders':''}}" data-current="0" catchtap="menuTap">全部</text>
+              <text class="menu1 {{menuTapCurrent==0?'borders':''}}" data-current="0" catchtap="menuTap" >全部</text>
               <view class="{{menuTapCurrent==0?'icon':''}}" wx:if="{{menuTapCurrent==0}}"></view>
             </view>
-            <view>
-              <text class="menu1 {{menuTapCurrent==1?'borders':''}}" data-current="1" catchtap="menuTap">粮油</text>
-              <view class="{{menuTapCurrent==1?'icon':''}}" wx:if="{{menuTapCurrent==1}}"></view>
+            <view wx:for="{{list}}" wx:key="index">
+              <text class="menu1 {{menuTapCurrent==index+1?'borders':''}}" data-current="{{index+1}}"  data-typeid="{{item.typeid}}" catchtap="menuTap">{{item.typename}}</text>
+              <view class="{{menuTapCurrent==index+1?'icon':''}}" wx:if="{{menuTapCurrent==index+1}}"></view>
             </view>
-            <view>
-              <text class="menu1 {{menuTapCurrent==2?'borders':''}}" data-current="2" catchtap="menuTap">蛋类</text>
-              <view class="{{menuTapCurrent==2?'icon':''}}" wx:if="{{menuTapCurrent==2}}"></view>
-            </view>
-            <view>
-              <text class="menu1 {{menuTapCurrent==3?'borders':''}}" data-current="3" catchtap="menuTap">家禽</text>
-              <view class="{{menuTapCurrent==3?'icon':''}}" wx:if="{{menuTapCurrent==3}}"></view>
-            </view>
+            
           </view>
-          <view class='cont1_top'  wx:if="{{menuTapCurrent==0}}" >
-            <view class="list" wx:for="{{4}}" wx:key="index">
-                  <image lazy-load='true' src='/pages/img/yu.png'></image>
-                  <view class="describe">支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉</view>
+
+
+          <view class='cont1_top'>
+            <view class="list" wx:for="{{ListView}}" wx:key="index" bindtap='handDetails' data-goodsid='{{item.goodsid}}'>
+                  <image lazy-load='true' src='{{item.pic}}'></image>
+                  <view class="describe">{{item.goodsname}}</view>
                   <view class="pirce">
                     <view class="left">
                       <view class="text_11">￥
-                        <text>299</text>
+                        <text>{{item.price}}</text>
                       </view>
-                      <view class="text_22">218人付款</view>
+                      <view class="text_22">{{item.salesnum}}人付款</view>
                     </view>
                     <view class="right">...</view>
                   </view>
             </view>
           </view>
-           <view class='cont1_top' wx:elif="{{menuTapCurrent==1}}">
+           <!-- <view class='cont1_top' wx:elif="{{menuTapCurrent==1}}">
             <view class="list" wx:for="{{7}}" wx:key="index">
                   <image lazy-load='true' src='/pages/img/yu.png'></image>
                   <view class="describe">支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉</view>
@@ -83,7 +78,6 @@
                     <view class="right">...</view>
                   </view>
             </view>
-          </view>
-
+          </view> -->
       </view>
 </view>

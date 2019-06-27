@@ -31,7 +31,7 @@
 .cont_name text{
   color: #999999;
   padding-left: 20rpx;
-  padding-right: 100rpx;
+  padding-right: 80rpx;
  
 }
 .cont_name_top{

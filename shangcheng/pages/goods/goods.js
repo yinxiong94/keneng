@@ -31,7 +31,6 @@ Page({
       userid: app.globalData.userid,
       shoppingnum:1
     }).then(res =>{
-      console.log(res);
       if (res.Result==1){
       wx.showToast({
         title: '加入购物车成功',
@@ -62,7 +61,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options) 
     that = this
     that.setData({
       sid: options.id

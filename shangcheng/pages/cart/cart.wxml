@@ -45,13 +45,13 @@
     </view>
   </view>
   <view class="item-box" wx:for="{{shoplist.Result.shoplist}}" wx:key="index">
-    <slide-delete  paramAtoB='{{item.shoppingid}}' >
+    <slide-delete paramAtoB='{{item.shoppingid}}'>
       <view class="list">
         <view class="items">
           <view class="items_left">
-            <checkbox-group >
+            <checkbox-group>
               <label>
-                <checkbox   bindtap='change' data-ind='{{index}}' checked='{{checked[index]}}' data-productNum="{{count[index]}}" data-productPrice="{{item.price}}"></checkbox>
+                <checkbox bindtap='change' data-ind='{{index}}' checked='{{checked[index]}}' data-productNum="{{count[index]}}" data-productPrice="{{item.price}}"></checkbox>
                 <!-- 其他布局代码 -->
               </label>
             </checkbox-group>
@@ -68,9 +68,9 @@
                   <image src='/pages/img/jian.png' lazy-load='true' class="jian"></image>
                 </view>
                 <view class="conter">{{count[index]}}</view>
-                  <view class="left" bindtap='jia' data-id="{{index}}" data-uid="{{item.shoppingid}}" data-goodsid='{{item.goodsid}}' data-price='{{item.price}}'>
-                    <image src='/pages/img/jia1.png' lazy-load='true' class="jia" ></image>
-                  </view>
+                <view class="left" bindtap='jia' data-id="{{index}}" data-uid="{{item.shoppingid}}" data-goodsid='{{item.goodsid}}' data-price='{{item.price}}'>
+                  <image src='/pages/img/jia1.png' lazy-load='true' class="jia"></image>
+                </view>
               </view>
             </view>
           </view>
@@ -79,13 +79,11 @@
       </view>
     </slide-delete>
   </view>
-
-
-
-  <view class="footer">
+  <view class="pdd"></view>
+  <view class="footer" wx:if="{{!show}}">
     <view class="coco">
       <checkbox-group>
-        <label class="input" >
+        <label class="input">
           <checkbox bindtap='all' checked='{{c}}'></checkbox>
           <!-- <view>{{item.name}}</view> -->
           <!-- 其他布局代码 -->

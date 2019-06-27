@@ -100,7 +100,7 @@
     </view>
     <view class='cont_Signout_coso'></view>
 
-    <view class='cont_Signout_text1'>
+    <view class='cont_Signout_text1' bindtap='handVip'>
       <view class='cont_Signout_text'>
         <image src='../img/hyk.png'></image>
         <text>我的会员卡</text>

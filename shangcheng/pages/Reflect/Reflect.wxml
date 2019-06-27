@@ -4,21 +4,24 @@
         <view class='cont_bg_text'>体现方式</view>
         <view class='cont_bg_tx'>
             <view 
-            class='cont_bg_but {{currentTab==0 ? "gouxuan":""}}'
+            class='cont_bg_but {{currentTab == 0 ?"border":""}}'
             bindtap='on'
             data-current='0'
             >
                 <image class="img1" src='../img/weixzhif.png'></image>
                 <text>微信支付</text>
-                <image class="gouxuan" src='../img/gouxuan1.png'></image>
+                <image class='gouxuan' src='../img/gouxuan1.png' wx:if="{{currentTab==0}}"></image>
             </view>
+
             <view
-            class='cont_bg_but {{currentTab==0 ? "gouxuan":""}}'
+            class='cont_bg_but {{currentTab == 1 ?"border":""}}'
             bindtap='on'
             data-current='1'
+             
             >
-                <image class="img1" src='../img/yingnagka.png'></image>
+                <image class='img1' src='../img/yingnagka.png'></image>
                 <text>银行卡</text>
+                 <image class='gouxuan' src='../img/gouxuan1.png' wx:if="{{currentTab==1}}"></image>
             </view>
         </view>
     </view>

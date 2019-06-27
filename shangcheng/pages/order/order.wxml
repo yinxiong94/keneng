@@ -2,14 +2,14 @@
 <view class="db">
   <view class="top" bindtap='handDizhi'>
     <image class="dizhi" src='/pages/img/tx.png' lazy-load='true'></image>
-    <view class="right" wx:if="{{off==1}}">
+    <view class="right" wx:if="{{ffo}}">
       <view class="right_1">
         <text>{{coco.username}}</text> {{coco.usertel}}</view>
       <view class="right_2">{{coco.useraddress}}</view>
       <view class="right_3"> {{coco.province}}{{coco.city}}{{coco.region}}</view>
     </view>
-    <view class="right_111" wx:if="{{off==0}}" bindtap='handDizhi'>选择收货地址</view>
-    <image wx:if="{{off==1}}" class="jian" src='/pages/img/right11.png' lazy-load='true' ></image>
+    <view class="right_111" wx:if="{{off}}" bindtap='handDizhi'>选择收货地址</view>
+    <image class="jian" src='/pages/img/right11.png' lazy-load='true' bindtap='handDizhi'></image>
   </view>
   <view class="order">
     <view class="item">
@@ -68,6 +68,6 @@
       <view>
         <text>￥</text>{{sum}}</view>
     </view>
-    <view class='right' bindtap='handZhifu'>提交订单</view>
+    <view class='right' bindtap='submit'>提交订单</view>
   </view>
 </view>
