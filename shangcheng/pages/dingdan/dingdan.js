@@ -1,4 +1,6 @@
 // pages/dingdan/dingdan.js
+const app = getApp()
+var that
 Page({
 
   /**
@@ -6,14 +8,22 @@ Page({
    */
   data: {
     off:false,
-    menuTapCurrent: 0,  //默认选择第1个
+    menuTapCurrent: -1,  //默认选择第1个
   },
+
+   // 获取用户订单信息
+ 
   // 选项卡
   menuTap:function(e){
-    this.setData({
+    that = this
+    that.setData({
       menuTapCurrent: e.currentTarget.dataset.current
     })
+    
   },
+
+ 
+
   handPinjia:function(){
     wx.navigateTo({
       url: '../publish/publish',
@@ -53,10 +63,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
-    this.setData({
+    that = this
+    that.setData({
       menuTapCurrent: options.id
     })
+  
   },
 
   /**
@@ -70,7 +81,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    that = this
+    that.setData({
+      menuTapCurrent: -1,
+    })
   },
 
   /**

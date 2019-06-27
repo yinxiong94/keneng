@@ -1,23 +1,23 @@
 <!-- 我的订单 -->
 <view class="db">
   <view class="nav">
-    <view class="nav_list  {{menuTapCurrent==0?'nav_list_color':''}}" data-current="0" catchtap="menuTap">全部
-      <view class="{{menuTapCurrent==0?'xian':''}}"></view>
+    <view class="nav_list  {{menuTapCurrent==-1?'nav_list_color':''}}" data-current="-1" catchtap="menuTap">全部
+      <view class="{{menuTapCurrent==-1?'xian':''}}"></view>
     </view>
-    <view class="nav_list {{menuTapCurrent==1?'nav_list_color':''}}" data-current="1" catchtap="menuTap">待付款
-       <view class="{{menuTapCurrent==1?'xian':''}}"></view>
+    <view class="nav_list {{menuTapCurrent==0?'nav_list_color':''}}" data-current="0" catchtap="menuTap">待付款
+       <view class="{{menuTapCurrent==0?'xian':''}}"></view>
     </view>
-    <view class="nav_list {{menuTapCurrent==2?'nav_list_color':''}}" data-current="2" catchtap="menuTap">待发货
+    <view class="nav_list {{menuTapCurrent==1?'nav_list_color':''}}" data-current="1" catchtap="menuTap">已付款
+         <view class="{{menuTapCurrent==1?'xian':''}}"></view>
+    </view>
+    <view class="nav_list {{menuTapCurrent==2?'nav_list_color':''}}" data-current="2" catchtap="menuTap">已收货
          <view class="{{menuTapCurrent==2?'xian':''}}"></view>
     </view>
-    <view class="nav_list {{menuTapCurrent==3?'nav_list_color':''}}" data-current="3" catchtap="menuTap">待取货
-         <view class="{{menuTapCurrent==3?'xian':''}}"></view>
+    <view class="nav_list {{menuTapCurrent==3?'nav_list_color':''}}" data-current="3" catchtap="menuTap">待退货
+           <view class="{{menuTapCurrent==3?'xian':''}}"></view>
     </view>
-    <view class="nav_list {{menuTapCurrent==4?'nav_list_color':''}}" data-current="4" catchtap="menuTap">待评价
+    <view class="nav_list {{menuTapCurrent==4?'nav_list_color':''}}" data-current="4" catchtap="menuTap">已退货
            <view class="{{menuTapCurrent==4?'xian':''}}"></view>
-    </view>
-    <view class="nav_list {{menuTapCurrent==5?'nav_list_color':''}}" data-current="5" catchtap="menuTap">售后
-           <view class="{{menuTapCurrent==5?'xian':''}}"></view>
     </view>
   </view>
   <view class="mian" wx:if="{{off}}">
