@@ -34,8 +34,6 @@ Page({
       })
       console.log(that.data.foo)
     }
-    
-
     that.setData({
       menuTapCurrent: e.currentTarget.dataset.current
     })
@@ -71,12 +69,7 @@ Page({
       url: '../publish/publish',
     })
   },
-  payment: function(e) {
-    console.log(e)
-    wx.navigateTo({
-      url: '../tuikuan/tuikuan',
-    })
-  },
+ 
   handCheng: function() {
     wx.navigateTo({
       url: '../After/After',
@@ -97,7 +90,13 @@ Page({
     })
   },
   // 退款
-  refund(){},
+  refund(e){
+    console.log(e.currentTarget.dataset.orderid)
+    var orderid = e.currentTarget.dataset.orderid
+    wx.navigateTo({
+      url: '../tuikuan/tuikuan?orderid=' + orderid,
+    })
+  },
   // 取消订单
   abolish(e){
     that = this 
@@ -132,10 +131,8 @@ Page({
     that.beg();
     this.setData({
       menuTapCurrent: options.id,
-
-    })
-  
-  },
+    })  
+  },  
 
   /**
    * 生命周期函数--监听页面初次渲染完成

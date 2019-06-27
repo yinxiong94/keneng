@@ -175,12 +175,14 @@ page {
   margin-top: -12rpx;
 }
 
-.footer .zp {
+ .zp {
   display: flex;
   justify-content: space-between;
+  width: 33.33333%;
+  position: relative;
 }
 
-.footer .zp .zp_1 {
+ .zp .zp_1 {
   width: 180rpx;
   height: 180rpx;
   background: rgba(239, 239, 239, 1);
@@ -190,14 +192,25 @@ page {
   box-sizing: border-box;
   text-align: center;
 }
-
-.footer .zp .zp_1 image {
+.zp .zp_1_1{
+  width:180rpx;
+  height:180rpx;
+  border-radius:10rpx;
+  margin-top:67rpx;
+  box-sizing:border-box;
+  text-align:center;
+}
+.zp .zp_1_1 image{
+  width: 100%;
+  height: 100%;
+}
+ .zp .zp_1 image {
   width: 61rpx;
   height: 55rpx;
   margin-top: 36rpx;
 }
 
-.footer .zp .zp_1 .tj {
+ .zp .zp_1 .tj {
   height: 23rpx;
   font-size: 24rpx;
   font-family: PingFangSC;
@@ -225,4 +238,16 @@ page {
 
 .margin {
   margin-top: 20rpx;
+}
+
+.flutter{
+  display: flex;
+  /* justify-content: spa */
+  flex-wrap: wrap;
+}
+
+.ui_uploader_item_icon{
+    position: absolute;
+    left: 154rpx;
+    top: 48rpx;
 }
