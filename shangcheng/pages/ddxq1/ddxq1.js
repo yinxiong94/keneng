@@ -1,13 +1,11 @@
 // pages/ddxq/ddxq.js
-const app = getApp();
-var that;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    off:false,
+    off:false
   },
   payment:function(){
     console.log("付款按钮被点击了")
@@ -16,16 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    that = this;
-    app.postData("GetOrderData.ashx", {
-      action: "GetOrderDetails",
-      orderid:options.id
-    }).then(res => {
-      that.setData({
-        list: res.Result
-      })
-      console.log(that.data.list);
-    })
+
   },
 
   /**
