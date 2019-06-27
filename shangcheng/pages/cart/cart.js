@@ -234,14 +234,6 @@ Page({
           }
         })
   },
-
-
-  // 跳到分类
-  handlGuang(){
-    wx.switchTab({
-      url: '/pages/sort/sort',
-    })
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
