@@ -39,7 +39,7 @@ Page({
     that.setData({
       menuTapCurrent: e.currentTarget.dataset.current
     })
-    
+    that.beg()
   },
 
   // beg
@@ -71,7 +71,8 @@ Page({
       url: '../publish/publish',
     })
   },
-  payment: function() {
+  payment: function(e) {
+    console.log(e)
     wx.navigateTo({
       url: '../tuikuan/tuikuan',
     })
@@ -95,8 +96,8 @@ Page({
       url: '../ddxq/ddxq?id=' + orderid,
     })
   },
-
-
+  // 退款
+  refund(){},
   // 取消订单
   abolish(e){
     that = this 
@@ -111,8 +112,10 @@ Page({
             action: "Cancel",
             orderid: orderid
           }).then(res=>{
-            console.log(res)
-            that.beg()
+            if (res.Result>0){
+              console.log(res)
+              that.beg()
+            }
           })
         } else if (res.cancel) {
           console.log('用户点击取消')
@@ -183,7 +186,7 @@ Page({
     that.setData({
       psize: pagenum, //更新当前页数
     })
-    // that.menuTap()
+    // that.beg()
   },
 
   /**
