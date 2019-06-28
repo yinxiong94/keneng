@@ -7,25 +7,55 @@ Page({
    * 页面的初始数据
    */
   data: {
-    off:false,
+    off: false,
+    orderStatus: 0,
+    liste: []
   },
-  payment:function(){
+  payment: function () {
     console.log("付款按钮被点击了")
+  },
+  handCode: function () {
+    that = this;
+    console.log(that.data.liste.OrderStatus);
+    if (that.data.liste.OrderStatus == '待付款') {
+      that.setData({
+        orderStatus: 0
+      })
+    } else if (that.data.liste.OrderStatus == '待收货') {
+      that.setData({
+        orderStatus: 1
+      })
+    } else if (that.data.liste.OrderStatus == '已收货') {
+      that.setData({
+        orderStatus: 2
+      })
+    } else if (that.data.liste.OrderStatus == '待退款') {
+      that.setData({
+        orderStatus: 3
+      })
+    } else if (that.data.liste.OrderStatus == '已退货') {
+      that.setData({
+        orderStatus: 4
+      })
+    }
+    console.log(that.data.orderStatus);
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     that = this;
+    console.log(1);
     app.postData("GetOrderData.ashx", {
       action: "GetOrderDetails",
-      orderid:options.id
+      orderid: options.id
     }).then(res => {
       that.setData({
-        list: res.Result
+        liste: res.Result
       })
-      console.log(that.data.list);
+      that.handCode();
     })
+
   },
 
   /**

@@ -8,7 +8,30 @@ Page({
   data: {
     images: [],
     ContentValue: "",
-    showUpload: true
+    showUpload: true,
+    score: 5,
+    off: true,
+    stars: [{
+      lightImg: '../img/xing11.png',
+      blackImg: '../img/kxing.png',
+      flag: 1,
+    }, {
+      lightImg: '../img/xing11.png',
+      blackImg: '../img/kxing.png',
+      flag: 1,
+    }, {
+      lightImg: '../img/xing11.png',
+      blackImg: '../img/kxing.png',
+      flag: 1,
+    }, {
+      lightImg: '../img/xing11.png',
+      blackImg: '../img/kxing.png',
+      flag: 1,
+    }, {
+      lightImg: '../img/xing11.png',
+      blackImg: '../img/kxing.png',
+      flag: 1,
+    }]
   },
   // 获取用户地址
   address() {
@@ -23,7 +46,59 @@ Page({
       })
     })
   },
+  // 选择评价星星
+  starClick: function (e) {
+    var that = this;
+    let off = that.data.off;
+    off = !off;
+    that.setData({
+      off: off
+    })
+    console.log(off);
+    for (let i = 0; i < that.data.stars.length; i++) {
+      var allItem = 'stars[' + i + '].flag';
+      that.setData({
+        [allItem]: 2
+      })
+    }
+    var index = e.currentTarget.dataset.index;
+    if (index == '0') {
+      if (off) {
+        for (let i = 0; i < that.data.stars.length; i++) {
+          var allItem = 'stars[' + i + '].flag';
+          that.setData({
+            [allItem]: 2
+          })
+        }
+        that.setData({
+          score: index,
 
+        })
+      } else {
+        var allItem = 'stars[' + 0 + '].flag';
+        let coco = index + 1;
+        that.setData({
+          [allItem]: 1,
+          score: 1
+        })
+      }
+
+    } else {
+      for (let i = 0; i <= index; i++) {
+        var item = 'stars[' + i + '].flag';
+        that.setData({
+          [item]: 1
+        })
+      }
+      let coco = index + 1;
+      that.setData({
+        score: coco
+      })
+    }
+
+    console.log(that.data.stars);
+    console.log(that.data.score);
+  },
   // 添加图片
   chooseImage() {
     that = this

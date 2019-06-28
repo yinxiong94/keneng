@@ -67,7 +67,7 @@ Page({
   },
   handJump:function(){
     wx.navigateTo({
-      url: '../dingdan/dingdan',
+      url: '../dingdan/dingdan?id=' + this.data.id + '&off=false',
     })
   },
   handTel: function () {

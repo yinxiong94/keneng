@@ -62,7 +62,7 @@
       </view>
     </view>
   </view>
-  <view class="hhh"></view>
+  <!-- <view class="hhh"></view>
   <view class="like">
     <view class="like_title">
       <view class="left">猜你喜欢</view>
@@ -83,7 +83,7 @@
         <view class="link_pirce">￥51.90</view>
       </view>
     </view>
-  </view>
+  </view> -->
   <view class="hhh"></view>
   <view class="goods">
     <view class="goods_title">商品详情</view>
