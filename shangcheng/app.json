@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/ddxq2/ddxq2",
     "pages/administration/administration",
     "pages/fille/fille",
     "pages/Mynews/Mynews",
@@ -34,8 +35,6 @@
     "pages/login/login",
     "pages/cart/cart",
     "pages/ddxq/ddxq",
-    "pages/ddxq1/ddxq1",
-    "pages/ddxq2/ddxq2",
     "pages/After/After",
     "pages/open/open",
     "pages/xjtg/xjtg"

@@ -6,7 +6,7 @@
       <view class="kk">亲，你的购物车还没有宝贝哦～</view>
       <view class="btn" bindtap='handlGuang'>去逛逛吧</view>
     </view>
-    <!-- <view class="biao">猜你喜欢</view>
+    <view class="biao">猜你喜欢</view>
     <view class="null_item">
       <view class="list">
         <image lazy-load='true' src='/pages/img/list1.png'></image>
@@ -42,7 +42,7 @@
           <view class="right">会员价</view>
         </view>
       </view>
-    </view> -->
+    </view>
   </view>
   <view class="item-box" wx:for="{{shoplist.Result.shoplist}}" wx:key="index">
     <slide-delete paramAtoB='{{item.shoppingid}}'>

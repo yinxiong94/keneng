@@ -24,20 +24,16 @@ Page({
     if (that.data.foo > 1){
       let index = e.currentTarget.dataset.current;
       that.setData({
-        status: index
+        status: index,
+        menuTapCurrent: index
       })
     }else{
       let w = that.data.foo + 1
-      console.log(w)
       that.setData({
-        foo: w
+        foo: w,
       })
-      console.log(that.data.foo)
     }
-    that.setData({
-      menuTapCurrent: e.currentTarget.dataset.current
-    })
-    that.beg()
+    that.beg();
   },
 
   // beg
@@ -49,17 +45,9 @@ Page({
       psize: that.data.psize,
       status: that.data.status
     }).then(res => {
-      console.log(res);
       that.setData({
         list: res.Result
       })
-      if (res.Result.length == 0) {
-        that.setData({
-          off: false
-        })
-      } else {
-        off: true
-      }
     })
   },
   
@@ -69,7 +57,11 @@ Page({
       url: '../publish/publish',
     })
   },
- 
+  payment: function() {
+    wx.navigateTo({
+      url: '../tuikuan/tuikuan',
+    })
+  },
   handCheng: function() {
     wx.navigateTo({
       url: '../After/After',
@@ -81,22 +73,16 @@ Page({
     })
   },
   handwait: function(e) {
+    console.log(1111);
     that= this;
     let index = e.currentTarget.dataset.index;
     let orderid = that.data.list[index].OrderId;
-    console.log(orderid);
     wx.navigateTo({
       url: '../ddxq/ddxq?id=' + orderid,
     })
   },
-  // 退款
-  refund(e){
-    console.log(e.currentTarget.dataset.orderid)
-    var orderid = e.currentTarget.dataset.orderid
-    wx.navigateTo({
-      url: '../tuikuan/tuikuan?orderid=' + orderid,
-    })
-  },
+
+
   // 取消订单
   abolish(e){
     that = this 
@@ -111,10 +97,8 @@ Page({
             action: "Cancel",
             orderid: orderid
           }).then(res=>{
-            if (res.Result>0){
-              console.log(res)
-              that.beg()
-            }
+            console.log(res)
+            that.beg()
           })
         } else if (res.cancel) {
           console.log('用户点击取消')
@@ -128,11 +112,17 @@ Page({
 
   onLoad: function(options) {
     that=this;
-    that.beg();
-    this.setData({
-      menuTapCurrent: options.id,
-    })  
-  },  
+    console.log(options);
+    if (options.off == 'false'){
+      that.menuTap();
+    }else{
+      that.setData({
+        menuTapCurrent: options.id,
+        status: options.id
+      })
+      that.menuTap();
+    }
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -147,10 +137,6 @@ Page({
 
   onShow: function () {
     that = this
-    that.setData({
-      menuTapCurrent: -1,
-    })
-
   },
 
   /**
@@ -183,7 +169,7 @@ Page({
     that.setData({
       psize: pagenum, //更新当前页数
     })
-    // that.beg()
+    // that.menuTap()
   },
 
   /**
