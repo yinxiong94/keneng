@@ -8,12 +8,18 @@
     </view>
     <view class="input">
       <view class="left">手机号码</view>
-      <input type='text' placeholder='请输入手机号'></input>
+      <input type='text' placeholder='请输入手机号' bindinput='Input_iphone'></input>
+    </view>
+    <view class="input">
+      <view class="left">获取验证码</view>
+      <input type='text' placeholder='请输入验证码' bindinput="Input_Iphone"></input>
+      <view class='yam' bindtap='textCode'>{{code}}</view>
     </view>
     <view class="input">
       <view class="left">所在地区</view>
       <input type='text' placeholder=''></input>
       <image src='/pages/img/right.png' lazy-load='true'></image>
+
     </view>
     <view class="input" style='border-bottom: 0;'>
       <view class="left">详细地址：</view>

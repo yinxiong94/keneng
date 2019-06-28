@@ -21,8 +21,9 @@ page{
   display: flex;
   height: 115rpx;
   width: 690rpx;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   border-bottom: 1px solid #ccc;
+  align-items: center;
 }
 
 .db .from .input .left {
@@ -33,6 +34,7 @@ page{
   font-family: PingFangSC;
   font-weight: 400;
   color: rgba(29, 32, 35, 1);
+  margin-left: 10rpx;
 }
 
 .db .from .input>input {
@@ -40,7 +42,7 @@ page{
   font-family: PingFangSC;
   font-weight: 400;
   color: rgba(153, 153, 153, 1);
-  margin-top: 32rpx;
+  /* margin-top: 32rpx; */
   flex: 1;
 }
 
@@ -90,4 +92,16 @@ page{
   font-family: PingFangSC;
   font-weight: 400;
   color: rgba(29, 32, 35, 1);
+}
+
+.yam{
+  background: #ccc;
+  height: 50rpx;
+  width: 200rpx;
+  color: #fff;
+  font-size: 26rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10rpx;
 }

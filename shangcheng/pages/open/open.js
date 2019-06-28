@@ -1,18 +1,87 @@
 // pages/open/open.js
+var that;
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    off:false
+    off:false,
+    iphoneValue: '', //手机号码
+    count: 60, //倒计时时间
+    code: '获取验证码',
+    IphoneValue:''
   },
   handlVip:function(){
     wx:wx.navigateTo({
       url: '../huika/huika'
     })
   },
+  // 获取用户输入的手机号码
+  Input_iphone(e) {
+    that = this
+    that.setData({
+      iphoneValue: e.detail.value
+    })
+  },
 
+  // 获取用户输入验证码
+  Input_Iphone(e){
+    that = this
+    that.setData({
+      IphoneValue: e.detail.value
+    })
+  },
+  // 点击获取验证码
+  textCode() {
+    that = this
+    if (!(/^1[3-9]\d{9}$/).test(that.data.iphoneValue)) {
+      wx.showToast({
+        title: '手机号码不正确',
+        icon: 'none',
+        duration: 2000
+      })
+      return
+    } else {
+      wx.showToast({
+        title: `验证码已发送`,
+        icon: 'none',
+        duration: 2000
+      })
+    }
+
+    if (that.data.code !== '获取验证码') {
+      wx.showToast({
+        title: '已发送验证码',
+        icon: 'none',
+        duration: 2000
+      })
+      return
+    }
+
+    const countDown = setInterval(() => {
+      if (that.data.count <= 0) {
+        that.setData({
+          count: 60,
+          code: '获取验证码'
+        })
+        // 终止定时器
+        clearInterval(countDown)
+        return
+      }
+      that.data.count--
+      that.setData({
+        count: that.data.count,
+        code: that.data.count < 10 ? `请等待0${that.data.count}s` : `请等待${that.data.count}s`
+      })
+    }, 1000)
+
+    app.postData("GetCode.ashx",{
+      action:'GetAuth',
+      Tel: that.data.iphoneValue
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
