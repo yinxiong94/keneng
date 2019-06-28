@@ -28,7 +28,6 @@ Page({
       })
     } else {
       let w = that.data.foo + 1
-      console.log(w)
       that.setData({
         foo: w
       })
@@ -49,7 +48,6 @@ Page({
       psize: that.data.psize,
       status: that.data.status
     }).then(res => {
-      console.log(res);
       that.setData({
         list: res.Result
       })
@@ -105,7 +103,6 @@ Page({
   // 取消订单
   abolish(e) {
     that = this
-    console.log(e)
     var orderid = e.currentTarget.dataset.orderid
     wx.showModal({
       title: '取消订单',
