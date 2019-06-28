@@ -145,6 +145,34 @@ page {
   width: 61rpx;
   height: 55rpx;
   margin-top: 36rpx;
+
+}
+
+.flutter .zp .zp_1 .tj {
+  height: 23rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 30rpx;
+  line-height: 23rpx;
+  text-align: center;
+}
+.flutter{
+  display: flex;
+  /* justify-content: spa */
+  flex-wrap: wrap;
+}
+
+.ui_uploader_item_icon{
+    position: absolute;
+    left: 175rpx;
+    top: 41rpx;
+}
+.item image {
+  width: 42rpx;
+  height: 42rpx;
+
 }
 
 .flutter .zp .zp_1 .tj {

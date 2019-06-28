@@ -12,21 +12,21 @@ Page({
     pageNum: 1,
     psize: 4,
     status: -1,
-    list:[],
-    foo:1
+    list: [],
+    foo: 1
   },
 
-   // 获取用户订单信息
- 
+  // 获取用户订单信息
+
   // 选项卡
-  menuTap: function(e) {
+  menuTap: function (e) {
     that = this;
-    if (that.data.foo > 1){
+    if (that.data.foo > 1) {
       let index = e.currentTarget.dataset.current;
       that.setData({
         status: index
       })
-    }else{
+    } else {
       let w = that.data.foo + 1
       console.log(w)
       that.setData({
@@ -41,7 +41,7 @@ Page({
   },
 
   // beg
-  beg(){
+  beg() {
     app.postData("GetOrderData.ashx", {
       action: "GetUserOrders",
       userid: app.globalData.userid,
@@ -62,24 +62,27 @@ Page({
       }
     })
   },
-  
 
-  handPinjia:function(){
+
+  handPinjia: function () {
     wx.navigateTo({
       url: '../publish/publish',
     })
   },
+
  
   handCheng: function() {
+
     wx.navigateTo({
       url: '../After/After',
     })
   },
-  cancel: function() {
+  cancel: function () {
     wx.navigateTo({
       url: '../logistics/logistics',
     })
   },
+
   handwait: function(e) {
     that= this;
     let index = e.currentTarget.dataset.index;
@@ -89,8 +92,10 @@ Page({
       url: '../ddxq/ddxq?id=' + orderid,
     })
   },
-  // 退款
-  refund(e){
+
+
+  // 点击退款
+  refund(e) {
     console.log(e.currentTarget.dataset.orderid)
     var orderid = e.currentTarget.dataset.orderid
     wx.navigateTo({
@@ -98,8 +103,8 @@ Page({
     })
   },
   // 取消订单
-  abolish(e){
-    that = this 
+  abolish(e) {
+    that = this
     console.log(e)
     var orderid = e.currentTarget.dataset.orderid
     wx.showModal({
@@ -107,12 +112,11 @@ Page({
       content: '您确认取消订单吗？',
       success(res) {
         if (res.confirm) {
-          app.postData("GetOrderData.ashx",{
+          app.postData("GetOrderData.ashx", {
             action: "Cancel",
             orderid: orderid
           }).then(res=>{
             if (res.Result>0){
-              console.log(res)
               that.beg()
             }
           })
@@ -126,6 +130,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
 
+
   onLoad: function(options) {
     that=this;
     that.beg();
@@ -137,7 +142,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
@@ -156,28 +161,28 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
     var that = this;
     var pagenum = that.data.pagenum + 4; //获取当前页数并+4
     that.setData({
@@ -189,7 +194,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })

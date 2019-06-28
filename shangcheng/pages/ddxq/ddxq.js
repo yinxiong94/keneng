@@ -9,9 +9,35 @@ Page({
   data: {
     off:false,
   },
-  payment:function(){
-    console.log("付款按钮被点击了")
+
+  payment: function () {
+    // console.log("付款按钮被点击了")
   },
+  handCode: function () {
+    that = this;
+    if (that.data.liste.OrderStatus == '待付款') {
+      that.setData({
+        orderStatus: 0
+      })
+    } else if (that.data.liste.OrderStatus == '待收货') {
+      that.setData({
+        orderStatus: 1
+      })
+    } else if (that.data.liste.OrderStatus == '已收货') {
+      that.setData({
+        orderStatus: 2
+      })
+    } else if (that.data.liste.OrderStatus == '待退款') {
+      that.setData({
+        orderStatus: 3
+      })
+    } else if (that.data.liste.OrderStatus == '已退货') {
+      that.setData({
+        orderStatus: 4
+      })
+    }
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
