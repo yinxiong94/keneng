@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    Result:"",
+    Result:[],
   },
   delivery:function(){
     wx:wx.navigateTo({
@@ -15,6 +15,7 @@ Page({
     })
   },
 
+  // 获取会员卡信息
   initialize(){
     that = this
     app.postData("GetGoodsData.ashx",{

@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/huika/huika",
     "pages/index/index",
+    "pages/huika/huika",
     "pages/administration/administration",
     "pages/fille/fille",
     "pages/Mynews/Mynews",

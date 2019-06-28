@@ -124,12 +124,15 @@ page{
 
 .input .right {
   flex: 1;
-  font-size: 28rpx;
+  font-size: 30rpx;
   font-family: PingFangSC;
-  font-weight: bold;
   color: rgba(153, 153, 153, 1);
-}
+ 
 
+}
+.picker{
+ font-weight:400;
+}
 .input textarea {
   font-size: 28rpx;
   font-family: PingFangSC;

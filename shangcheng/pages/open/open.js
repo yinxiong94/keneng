@@ -104,9 +104,6 @@ Page({
 
   // 开通会员卡
   handlVip(){
-    wx.navigateTo({
-      url: '../huika/huika'
-    })
     that = this
     if (that.data.name == undefined){
       wx.showToast({
@@ -160,7 +157,6 @@ Page({
       address: that.data.address,
       code: that.data.IphoneValue,
     }).then(res=>{
-        console.log(res)
       if (res.Msg == "验证码错误"){
         wx.showToast({
           title: '验证码错误',
@@ -177,7 +173,9 @@ Page({
           'signType': res.signType,
           'paySign': res.paySign,
           'success': function (res) { 
-            console.log(res.errMsg)
+            that.setData({
+              off:true
+            })
             if (res.errMsg == "requestPayment:ok"){
               wx.navigateTo({
                 url: '../huika/huika'
