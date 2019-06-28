@@ -11,13 +11,32 @@ Page({
     iphoneValue: '', //手机号码
     count: 60, //倒计时时间
     code: '获取验证码',
-    IphoneValue:''
+    IphoneValue:'',
+    region: ['广东省', '广州市', '海珠区'],
   },
-  handlVip:function(){
-    wx:wx.navigateTo({
-      url: '../huika/huika'
+  
+  // 地址三级联动 并且获取地址
+  bindRegionChange: function (e) {
+    this.setData({
+      region: e.detail.value
+    })
+
+  },
+  // 获取用户输入的姓名
+  Input_name(e){
+    this.setData({
+      name: e.detail.value
     })
   },
+
+  // 获取用户输入的详细地址
+  Input_site(e) {
+    this.setData({
+      address: e.detail.value
+    })
+  },
+
+ 
   // 获取用户输入的手机号码
   Input_iphone(e) {
     that = this
@@ -82,6 +101,95 @@ Page({
       Tel: that.data.iphoneValue
     })
   },
+
+  // 开通会员卡
+  handlVip(){
+    wx.navigateTo({
+      url: '../huika/huika'
+    })
+    that = this
+    if (that.data.name == undefined){
+      wx.showToast({
+        title: '姓名不能为空哦',
+        icon: "none",
+        duration: 2000
+      })
+      return
+    }
+    if (!(/^1[3-9]\d{9}$/).test(that.data.iphoneValue)) {
+      wx.showToast({
+        title: '手机号码不正确',
+        icon: 'none',
+        duration: 2000
+      })
+      return
+    }
+    if (that.data.IphoneValue == undefined){
+      wx.showToast({
+        title: '验证码不能为空',
+        icon: 'none',
+        duration: 2000
+      })
+      return
+    }
+    if (that.data.region == undefined) {
+      wx.showToast({
+        title: '地区不能为空',
+        icon: 'none',
+        duration: 2000
+      })
+      return
+    }
+
+    if (that.data.address == undefined) {
+      wx.showToast({
+        title: '详细地址不能为空',
+        icon: 'none',
+        duration: 2000
+      })
+      return
+    }
+    app.postData("GetGoodsData.ashx",{
+      action:'BuyCard',
+      userid: app.globalData.userid,
+      username: that.data.name,
+      mobile: that.data.iphoneValue,
+      province: that.data.region[0],
+      city: that.data.region[1],
+      region: that.data.region[2],
+      address: that.data.address,
+      code: that.data.IphoneValue,
+    }).then(res=>{
+        console.log(res)
+      if (res.Msg == "验证码错误"){
+        wx.showToast({
+          title: '验证码错误',
+          icon: 'none',
+          duration: 2000
+        })
+        return
+      }else{
+        // 发起微信支付
+        wx.requestPayment({
+          'timeStamp': res.timeStamp,
+          'nonceStr': res.nonceStr,
+          'package': res.package,
+          'signType': res.signType,
+          'paySign': res.paySign,
+          'success': function (res) { 
+            console.log(res.errMsg)
+            if (res.errMsg == "requestPayment:ok"){
+              wx.navigateTo({
+                url: '../huika/huika'
+              })
+            }
+          },
+        })
+      }
+
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

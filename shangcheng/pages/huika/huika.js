@@ -1,30 +1,37 @@
 // pages/huika/huika.js
 var that;
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    Result:"",
   },
   delivery:function(){
-    that = this;
-    if(that.data.send =='0'){
-      return
-    }
     wx:wx.navigateTo({
       url: '../request/request' 
     })
   },
+
+  initialize(){
+    that = this
+    app.postData("GetGoodsData.ashx",{
+      action:'GetCard',
+    }).then(res=>{
+      that.setData({
+        Result: res.Result
+      })
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     that = this;
-    that.setData({
-      send: options.send
-    })
+    that.initialize()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

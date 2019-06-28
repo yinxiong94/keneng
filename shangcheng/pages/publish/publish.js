@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    images: [],
+    
     ContentValue: "",
     showUpload: true,
     score: 5,
@@ -108,7 +108,7 @@ Page({
       sourceType: ['album', 'camera'],
       success(res) {
         console.log(res)
-        const tempFilePaths = res.tempFilePaths
+        const tempFilePaths = res.tempFilePaths;
         that.setData({
           images: that.data.images.concat(res.tempFilePaths)
         })
