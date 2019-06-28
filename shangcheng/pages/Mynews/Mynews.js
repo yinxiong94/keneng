@@ -57,10 +57,10 @@ Page({
   },
   handTarget:function(e){
     this.setData({
-      id: e.currentTarget.dataset.current,
+      id: e.currentTarget.dataset.current
     })
     wx.navigateTo({
-      url: '../dingdan/dingdan?id=' + this.data.id,
+      url: '../dingdan/dingdan?id='+ this.data.id,
     })
   },
   handJump:function(){

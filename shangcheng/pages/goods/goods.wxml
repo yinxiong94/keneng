@@ -62,7 +62,7 @@
       </view>
     </view>
   </view>
-  <view class="hhh"></view>
+  <!-- <view class="hhh"></view>
   <view class="like">
     <view class="like_title">
       <view class="left">猜你喜欢</view>
@@ -83,7 +83,7 @@
         <view class="link_pirce">￥51.90</view>
       </view>
     </view>
-  </view>
+  </view> -->
   <view class="hhh"></view>
   <view class="goods">
     <view class="goods_title">商品详情</view>
@@ -97,8 +97,8 @@
       <image src='/pages/img/tousu.png' lazy-load='true'></image>
       <view class="diso">客服</view>
     </view>
-    <view class="footer_2" bindtap='handCart'>加入购物车</view>
-    <view class="footer_2 red" bindtap='handgm'>立即购买</view>
+    <view class="footer_2" catchtap='handCart'>加入购物车</view>
+    <view class="footer_2 red" catchtap='handgm'>立即购买</view>
   </view>
   <view class="zzc" wx:if="{{off}}">
     <view class="zzc_mian">
@@ -128,7 +128,7 @@
           </view>
         </view>
       </view>
-      <view class="btn" bindtap='handTxdd'>确定</view>
+      <view class="btn" catchtap='handTxdd'>确定</view>
     </view>
   </view>
 </view>
