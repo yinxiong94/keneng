@@ -16,7 +16,6 @@ Page({
   },
   handCode: function() {
     that = this;
-    console.log(that.data.liste.OrderStatus);
     if (that.data.liste.OrderStatus == '待付款') {
       that.setData({
         orderStatus: 0
@@ -38,14 +37,12 @@ Page({
         orderStatus: 4
       })
     }
-    console.log(that.data.orderStatus);
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     that = this;
-    console.log(1);
     app.postData("GetOrderData.ashx", {
       action: "GetOrderDetails",
       orderid: options.id

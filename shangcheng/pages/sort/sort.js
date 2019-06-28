@@ -29,7 +29,6 @@ Page({
     wx.navigateTo({
       url: '../goods/goods?id=' + e.currentTarget.dataset.goodsid
     })
-    console.log(e)
   },
 
   menuTap(e){
@@ -38,7 +37,6 @@ Page({
       menuTapCurrent: e.currentTarget.dataset.current,
       typeid: e.currentTarget.dataset.typeid
     })
-    console.log(that.data.typeid)
     if (that.data.menuTapCurrent != 0) {
       console.log(1)
       app.postData("GetGoodsData.ashx", {
@@ -52,13 +50,11 @@ Page({
         })
       })
     } else {
-      console.log(2)
       app.postData("GetGoodsData.ashx", {
         action: "GetGoodsList",
         Pid: 1,
         pagesize: that.data.pagenum
       }).then(res => {
-        console.log(res)
         that.setData({
           ListView: res.Result
         })
@@ -68,7 +64,6 @@ Page({
 
   refer() {
     that = this
-    console.log(that.data.typeid)
     if (that.data.menuTapCurrent!=0){
       app.postData("GetGoodsData.ashx", {
         action: "GetGoodsList",
@@ -86,7 +81,6 @@ Page({
         Pid: 1,
         pagesize: that.data.pagenum
       }).then(res => {
-        console.log(res)
         that.setData({
           ListView: res.Result
         })
