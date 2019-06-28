@@ -72,6 +72,7 @@ Page({
       url: '../logistics/logistics',
     })
   },
+  
   handwait: function (e) {
     console.log(1111);
     that = this;
@@ -82,7 +83,14 @@ Page({
     })
   },
 
-
+  // 点击退款
+  refund(e) {
+    console.log(e.currentTarget.dataset.orderid)
+    var orderid = e.currentTarget.dataset.orderid
+    wx.navigateTo({
+      url: '../tuikuan/tuikuan?orderid=' + orderid,
+    })
+  },
   // 取消订单
   abolish(e) {
     that = this

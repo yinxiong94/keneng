@@ -124,9 +124,10 @@ Page({
         usertel: that.data.coco.usertel,
         address: that.data.site
       }).then(res => {
-        wx.navigateTo({
-          url: '../payment/payment'
-        })
+        console.log(res)
+        // wx.navigateTo({
+        //   url: '../payment/payment'
+        // })
       })
     }else{
         wx.showToast({
