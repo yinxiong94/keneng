@@ -1,4 +1,5 @@
 // pages/publish/publish.js
+const app = getApp();
 var that;
 Page({
 
@@ -6,8 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    sid: '',
     images: [],
-    ima:"",
+    conter: '',
     ContentValue: "",
     showUpload: true,
     score: 5,
@@ -34,6 +36,39 @@ Page({
       flag: 1,
     }]
   },
+  bindinput: function (e) {
+    that = this;
+    that.setData({
+      conter: e.detail.value
+    })
+  },
+  handBtn: function () {
+    that = this;
+    var b = that.data.images;
+    b = b.join(',');
+    app.postData("GetOrderData.ashx", {
+      action: "Evaluate",
+      goodsid: that.data.sid,
+      userid: app.globalData.userid,
+      content: that.data.conter,
+      lev: that.data.score,
+      pics: b
+    }).then(res => {
+      if (res.Result == 1) {
+        wx.showToast({
+          title: '发表成功',
+          icon: 'none',
+          duration: 2000
+        })
+      } else {
+        wx.showToast({
+          title: '发表失败',
+          icon: 'none',
+          duration: 2000
+        })
+      }
+    })
+  },
   // 获取用户地址
   address() {
     that = this
@@ -47,7 +82,7 @@ Page({
     })
   },
   // 选择评价星星
-  starClick: function(e) {
+  starClick: function (e) {
     var that = this;
     let off = that.data.off;
     off = !off;
@@ -94,6 +129,7 @@ Page({
         score: coco
       })
     }
+
   },
   // 添加图片
   chooseImage() {
@@ -106,7 +142,7 @@ Page({
         const tempFilePaths = res.tempFilePaths;
         that.setData({
           images: that.data.images.concat(res.tempFilePaths),
-      
+
         })
         if (that.data.images.length == 3) {
           that.setData({
@@ -120,8 +156,8 @@ Page({
   // // 删除图片
   clearImg(e) {
     that - this
-    var nowList = []; //新数据
-    var uploaderList = this.data.images; //原数据
+    var nowList = [];//新数据
+    var uploaderList = this.data.images;//原数据
     for (let i = 0; i < uploaderList.length; i++) {
       if (i == e.currentTarget.dataset.index) {
         continue;
@@ -147,56 +183,63 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-
+  onLoad: function (options) {
+    that = this;
+    that.setData({
+      sid: options.ccc
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
-
+  passInput: function (e) {
+    this.setData({
+      conter: e.detail.value
+    })
+  },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })

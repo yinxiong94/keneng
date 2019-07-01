@@ -59,14 +59,14 @@
       <view class="t_5_btn" catchtap='cancel'>查看物流</view>
     </view>
     <view class="t_5" wx:if="{{item.OrderStatus=='已收货'}}">
-      <view class="t_5_btn" catchtap='handPinjia'>评价</view>
+      <view class="t_5_btn" catchtap='handPinjia' data-num="{{index}}">评价</view>
       <view class="t_5_btn" catchtap='payment'>确认收货</view>
     </view>
     <view class="t_5" wx:if="{{item.OrderStatus=='待退货'}}">
       <view class="t_5_btn" catchtap='refund'  data-OrderId='{{item.OrderId}}'>退款</view>
     </view>
     <view class="t_5" wx:if="{{item.OrderStatus=='已退货'}}">
-      <view class="t_5_btn" catchtap='handPinjia'>评价</view>
+      <view class="t_5_btn" catchtap='handPinjia' data-num="{{index}}">评价</view>
     </view>
   </view>
   <!--  待付款 -->
@@ -159,7 +159,7 @@
       <text class="t_4_1">共{{item.ProductSumNum}}件商品  合计：</text>
     </view>
     <view class="t_5">
-      <view class="t_5_btn" catchtap='handPinjia'>评价</view>
+      <view class="t_5_btn" catchtap='handPinjia' data-num="{{index}}">评价</view>
       <view class="t_5_btn" catchtap='payment'>确认收货</view>
     </view>
   </view>
@@ -220,7 +220,7 @@
       <text class="t_4_1">共{{item.ProductSumNum}}件商品  合计：</text>
     </view>
     <view class="t_5">
-      <view class="t_5_btn" catchtap='handPinjia'>评价</view>
+      <view class="t_5_btn" catchtap='handPinjia' data-num="{{index}}">评价</view>
     </view>
   </view>
 </view>
