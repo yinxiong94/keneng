@@ -39,7 +39,9 @@ Page({
   },
   
 
-
+  judge(){
+   
+  },
 
   handBtn: function() {
     that = this;

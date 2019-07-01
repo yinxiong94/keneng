@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/huika/huika",
     "pages/administration/administration",
     "pages/fille/fille",
     "pages/Mynews/Mynews",
@@ -17,6 +16,7 @@
     "pages/Complaint/Complaint",
     "pages/Mybinding/Mybinding",
     "pages/binding/binding",
+    "pages/huika/huika",
     "pages/order/order",
     "pages/spread/spread",
     "pages/wallet/wallet",

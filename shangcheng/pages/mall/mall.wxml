@@ -7,7 +7,7 @@
         <input type='text' placeholder='搜索关键词'></input>
       </view>
     </view>
-    <swiper class="swiper" autoplay indicator-dots>
+    <swiper class="swiper">
       <block wx:for="{{send}}" wx:key="index">
         <swiper-item>
           <image class="img_11" src='{{item.campic}}'></image>

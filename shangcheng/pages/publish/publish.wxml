@@ -10,7 +10,7 @@
   </view>
 </view>
 <view class="mian">
-  <textarea placeholder='宝贝满足你的期待吗？说说你的使用心得，分享给想买的他们吧'></textarea>
+  <textarea bindinput="bindinput" placeholder='宝贝满足你的期待吗？说说你的使用心得，分享给想买的他们吧'></textarea>
   <view class="image">
    <view class='flutter'>
         <view class="zp" wx:for="{{images}}" wx:key="index">
@@ -28,4 +28,4 @@
     </view>
   </view>
 </view>
-<view class="btn">发表评论</view>
+<view class="btn" bindtap='handBtn'>发表评论</view>

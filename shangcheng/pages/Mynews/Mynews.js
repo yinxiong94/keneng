@@ -55,7 +55,6 @@ Page({
       }
     })   
   },
-
   handTarget:function(e){
     this.setData({
       id: e.currentTarget.dataset.current
@@ -64,15 +63,11 @@ Page({
       url: '../dingdan/dingdan?id='+ this.data.id,
     })
   },
-
-
   handJump: function () {
     wx.navigateTo({
       url: '../dingdan/dingdan?id=' + this.data.id + '&off=false',
     })
   },
-
-
   handTel: function () {
     wx.navigateTo({
       url: '../Myphone/Myphone',
