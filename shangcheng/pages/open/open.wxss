@@ -49,7 +49,6 @@ page{
 .db .from .input>image {
   width: 21rpx;
   height: 21rpx;
-  margin-top: 48rpx;
 }
 
 .btn {
@@ -95,7 +94,7 @@ page{
 }
 
 .yam{
-  background: #ccc;
+  background: rgba(142, 195, 31, 1);
   height: 50rpx;
   width: 200rpx;
   color: #fff;
@@ -104,4 +103,74 @@ page{
   justify-content: center;
   align-items: center;
   border-radius: 10rpx;
+}
+
+
+
+.input .left {
+  width: 150rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC;
+  font-weight: bold;
+  color: rgba(153, 153, 153, 1);
+}
+
+ .input .left text {
+  font-size: 28rpx;
+  font-family: PingFangSC;
+  font-weight: bold;
+  color: rgba(153, 153, 153, 1);
+}
+
+.input .right {
+  flex: 1;
+  font-size: 30rpx;
+  font-family: PingFangSC;
+  color: rgba(153, 153, 153, 1);
+ 
+
+}
+.picker{
+ font-weight:400;
+}
+.input textarea {
+  font-size: 28rpx;
+  font-family: PingFangSC;
+  font-weight: bold;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 31rpx;
+  margin-left: 40rpx;
+  width: 500rpx;
+  height: 58rpx;
+  line-height: 0;
+}
+
+.input input {
+  width: 100%;
+  font-size: 24rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color:rgba(153,153,153,1);
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: left;
+  margin-left: 20rpx;
+}
+
+.input .right .xuan {
+  width: 100rpx;
+  height: 40rpx;
+  font-size: 24rpx;
+  background-color: #fbc00e;
+  text-align: center;
+  line-height: 40rpx;
+  border-radius: 20rpx;
+  margin-top: 25rpx;
+  color: #fff;
+}
+
+.input .jian {
+  width: 12rpx;
+  height: 22rpx;
+ 
 }

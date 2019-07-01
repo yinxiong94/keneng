@@ -8,7 +8,7 @@ Page({
 
   },
   handlQqps:function(){
-    wx.navigateTo({
+    wx:wx.navigateTo({
       url: '../qqps/qqps'
     })
   },

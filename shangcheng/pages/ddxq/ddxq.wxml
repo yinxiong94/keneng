@@ -2,19 +2,8 @@
 <view class="db">
   <view class="top">
     <image src='/pages/img/bg66.png' lazy-load='true'></image>
-    <view class="wait" wx:if="{{orderStatus==0}}">等待买家付款</view>
-    <view class="wait" wx:if="{{orderStatus==1}}">卖家已发货</view>
-    <view class="wait" wx:if="{{orderStatus==2}}">交易成功</view>
-  </view>
-  <view class="package" wx:if="{{orderStatus>=1}}">
-    <view class="package_a">
-      <image class="fahuo" src='/pages/img/fahuo.png' lazy-load='true'></image>
-      <view class="right">
-        <view class="right_see">包裹正在等待揽收</view>
-        <view class="right_don">2019-05-15 11:27:28</view>
-      </view>
-      <image src='/pages/img/right.png' lazy-load='true' class="jiantou"></image>
-    </view>
+    <view class="wait">等待买家付款</view>
+    <view class="wait_time">剩余23小时59分自动关闭</view>
   </view>
   <view class="mian">
     <view class="mian_a">
@@ -62,12 +51,9 @@
     <view class="ddh">订单号：{{list.OrderNo}}</view>
     <view class="ddh">创建时间：{{list.OrderDate}}</view>
     <view class="ddh">成交时间：{{list.ZhiFuTime == null?'':'list.ZhiFuTime'}}</view>
-    <view class="dh" wx:if="{{orderStatus==0}}">
+    <view class="dh">
       <view class="dh_btn">联系卖家</view>
       <view class="dh_btn">拨打电话</view>
-    </view>
-    <view class="dh" wx:if="{{orderStatus>0}}">
-      <view class="dh_btn_1">联系客服</view>
     </view>
   </view>
   <view class="biao">猜你喜欢</view>
@@ -99,15 +85,8 @@
       </view>
     </view>
   </view>
-  <view class="send" wx:if="{{orderStatus==0}}">
+  <view class="send">
     <view class="send_btn">取消订单</view>
     <view class="send_btn_1" bindtap='payment'>付款</view>
-  </view>
-  <view class="send" wx:if="{{orderStatus == 1}}">
-    <view class="send_btn">查看物流</view>
-    <view class="send_btn_1" bindtap='payment'>确认收货</view>
-  </view>
-  <view class="send" wx:if="{{orderStatus == 2}}">
-    <view class="send_btn_1" catchtap='handPinjia' data-num="{{index}}">评价</view>
   </view>
 </view>

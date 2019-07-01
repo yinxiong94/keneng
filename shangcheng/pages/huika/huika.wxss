@@ -5,7 +5,6 @@ page{
   width: 738rpx;
   height: 330rpx;
   position: relative;
-  margin-top: 90rpx;
 }
 
 .vip>image {

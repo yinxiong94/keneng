@@ -40,7 +40,6 @@
 .db .top .item .list .left {
   width: 45rpx;
   position: relative;
-
   border-left: 1px solid #eee;
   margin-left: 15rpx;
 }

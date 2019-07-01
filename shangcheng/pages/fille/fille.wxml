@@ -9,6 +9,9 @@
       <view class="left">手机号码</view>
       <input type='text' bindinput="bindTel" name="userTel" type='number' maxlength='11' value="{{tel}}"></input>
     </view>
+
+
+    
     <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
       <view class="total">
         <view class="left">所在地区</view>
@@ -20,6 +23,8 @@
         <image class="jian" src="/pages/img/right.png" lazy-load='true'></image>
       </view>
     </picker>
+
+
     <view class="total">
       <view class="left">
         <text>详细地址：</text>

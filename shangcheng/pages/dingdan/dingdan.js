@@ -24,16 +24,19 @@ Page({
     if (that.data.foo > 1) {
       let index = e.currentTarget.dataset.current;
       that.setData({
-        status: index,
-        menuTapCurrent: index
+        status: index
       })
     } else {
       let w = that.data.foo + 1
       that.setData({
-        foo: w,
+        foo: w
       })
+      console.log(that.data.foo)
     }
-    that.beg();
+    that.setData({
+      menuTapCurrent: e.currentTarget.dataset.current
+    })
+    that.beg()
   },
 
   // beg
@@ -48,16 +51,26 @@ Page({
       that.setData({
         list: res.Result
       })
+      if (res.Result.length == 0) {
+        that.setData({
+          off: false
+        })
+      } else {
+        off: true
+      }
     })
   },
-  handPinjia: function (e) {
-    let index = e.currentTarget.dataset.num;
-    let sid = that.data.list[index].OrderId;
+
+
+  handPinjia: function () {
     wx.navigateTo({
-      url: '../publish/publish?ccc=' + sid,
+      url: '../publish/publish',
     })
   },
+
+ 
   handCheng: function() {
+
     wx.navigateTo({
       url: '../After/After',
     })
@@ -72,6 +85,7 @@ Page({
     that= this;
     let index = e.currentTarget.dataset.index;
     let orderid = that.data.list[index].OrderId;
+    console.log(orderid);
     wx.navigateTo({
       url: '../ddxq/ddxq?id=' + orderid,
     })
@@ -80,6 +94,7 @@ Page({
 
   // 点击退款
   refund(e) {
+    console.log(e.currentTarget.dataset.orderid)
     var orderid = e.currentTarget.dataset.orderid
     wx.navigateTo({
       url: '../tuikuan/tuikuan?orderid=' + orderid,
@@ -113,18 +128,13 @@ Page({
    */
 
 
-  onLoad: function (options) {
-    that = this;
-    if (options.off == 'false') {
-      that.menuTap();
-    } else {
-      that.setData({
-        menuTapCurrent: options.id,
-        status: options.id
-      })
-      that.menuTap();
-    }
-  },
+  onLoad: function(options) {
+    that=this;
+    that.beg();
+    this.setData({
+      menuTapCurrent: options.id,
+    })  
+  },  
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -139,6 +149,10 @@ Page({
 
   onShow: function () {
     that = this
+    that.setData({
+      menuTapCurrent: -1,
+    })
+
   },
 
   /**
