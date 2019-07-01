@@ -124,21 +124,7 @@ Page({
         usertel: that.data.coco.usertel,
         address: that.data.site
       }).then(res => {
-        // 发起微信支付
-        wx.requestPayment({
-          'timeStamp': res.timeStamp,
-          'nonceStr': res.nonceStr,
-          'package': res.package,
-          'signType': res.signType,
-          'paySign': res.paySign,
-          'success': function (res) {
-            if (res.errMsg == "requestPayment:ok") {
-              wx.navigateTo({
-                url: '../payment/payment'
-              })
-            }
-          },
-        })
+        console.log(res)
         // wx.navigateTo({
         //   url: '../payment/payment'
         // })
@@ -190,8 +176,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    this.site()
 
-   
+    console.log(this.data.addressid)
   },
 
   /**

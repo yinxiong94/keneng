@@ -60,14 +60,9 @@ Page({
         code: that.data.count < 10 ? `请等待0${that.data.count}s` : `请等待${that.data.count}s`
       })
     }, 1000);
+
     // 调用验证码接口
-    app.postData("GetCode.ashx", {
-      action: 'GetAuth',
-      Tel: that.data.iphoneValue
-    })
   },
-
-
   /**
    * 生命周期函数--监听页面加载
    */
