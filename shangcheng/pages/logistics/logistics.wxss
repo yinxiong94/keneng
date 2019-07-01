@@ -40,7 +40,7 @@
 .db .top .item .list .left {
   width: 45rpx;
   position: relative;
-  border-left: 1px solid #eee;
+  /* border-left: 1px solid #eee; */
   margin-left: 15rpx;
 }
 
@@ -48,12 +48,24 @@
   width: 22rpx;
   height: 22rpx;
   border-radius: 50%;
-  background-color: #8ec31f;
+  /* background-color: #8ec31f; */
   border: 4rpx solid rgba(142, 195, 31, 0.5);
   position: absolute;
   top: 0;
   left: -15rpx;
   margin-top: 2rpx;
+  animation:my_animation 2s infinite;
+}
+
+@keyframes my_animation{
+  50% {  
+    transform: scale(1);  
+    background-color: transparent;  
+    }
+    100%{  
+    transform: scale(-1);  
+    background-color: transparent;  
+    }
 }
 
 .db .top .item .list .right {
