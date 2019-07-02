@@ -97,7 +97,7 @@
     </view>
     <view class="t_5">
       <view class="t_5_btn" catchtap='payment'>付款</view>
-      <view class="t_5_btn" catchtap='abolish'>取消订单</view>
+      <view class="t_5_btn" catchtap='abolish' data-OrderId='{{item.OrderId}}'>取消订单</view>
     </view>
 
   </view>

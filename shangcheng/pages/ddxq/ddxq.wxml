@@ -61,7 +61,7 @@
     <view class="xinxi_title">订单信息</view>
     <view class="ddh">订单号：{{list.OrderNo}}</view>
     <view class="ddh">创建时间：{{list.OrderDate}}</view>
-    <view class="ddh">成交时间：{{list.ZhiFuTime == null?'':'list.ZhiFuTime'}}</view>
+    <view class="ddh">成交时间：{{list.ZhiFuTime}}</view>
     <view class="dh" wx:if="{{orderStatus==0}}">
       <view class="dh_btn">联系卖家</view>
       <view class="dh_btn" catchtap="Tel">拨打电话</view>

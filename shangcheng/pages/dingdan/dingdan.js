@@ -92,6 +92,7 @@ Page({
   abolish(e) {
     that = this
     var orderid = e.currentTarget.dataset.orderid
+    console.log(e)
     wx.showModal({
       title: '取消订单',
       content: '您确认取消订单吗？',
