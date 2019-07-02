@@ -50,6 +50,7 @@ Page({
       })
     })
   },
+
   handPinjia: function (e) {
     let index = e.currentTarget.dataset.num;
     let sid = that.data.list[index].OrderId;
@@ -57,11 +58,13 @@ Page({
       url: '../publish/publish?ccc=' + sid,
     })
   },
+
   handCheng: function () {
     wx.navigateTo({
       url: '../After/After',
     })
   },
+
   cancel: function () {
     wx.navigateTo({
       url: '../logistics/logistics',
@@ -124,6 +127,8 @@ Page({
       })
       that.menuTap();
     }
+    
+
   },
 
   /**
@@ -139,6 +144,7 @@ Page({
 
   onShow: function () {
     that = this
+    that.beg();
   },
 
   /**

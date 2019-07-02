@@ -33,7 +33,7 @@ Page({
       that.setData({
         list: res.Result
       })
-      
+
     })
     app.postData("GetIndexData.ashx", {
       action: "getBanner"
@@ -41,6 +41,29 @@ Page({
       that.setData({
         send: res.Result
       })
+    })
+
+    that.initialize();
+  },
+
+  // 获取会员卡信息
+  initialize() {
+    that = this
+    app.postData("GetGoodsData.ashx", {
+      action: 'GetCard',
+    }).then(res => {
+      if (res.Result.length == 0) {
+        that.setData({
+          falg: false,
+          hide:true
+        })
+      } else {
+        that.setData({
+          Result: res.Result,
+          falg: true,
+          hide:false
+        })
+      }
     })
   },
 

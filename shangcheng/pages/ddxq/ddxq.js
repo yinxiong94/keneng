@@ -62,6 +62,40 @@ Page({
 
   },
 
+
+  // 取消订单
+  abolish() {
+    that = this
+    var OrderId = that.data.list.OrderId;
+    wx.showModal({
+      title: '取消订单',
+      content: '您确认取消订单吗？',
+      success(res) {
+        if (res.confirm) {
+          app.postData("GetOrderData.ashx", {
+            action: "Cancel",
+            orderid: OrderId
+          }).then(res => {
+            if (res.Result > 0) {
+              wx.navigateBack({
+                delta: 1
+              })
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+
+  // 拨打电话
+  Tel(){
+    that = this
+    wx.makePhoneCall({
+      phoneNumber:that.data.list.Tel
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

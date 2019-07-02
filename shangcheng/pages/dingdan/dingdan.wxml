@@ -70,7 +70,7 @@
     </view>
   </view>
   <!--  待付款 -->
-  <view class="whole" wx:if="{{menuTapCurrent==0}}"  wx:for="{{list}}" wx:key="index" data-index='{{index}}'>
+  <view class="whole" wx:if="{{menuTapCurrent==0}}"  wx:for="{{list}}" catchtap='handwait' wx:key="index" data-index='{{index}}'>
     <view class="t_1">{{item.OrderStatus}}</view>
     <view class="t_2" wx:for="{{item.detailsdlist}}" wx:for-item="list" wx:key="id">
       <view class="t_2_list">
