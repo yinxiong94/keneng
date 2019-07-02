@@ -24,7 +24,6 @@ Page({
   // 获取地址
   site() {
     that = this
-    
     app.postData("GetShoppingData.ashx", {
       action: "GetAddressList",
       userid: app.globalData.userid
@@ -176,7 +175,6 @@ Page({
     })
     that.handgm(options)
     that.loadmore()
-    that.site()
   },
 
   /**
@@ -190,7 +188,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    this.site()
    
   },
 

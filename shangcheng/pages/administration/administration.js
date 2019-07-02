@@ -104,9 +104,7 @@ Page({
    */
   onLoad: function(options) {
     that = this;
-    that.setData({
-      send: options.send
-    })
+   
     that.scrl()
   },
 
