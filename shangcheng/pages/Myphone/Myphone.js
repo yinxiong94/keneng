@@ -1,4 +1,6 @@
 // pages/Myphone/Myphone.js
+var that;
+const app = getApp();
 Page({
 
   /**
@@ -8,15 +10,10 @@ Page({
     iphoneValue: '', //手机号码
     count: 60,  //倒计时时间
     code: '获取验证码',
+    Usercode:252124, //用户输入的验证码
   },
-  // 获取用户输入的手机号码
-  Input_iphone(e) {
-    let that = this;
-    that.setData({
-      iphoneValue: e.detail.value
-    })
 
-  },
+
   // 点击获取验证码
   textCode() {
     let that = this;
@@ -67,12 +64,56 @@ Page({
     })
   },
 
+  // 获取key中的手机号码
+  Usersphone(){
+    that = this
+    wx.getStorage({
+      key: 'UserTel',
+      success: function (res) {
+        that.setData({
+          iphoneValue: res.data
+          })
+        },
+    })
+  },
+
+  // 获取用户输入的验证码
+  verifycode(e){
+    that = this
+    that.setData({
+      Usercode: e.detail.value
+    })
+  },
+  
+  // 点击验证
+  verify(){
+    that = this
+    app.postData("GetCode.ashx?",{
+      action:'ExistAuth',
+      Tel: that.data.iphoneValue,
+      Code: that.data.Usercode
+    }).then(res=>{
+      console.log(res)
+      if (res.Result == false){
+        wx.showToast({
+          title: '验证码错误',
+          icon:"none",
+          duration:2000
+        })
+        return
+      }else{
+        wx.navigateTo({
+          url: '../usedMyphone/usedMyphone',
+        })
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.Usersphone()
   },
 
   /**

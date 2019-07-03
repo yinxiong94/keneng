@@ -1,4 +1,6 @@
 // pages/usedMyphone/usedMyphone.js
+var  that;
+const app = getApp();
 Page({
 
   /**
@@ -66,6 +68,59 @@ Page({
         code: that.data.count < 10 ? `请等待0${that.data.count}s` : `请等待${that.data.count}s`
       })
     }, 1000);
+
+    // 调用验证码接口
+    app.postData("GetCode.ashx", {
+      action: 'GetAuth',
+      Tel: that.data.iphoneValue
+    })
+  },
+
+  // 获取用户输入的验证码
+  verifycode(e) {
+    that = this
+    that.setData({
+      Usercode: e.detail.value
+    })
+  },
+
+  // 点击验证
+  verify() {
+    that = this
+    app.postData("GetCode.ashx?", {
+      action: 'ExistAuth',
+      Tel: that.data.iphoneValue,
+      Code: that.data.Usercode
+    }).then(res => {
+      if (res.Result == false) {
+        wx.showToast({
+          title: '验证码错误',
+          icon: "none",
+          duration: 2000
+        })
+        return
+      } else {
+        app.postData("GetUserData.ashx",{
+          action:'SetUserInfo',
+          userid: app.globalData.userid,
+          usertel: that.data.iphoneValue
+        }).then(res=>{
+          if (res.Result){
+            wx.showToast({
+              title: '修改成功',
+              icon: "none",
+              duration: 2000
+            })
+          }else{
+            wx.showToast({
+              title: '修改失败',
+              icon: "none",
+              duration: 2000
+            })
+          }
+        })
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
