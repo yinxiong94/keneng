@@ -1,4 +1,7 @@
 // pages/logistics/logistics.js
+
+var that;
+const app = getApp();
 Page({
 
   /**

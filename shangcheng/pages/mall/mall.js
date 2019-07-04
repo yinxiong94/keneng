@@ -43,7 +43,7 @@ Page({
       })
     })
 
-    that.initialize();
+   
   },
 
   // 获取会员卡信息
@@ -51,9 +51,11 @@ Page({
     that = this
     app.postData("GetGoodsData.ashx", {
       action: 'GetCard',
+      userid: app.globalData.userid
     }).then(res => {
-      if (res.Result.length == 0) {
+      if (res.Result.IsVip == 0) {
         that.setData({
+          Result: res.Result,
           falg: false,
           hide:true
         })
@@ -63,6 +65,7 @@ Page({
           falg: true,
           hide:false
         })
+       
       }
     })
   },
@@ -78,7 +81,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    that = this;
+    that.initialize();
   },
 
   /**

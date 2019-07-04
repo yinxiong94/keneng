@@ -20,6 +20,7 @@ Page({
     that = this
     app.postData("GetGoodsData.ashx",{
       action:'GetCard',
+      userid: app.globalData.userid
     }).then(res=>{
       that.setData({
         Result: res.Result
