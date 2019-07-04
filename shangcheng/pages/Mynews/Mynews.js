@@ -1,5 +1,5 @@
 // pages/Mynews/Mynews.js
-var app = getApp();
+const app = getApp();
 var that;
 Page({
 
@@ -73,9 +73,15 @@ Page({
     })
   },
   handTel: function () {
-    wx.navigateTo({
-      url: '../Myphone/Myphone',
-    })
+    if (wx.getStorageSync('UserTel')){
+      wx.navigateTo({
+        url: '../Myphone/Myphone',
+      })
+    }else{
+      wx.navigateTo({
+        url: '../usedMyphone/usedMyphone',
+      })
+    }
   },
   handTgm: function () {
     wx.navigateTo({

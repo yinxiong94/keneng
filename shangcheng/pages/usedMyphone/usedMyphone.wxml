@@ -10,7 +10,7 @@
     <view class="left">
       验证码
     </view>
-    <input type='text' placeholder='请输入验证码'></input>
+    <input type='text' placeholder='请输入验证码' bindinput='verifycode' type='number' maxlength="6"></input>
   </view>
-  <view class="btn">验证</view>
+  <view class="btn" bindtap='verify'>验证</view>
 </view>
