@@ -1,9 +1,12 @@
 // pages/request/request.js
+var app = getApp();
+var that;
 Page({
 
   /**
    * 页面的初始数据
    */
+
   data: {
 
   },
@@ -30,7 +33,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    that = this;
+    app.postData("GetGoodsData.ashx", {
+      action: "DeliverList",
+      userid: app.globalData.userid
+    }).then(res => {
+      console.log(res);
+    })
   },
 
   /**

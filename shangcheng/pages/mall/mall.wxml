@@ -18,7 +18,7 @@
 
 
 
-  <view class="vip">
+  <view class="vip" bindtap='handHuika'>
     <image src='{{Result.Cardpic}}'></image>
     <view class="text_1">VIP</view>
     <view class="text_2">{{Result.Cardname}}</view>
@@ -27,7 +27,7 @@
       {{Result.Carddesc}}
       </view>
     <view class="text_4" wx:if="{{falg}}">￥{{Result.Cardprice}}</view>
-    <view class="kaitong" bindtap='handlOpening' wx:if="{{hide}}">立即开通</view>
+    <view class="kaitong" catchtap='handlOpening' wx:if="{{hide}}">立即开通</view>
   </view>
 
 

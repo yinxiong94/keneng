@@ -37,7 +37,7 @@
         <image class="img1" src='/pages/img/right.png' lazy-load='true'></image>
       </view>
     </view>
-    <view class="reply" wx:for="{{just.list}}" wx:key="index">
+    <view class="reply" wx:for="{{justOne}}" wx:key="index">
       <view class='reply_list'>
         <view class="left">
           <image src='{{item.UserImg}}' lazy-load='true'></image>
@@ -83,6 +83,7 @@
       </view>
     </view>
   </view> -->
+  <view class="whole" bindtap='handWhole'>显示全部</view>
   <view class="hhh"></view>
   <view class="goods">
     <view class="goods_title">商品详情</view>
@@ -93,8 +94,9 @@
   </view>
   <view class="footer">
     <view class="footer_1">
-      <image src='/pages/img/tousu.png' lazy-load='true'></image>
-      <view class="diso">客服</view>
+      <image src='/pages/img/gouwu.png' lazy-load='true'></image>
+      <view class="diso">购物车</view>
+      <view class="coot">{{num}}</view>
     </view>
     <view class="footer_2" catchtap='handCart'>加入购物车</view>
     <view class="footer_2 red" catchtap='handgm'>立即购买</view>

@@ -12,6 +12,11 @@ Page({
     list: [],
     send: []
   },
+  handHuika:function(){
+    wx.navigateTo({
+      url: '../huika/huika',
+    })
+  },
   handlOpening: function() {
     wx.navigateTo({
       url: '../card/card'
@@ -51,6 +56,7 @@ Page({
     that = this
     app.postData("GetGoodsData.ashx", {
       action: 'GetCard',
+      userid: app.globalData.userid
     }).then(res => {
       if (res.Result.length == 0) {
         that.setData({
