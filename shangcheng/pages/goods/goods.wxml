@@ -30,31 +30,30 @@
   <view class="hhh"></view>
   <view class="evaluation">
     <view class="title">
-      <view class="left">评价（1253）</view>
+      <view class="left">评价（{{just.count}}）</view>
       <view class="right">
         <image class="img" src='/pages/img/xing.png' lazy-load='true'></image>
-        <text>4.5</text>
+        <text>{{just.avg}}</text>
         <image class="img1" src='/pages/img/right.png' lazy-load='true'></image>
       </view>
     </view>
-    <view class="reply">
+    <view class="reply" wx:for="{{just.list}}" wx:key="index">
       <view class='reply_list'>
         <view class="left">
-          <image src='/pages/img/tx11.png' lazy-load='true'></image>
+          <image src='{{item.UserImg}}' lazy-load='true'></image>
           <view class="text_1">
-            <view class="k1">无厘头</view>
-            <view class="k2">2019.5.12</view>
+            <view class="k1">{{item.NickName}}</view>
+            <view class="k2">{{item.Createdate}}</view>
           </view>
         </view>
         <view class="right">
           <image src='/pages/img/xing.png' lazy-load='true'></image>
-          <text>4.5</text>
+          <text>{{item.Lev}}</text>
         </view>
       </view>
-      <view class="sentence">物流非常快，味道还可以下次继续光顾。</view>
+      <view class="sentence">{{item.Cotent}}</view>
       <view class="i_1">
-        <image lazy-load='true' src='/pages/img/hetao.png'></image>
-        <image lazy-load='true' src='/pages/img/hetao.png'></image>
+        <image wx:for="{{item.piclist}}" wx:for-item="sai" wx:key="{{index}}" lazy-load='true' src='{{sai.url}}'></image>
       </view>
       <view class="t_1">碧根果190ｇ／袋</view>
       <view class="h_1">
