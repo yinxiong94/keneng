@@ -14,7 +14,8 @@ Page({
     length: '',
     current:1,
     count:1,
-    shoplist:[]
+    shoplist:[],
+    just:[]
   },
   aaa:function(e){
     that.setData({ current: e.detail.current+=1})
@@ -69,6 +70,7 @@ Page({
       action: "GetDetails",
       goodsid: that.data.sid
     }).then(res => {
+      // console.log(res);
       that.setData({
         list: res.Result,
         urlLength:res.Result.piclist.length
@@ -81,6 +83,18 @@ Page({
     })
   
   },
+  hnadComment:function(){
+    that = this;
+    app.postData("GetGoodsData.ashx", {
+      action: "GetComments",
+      goodsid: that.data.sid
+    }).then(res => {
+      console.log(res);
+      that.setData({
+        just:res.Result
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -92,7 +106,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    that = this;
+    that.hnadComment();
   },
 
   /**

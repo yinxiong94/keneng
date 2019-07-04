@@ -45,6 +45,7 @@ Page({
       psize: that.data.psize,
       status: that.data.status
     }).then(res => {
+      console.log(res);
       that.setData({
         list: res.Result
       })
@@ -52,10 +53,10 @@ Page({
   },
 
   handPinjia: function (e) {
-    let index = e.currentTarget.dataset.num;
-    let sid = that.data.list[index].OrderId;
+    that = this;
+    let index = e.currentTarget.dataset.goodsid;
     wx.navigateTo({
-      url: '../publish/publish?ccc=' + sid,
+      url: '../publish/publish?ccc=' + index,
     })
   },
 
@@ -92,7 +93,6 @@ Page({
   abolish(e) {
     that = this
     var orderid = e.currentTarget.dataset.orderid
-    console.log(e)
     wx.showModal({
       title: '取消订单',
       content: '您确认取消订单吗？',

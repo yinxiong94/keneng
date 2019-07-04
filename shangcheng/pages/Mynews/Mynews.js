@@ -37,6 +37,10 @@ Page({
         key: 'NickName',
         data: res.Result.NickName,
       })
+      wx.setStorage({
+        key: 'UserTel',
+        data: res.Result.UserTel,
+      })
     })
   },
 
