@@ -59,6 +59,6 @@
   margin-top: 80rpx;
 }
 
-.text{
-  
+input{
+  color: #EEEEEE;
 }
