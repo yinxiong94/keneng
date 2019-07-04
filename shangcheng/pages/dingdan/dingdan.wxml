@@ -163,9 +163,9 @@
           <text>￥</text>{{item.TotalPrice}}</view>
         <text class="t_4_1">共{{item.ProductSumNum}}件商品  合计：</text>
       </view>
-      <view class="t_5">
+      <!-- <view class="t_5">
         <view class="t_5_btn" catchtap='payment'>确认收货</view>
-      </view>
+      </view> -->
     </view>
   </view>
   <!--  待退货 -->

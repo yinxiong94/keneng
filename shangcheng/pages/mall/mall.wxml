@@ -23,7 +23,7 @@
     <view class="text_1">VIP</view>
     <view class="text_2">{{Result.Cardname}}</view>
     <view class="text_3">
-      <view wx:if="{{falg}}">12</view>
+      <view wx:if="{{falg}}">{{Result.Count}}</view>
       {{Result.Carddesc}}
       </view>
     <view class="text_4" wx:if="{{falg}}">￥{{Result.Cardprice}}</view>

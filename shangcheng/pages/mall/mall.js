@@ -13,9 +13,16 @@ Page({
     send: []
   },
   handHuika:function(){
-    wx.navigateTo({
-      url: '../huika/huika',
-    })
+    that = this;
+    var falg = that.data.falg;
+    var hide = that.data.hide;
+    if (falg == true && hide == false){
+      wx.navigateTo({
+        url: '../request/request'
+      })
+    }else{
+      return
+    }
   },
   handlOpening: function() {
     wx.navigateTo({
@@ -48,7 +55,7 @@ Page({
       })
     })
 
-    that.initialize();
+   
   },
 
   // 获取会员卡信息
@@ -58,8 +65,9 @@ Page({
       action: 'GetCard',
       userid: app.globalData.userid
     }).then(res => {
-      if (res.Result.length == 0) {
+      if (res.Result.IsVip == 0) {
         that.setData({
+          Result: res.Result,
           falg: false,
           hide:true
         })
@@ -69,6 +77,7 @@ Page({
           falg: true,
           hide:false
         })
+       
       }
     })
   },
@@ -84,7 +93,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    that = this;
+    that.initialize();
   },
 
   /**
