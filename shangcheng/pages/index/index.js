@@ -59,7 +59,7 @@ Page({
                 success: res => {
                   app.globalData.userData = res;
                   that.login();
-                  wx.switchTab({
+                  wx.navigateTo({
                     url: '/pages/mall/mall',
                   })
                 }

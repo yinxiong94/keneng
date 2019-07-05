@@ -16,8 +16,8 @@ Page({
     count: 1,
     shoplist: [],
     just: [],
-    justOne:[],
-    num:''
+    justOne: [],
+    num: ''
   },
   aaa: function(e) {
     that.setData({
@@ -25,7 +25,7 @@ Page({
     })
 
   },
-  handWhole:function(){
+  handWhole: function() {
     that = this;
     var sendCoo = [];
     sendCoo = that.data.just.list;
@@ -41,16 +41,21 @@ Page({
       action: "Query",
       userid: app.globalData.userid
     }).then(res => {
-      str = res.Result.shoplist.length;
-      that.setData({
-        num: str
-      })
+      if (res.Result == null) {
+        that.setData({
+          num: 0
+        })
+      } else {
+        str = res.Result.shoplist.length;
+        that.setData({
+          num: str
+        })
+      }
     })
   },
   // 加入购物车
   handCart: function() {
     that = this
-    that.handMun();
     app.postData("GetShoppingData.ashx", {
       action: "AddShopping",
       goodsid: that.data.sid,
@@ -63,6 +68,7 @@ Page({
           icon: 'none',
           duration: 2000
         })
+        that.handMun();
       } else {
         wx.showToast({
           title: '加入购物车失败',
@@ -119,14 +125,14 @@ Page({
       that.setData({
         just: res.Result
       })
-      for (let i = 0; i < 3; i++){
+      for (let i = 0; i < 3; i++) {
         coout.push(res.Result.list[i]);
       }
       that.setData({
-        justOne:coout
+        justOne: coout
       })
     })
-  },  
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

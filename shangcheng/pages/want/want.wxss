@@ -1,0 +1,121 @@
+.db {
+  width: 750rpx;
+  border-top: 1px solid #ccc;
+  position: relative;
+}
+
+.db .top {
+  width: 700rpx;
+  height: 86rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 5px 10px 0px rgba(47, 129, 255, 0.13);
+  border-radius: 6rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  display: flex;
+}
+
+.db .top>input {
+  flex: 1;
+  font-size: 26rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(172, 172, 172, 1);
+  margin-top: 16rpx;
+}
+
+.db .top image {
+  width: 36rpx;
+  height: 36rpx;
+  padding: 25rpx;
+}
+
+.db .id {
+  width: 700rpx;
+  margin: 0 auto;
+  margin-top: 24rpx;
+}
+
+.db .id .equipment {
+  height: 30rpx;
+  font-size: 30rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(153, 153, 153, 1);
+}
+
+.db .id .equipment text {
+  height: 28rpx;
+  font-size: 30rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: #545252;
+  line-height: 28rpx;
+}
+
+.item {
+  width: 690rpx;
+  height: 138rpx;
+  background: rgba(255, 255, 255, 1);
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin-top: 24rpx;
+  background: rgba(223, 223, 223, 1);
+  position: relative;
+}
+
+.item .list {
+  width: 690rpx;
+  display: flex;
+  padding: 53rpx 35rpx;
+  background-color: #fff;
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  border: 1px solid rgba(240, 240, 240, 1);
+  box-shadow: 0px 10px 16px 4px rgba(189, 189, 189, 0.29);
+  border-radius: 10rpx;
+}
+
+.item .list .left {
+  height: 34rpx;
+  font-size: 30rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(1, 1, 1, 1);
+  line-height: 34rpx;
+  width: 347rpx;
+}
+
+.item .list .right {
+  flex: 1;
+  height: 34rpx;
+  font-size: 30rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(1, 1, 1, 1);
+  line-height: 34rpx;
+}
+
+.kop {
+  width: 271rpx;
+  height: 138rpx;
+  display: flex;
+  justify-content: space-between;
+  float: right;
+}
+
+.kop image {
+  width: 107rpx;
+  height: 107rpx;
+  margin-top: 16rpx;
+}
+
+.jia {
+  position: absolute;
+  top: 955rpx;
+  width: 166rpx;
+  height: 166rpx;
+  left: 262rpx;
+}

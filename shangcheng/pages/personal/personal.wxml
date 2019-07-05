@@ -1,0 +1,70 @@
+<view class="db">
+  <view class="top">
+    <image src='/pages/img/tou.png'></image>
+    <view class="name">小浣熊代理</view>
+  </view>
+  <view class="bg">
+    <image src='/pages/img/bg2.png'></image>
+    <view class="bg_coco">
+      <view class="pirce">账户余额（元）</view>
+      <view class="tixian">
+        <view class="left" bindtap='toyj'>
+          1323.89
+        </view>
+        <view class="right" bindtap='totx'>
+          提现
+        </view>
+      </view>
+      <view class="shou" bindtap='toyj'>
+        <view class="right">今日收入1465.87</view>
+        <view class="right">总收入489124</view>
+      </view>
+    </view>
+  </view>
+  <view class="nav">
+    <view class="list">
+      <view class="list_1">
+        <view class="list_2" bindtap='szgl'>
+          <image src='/pages/img/nav.png'></image>
+          <view class="nav_1">社长管理</view>
+        </view>
+        <view class="list_2" bindtap='spxs'>
+          <image src='/pages/img/nav1.png'></image>
+          <view class="nav_1">商品销售报表</view>
+        </view>
+        <view class="list_2" bindtap='shbb'>
+          <image src='/pages/img/nav2.png'></image>
+          <view class="nav_1">送货报表</view>
+        </view>
+      </view>
+      <view class="list_1">
+        <view class="list_2" bindtap='sqxx'>
+          <image src='/pages/img/nav3.png'></image>
+          <view class="nav_1">社区基础信息</view>
+        </view>
+        <view class="list_2" bindtap='tgt'>
+          <image src='/pages/img/nav4.png'></image>
+          <view class="nav_1">推广拓扑图</view>
+        </view>
+        <view class="list_2" bindtap='wdtj'>
+          <image src='/pages/img/nav5.png'></image>
+          <view class="nav_1">我的推荐码</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="tabar">
+    <view class="nav" bindtap='handJump1'>
+      <image src='../img/wdsb1.png' lazy-load='true'></image>
+      <text>我的设备</text>
+    </view>
+    <view class="nav" bindtap='handJump2'>
+      <image src='../img/myhy.png' lazy-load='true'></image>
+      <text>我的会员</text>
+    </view>
+    <view class="nav" bindtap='handJump3'>
+      <image src='../img/grzx.png' lazy-load='true'></image>
+      <text class="lv">个人中心</text>
+    </view>
+  </view>
+</view>

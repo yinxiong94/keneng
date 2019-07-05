@@ -53,4 +53,22 @@
       </view>
     </view>
   </view>
+  <view class="tabar">
+    <view class="nav" bindtap='handJump1'>
+      <image src='/pages/img/index.png' lazy-load='true'></image>
+      <text class="lv">首页</text>
+    </view>
+    <view class="nav" bindtap='handJump2'>
+      <image src='/pages/img/fenlei1.png' lazy-load='true'></image>
+      <text>分类</text>
+    </view>
+    <view class="nav" bindtap='handJum3'>
+      <image src='/pages/img/cart1.png' lazy-load='true'></image>
+      <text>购物车</text>
+    </view>
+    <view class="nav" bindtap='handJump4'>
+      <image src='/pages/img/My1.png' lazy-load='true'></image>
+      <text>我的</text>
+    </view>
+  </view>
 </view>

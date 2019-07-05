@@ -125,7 +125,23 @@
     </view>
 
   </view>
-
+  <view class='cont_Signout'>
+    <view class='cont_Signout_text1' bindtap='handDld'>
+      <view class='cont_Signout_text'>
+        <image src='../img/peisong.png'></image>
+        <text>代理端</text>
+      </view>
+      <image src='../img/youjux.png'></image>
+    </view>
+    <view class='cont_Signout_coso'></view>
+    <view class='cont_Signout_text1' bindtap='handSzd'>
+      <view class='cont_Signout_text'>
+        <image src='../img/tousu1.png'></image>
+        <text>社长端</text>
+      </view>
+      <image src='../img/youjux.png'></image>
+    </view>
+  </view>
   <view class='cont_quit' bindtap='handOut'>退出账户</view>
   <view class='cont_high'></view>
 </view>

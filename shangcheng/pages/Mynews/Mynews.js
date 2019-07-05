@@ -10,6 +10,16 @@ Page({
     id: '0',
     send: 0
   },
+  handDld:function(){
+    wx.navigateTo({
+      url: '/pages/personal/personal',
+    })
+  },
+  handSzd: function () {
+    wx.navigateTo({
+      url: '/pages/szdpersonal/szdpersonal',
+    })
+  },
   handVip: function () {
     wx.navigateTo({
       url: '/pages/huika/huika?send=0',

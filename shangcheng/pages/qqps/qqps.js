@@ -7,28 +7,45 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: []
+    list: [],
+    show: true
   },
-  handReceiving:function(e){
-    that=this;
+  handReceiving: function(e) {
+    that = this;
     let deliverid = e.currentTarget.dataset.index;
+    let index = e.currentTarget.dataset.coco;
+    let list = that.data.list
     app.postData("GetGoodsData.ashx", {
       action: "ReviceDeliver",
       deliverid: deliverid
     }).then(res => {
-      console.log(res);
+      if (res.Result == 1) {
+        list[index].isShow = false;
+        that.setData({
+          list: list
+        })
+      }
     })
   },
   handDeliverList: function() {
     that = this;
+    let coco = [];
     app.postData("GetGoodsData.ashx", {
       action: "DeliverList",
       userid: app.globalData.userid
     }).then(res => {
-      that.setData({
-        list: res.Result
-      })
-      console.log(that.data.list);
+      console.log(res);
+      res.Result.map(element => element['isShow'] = true);
+      if (res.Result.length >= 1) {
+        that.setData({
+          list: res.Result,
+          show: false
+        })
+      } else {
+        that.setData({
+          show: true
+        })
+      }
     })
   },
   handlPin: function() {
@@ -55,7 +72,7 @@ Page({
    */
   onShow: function() {
     that = this;
-    that.handDeliverList();
+    // that.handDeliverList();
   },
 
   /**
