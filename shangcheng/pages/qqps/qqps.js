@@ -16,7 +16,7 @@ Page({
       action: "ReviceDeliver",
       deliverid: deliverid
     }).then(res => {
-      console.log(res);
+      // console.log(res);
     })
   },
   handDeliverList: function() {
@@ -31,9 +31,9 @@ Page({
       console.log(that.data.list);
     })
   },
-  handlPin: function() {
+  handlPin: function(e) {
     wx.navigateTo({
-      url: '../evaluation/evaluation'
+      url: '../evaluation/evaluation?deliverid=' + e.currentTarget.dataset.deliverid
     })
   },
   /**

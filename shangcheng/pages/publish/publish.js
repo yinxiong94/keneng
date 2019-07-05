@@ -161,6 +161,8 @@ Page({
       }
     })
   },
+
+  
   //多张图片上传
   uploadimg: function(data) {
     var that = this,

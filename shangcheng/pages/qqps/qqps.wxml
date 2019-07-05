@@ -22,7 +22,7 @@
       </view>
     </view>
     <view class="btn">
-      <view class="pin" bindtap='handlPin'>评价</view>
+      <view class="pin" bindtap='handlPin' data-DeliverId='{{item.DeliverId}}'>评价</view>
       <view class="shou">确认收货</view>
     </view>
   </view>
