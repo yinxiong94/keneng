@@ -139,6 +139,8 @@ Page({
     }
 
   },
+
+
   // 添加图片
   chooseImage() {
     that = this
@@ -159,6 +161,8 @@ Page({
       }
     })
   },
+
+  
   //多张图片上传
   uploadimg: function(data) {
     var that = this,
@@ -201,6 +205,11 @@ Page({
       }
     })
   },
+
+
+
+
+  
   // // 删除图片
   clearImg(e) {
     that - this

@@ -11,35 +11,38 @@
     <view class="title">配送评价</view>
     <view class="coco">
       <view class="list">
-        <image src='/pages/img/pin1.png' lazy-load='true'></image>
+        <image src='/pages/img/pin1.png' lazy-load='true' data-img1='1' bindtap='bindImg' wx:if="{{data_img!=1}}"></image>
+        <image src='/pages/img/pin11.png' lazy-load='true' wx:if="{{data_img==1}}"></image>
         <view>差</view>
       </view>
       <view class="list">
-        <image src='/pages/img/pin2.png' lazy-load='true'></image>
+        <image src='/pages/img/pin3.png' lazy-load='true' data-img1='2' bindtap='bindImg' wx:if="{{data_img!=2}}"></image>
+        <image src='/pages/img/pin33.png' lazy-load='true' wx:if="{{data_img==2}}"></image>
         <view>中</view>
       </view>
       <view class="list">
-        <image src='/pages/img/pin3.png' lazy-load='true'></image>
+        <image src='/pages/img/pin2.png' lazy-load='true' data-img1='3' bindtap='bindImg' wx:if="{{data_img!=3}}"></image>
+        <image src='/pages/img/pin22.png' lazy-load='true' wx:if="{{data_img==3}}"></image>
         <view>好</view>
       </view>
     </view>
   </view>
   <view class="upload">
-    <textarea maxlength="-1" placeholder='还有什么想说的吗？那就在这里写下来吧!'></textarea>
+    <textarea maxlength="-1" placeholder='还有什么想说的吗？那就在这里写下来吧!' maxlength='200' bindinput='golev'></textarea>
     <view class="upload_img">
-      <view class="img">
-        <image class="img_1" src='/pages/img/img1.png'></image>
-        <image class="img_2" src='/pages/img/del.png'></image>
+      <view class="img" wx:for="{{images}}" wx:key="index">
+        <image class="img_1" src='{{item}}' bindtap='showImg'  data-index="{{index}}"></image>
+        <image class="img_2" src='/pages/img/del.png' bindtap='clearImg' data-index="{{index}}" ></image>
       </view>
-      <view class="img">
+      <view class="img" wx:if="{{showUpload}}" catchtap='chooseImage'>
         <image class="img_1" src='/pages/img/jia.png'></image>
       </view>
-      <view class="img">
+      <!-- <view class="img">
         <image class="img_1" src='/pages/img/jia.png'></image>
-      </view>
+      </view> -->
     </view>
   </view>
-  <view class="btn">
+  <view class="btn" bindtap='gobtn'>
   发表评论
   </view>
 </view>

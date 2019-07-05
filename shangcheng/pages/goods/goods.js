@@ -19,13 +19,13 @@ Page({
     justOne: [],
     num: ''
   },
-  aaa: function(e) {
+  aaa: function (e) {
     that.setData({
       current: e.detail.current += 1
     })
 
   },
-  handWhole: function() {
+  handWhole: function () {
     that = this;
     var sendCoo = [];
     sendCoo = that.data.just.list;
@@ -34,7 +34,7 @@ Page({
     })
   },
   // 获取购物车商品数量
-  handMun: function() {
+  handMun: function () {
     that = this;
     var str = '';
     app.postData("GetShoppingData.ashx", {
@@ -54,7 +54,7 @@ Page({
     })
   },
   // 加入购物车
-  handCart: function() {
+  handCart: function () {
     that = this
     app.postData("GetShoppingData.ashx", {
       action: "AddShopping",
@@ -84,7 +84,7 @@ Page({
       url: '/pages/order/order?sid=' + that.data.sid + "&id=" + "0",
     })
   },
-  handTxdd: function() {
+  handTxdd: function () {
     wx: wx.navigateTo({
       url: '../order/order'
     })
@@ -92,7 +92,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     that = this
     that.setData({
       sid: options.id
@@ -115,7 +115,7 @@ Page({
 
   },
   // 评论
-  hnadComment: function() {
+  hnadComment: function () {
     that = this;
     var coout = [];
     app.postData("GetGoodsData.ashx", {
@@ -136,14 +136,14 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
     that = this;
     that.hnadComment();
     that.handMun();
@@ -152,35 +152,35 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })
