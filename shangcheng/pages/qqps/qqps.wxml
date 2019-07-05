@@ -1,20 +1,25 @@
 <!-- 请求配送 -->
 <view class="db">
-  <view class="from">
+  <view class="from" wx:for="{{list}}" wx:key="{{index}}" data-index="{{item.DeliverId}}" bindtap='handReceiving'>
     <view class="s">
-      <view class="left">会员名称：湖南浣熊</view>
-      <view class="right">预计12:48送到</view>
+      <view class="left">会员名称：{{item.UserName}}</view>
+      <view class="right">预计{{item.CreateDate}}送到</view>
     </view>
     <view class="s1">
-      <image src='/pages/img/dizhi.png' lazy-load='true'></image>
-      <view class="right">长沙市天心区雀园路国家广告创意园</view>
+      <image src='/pages/img/dizhilv.png' lazy-load='true'></image>
+      <view class="right">{{item.Address}}</view>
     </view>
     <view class="s1">
       <image src='/pages/img/tel.png' lazy-load='true'></image>
-      <view class="right">18765255140</view>
+      <view class="right">{{item.UserTel}}</view>
     </view>
-    <view class="remaining">剩余
-      <text>11</text>次送米
+    <view class="goout">
+      <view class="remaining">剩余
+        <text>{{item.SurCount}}</text>次送米
+      </view>
+      <view class="goout_right">
+      配送{{item.Decount}}份
+      </view>
     </view>
     <view class="btn">
       <view class="pin" bindtap='handlPin'>评价</view>
