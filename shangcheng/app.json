@@ -39,16 +39,40 @@
     "pages/ddxq2/ddxq2",
     "pages/After/After",
     "pages/open/open",
+    "pages/personal/personal",
+    "pages/spxsdd/spxsdd",
+    "pages/want/want",
+    "pages/plan/plan",
+    "pages/mymember/mymember",
+    "pages/member/member",
+    "pages/extension1/extension1",
+    "pages/code/code",
+    "pages/cash/cash",
+    "pages/commission/commission",
+    "pages/basics/basics",
+    "pages/Dldindex/Dldindex",
+    "pages/Dldadministration/Dldadministration",
+    "pages/tixian/tixian",
+    "pages/szdpersonal/szdpersonal",
+    "pages/Return/Return",
+    "pages/withdrawal/withdrawal",
+    "pages/fault/fault",
+    "pages/szdmember/szdmember",
+    "pages/flowing/flowing",
+    "pages/zhuangzheng/zhuangzheng",
+    "pages/szdextension/szdextension",
+    "pages/szdindex/szdindex",
+    "pages/mydevice/mydevice",
+    "pages/device/device",
     "pages/xjtg/xjtg"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
-  },
-  "sitemapLocation": "sitemap.json",
-  "tabBar": {
+  },  "tabBar": {
     "list": [
       {
         "pagePath": "pages/mall/mall",
@@ -75,5 +99,6 @@
         "selectedIconPath": "/pages/img/My.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

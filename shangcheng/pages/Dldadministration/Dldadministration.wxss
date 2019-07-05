@@ -1,0 +1,84 @@
+.db {
+  width: 750rpx;
+  border-top: 1px solid #e5e5e5;
+}
+
+.db .input {
+  width: 711rpx;
+  height: 86rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 5px 10px 0px rgba(47, 129, 255, 0.13);
+  border-radius: 6rpx;
+  margin: 0 auto;
+  display: flex;
+}
+
+.db .input image {
+  width: 36rpx;
+  height: 36rpx;
+  padding: 25rpx 22rpx;
+}
+
+.db .input input {
+  height: 25rpx;
+  font-size: 26rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(172, 172, 172, 1);
+  margin-top: 14rpx;
+}
+
+.db .item {
+  margin-top: 20rpx;
+}
+
+.db .item .list {
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  height: 155rpx;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  padding-top: 21rpx;
+  width: 750rpx;
+  padding-right: 30rpx;
+}
+
+.db .item .list .img1 {
+  width: 89rpx;
+  height: 89rpx;
+}
+
+.db .item .list .right {
+  flex: 1;
+  margin-left: 30rpx;
+}
+
+.db .item .list .right .xinxi {
+  font-size: 22rpx;
+  color: #787878;
+}
+
+.db .item .list .right .xinxi .name {
+  color: #323232;
+  height: 29rpx;
+  font-size: 30rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+}
+
+.db .item .list .right .xinxi .address {
+  margin-top: 22rpx;
+  margin-bottom: 15rpx;
+  height: 21rpx;
+  line-height: 21rpx;
+}
+
+.db .item .list .right .xinxi .tel {
+  height: 21rpx;
+  line-height: 21rpx;
+}
+.db .item .list .img2{
+  width: 136rpx;
+  height: 40rpx;
+  margin-top: 36rpx;
+}

@@ -1,0 +1,45 @@
+<view class="db">
+  <view class="input">
+    <image src='/pages/img/fdj.png' lazy-load='true'></image>
+    <input type='text' placeholder='请输入搜索内容'></input>
+  </view>
+  <view class="item">
+    <view class="list">
+      <image class="img1" src='/pages/img/tx.png'></image>
+      <view class="right">
+        <view class="xinxi">
+          <view class="name">胖大海</view>
+          <view class="address">长沙市天心区九峰小区</view>
+          <view class="tel">
+            联系方式：15986203495
+          </view>
+        </view>
+      </view>
+      <image class="img2" src='/pages/img/bei.png'></image>
+    </view>
+    <view class="list">
+      <image class="img1" src='/pages/img/tx.png'></image>
+      <view class="right">
+        <view class="xinxi">
+          <view class="name">胖大海</view>
+          <view class="address">长沙市天心区九峰小区</view>
+          <view class="tel">
+            联系方式：15986203495
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="list">
+      <image class="img1" src='/pages/img/tx.png'></image>
+      <view class="right">
+        <view class="xinxi">
+          <view class="name">胖大海</view>
+          <view class="address">长沙市天心区九峰小区</view>
+          <view class="tel">
+            联系方式：15986203495
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

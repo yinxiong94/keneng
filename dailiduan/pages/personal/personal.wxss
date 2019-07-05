@@ -152,3 +152,40 @@
   line-height: 24rpx;
   margin-top: 18rpx;
 }
+  .tabar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 98rpx;
+  width: 750rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px -3px 6px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.tabar .nav {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabar .nav image {
+  width: 42rpx;
+  height: 42rpx;
+  margin: 0 auto;
+  margin-top: 11rpx;
+}
+
+.tabar .nav text {
+  font-size: 24rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: #aaa;
+  height: 23rpx;
+  margin-top: 4rpx;
+  text-align: center;
+}
+
+.lv {
+  color: #8ec31f !important;
+}

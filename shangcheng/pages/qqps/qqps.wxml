@@ -1,6 +1,13 @@
 <!-- 请求配送 -->
 <view class="db">
-  <view class="from" wx:for="{{list}}" wx:key="{{index}}" data-index="{{item.DeliverId}}" bindtap='handReceiving'>
+  <view class="null" wx:if="{{show}}">
+    <view class="top">
+      <image src='/pages/img/peisongche.png' lazy-load='true'></image>
+      <view class="kk">亲，你还没有相关订单哦～</view>
+    </view>
+  </view>
+
+  <view class="from" wx:for="{{list}}" wx:key="{{index}}">
     <view class="s">
       <view class="left">会员名称：{{item.UserName}}</view>
       <view class="right">预计{{item.CreateDate}}送到</view>
@@ -18,12 +25,12 @@
         <text>{{item.SurCount}}</text>次送米
       </view>
       <view class="goout_right">
-      配送{{item.Decount}}份
+        配送{{item.Decount}}份
       </view>
     </view>
     <view class="btn">
-      <view class="pin" bindtap='handlPin' data-DeliverId='{{item.DeliverId}}'>评价</view>
-      <view class="shou">确认收货</view>
+      <view class="pin" bindtap='handlPin'>评价</view>
+      <view class="shou" data-index="{{item.DeliverId}}" data-coco="{{index}}" bindtap='handReceiving' wx:if="{{item.isShow}}">确认收货</view>
     </view>
   </view>
 </view>

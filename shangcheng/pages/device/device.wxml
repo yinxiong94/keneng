@@ -1,0 +1,27 @@
+<view class="db">
+  <view class="header">
+    <view class="top">
+      <image class="top1" src="../img/top1.png" lazy-load='true'></image>
+      <image class="top2" src="../img/top2.png" lazy-load='true'></image>
+    </view>
+    <view class="list">
+      <view class="item" wx:for="{{list}}">
+        <view class="yuan"></view>
+        <image src="../img/guizi.png"></image>
+        <view class="dizhi">{{item.name}}</view>
+        <view class="btn" bindtap='mydevice'>点击查看</view>
+      </view>
+    </view>
+  </view>
+  <image src="../img/top.png" lazy-load='true'></image>
+  <view class="tabar">
+    <view class="nav" bindtap='handJump1'>
+      <image src='../img/wdsb.png' lazy-load='true'></image>
+      <text class="lv">我的设备</text>
+    </view>
+    <view class="nav" bindtap='handJump3'>
+      <image src='../img/grzx1.png' lazy-load='true'></image>
+      <text>个人中心</text>
+    </view>
+  </view>
+</view>

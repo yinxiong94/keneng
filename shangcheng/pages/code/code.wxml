@@ -1,0 +1,9 @@
+<view class="db">
+  <view class="top">
+  <image src='/pages/img/bg3.png' lazy-load='true' class="img2"></image>
+    <text class="text_1">我的二维码</text>
+    <image class="img" src='/pages/img/wv.png'></image>
+    <text class="text_2">扫描的我的二维码，立即成为我的社长吧</text>
+  </view>
+  <view class="btn">保存我的推广码</view>
+</view>
