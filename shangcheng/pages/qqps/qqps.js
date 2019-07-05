@@ -28,7 +28,6 @@ Page({
       that.setData({
         list: res.Result
       })
-      console.log(that.data.list);
     })
   },
   handlPin: function(e) {

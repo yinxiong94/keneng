@@ -107,6 +107,8 @@
       </view>
       <image src='../img/youjux.png'></image>
     </view>
+    <view class='cont_Signout_coso'></view>
+    
     <view class='cont_Signout_text1' bindtap='handDeliverList'>
       <view class='cont_Signout_text'>
         <image src='../img/peisong.png'></image>
