@@ -20,6 +20,11 @@ Page({
       url: '/pages/administration/administration?send=0',
     })
   },
+  handDeliverList:function(){
+    wx.navigateTo({
+      url: '../qqps/qqps',
+    })
+  },
   userlogin() {
     app.postData("GetUserData.ashx", {
       action: "GetUserInfo",

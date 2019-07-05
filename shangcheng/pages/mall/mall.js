@@ -12,6 +12,21 @@ Page({
     list: [],
     send: []
   },
+  handHuika:function(){
+    that = this;
+    var falg = that.data.falg;
+    var hide = that.data.hide;
+    wx.navigateTo({
+      url: '../request/request'
+    })
+    if (falg == true && hide == false){
+      wx.navigateTo({
+        url: '../request/request'
+      })
+    }else{
+      return
+    }
+  },
   handlOpening: function() {
     wx.navigateTo({
       url: '../card/card'
