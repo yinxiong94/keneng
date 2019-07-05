@@ -139,6 +139,8 @@ Page({
     }
 
   },
+
+
   // 添加图片
   chooseImage() {
     that = this
@@ -201,6 +203,11 @@ Page({
       }
     })
   },
+
+
+
+
+  
   // // 删除图片
   clearImg(e) {
     that - this
