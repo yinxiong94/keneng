@@ -88,14 +88,14 @@ Page({
         that.setData({
           detailsdlist: res.Result
         })
-        that.data.detailsdlist.detailsdlist.forEach(item => {
-          let goodsprice = item.goodsprice
-          let goodsnum = item.goodsnum
-          let sum = goodsprice * goodsnum
-          that.setData({
-            sum: sum
-          })
-        })
+        // that.data.detailsdlist.detailsdlist.forEach(item => {
+        //   let goodsprice = item.goodsprice
+        //   let goodsnum = item.goodsnum
+        //   let sum = goodsprice * goodsnum
+        //   that.setData({
+        //     sum: sum
+        //   })
+        // })
       })
 
     } else {
@@ -104,6 +104,7 @@ Page({
         userid: app.globalData.userid,
         shopppingid: that.data.shoppingid
       }).then(res => {
+        console.log(res)
         that.setData({
           detailsdlist: res.Result
         })

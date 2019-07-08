@@ -28,7 +28,7 @@
     <view class="discount">
       <text class="send">商品总额：</text>
       <view class="the">
-        <text>￥{{sum}}</text>
+        <text>￥{{detailsdlist.TotalPrice}}</text>
       </view>
     </view>
     <!-- <view class="discount">
@@ -57,7 +57,7 @@
     <view class="discount">
       <text class="send">实付金额：</text>
       <view class="the">
-        <text>￥{{sum}}</text>
+        <text>￥{{detailsdlist.OrderPrice}}</text>
       </view>
     </view>
   </view>
@@ -65,7 +65,7 @@
   <view class="footer">
     <view class='left'>实付金额:
       <view>
-        <text>￥</text>{{sum}}</view>
+        <text>￥</text>{{detailsdlist.OrderPrice}}</view>
     </view>
     <view class='right' bindtap='submit'>提交订单</view>
   </view>
