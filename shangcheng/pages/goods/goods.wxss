@@ -326,8 +326,8 @@ page {
 }
 
 .evaluation .reply .i_1 image {
-  width: 201rpx;
-  height: 201rpx;
+  width: 150rpx;
+  height: 150rpx;
   margin-right: 20rpx;
 }
 

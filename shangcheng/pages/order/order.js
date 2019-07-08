@@ -12,7 +12,8 @@ Page({
     sid: "",
     sum: 0, //商品总金额
     off: true,
-    ffo: false
+    ffo: false,
+    amount:1
   },
 
   handDizhi: function() {
@@ -83,7 +84,8 @@ Page({
       app.postData("GetShoppingData.ashx", {
         action: "Submit",
         userid: app.globalData.userid,
-        goodsid: that.data.sid
+        goodsid: that.data.sid,
+        goodscount: that.data.amount
       }).then(res => {
         that.setData({
           detailsdlist: res.Result
@@ -102,7 +104,8 @@ Page({
       app.postData("GetShoppingData.ashx", {
         action: "Submit",
         userid: app.globalData.userid,
-        shopppingid: that.data.shoppingid
+        shopppingid: that.data.shoppingid,
+      
       }).then(res => {
         console.log(res)
         that.setData({
@@ -157,13 +160,16 @@ Page({
     that = this
     if (options.id == 0) {
       that.setData({
-        sid: options.sid
+        sid: options.sid,
+        amount: options.amount
       })
     } else {
       that.setData({
-        shoppingid: options.ddd
+        shoppingid: options.ddd,
+      
       })
     }
+ 
   },
 
   /**
@@ -172,7 +178,7 @@ Page({
   onLoad: function(options) {
     that = this;
     that.setData({
-      id: options.id
+      id: options.id,
     })
     that.handgm(options)
     that.loadmore()

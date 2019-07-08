@@ -17,7 +17,8 @@ Page({
     shoplist: [],
     just: [],
     justOne: [],
-    num: ''
+    num: '',
+    amount:1, //购买数量
   },
   aaa: function (e) {
     that.setData({
@@ -79,14 +80,52 @@ Page({
     })
   },
   // 立即购买
+  // handgm() {
+  //   wx.navigateTo({
+  //     url: '/pages/order/order?sid=' + that.data.sid + "&id=" + "0",
+  //   })
+  // },
+
+  // 立即购买
   handgm() {
-    wx.navigateTo({
-      url: '/pages/order/order?sid=' + that.data.sid + "&id=" + "0",
+    that = this;
+    that.setData({
+      off: true
     })
   },
+  Delete() {
+    that = this;
+    that.setData({
+      off: false
+    })
+  },
+
+  jian(){
+    that = this
+    if (that.data.amount <= 1) {
+      wx.showToast({
+        title: '购买数量不能少于1',
+        icon: "neno",
+      })
+      return
+    } else {
+      that.setData({
+        amount: that.data.amount-1
+      })
+    }
+  },
+  jia(){
+    that = this
+    that.setData({
+      amount: that.data.amount+1
+    })
+  },
+
+
   handTxdd: function () {
-    wx: wx.navigateTo({
-      url: '../order/order'
+    that = this
+   wx.navigateTo({
+     url: '/pages/order/order?sid=' + that.data.sid + "&id=" + "0" + "&amount=" + that.data.amount,
     })
   },
   /**

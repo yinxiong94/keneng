@@ -47,7 +47,7 @@
     <view class="discount">
       <text class="send">运费：</text>
       <view class="the">
-        <text>￥0</text>
+        <text>￥{{detailsdlist.yunfei}}</text>
       </view>
     </view>
     <view class="message">
