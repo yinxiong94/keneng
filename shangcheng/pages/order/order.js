@@ -12,7 +12,10 @@ Page({
     sid: "",
     sum: 0, //商品总金额
     off: true,
-    ffo: false
+    ffo: false,
+    amount:1,
+    TotalPrice:0,//商品总金额
+    shifu:0,//实付
   },
 
   handDizhi: function() {
@@ -83,27 +86,32 @@ Page({
       app.postData("GetShoppingData.ashx", {
         action: "Submit",
         userid: app.globalData.userid,
-        goodsid: that.data.sid
+        goodsid: that.data.sid,
+        goodscount: that.data.amount
       }).then(res => {
         that.setData({
-          detailsdlist: res.Result
+          detailsdlist: res.Result,
+          yunfei: res.Result.yunfei
         })
+        
         that.data.detailsdlist.detailsdlist.forEach(item => {
           let goodsprice = item.goodsprice
           let goodsnum = item.goodsnum
           let sum = goodsprice * goodsnum
           that.setData({
-            sum: sum
+            TotalPrice: sum,
+            shifu: sum - that.data.yunfei
           })
         })
       })
-
     } else {
       app.postData("GetShoppingData.ashx", {
         action: "Submit",
         userid: app.globalData.userid,
-        shopppingid: that.data.shoppingid
+        shopppingid: that.data.shoppingid,
+      
       }).then(res => {
+        console.log(res)
         that.setData({
           detailsdlist: res.Result
         })
@@ -156,13 +164,16 @@ Page({
     that = this
     if (options.id == 0) {
       that.setData({
-        sid: options.sid
+        sid: options.sid,
+        amount: options.amount
       })
     } else {
       that.setData({
-        shoppingid: options.ddd
+        shoppingid: options.ddd,
+      
       })
     }
+ 
   },
 
   /**
@@ -171,7 +182,7 @@ Page({
   onLoad: function(options) {
     that = this;
     that.setData({
-      id: options.id
+      id: options.id,
     })
     that.handgm(options)
     that.loadmore()

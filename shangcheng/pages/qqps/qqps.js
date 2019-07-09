@@ -34,6 +34,9 @@ Page({
       action: "DeliverList",
       userid: app.globalData.userid
     }).then(res => {
+      that.setData({
+        list: res.Result
+      })
       console.log(res);
       res.Result.map(element => element['isShow'] = true);
       if (res.Result.length >= 1) {

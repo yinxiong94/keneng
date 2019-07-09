@@ -50,6 +50,8 @@ Page({
       path: that.data.images
     })
   },
+
+
   jijiao:function(){
     var b = that.data.cop;
     that = this;
@@ -77,6 +79,8 @@ Page({
       }
     })
   },
+
+
   // 获取用户地址
   address() {
     that = this
@@ -162,7 +166,7 @@ Page({
     })
   },
 
-  
+
   //多张图片上传
   uploadimg: function(data) {
     var that = this,
@@ -204,6 +208,7 @@ Page({
         }
       }
     })
+   
   },
 
 

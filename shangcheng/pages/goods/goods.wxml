@@ -56,11 +56,13 @@
         <image wx:for="{{item.piclist}}" wx:for-item="sai" wx:key="{{index}}" lazy-load='true' src='{{sai.url}}'></image>
       </view>
       <view class="t_1">碧根果190ｇ／袋</view>
-      <view class="h_1">
+      <!-- <view class="h_1">
         回复：谢谢您的惠顾您的满意是我们最大的动力谢谢您的惠顾！您的满意是我们最大的动力！
-      </view>
+      </view> -->
     </view>
   </view>
+
+
   <!-- <view class="hhh"></view>
   <view class="like">
     <view class="like_title">
@@ -83,6 +85,8 @@
       </view>
     </view>
   </view> -->
+
+
   <view class="whole" bindtap='handWhole'>显示全部</view>
   <view class="hhh"></view>
   <view class="goods">
@@ -101,35 +105,42 @@
     <view class="footer_2" catchtap='handCart'>加入购物车</view>
     <view class="footer_2 red" catchtap='handgm'>立即购买</view>
   </view>
+
+  
   <view class="zzc" wx:if="{{off}}">
     <view class="zzc_mian">
       <view class="zzc_d">
         <image src='/pages/img/zzc.png' lazy-load='true'></image>
         <view class="zzc_pirce">
-          <view class="zzc_t1">￥218.9</view>
-          <view class="zzc_t2">库存：1498</view>
-          <image src='/pages/img/quxiao.png' lazy-load='true'></image>
+          <view class="zzc_t1">￥{{list.saleprice}}</view>
+          <view class="zzc_t2">库存：{{list.kucun}}</view>
+          <image src='/pages/img/quxiao.png' lazy-load='true' catchtap='Delete'></image>
         </view>
       </view>
-      <view class="zzc_input">
+      <!-- <view class="zzc_input">
         <view class="left">配送区域</view>
         <input type='text' placeholder='（配送地可能会影响库存，请正确选择）'></input>
-      </view>
+      </view> -->
       <view class="zzc_input">
-        <view class="left">配送区域</view>
+        <view class="left">购买数量</view>
         <view class="right">
-          <view class="y">
-            <image class="jia" src='/pages/img/jia1.png' lazy-load='true'></image>
+          <view class="y" catchtap='jia'>
+            <!-- <image class="jia" src='/pages/img/jia1.png' lazy-load='true'></image> -->
+            +
           </view>
           <view class="y">
-            1
+            {{amount}}
           </view>
-          <view class="y">
-            <image class="jian" src='/pages/img/jian.png' lazy-load='true'></image>
-          </view>
+         <view class="y" catchtap='jian'>
+            <!-- <image  src='/pages/img/jian.png' lazy-load='true'></image> -->
+            -
         </view>
       </view>
+        </view>
       <view class="btn" catchtap='handTxdd'>确定</view>
     </view>
   </view>
+
+
+
 </view>

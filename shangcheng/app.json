@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/card/card",
+    "pages/qqps/qqps",
     "pages/huika/huika",
     "pages/administration/administration",
     "pages/fille/fille",
