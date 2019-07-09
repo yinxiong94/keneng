@@ -16,7 +16,7 @@
     </view>
     <view class='cont_name cont_name_bottom'>
         <text>银行卡号</text>
-        <input placeholder='{{cardno1}}' bindinput='handCard'></input>
+        <input placeholder='{{cardno1}}' bindinput='handCard' type='number' maxlength='19'></input>
     </view>
     <view class='cont_name cont_name_bottom'>
         <text>开户银行</text>

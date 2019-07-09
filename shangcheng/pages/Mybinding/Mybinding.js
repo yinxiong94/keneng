@@ -17,23 +17,40 @@ Page({
     cardid: 0,
     off: 0
   },
+
+  //获取银行卡号
   handCard: function (e) {
     that = this;
     var cardno = e.detail.value;
     that.setData({
-      cardno: cardno
+      cardno1: cardno
     })
   },
+  //获取银行名称
   handYh: function (e) {
     that = this;
     var cardname = e.detail.value;
     that.setData({
-      cardname: cardname
+      cardname1: cardname
     })
   },
   // 增加银行卡
   handAddYh: function () {
     that = this;
+    if ((/^([1-9]{1})(\d{15}|\d{18})$/).test(that.data.cardno1) && (/^[\u4E00-\u9FA5]{1,6}$/).test(that.data.cardname1)) {
+      wx.showToast({
+        title: '提交成功',
+        icon: 'none',
+        duration: 2000
+      })
+    } else {
+      wx.showToast({
+        title: '银行卡号或银行名称填写错误不正确',
+        icon: 'none',
+        duration: 2000
+      })
+      return
+    }
     if (that.data.off == 0) {
       app.postData("GetUserData.ashx?", {
         action: "AddBankCard",
@@ -55,10 +72,13 @@ Page({
           })
         }
       })
-    }else{
+    } else {
       that.handModify();
     }
   },
+
+
+
   // 修改银行卡
   handModify: function () {
     that = this;
@@ -68,7 +88,7 @@ Page({
       cardno: that.data.cardno,
       cardname: that.data.cardname
     }).then(res => {
-      if (res.Result == 1){
+      if (res.Result == 1) {
         that.setData({
           cardname1: that.data.cardname,
           cardno1: that.data.cardno
@@ -78,7 +98,7 @@ Page({
           icon: 'none',
           duration: 2000
         })
-      }else{
+      } else {
         wx.showToast({
           title: '修改失败',
           icon: 'none',
