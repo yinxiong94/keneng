@@ -6,11 +6,11 @@
     </view>
     <view class="s1">
       <image src='/pages/img/dizhilv.png' lazy-load='true'></image>
-      <view class="right">长沙市天心区雀园路国家广告创意园</view>
+      <view class="right">{{address}}</view>
     </view>
     <view class="s1">
       <image src='/pages/img/tel.png' lazy-load='true'></image>
-      <view class="right">18765255140</view>
+      <view class="right">{{tel}}</view>
     </view>
     <view class="remaining">剩余
       <text>11</text>次送米

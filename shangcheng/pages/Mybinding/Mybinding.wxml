@@ -1,6 +1,6 @@
 <view class='container'>
     <!-- 请输入省份信息 -->
-    <view class='cont_sf'>
+    <!-- <view class='cont_sf'>
         <text>请输入身份信息</text>
     </view>
     <view class='cont_name cont_name_top'>
@@ -10,32 +10,32 @@
     <view class='cont_name cont_name_top'>
         <text>身份证号</text>
         <input placeholder='请输入身份证号'></input>
-    </view>
+    </view> -->
      <view class='cont_sf cont_kh'>
         <text>请输入银行卡号</text>
     </view>
     <view class='cont_name cont_name_bottom'>
         <text>银行卡号</text>
-        <input placeholder='请输入银行卡号'></input>
-    </view>
-    <view class='cont_sr cont_kh cont_name_bottom' bindtap='handYh'>
-        <text>中国工商银行</text>
-        <image src='../img/jiantou.png'></image>
+        <input placeholder='{{cardno1}}' bindinput='handCard'></input>
     </view>
     <view class='cont_name cont_name_bottom'>
+        <text>开户银行</text>
+        <input placeholder='{{cardname1}}' bindinput='handYh'></input>
+    </view>
+    <view class='cont_name cont_name_bottom' wx:if="{{off==0}}">
         <text>手机号码</text>
         <input placeholder='请输入手机号码'></input>
     </view>
-    <view class='cont_name cont_name_bottom'>
+    <view class='cont_name cont_name_bottom' wx:if="{{off==0}}">
         <text>短信验证</text>
         <input placeholder='请输入验证码' bindinput="Input_iphone" type='number' maxlength='11'></input>
         <view class='cont_button'  catchtap='textCode'>{{code}}</view>
     </view>
 
-    <view class='cont_tetx'>
+    <view class='cont_tetx' wx:if="{{off==0}}">
         <text class='cont_ty'>同意<text decode="true" class='cont_tetx_text'>&lt;用户协议&gt;</text>及其服务条款</text>
     </view>
     <view class='cont_tetx_but_tx'>
-      <view class='cont_tetx_but'>确认绑卡</view>
+      <view class='cont_tetx_but' bindtap='handAddYh'>确认</view>
     </view>
 </view>
