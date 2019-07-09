@@ -27,7 +27,7 @@ Page({
       action: "GetUserCard",
       userid: app.globalData.userid
     }).then(res => {
-      if (res.BankCardId == 'undefined'){
+      if (res.BankCardId == undefined || null){
         that.setData({
           off: 0
         })

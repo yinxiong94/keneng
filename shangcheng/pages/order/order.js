@@ -64,6 +64,7 @@ Page({
               off: false,
               ffo: true
             })
+            
             var site = []
             site.push(item.city)
             site.push(item.province)
