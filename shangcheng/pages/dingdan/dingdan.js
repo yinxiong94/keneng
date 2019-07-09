@@ -52,9 +52,11 @@ Page({
   },
 
 
-  handPinjia: function () {
+  handPinjia: function (e) {
+    let index = e.currentTarget.dataset.num;
+    let sid = that.data.list[index].OrderId;
     wx.navigateTo({
-      url: '../publish/publish',
+      url: '../publish/publish?ccc=' + sid,
     })
   },
   payment: function () {

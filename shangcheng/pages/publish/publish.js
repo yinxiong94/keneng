@@ -1,4 +1,5 @@
 // pages/publish/publish.js
+const app = getApp();
 var that;
 Page({
 
@@ -31,7 +32,95 @@ Page({
       lightImg: '../img/xing11.png',
       blackImg: '../img/kxing.png',
       flag: 1,
-    }]
+    }],
+    list:"",
+    goodsid:"",
+    obj: [],
+    info: [],
+    list1:[]
+  },
+  // 上传图片
+  uploadimg:function(data){
+    var that = this,
+      i = data.i ? data.i : 0, //当前上传的哪张图片
+      success = data.success ? data.success : 0, //上传成功的个数
+      fail = data.fail ? data.fail : 0; //上传失败的个数
+    wx.uploadFile({
+      url: data.url,
+      filePath: data.path[i],
+      name: 'file', //这里根据自己的实际情况改
+      formData: null, //这里是上传图片时一起上传的数据
+      success: (resp) => {
+        success++; //图片上传成功，图片上传成功的变量+1
+        var list = that.data.list;
+        console.log(resp.data.Result);
+        list += resp.data.Result + ',';
+        that.setData({
+          list: list
+        })
+        //这里可能有BUG，失败也会执行这里,所以这里应该是后台返回过来的状态码为成功时，这里的success才+1
+      },
+      fail: (res) => {
+        fail++; //图片上传失败，图片上传失败的变量+1
+        console.log('fail:' + i + "fail:" + fail);
+      },
+      complete: () => {
+        console.log(i);
+        i++; //这个图片执行完上传后，开始上传下一张
+        if (i == data.path.length) { //当图片传完时，停止调用
+          that.jijiao();
+          console.log('执行完毕');
+          console.log('成功：' + success + " 失败：" + fail);
+        } else { //若图片还没有传完，则继续调用函数
+          console.log(i);
+          data.i = i;
+          data.success = success;
+          data.fail = fail;
+          that.uploadimg(data);
+        }
+      }
+    });
+  },
+  // 提交
+  gobtn: function () {
+    // var lev = that.data.lev;
+    // if (lev == 0) {
+    //   wx.showToast({
+    //     title: '您还未打分',
+    //     icon: 'none',
+    //     duration: 2000,
+    
+    //   })
+    //   return;
+    // }
+    // var text = that.data.text;
+    // if (text.cursor == 0) {
+    //   wx.showToast({
+    //     title: '评论未满8个字',
+    //     icon: 'none',
+    //     duration: 2000,
+    //   })
+    //   return;
+    // }
+    wx.showLoading({
+      title: '上传中...',
+      mask: true,
+    })
+    var pics = that.data.images;
+    that.uploadimg({
+      url: app.globalData.http + 'FileUpLoad.ashx', //这里是你图片上传的接口
+      path: pics //这里是选取的图片的地址数组
+    });
+  },
+  inputedit: function (e) {
+    // 1. input 和 info 双向数据绑定
+    let dataset = e.currentTarget.dataset;
+    //data-开头的是自定义属性，可以通过dataset获取到，dataset是一个json对象，有obj和item属性，可以通过这两个实现双向数据绑定，通过更改这两个值，对不同name的变量赋值
+    let value = e.detail.value;
+    this.data[dataset.obj][dataset.item] = value;
+    this.setData({
+      obj: this.data[dataset.obj]
+    });
   },
   // 获取用户地址
   address() {
@@ -46,6 +135,41 @@ Page({
       })
     })
   },
+  // 提交信息
+  jijiao: function () {
+    app.postData('FileUpLoad.ashx', {
+      action: 'Evaluate',
+      userid: app.globalData.userid,
+      goodsid: that.data.goodsid,
+      content: that.data.obj.manager,
+      lev: that.data.score,
+      pic: that.data.list
+    }).then(res => {
+      console.log(res)
+      wx.hideLoading();
+      if (res.Result == 1) {
+        wx.showToast({
+          title: '评论成功',
+          icon: 'none',
+          duration: 2000,
+          mask: true,
+          success: function (res) {
+            setTimeout(function () {
+              wx.navigateBack({
+                delta: 1,
+              })
+            }, 2000)
+          },
+        })
+      } else {
+        wx.showToast({
+          title: '评论失败，请稍后重试',
+          icon: 'none',
+          duration: 2000
+        })
+      }
+    })
+  },
   // 选择评价星星
   starClick: function (e) {
     var that = this;
@@ -54,7 +178,6 @@ Page({
     that.setData({
       off: off
     })
-    console.log(off);
     for (let i = 0; i < that.data.stars.length; i++) {
       var allItem = 'stars[' + i + '].flag';
       that.setData({
@@ -95,9 +218,6 @@ Page({
         score: coco
       })
     }
-
-    console.log(that.data.stars);
-    console.log(that.data.score);
   },
   // 添加图片
   chooseImage() {
@@ -110,13 +230,22 @@ Page({
         console.log(res)
         const tempFilePaths = res.tempFilePaths
         that.setData({
-          images: that.data.images.concat(res.tempFilePaths)
+          images: that.data.images.concat(res.tempFilePaths),
+          list1: tempFilePaths
         })
-        console.log(that.data.images)
         if (that.data.images.length == 3) {
-          that.setData({
-            showUpload: false
+          wx.showToast({
+            title: '最多只能上传3张图片',
+            icon: 'none',
+            duration: 2000,
+            success(res){
+              that.setData({
+                showUpload: false
+              })
+            }
           })
+          return;
+         
         }
       }
     })
@@ -153,7 +282,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    this.setData({ goodsid:options.ccc})
   },
 
   /**
