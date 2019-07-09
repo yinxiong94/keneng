@@ -72,7 +72,7 @@ Page({
    */
   onShow: function() {
     that = this;
-    // that.handDeliverList();
+    that.handDeliverList();
   },
 
   /**

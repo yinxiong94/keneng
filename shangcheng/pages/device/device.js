@@ -25,7 +25,7 @@ Page({
   },
   handJump3: function() {
     wx.navigateTo({
-      url: '"../szdpersonal/szdpersonal",',
+      url: '../szdpersonal/szdpersonal',
     })
   },
   /**

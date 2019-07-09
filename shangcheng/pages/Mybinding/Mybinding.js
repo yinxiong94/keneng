@@ -1,5 +1,6 @@
 // pages/Mybinding/Mybinding.js
-var that
+const app = getApp();
+var that;
 Page({
 
   /**
@@ -9,9 +10,82 @@ Page({
     iphoneValue: '', //手机号码
     count: 60, //倒计时时间
     code: '获取验证码',
+    cardno1: '请输入银行卡号',
+    cardname1: '请输入开户行',
+    cardno: '',
+    cardname: '',
+    cardid: 0,
+    off: 0
   },
-  handYh:function(){
-    console.log('选择银行');
+  handCard: function (e) {
+    that = this;
+    var cardno = e.detail.value;
+    that.setData({
+      cardno: cardno
+    })
+  },
+  handYh: function (e) {
+    that = this;
+    var cardname = e.detail.value;
+    that.setData({
+      cardname: cardname
+    })
+  },
+  // 增加银行卡
+  handAddYh: function () {
+    that = this;
+    if (that.data.off == 0) {
+      app.postData("GetUserData.ashx?", {
+        action: "AddBankCard",
+        userid: app.globalData.userid,
+        cardno: that.data.cardno,
+        cardname: that.data.cardname
+      }).then(res => {
+        if (res.Result == 1) {
+          wx.showToast({
+            title: '绑定成功',
+            icon: 'none',
+            duration: 2000
+          })
+        } else {
+          wx.showToast({
+            title: '绑定失败',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      })
+    }else{
+      that.handModify();
+    }
+  },
+  // 修改银行卡
+  handModify: function () {
+    that = this;
+    app.postData("GetUserData.ashx?", {
+      action: "AddBankCard",
+      userid: app.globalData.userid,
+      cardno: that.data.cardno,
+      cardname: that.data.cardname
+    }).then(res => {
+      if (res.Result == 1){
+        that.setData({
+          cardname1: that.data.cardname,
+          cardno1: that.data.cardno
+        })
+        wx.showToast({
+          title: '修改成功',
+          icon: 'none',
+          duration: 2000
+        })
+      }else{
+        wx.showToast({
+          title: '修改失败',
+          icon: 'none',
+          duration: 2000
+        })
+      }
+    })
   },
   // 获取用户输入的手机号码
   Input_iphone(e) {
@@ -59,65 +133,75 @@ Page({
         return
       }
       that.data.count--
-        that.setData({
-          count: that.data.count,
-          code: that.data.count < 10 ? `请等待0${that.data.count}s` : `请等待${that.data.count}s`
-        })
+      that.setData({
+        count: that.data.count,
+        code: that.data.count < 10 ? `请等待0${that.data.count}s` : `请等待${that.data.count}s`
+      })
     }, 1000)
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-
+  onLoad: function (options) {
+    that = this;
+    console.log(options);
+    if (options.send == 1) {
+      that.setData({
+        off: 1,
+        cardid: options.cardid,
+        cardname: options.cardname,
+        cardno: options.cardno
+      })
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
+    that = this;
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })

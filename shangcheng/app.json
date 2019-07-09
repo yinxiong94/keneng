@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/card/card",
     "pages/huika/huika",
     "pages/administration/administration",
     "pages/fille/fille",
@@ -27,7 +28,6 @@
     "pages/tkyy/tkyy",
     "pages/tuikuan/tuikuan",
     "pages/refund/refund",
-    "pages/card/card",
     "pages/logistics/logistics",
     "pages/details/details",
     "pages/evaluation/evaluation",

@@ -8,7 +8,9 @@ Page({
    */
 
   data: {
-    share:1
+    share:1,
+    tel: app.globalData.tel,
+    address: app.globalData.address
   },
   jian: function (e) {
     that = this;

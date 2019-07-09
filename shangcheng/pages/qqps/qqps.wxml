@@ -23,14 +23,15 @@
     <view class="goout">
       <view class="remaining">剩余
         <text>{{item.SurCount}}</text>次送米
-      </view>
+      </view>   
       <view class="goout_right">
         配送{{item.Decount}}份
       </view>
     </view>
     <view class="btn">
-      <view class="pin" bindtap='handlPin'>评价</view>
+      <view class="pin" bindtap='handlPin' data-DeliverId='{{item.DeliverId}}'
+>评价</view>
       <view class="shou" data-index="{{item.DeliverId}}" data-coco="{{index}}" bindtap='handReceiving' wx:if="{{item.isShow}}">确认收货</view>
     </view>
   </view>
-</view>
+</view>    

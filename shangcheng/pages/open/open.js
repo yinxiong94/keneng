@@ -43,6 +43,7 @@ Page({
     that.setData({
       iphoneValue: e.detail.value
     })
+    app.globalData.tel = that.data.iphoneValue
   },
 
   // 获取用户输入验证码
@@ -177,6 +178,7 @@ Page({
               off:true
             })
             if (res.errMsg == "requestPayment:ok"){
+              var address = this.data.region[0] + this.data.region[1] + this.data.region[2] + this.data.address;
               wx.navigateTo({
                 url: '../huika/huika'
               })

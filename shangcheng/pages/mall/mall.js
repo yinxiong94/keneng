@@ -16,9 +16,6 @@ Page({
     that = this;
     var falg = that.data.falg;
     var hide = that.data.hide;
-    wx.navigateTo({
-      url: '../request/request'
-    })
     if (falg == true && hide == false){
       wx.navigateTo({
         url: '../request/request'
