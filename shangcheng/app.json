@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/Mybinding/Mybinding",
     "pages/index/index",
     "pages/card/card",
     "pages/qqps/qqps",
@@ -17,7 +18,6 @@
     "pages/Myphone/Myphone",
     "pages/usedMyphone/usedMyphone",
     "pages/Complaint/Complaint",
-    "pages/Mybinding/Mybinding",
     "pages/binding/binding",
     "pages/order/order",
     "pages/spread/spread",
