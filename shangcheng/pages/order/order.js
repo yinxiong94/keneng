@@ -99,7 +99,9 @@ Page({
           let goodsnum = item.goodsnum
           let sum = goodsprice * goodsnum
           that.setData({
+            // 商品总金额
             TotalPrice: sum,
+            // 计算运费实付款
             shifu: sum - that.data.yunfei
           })
         })
