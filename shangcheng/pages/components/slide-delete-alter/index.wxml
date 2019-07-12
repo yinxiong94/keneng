@@ -3,13 +3,18 @@
         bindtouchstart="handleTouchStart"
         bindtouchmove="handleTouchMove"
         bindtouchend="handleTouchEnd"
-        style="transform: translateX({{translateX * 2}}rpx)"
+        style="transform: translateX({{translateX * 4}}rpx)"
   >
       <slot/>
   </view>
   <view class="action-wrap">
       <view class="action del" bindtap="handleAction" data-shoppingid="{{paramAtoB}}">
-          <text>删除</text>
+          <image src='/pages/img/tu2.png' lazy-load='true'></image>
+      </view>
+  </view>
+  <view class="action-wrap1">
+      <view class="action del" bindtap="handleAction" data-shoppingid="{{paramAtoB}}">
+          <image src='/pages/img/tu1.png' lazy-load='true'></image>
       </view>
   </view>
 </view>

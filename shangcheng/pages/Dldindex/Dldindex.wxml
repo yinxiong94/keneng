@@ -18,7 +18,7 @@
 
   <view class="dami_1">
     <view class="dami" wx:for="{{iSfacility}}" wx:key="index">
-      <view class="item" bindtap='toyh'>
+      <view class="item" bindtap='toyh' data-MachineId='{{item.MachineId}}' data-Address='{{item.Address}}'>
         <view class="item_top">
           <view class="left">
             <text>大米机</text>

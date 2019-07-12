@@ -8,6 +8,8 @@ Page({
    */
   data: {
     inputval:"",
+    machineId:"",
+    address:""
   },
   // 跳转要货计划编辑页面
   toyh:function(){
@@ -28,17 +30,25 @@ Page({
     app.postData("GetAgentInfo.ashx",{
       action:'RequireGoodsList',
       userId: app.globalData.userid,
-      key: that.data.inputval
+      key: that.data.inputval,
+      machineId: that.data.machineId
     }).then(res=>{
-      console.log(res)
+      that.setData({
+        toLIst: res.Result
+      })
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+   
     that = this
-    that.tolist()
+    // that.tolist()
+    that.setData({
+      machineId: options.machineid,
+      address: options.address
+    })
   },
 
   /**
@@ -52,7 +62,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    that.tolist()
   },
 
   /**
