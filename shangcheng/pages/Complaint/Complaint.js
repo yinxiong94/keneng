@@ -41,7 +41,7 @@ Page({
     }else{
       wx.showToast({
         title: '不能为空',
-
+        icon:'none'
       })
     }
   },

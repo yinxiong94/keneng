@@ -1,15 +1,24 @@
 // pages/commission/commission.js
+const app = getApp();
+var that;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    cuttVal:1
   },
   totx:function(){
     wx.navigateTo({
       url: '/pages/tixian/tixian',
+    })
+  },
+
+  cutt(e){
+    that = this
+    that.setData({
+      cuttVal: e.currentTarget.dataset.cutt
     })
   },
   /**

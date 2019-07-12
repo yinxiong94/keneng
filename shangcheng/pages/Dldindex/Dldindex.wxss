@@ -1,7 +1,10 @@
+page{
+   background-color: #faffee;
+}
 .db {
   width: 750rpx;
   position: relative;
-  background-color: #faffee;
+ 
 }
 
 .db .top {
@@ -121,7 +124,6 @@
 .db .dami .item .item_top .left view {
   width: 106rpx;
   height: 38rpx;
-  background: rgba(142, 195, 31, 1);
   font-size: 28rpx;
   font-family: PingFang-SC-Medium;
   font-weight: 500;
@@ -130,7 +132,18 @@
   line-height: 38rpx;
   margin-left: 40rpx;
 }
-
+/* 正常 */
+.db .dami .item .item_top .left .zc{
+  background: rgba(142, 195, 31, 1);
+}
+/* 异常 */
+.db .dami .item .item_top .left .yc{
+  background: #BC3232
+}
+/* 维护 */
+.db .dami .item .item_top .left .hf{
+  background: #828282;
+}
 .db .dami .item .item_top .right {
   flex: 1;
   display: flex;
@@ -186,6 +199,15 @@
 
 .db .dami .item .coco .left .list .hei {
   color: #545252;
+ 
+}
+
+.db .dami .item .coco .left .list .sebID{
+  width: 385rpx;
+  overflow:hidden;
+  word-break:keep-all;
+  white-space:nowrap;
+  text-overflow:ellipsis;
 }
  .tabar {
   position: fixed;

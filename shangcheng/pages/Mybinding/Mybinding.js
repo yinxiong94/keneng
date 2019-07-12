@@ -11,7 +11,7 @@ Page({
     count: 60, //倒计时时间
     code: '获取验证码',
     cardno1: '请输入银行卡号',
-    cardname1: '请输入开户行',
+    cardname1: 'abc',
     cardno: '',
     cardname: '',
     cardid: 0,
@@ -55,8 +55,8 @@ Page({
       app.postData("GetUserData.ashx?", {
         action: "AddBankCard",
         userid: app.globalData.userid,
-        cardno: that.data.cardno,
-        cardname: that.data.cardname
+        cardno: that.data.cardno1,
+        cardname: that.data.cardname1
       }).then(res => {
         if (res.Result == 1) {
           wx.showToast({
@@ -107,6 +107,8 @@ Page({
       }
     })
   },
+
+
   // 获取用户输入的手机号码
   Input_iphone(e) {
     that = this
@@ -158,6 +160,11 @@ Page({
         code: that.data.count < 10 ? `请等待0${that.data.count}s` : `请等待${that.data.count}s`
       })
     }, 1000)
+    // 调用验证码接口
+    app.postData("GetCode.ashx", {
+      action: 'GetAuth',
+      Tel: that.data.iphoneValue
+    })
   },
   /**
    * 生命周期函数--监听页面加载

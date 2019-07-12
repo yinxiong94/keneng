@@ -16,11 +16,11 @@
     </view>
     <view class='cont_name cont_name_bottom'>
         <text>银行卡号</text>
-        <input placeholder='{{cardno1}}' bindinput='handCard' type='number' maxlength='19'></input>
+        <input placeholder='请输入银行卡号' bindinput='handCard' type='number' maxlength='19'></input>
     </view>
     <view class='cont_name cont_name_bottom'>
         <text>开户银行</text>
-        <input placeholder='{{cardname1}}' bindinput='handYh'></input>
+        <input placeholder='请输入开户银行' bindinput='handYh' value='{{cardname1}}'></input>
     </view>
     <view class='cont_name cont_name_bottom' wx:if="{{off==0}}">
         <text>手机号码</text>

@@ -1,11 +1,30 @@
+const app = getApp();
+var that;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    iSfacility:[]
   },
+
+  // 设备列表
+  iSfacility(){
+    that = this
+    app.postData("GetMachineInfo.ashx",{
+      action:"GetMachineInfo",
+      userId: app.globalData.userid
+    }).then(res=>{
+        that.setData({
+          iSfacility: res.Result
+        })
+    })
+  },
+
+
+
+
   handJump1: function () {
     wx.navigateTo({
       url: '/pages/Dldindex/Dldindex',
@@ -25,7 +44,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    that = this
+    that.iSfacility()
   },
   // 跳转要货计划
   toyh:function(){

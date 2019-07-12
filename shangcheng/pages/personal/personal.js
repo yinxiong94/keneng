@@ -1,11 +1,13 @@
 // pages/personal/personal.js
+const app = getApp();
+var that;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    message:[]
   },
   handJump1:function(){
     wx.navigateTo({
@@ -29,12 +31,12 @@ Page({
   },
   totx:function(){
     wx.navigateTo({
-      url: '/pages/tixian/tixian',
+      url: '/pages/commission/commission',
     })
   },
   szgl:function(){
     wx.navigateTo({
-      url: '/pages/administration/administration',
+      url: '/pages/Dldadministration/Dldadministration',
     })
   },
   shbb:function(){
@@ -62,11 +64,26 @@ Page({
       url: '/pages/spxsdd/spxsdd',
     })
   },
+
+
+  // 代理信息
+  isinfo(){
+    that = this
+    app.postData("GetAgentInfo.ashx",{
+      action:"GetAgentInfo",
+      userId: app.globalData.userid
+    }).then(res=>{
+      that.setData({
+        message: res.Result
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    that = this
+    that.isinfo()
   },
 
   /**

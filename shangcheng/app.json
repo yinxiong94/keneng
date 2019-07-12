@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/Mybinding/Mybinding",
+  
     "pages/index/index",
+    "pages/commission/commission",
+    "pages/Mybinding/Mybinding",
     "pages/card/card",
     "pages/qqps/qqps",
     "pages/huika/huika",
@@ -48,7 +50,7 @@
     "pages/extension1/extension1",
     "pages/code/code",
     "pages/cash/cash",
-    "pages/commission/commission",
+    
     "pages/basics/basics",
     "pages/Dldindex/Dldindex",
     "pages/Dldadministration/Dldadministration",
@@ -65,7 +67,6 @@
     "pages/mydevice/mydevice",
     "pages/device/device",
     "pages/xjtg/xjtg"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",

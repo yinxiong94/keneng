@@ -9,14 +9,14 @@
   </view>
   <view class="vip">
     <view class="vip_nav">
-      <view class="nav_l">
+      <view class="{{cuttVal==1?'nav_l':'nav_r'}}" data-cutt='1' catchtap='cutt'>
         我的佣金明细
       </view>
-      <view class="nav_r">
+      <view class="{{cuttVal==2?'nav_l':'nav_r'}}" data-cutt='2' catchtap='cutt'>
         分销明细
       </view>
     </view>
-    <view class="conter">
+    <view class="conter" wx:if="{{cuttVal==1}}">
       <view class="list">
         <view class="recommend">
           <text class="recommend_1">推荐会员张三</text>
@@ -31,6 +31,18 @@
         </view>
         <text>¥105</text>
       </view>
+    </view>
+
+
+    <view class="conter" wx:if="{{cuttVal==2}}">
+      <view class="list">
+        <view class="recommend">
+          <text class="recommend_1">推荐会员张三</text>
+          <text class="recommend_2">2019-05-10   18:00</text>
+        </view>
+        <text>¥105</text>
+      </view>
+     
     </view>
   </view>
 </view>
