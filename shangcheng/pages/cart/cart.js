@@ -213,7 +213,6 @@ Page({
         action: "Query",
         userid: app.globalData.userid
       }).then(res => {
-        console.log(res);
         if (res.Result!=null){
             var ff = [];
               for (var i = 0; i < res.Result.shoplist.length; i++) {

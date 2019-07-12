@@ -1,11 +1,9 @@
 {
   "pages": [
-  
     "pages/index/index",
-    "pages/commission/commission",
+    "pages/qqps/qqps",
     "pages/Mybinding/Mybinding",
     "pages/card/card",
-    "pages/qqps/qqps",
     "pages/huika/huika",
     "pages/administration/administration",
     "pages/fille/fille",
@@ -50,7 +48,7 @@
     "pages/extension1/extension1",
     "pages/code/code",
     "pages/cash/cash",
-    
+
     "pages/basics/basics",
     "pages/Dldindex/Dldindex",
     "pages/Dldadministration/Dldadministration",
@@ -73,7 +71,8 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
-  },  "tabBar": {
+  },
+  "tabBar": {
     "list": [
       {
         "pagePath": "pages/mall/mall",

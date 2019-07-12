@@ -89,7 +89,7 @@
 }
 
 .db .list .coco .left {
-  width: 50%;
+  width: 25%;
   line-height: 140rpx;
   height: 140rpx;
   font-size: 30rpx;
