@@ -31,7 +31,7 @@ Page({
   },
   tomyhy:function(){
     wx.navigateTo({
-      url: '/pages/member/member',
+      url: '/pages/szdmember/szdmember',
     })
   },
   tozz:function(){

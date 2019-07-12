@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/Mybinding/Mybinding",
     "pages/index/index",
-    "pages/card/card",
     "pages/qqps/qqps",
+    "pages/Mybinding/Mybinding",
+    "pages/card/card",
     "pages/huika/huika",
     "pages/administration/administration",
     "pages/fille/fille",
@@ -65,14 +65,14 @@
     "pages/mydevice/mydevice",
     "pages/device/device",
     "pages/xjtg/xjtg"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
-  },  "tabBar": {
+  },
+  "tabBar": {
     "list": [
       {
         "pagePath": "pages/mall/mall",

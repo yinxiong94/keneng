@@ -11,9 +11,7 @@ Page({
     count: 60, //倒计时时间
     code: '获取验证码',
     cardno1: '请输入银行卡号',
-    cardname1: '请输入开户行',
-    cardno: '',
-    cardname: '',
+    cardname1: '',
     cardid: 0,
     off: 0
   },
@@ -37,12 +35,36 @@ Page({
   // 增加银行卡
   handAddYh: function () {
     that = this;
-    if ((/^([1-9]{1})(\d{15}|\d{18})$/).test(that.data.cardno1) && (/^[\u4E00-\u9FA5]{1,6}$/).test(that.data.cardname1)) {
+    if ((/^([1-9]{1})(\d{15}|\d{18})$/).test(that.data.cardno1)&&(/^[\u4E00-\u9FA5]{1,6}$/).test(that.data.cardname1)) {
       wx.showToast({
         title: '提交成功',
         icon: 'none',
         duration: 2000
       })
+      if (that.data.off == 0) {
+        app.postData("GetUserData.ashx?", {
+          action: "AddBankCard",
+          userid: app.globalData.userid,
+          cardno: that.data.cardno,
+          cardname: that.data.cardname
+        }).then(res => {
+          if (res.Result == 1) {
+            wx.showToast({
+              title: '绑定成功',
+              icon: 'none',
+              duration: 2000
+            })
+          } else {
+            wx.showToast({
+              title: '绑定失败',
+              icon: 'none',
+              duration: 2000
+            })
+          }
+        })
+      } else {
+        that.handModify();
+      }
     } else {
       wx.showToast({
         title: '银行卡号或银行名称填写错误不正确',
@@ -50,30 +72,6 @@ Page({
         duration: 2000
       })
       return
-    }
-    if (that.data.off == 0) {
-      app.postData("GetUserData.ashx?", {
-        action: "AddBankCard",
-        userid: app.globalData.userid,
-        cardno: that.data.cardno,
-        cardname: that.data.cardname
-      }).then(res => {
-        if (res.Result == 1) {
-          wx.showToast({
-            title: '绑定成功',
-            icon: 'none',
-            duration: 2000
-          })
-        } else {
-          wx.showToast({
-            title: '绑定失败',
-            icon: 'none',
-            duration: 2000
-          })
-        }
-      })
-    } else {
-      that.handModify();
     }
   },
 
@@ -169,8 +167,8 @@ Page({
       that.setData({
         off: 1,
         cardid: options.cardid,
-        cardname: options.cardname,
-        cardno: options.cardno
+        cardname1: options.cardname,
+        cardno1: options.cardno
       })
     }
   },

@@ -68,6 +68,7 @@ Page({
       action: 'GetCard',
       userid: app.globalData.userid
     }).then(res => {
+      console.log(res);
       if (res.Result.IsVip == 0) {
         that.setData({
           Result: res.Result,

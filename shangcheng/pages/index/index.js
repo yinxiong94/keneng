@@ -61,7 +61,7 @@ Page({
                   that.login();
                   wx.navigateTo({
                     url: '/pages/mall/mall',
-                  })
+                  })     
                 }
               })
           },

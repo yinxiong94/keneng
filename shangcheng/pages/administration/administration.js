@@ -63,15 +63,14 @@ Page({
       addressid: that.data.list[e.currentTarget.dataset.index].addressid,
       userid: app.globalData.userid
     }).then(res => {
-      console.log(res)
+      // console.log(res)
     })
     
     
-  },
+  },    
   
   // 返回
   superior(e){
-    console.log(e.currentTarget.dataset.addressid)
     var pages = getCurrentPages();
     var currPage = pages[pages.length - 1];   //当前页面
     var prevPage = pages[pages.length - 2];  //上一个页面

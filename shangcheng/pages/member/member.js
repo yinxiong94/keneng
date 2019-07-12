@@ -1,11 +1,26 @@
 // pages/member/member.js
+var app = getApp();
+var that;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list: []
+  },
+  // 我的会员接口
+  handMember: function() {
+    that = this;
+    app.postData("GetAgentInfo.ashx", {
+      action: "MyMemberList",
+      userId: app.globalData.userid
+    }).then(res => {
+      console.log(res.Result);
+      that.setData({
+        list: res.Result
+      })
+    })
   },
   handJump1: function() {
     wx.navigateTo({
@@ -40,7 +55,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    that = this;
+    that.handMember();
   },
 
   /**
