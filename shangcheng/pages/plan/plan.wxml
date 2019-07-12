@@ -8,12 +8,12 @@
       <input type='text' placeholder='请在这里输入这台机器编码'></input>
     </view>
     <view class="item">
-      <view class="left">机器编码：</view>
-      <input type='text' placeholder='请在这里输入这台机器编码'></input>
+      <view class="left">要货日期：</view>
+      <input type='text' placeholder='2019-5-1'></input>
     </view>
     <view class="item">
-      <view class="left">机器编码：</view>
-      <input type='text' placeholder='请在这里输入这台机器编码'></input>
+      <view class="left">要货数量：</view>
+      <input type='text' placeholder='50KG'></input>
     </view>
     <view class="btn">提交</view>
   </view>

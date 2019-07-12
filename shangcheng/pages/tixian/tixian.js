@@ -1,22 +1,86 @@
 // pages/tixian/tixian.js
+const app = getApp()
+var that
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    sum:0,
+    inputVal:0
   },
   txjl:function(){
     wx.navigateTo({
       url: '/pages/cash/cash',
     })
   },
+  // 获取key中的数据
+  issj(){
+    that = this
+    wx.getStorage({
+      key: 'Wmoney',
+      success: function(res) {
+        that.setData({
+          sum:res.data
+        })
+      },
+    })
+  },
+
+  inputVal(e){
+    that = this
+    that.setData({
+      inputVal: e.detail.value
+    })
+  },
+
+  // 全部提现
+  handbtx(){
+    that = this
+    // that.inputVal()
+    that.setData({
+      inputVal:that.data.sum
+    })
+    console.log(1)
+  },
+
+  // 确认提现
+  withdraw(){
+    that = this
+    if (that.data.sum>=100 && that.data.inputVal>=100){
+      app.postData("GetAgentInfo.ashx",{
+        action:'WithdrawAdd',
+        userId: app.globalData.userid,
+        money:that.data.sum
+      }).then(res=>{
+        wx.showToast({
+          title: '提现成功',
+          icon: 'none',
+          duration: 2000,
+        })
+        setTimeout(function () {
+          wx.navigateTo({
+            url: '/pages/cash/cash',
+          })
+        }, 1000)
+      })
+      
+    }else{
+      wx.showToast({
+        title: '可提现金额不能少于100',
+        icon: 'none',
+        duration: 2000,
+      })
+    }
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      that = this
+      that.issj()
   },
 
   /**

@@ -1,11 +1,13 @@
 // pages/want/want.js
+var that;
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    inputval:"",
   },
   // 跳转要货计划编辑页面
   toyh:function(){
@@ -13,11 +15,30 @@ Page({
       url: '/pages/plan/plan',
     })
   },
+  // 获取输入框的内容
+  inputval(e){
+    that = this
+    that.setData({
+      inputval: e.detail.value
+    })
+  },
+  // 要货计划列表
+  tolist(){
+    that = this
+    app.postData("GetAgentInfo.ashx",{
+      action:'RequireGoodsList',
+      userId: app.globalData.userid,
+      key: that.data.inputval
+    }).then(res=>{
+      console.log(res)
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    that = this
+    that.tolist()
   },
 
   /**

@@ -1,8 +1,8 @@
 <!-- 代理端要货计划 -->
 <view class="db">
   <view class="top">
-    <image src='/pages/img/fdj.png' lazy-load='true'></image>
-    <input type='text' placeholder='请输入搜索内容'></input>
+    <image src='/pages/img/fdj.png' lazy-load='true' catchtap='tolist'></image>
+    <input type='text' placeholder='请输入搜索内容' bindinput='inputval'></input>
   </view>
   <view class="id">
     <view class="equipment">
