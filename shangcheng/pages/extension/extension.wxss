@@ -1,6 +1,7 @@
-page{
-  background: #efeff4
+page {
+  background: #efeff4;
 }
+
 .db {
   width: 750rpx;
   border-top: 1px solid #ccc;
@@ -12,12 +13,12 @@ page{
   margin: 0 auto;
   margin-top: 20rpx;
   width: 690rpx;
-  height: 160rpx;
   background: rgba(255, 255, 255, 1);
   border-radius: 10rpx;
   display: flex;
   box-sizing: border-box;
   padding: 0 30rpx;
+  padding-bottom: 30rpx;
 }
 
 .item .img1 {
@@ -26,7 +27,7 @@ page{
   margin-top: 30rpx;
 }
 
-.item .conter {
+.item .conter, .item_a .conter1 {
   flex: 1;
   margin-left: 30rpx;
 }
@@ -62,4 +63,40 @@ page{
   text-align: center;
   line-height: 52rpx;
   margin-top: 54rpx;
+}
+
+.item_a {
+  width: 662rpx;
+  background: rgba(255, 255, 255, 1);
+  padding: 16rpx 16rpx 0 16rpx;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 0px 0px 12rpx 12rpx;
+}
+
+.item_a .img2 {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.haet {
+  display: flex;
+  width: 630rpx;
+  margin: 0 auto;
+  border-bottom: 2rpx solid #ccc;
+  padding-bottom: 20rpx;
+}
+
+.item_a .conter1 .name {
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(29, 32, 35, 1);
+}
+
+.item_a .conter1 .tel {
+  font-size: 22rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(153, 153, 153, 1);
 }

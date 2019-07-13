@@ -1,4 +1,6 @@
 // pages/zhuangzheng/zhuangzheng.js
+var app = getApp();
+var that;
 Page({
 
   /**
@@ -7,7 +9,21 @@ Page({
   data: {
 
   },
-
+  handBecome:function(){
+    that = this;
+    app.postData("President.ashx", {
+      action: "BecomeApply",
+      userId: app.globalData.userid
+    }).then(res => {
+      if (res.Msg == '转正申请成功'){
+        wx.showToast({
+          title: '转正申请成功',
+          duration: 2000,
+          icon: "none"
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

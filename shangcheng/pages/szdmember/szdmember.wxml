@@ -1,27 +1,11 @@
 <!-- 我的会员 -->
 <view class="db">
-  <view class="item">
-    <image src='../img/tx.png'></image>
+  <view class="item" wx:for="{{list}}" wx:key="index">
+    <image src='{{item.UserImg}}'></image>
     <view class="item_right">
-      <view class="name">胖大海</view>
-      <view class="address">长沙市天心区九峰小区</view>
-      <view class="address">联系方式：15986203495</view>
-    </view>
-  </view>
-  <view class="item">
-    <image src='../img/tx.png'></image>
-    <view class="item_right">
-      <view class="name">胖大海</view>
-      <view class="address">长沙市天心区九峰小区</view>
-      <view class="address">联系方式：15986203495</view>
-    </view>
-  </view>
-  <view class="item">
-    <image src='../img/tx.png'></image>
-    <view class="item_right">
-      <view class="name">胖大海</view>
-      <view class="address">长沙市天心区九峰小区</view>
-      <view class="address">联系方式：15986203495</view>
+      <view class="name">{{item.UserName}}</view>
+      <view class="address">{{item.address}}</view>
+      <view class="address">联系方式：{{item.UserTel}}</view>
     </view>
   </view>
 </view>

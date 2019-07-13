@@ -8,7 +8,7 @@
   height: 117rpx;
 }
 
-.db .top>.banxin, .db .top1>.banxin, .db .item>.banxin {
+.db .top>.banxin, .db .top1>.banxin, .db .item>.banxin,.db .top>.banxin, .db .top1>.banxin, .db .item1>.banxin {
   display: flex;
 }
 
@@ -25,10 +25,22 @@
   text-align: center;
   line-height: 62rpx;
   margin-right: 40rpx;
-  font-size: 28rpx
+  font-size: 28rpx;
 }
 
-.db .top .banxin>image {
+.db .top .banxin .top_left>.list1 {
+  width: 120rpx;
+  height: 62rpx;
+  margin-top: 25rpx;
+  text-align: center;
+  line-height: 62rpx;
+  margin-right: 40rpx;
+  color: #8ec31f;
+  border: 2rpx solid #8ec31f !important;
+  font-size: 32rpx !important;
+}
+
+.db .top .banxin .coco {
   width: 50rpx;
   height: 48rpx;
   margin-top: 34rpx;
@@ -63,37 +75,37 @@
   padding-top: 30rpx;
 }
 
-.db .item .right {
+
+.db .item1 {
+  width: 100%;
+  height: 140rpx;
+  padding-top: 30rpx;
+  background: rgba(62, 148, 244, 0.05);
+}
+
+
+.db .item .right,.db .item1 .right {
   font-size: 34rpx;
   font-family: PingFang-SC-Medium;
   font-weight: bold;
   color: rgba(142, 195, 31, 1);
 }
 
-.db .item .left {
+.db .item .left,.db .item1 .left {
   flex: 1;
 }
 
-.db .item .left .jiaoyi {
+.db .item .left .jiaoyi,.db .item1 .left .jiaoyi {
   font-size: 34rpx;
   font-family: PingFang-SC-Medium;
   font-weight: 500;
   color: rgba(77, 77, 77, 1);
 }
 
-.db .item .left .time {
+.db .item .left .time,.db .item1 .left .time {
   font-size: 24rpx;
   font-family: PingFang-SC-Medium;
   font-weight: 500;
   color: rgba(166, 166, 166, 1);
   margin-top: 26rpx;
-}
-
-.blue {
-  background: rgba(62, 148, 244, 0.05);
-}
-.click{
-  color:#8EC31F;
-  border:2rpx solid #8EC31F !important;
-  font-size: 32rpx !important
 }

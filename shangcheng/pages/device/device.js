@@ -1,21 +1,32 @@
 // pages/device/device.js
+var app = getApp();
+var that;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: [{
-      id: 1,
-      name: "九峰小区12栋1号设备"
-    }, {
-      id: 2,
-      name: "九峰小区12栋2号设备"
-    }]
+    list: []
   },
-  mydevice: function() {
+  // 设备列表
+  handDevice:function(){
+    that = this;
+    app.postData("President.ashx", {
+      action: "MachineInfoList",
+      userId: app.globalData.userid
+    }).then(res => {
+      console.log(res);
+      that.setData({
+        list: res.Result
+      })
+    })
+  },
+  mydevice: function(e) {
+    let index = e.currentTarget.dataset.index;
+    let send = that.data.list[index];
     wx.navigateTo({
-      url: '/pages/mydevice/mydevice',
+      url: '/pages/mydevice/mydevice?MachineId=' + send.MachineId + '&Reserves=' + send.Reserves + '&MachineState=' + send.MachineState,
     })
   },
   handJump1: function() {
@@ -46,7 +57,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    that = this;
+    that.handDevice();
   },
 
   /**
