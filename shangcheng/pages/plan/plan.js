@@ -71,7 +71,23 @@ Page({
       cargoNumber: that.data.cargoNumberval,
       createTime: that.data.createTimeval
     }).then(res=>{
-      console.log(res)
+      if (res.Msg == "不存在该设备"){
+        wx.showToast({
+          title: '机器编码错误！',
+          icon: 'none'
+        })
+      }else{
+        wx.showToast({
+          title: '提交成功',
+          icon: 'none',
+          duration: 2000,
+        })
+        setTimeout(function () {
+          wx.navigateTo({
+            url: '/pages/cash/cash',
+          })
+        }, 2500)
+      }
     })
   },
   /**

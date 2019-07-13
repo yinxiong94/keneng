@@ -9,58 +9,18 @@
   <view>成交时间</view>
 </view>
 
-<view class='hyxq'>
+<view class='hyxq' wx:for="{{list}}" wx:key="index">
   <view class='xm'>
-    <view>九峰小区</view>
-    <view>no.459784213</view>
+    <view>{{item.CommunityName}}</view>
+    <view class='MachineId'>{{item.MachineId}}</view>
   </view>
-  <view class='tel'>泰国正品香米59kg</view>
   <view class='xm'>
-    <view>2019-05-21</view>
-    <view>15:56</view>
+    <view >{{item.ProductName}}</view>
+    <view class='tel1'>￥{{item.PayMoney}}</view>
   </view>
-</view>
-<view class='hyxq'>
   <view class='xm'>
-    <view>九峰小区</view>
-    <view>no.459784213</view>
-  </view>
-  <view class='tel'>泰国正品香米59kg</view>
-  <view class='xm'>
-    <view>2019-05-21</view>
-    <view>15:56</view>
+    <view>{{item.PayTime}}</view>
+    <!-- <view>15:56</view> -->
   </view>
 </view>
-<view class='hyxq'>
-  <view class='xm'>
-    <view>九峰小区</view>
-    <view>no.459784213</view>
-  </view>
-  <view class='tel'>泰国正品香米59kg</view>
-  <view class='xm'>
-    <view>2019-05-21</view>
-    <view>15:56</view>
-  </view>
-</view>
-<view class='hyxq'>
-  <view class='xm'>
-    <view>九峰小区</view>
-    <view>no.459784213</view>
-  </view>
-  <view class='tel'>泰国正品香米59kg</view>
-  <view class='xm'>
-    <view>2019-05-21</view>
-    <view>15:56</view>
-  </view>
-</view>
-<view class='hyxq'>
-  <view class='xm'>
-    <view>九峰小区</view>
-    <view>no.459784213</view>
-  </view>
-  <view class='tel'>泰国正品香米59kg</view>
-  <view class='xm'>
-    <view>2019-05-21</view>
-    <view>15:56</view>
-  </view>
-</view>
+

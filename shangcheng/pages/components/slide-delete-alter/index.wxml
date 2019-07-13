@@ -8,12 +8,12 @@
       <slot/>
   </view>
   <view class="action-wrap">
-      <view class="action del" bindtap="handleAction" data-shoppingid="{{paramAtoB}}">
+      <view class="action del" bindtap="handleAction" data-MachiId="{{paramAtoB}}">
           <image src='/pages/img/tu2.png' lazy-load='true'></image>
       </view>
   </view>
   <view class="action-wrap1">
-      <view class="action del" bindtap="handleAction" data-shoppingid="{{paramAtoB}}">
+      <view class="action del">
           <image src='/pages/img/tu1.png' lazy-load='true'></image>
       </view>
   </view>

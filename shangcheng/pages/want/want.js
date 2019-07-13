@@ -40,7 +40,6 @@ Page({
       that.setData({
         toLIst: res.Result
       })
-      console.log(that.data.toLIst)
       if (that.data.toLIst.length == 0){
         that.setData({
           show:false,

@@ -130,10 +130,31 @@ Component({
     /**
      * 组件操作事件（此示例只有删除事件，可根据需要增加其他事件）
     //  */
-      handleAction(e){
-       
-      },
+     
+    handleAction(e) {
+      var machiid = e.currentTarget.dataset.machiid;
+      // console.log(shoppingid, app.globalData.userid)
+      app.postData("GetAgentInfo.ashx", {
+        action: "RequireGoodsDel",
+        eeId: machiid,
+        userId: app.globalData.userid
+      }).then(res => {
+        wx.showToast({
+          title: '删除成功',
+          duration: 2000,
+          success(res) {
+            setTimeout(function () {
+              wx.reLaunch({
+                url: '/pages/want/want',
+              })
+            }, 2000)
+          }
+        })
+      })
+    },
   },
+
+  
 
   ready() {
     this.actionWidth = 60

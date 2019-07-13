@@ -156,7 +156,24 @@ page{
   border-radius: 8rpx;
   background-color: rgba(142, 195, 31, 1);
   margin-top: 38rpx;
+  /* animation:hide-item 2s ease-in forwards; */
 }
+
+/* 
+@keyframes hide-item{
+    0% {
+        opacity:1;
+        color:yellow;
+    }
+    50%{
+        opacity: 0.5 ;
+        color:red;
+    }
+    100%{
+        opacity:0;
+        color: green;
+    }
+} */
 
 .db .dami .item .item_top .right .kg {
   font-size: 30rpx;
