@@ -1,5 +1,6 @@
 // pages/personal/personal.js
 const app = getApp()
+var that;
 Page({
 
   /**
@@ -8,8 +9,26 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    phone:"13875873502"
+    phone:"0",
+    list:[],
+    tel:''
+  },
+  handPresident:function(){
+    that = this;
+    app.postData("GetAgentInfo.ashx", {
+      action: "GetAgentInfo",
+      userId: app.globalData.userid
+    }).then(res => {
+      console.log(res);
+      that = this;
+      var start = res.Result.UserTel.substring(0,3);
+      var stop = res.Result.UserTel.substring(7)
+      var tel = start + '****' + stop;
+      that.setData({
+        list: res.Result,
+        tel:tel
+      })
+    })
   },
   handJump1: function () {
     wx.navigateTo({
@@ -99,7 +118,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    that = this;
+    that.handPresident();
   },
 
   /**
