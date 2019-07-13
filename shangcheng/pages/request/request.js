@@ -10,7 +10,10 @@ Page({
   data: {
     share:1,
     tel: app.globalData.tel,
-    address: app.globalData.address
+    address: app.globalData.address,
+    Address:"", //地址
+    UserName:"",//姓名
+    UserTel:"",//手机号码
   },
   jian: function (e) {
     that = this;
@@ -71,11 +74,33 @@ Page({
       }
     })
   },
+
+  // 获取会员信息
+  handuerl(){
+    app.postData("GetUserData.ashx",{
+      action:"GetUserInfo",
+      userid: app.globalData.userid,
+    }).then(res=>{
+      console.log(res)
+      var list= [];
+      list.push(res.Result.City);
+      list.push(res.Result.Province);
+      list.push(res.Result.Region)
+      list.push(res.Result.Address);
+      var list1 = list.join().replace(/,/g, "");
+      that.setData({
+        Address:list1,
+        UserName: res.Result.UserName,
+        UserTel: res.Result.UserTel,
+      })
+      
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+   
   },
 
   /**
@@ -90,6 +115,7 @@ Page({
    */
   onShow: function() {
     that = this;
+    that.handuerl()
   },
 
   /**

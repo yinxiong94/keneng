@@ -16,7 +16,6 @@ Page({
       action: "MyMemberList",
       userId: app.globalData.userid
     }).then(res => {
-      console.log(res.Result);
       that.setData({
         list: res.Result
       })

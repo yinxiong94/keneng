@@ -1,18 +1,37 @@
 // pages/spxsdd/spxsdd.js
+var app = getApp();
+var that
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list:[]
   },
 
+
+  /**
+   * 获取商品销售记录
+   */
+  iSmarket(){
+    that = this
+    app.postData("GetAgentInfo.ashx",{
+      action:"MachineOrderList",
+      userId: app.globalData.userid
+    }).then(res=>{
+      console.log(res)
+      that.setData({
+        list: res.Result
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    that  =this;
+    that.iSmarket()
   },
 
   /**

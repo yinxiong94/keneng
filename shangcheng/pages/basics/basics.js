@@ -1,18 +1,37 @@
 // pages/basics/basics.js
+const app = getApp();
+var that;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list:[],
   },
-
+  
+  /**
+   * 获取社区基本信息
+   */
+  ismessage(key){
+    that = this
+    app.postData("GetAgentInfo.ashx",{
+      action:"CommunityInfo",
+      userId: app.globalData.userid,
+      key: key == undefined?"":key
+    }).then(res=>{
+      console.log(res)
+      that.setData({
+        list: res.Result
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    that = this
+    that.ismessage()
   },
 
   /**

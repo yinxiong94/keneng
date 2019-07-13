@@ -25,6 +25,8 @@ Page({
       })
     })
   },
+
+
   handDetails: function (e) {
     wx.navigateTo({
       url: '../goods/goods?id=' + e.currentTarget.dataset.goodsid
@@ -38,7 +40,6 @@ Page({
       typeid: e.currentTarget.dataset.typeid
     })
     if (that.data.menuTapCurrent != 0) {
-      console.log(1)
       app.postData("GetGoodsData.ashx", {
         action: "GetGoodsList",
         typeid: that.data.typeid,
@@ -87,6 +88,8 @@ Page({
       })
     }
   },
+
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
