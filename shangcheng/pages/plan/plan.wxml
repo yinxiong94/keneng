@@ -5,16 +5,16 @@
   <view class="from">
     <view class="item">
       <view class="left">机器编码：</view>
-      <input type='text' placeholder='请在这里输入这台机器编码'></input>
+      <input type='text' placeholder='请在这里输入这台机器编码' bindinput='machineId'></input>
     </view>
     <view class="item">
-      <view class="left">机器编码：</view>
-      <input type='text' placeholder='请在这里输入这台机器编码'></input>
+      <view class="left">要货日期：</view>
+      <input type='text' placeholder='2019-5-1' bindinput='createTime'></input>
     </view>
     <view class="item">
-      <view class="left">机器编码：</view>
-      <input type='text' placeholder='请在这里输入这台机器编码'></input>
+      <view class="left">要货重量：</view>
+      <input type='text' placeholder='50KG' bindinput='cargoNumber'></input>
     </view>
-    <view class="btn">提交</view>
+    <view class="btn" bindtap='present'>提交</view>
   </view>
 </view>

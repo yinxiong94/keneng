@@ -7,7 +7,7 @@
   position: relative;
   z-index: 1;
   background: #fff;
-  /* margin: 10rpx; */
+  margin: 10rpx;
 }
 
 .wrap .content.animate {
@@ -22,17 +22,27 @@
   bottom: 0;
   right: 0;
 }
+.wrap .action-wrap1 {
+  position: absolute;
+  display: flex;
+  width: 120rpx;
+  top: 0;
+  bottom: 0;
+  right: 120rpx;
+}
 
 .wrap .action {
   display: flex;
   width: 120rpx;
-  height: 100%;
+  height: 143rpx;
   justify-content: center;
   align-items: center;
-  background: #FF533C;
+  background: #eee;
+  border-radius: 10rxp;
 }
 
-.wrap .action text {
-  font-size: 24rpx;
-  color: #fff;
+.wrap .action image {
+  width: 107rpx;
+  height: 107rpx;
+  margin-top: 20rpx;
 }

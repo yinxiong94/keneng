@@ -1,11 +1,18 @@
 // pages/want/want.js
+var that;
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    inputval:"",
+    machineId:"",
+    address:"",
+    toLIst:[],
+    show:false,
+    hide:false
   },
   // 跳转要货计划编辑页面
   toyh:function(){
@@ -13,11 +20,52 @@ Page({
       url: '/pages/plan/plan',
     })
   },
+  // 获取输入框的内容
+  inputval(e){
+    that = this
+    that.setData({
+      inputval: e.detail.value
+    })
+    that.tolist()
+  },
+  // 要货计划列表
+  tolist(){
+    that = this
+    app.postData("GetAgentInfo.ashx",{
+      action:'RequireGoodsList',
+      userId: app.globalData.userid,
+      key: that.data.inputval,
+      machineId: that.data.machineId
+    }).then(res=>{
+      that.setData({
+        toLIst: res.Result
+      })
+      console.log(that.data.toLIst)
+      if (that.data.toLIst.length == 0){
+        that.setData({
+          show:false,
+          hide:true
+        })
+      }else{
+        that.setData({
+          show:true,
+          hide:false
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    that = this
+    
+    
+    // that.tolist()
+    that.setData({
+      machineId: options.machineid,
+      address: options.address
+    })
   },
 
   /**
@@ -31,7 +79,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    that.tolist()
   },
 
   /**

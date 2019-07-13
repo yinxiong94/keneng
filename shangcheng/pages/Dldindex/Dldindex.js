@@ -47,10 +47,12 @@ Page({
     that = this
     that.iSfacility()
   },
+
   // 跳转要货计划
-  toyh:function(){
+  toyh:function(e){
+    console.log(e.currentTarget.dataset.address)
     wx.navigateTo({
-      url: '/pages/want/want',
+      url: '/pages/want/want?machineid=' + e.currentTarget.dataset.machineid + "&address=" + e.currentTarget.dataset.address,
     })
   },
   /**

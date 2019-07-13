@@ -7,7 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    cuttVal:1
+    cuttVal:1,
+    iSmaoy:[],
+    sum:0
   },
   totx:function(){
     wx.navigateTo({
@@ -20,6 +22,30 @@ Page({
     that.setData({
       cuttVal: e.currentTarget.dataset.cutt
     })
+  },
+
+  // 分销明细
+  isdistribution(){
+    that = this
+    app.postData("GetAgentInfo.ashx",{
+      action:"GetDivideIntoList",
+      userId: app.globalData.userid
+    }).then(res=>{
+      var sum = 0
+      res.Result.forEach(item => {
+        sum += item.Wmoney
+      })
+      wx.setStorage({
+        key: 'Wmoney',
+        data: sum,
+      })
+      that.setData({
+        iSmaoy: res.Result,
+        sum: sum
+      })
+     
+    })
+  
   },
   /**
    * 生命周期函数--监听页面加载
@@ -39,7 +65,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    that = this
+    that.isdistribution()
   },
 
   /**

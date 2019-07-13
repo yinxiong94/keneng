@@ -129,26 +129,9 @@ Component({
 
     /**
      * 组件操作事件（此示例只有删除事件，可根据需要增加其他事件）
-     */
+    //  */
       handleAction(e){
-        var shoppingid=e.currentTarget.dataset.shoppingid;
-        console.log(shoppingid,app.globalData.userid)
-        app.postData("GetShoppingData.ashx",{
-          action:"DelGoods",
-          shoppingid: shoppingid
-        }).then(res=>{
-          wx.showToast({
-            title: '删除成功',
-            duration:2000,
-            success(res){
-              setTimeout(function(){
-                wx.reLaunch({
-                  url: '/pages/cart/cart',
-                })
-              },2000)              
-            }
-          })         
-        })
+       
       },
   },
 
