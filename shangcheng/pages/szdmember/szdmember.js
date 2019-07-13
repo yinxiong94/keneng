@@ -1,13 +1,25 @@
 // pages/member/member.js
+var app = getApp();
+var that;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list:[]
   },
-
+  handMember:function(){
+    that = this;
+    app.postData("President.ashx", {
+      action: "MemberInfoList",
+      userId: app.globalData.userid
+    }).then(res => {
+      that.setData({
+        list:res.Result
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -26,7 +38,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    that = this;
+    that.handMember();
   },
 
   /**

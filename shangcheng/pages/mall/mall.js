@@ -32,7 +32,7 @@ Page({
     });
   },
   handDetails: function(e) {
-    wx.navigateTo({
+    wx.navigateTo({ 
       url: "../goods/goods?id=" + e.currentTarget.dataset.goodsid
     });
   },

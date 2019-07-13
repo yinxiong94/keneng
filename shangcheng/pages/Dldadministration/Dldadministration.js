@@ -1,13 +1,33 @@
 // pages/administration/administration.js
+var app = getApp();
+var that;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    textCont:'',
+    list:[]
   },
-
+  handText:function(e){
+    that.setData({
+      textCont: e.detail.value
+    })
+  },
+  handSearch:function(){
+    that = this;
+    app.postData("GetAgentInfo.ashx", {
+      action: "PresidentList",
+      userid: app.globalData.userid,
+      key: that.data.textCont
+    }).then(res => {
+      that.setData({
+        list:res.Result
+      })
+      console.log(that.data.list);
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -26,7 +46,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    that = this;
+    that.handSearch();
   },
 
   /**

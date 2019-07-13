@@ -1,4 +1,6 @@
 import Canvas from '../../utils/canvas.js'
+var app = getApp();
+var that;
 Page({
   ...Canvas.options,
   /**
@@ -6,10 +8,14 @@ Page({
    */
   data: {
     ...Canvas.data,
+    Reserves: '',
+    MachineId:'',
+    MachineState:''
   },
   tols:function(){
+    that = this;
     wx.navigateTo({
-      url: '/pages/flowing/flowing',
+      url: '/pages/flowing/flowing?MachineId=' + that.data.MachineId,
     })
   },
   tozz:function(){
@@ -26,6 +32,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.draw('runCanvas', 78 , 1000);
+    that = this;
+    console.log(options);
+    that.setData({
+      MachineId: options.MachineId,
+      MachineState: options.MachineState,
+      Reserves: options.Reserves
+    })
+    this.draw('runCanvas', that.data.Reserves, 1000);
   },
 })

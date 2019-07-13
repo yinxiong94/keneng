@@ -1,19 +1,22 @@
 <!-- 我的推广 -->
 <view class="db">
-  <view class="item">
-    <image class="img1" src='/pages/img/tou.png'></image>
-    <view class="conter">
-      <view class="name">浣熊</view>
-      <view class="tel">手机号：15698736548</view>
+  <view class="list" wx:for="{{list}}" wx:key="index">
+    <view class="item">
+      <image class="img1" src='{{item.UserImg}}'></image>
+      <view class="conter">
+        <view class="name">{{item.UserName}}</view>
+        <view class="tel">手机号：{{item.UserTel}}</view>
+      </view>
+      <view class="item_btn" bindtap='handTdxj' data-index="{{index}}">TA的下级</view>
     </view>
-    <view class="item_btn" bindtap='handTdxj'>TA的下级</view>
-  </view>
-  <view class="item">
-    <image class="img1" src='/pages/img/tou.png'></image>
-    <view class="conter">
-      <view class="name">浣熊</view>
-      <view class="tel">手机号：15698736548</view>
+    <view class="item_a" wx:if="{{item.off}}" wx:for="{{item.list}}" wx:for-item="idx">
+      <view class="haet">
+        <image class="img2" src='{{idx.UserImg}}'></image>
+        <view class="conter1">
+          <view class="name">{{idx.UserName}}</view>
+          <view class="tel">手机号：{{idx.UserTel}}</view>
+        </view>
+      </view>
     </view>
-    <view class="item_btn">TA的下级</view>
   </view>
 </view>

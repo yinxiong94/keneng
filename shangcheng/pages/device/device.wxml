@@ -5,11 +5,11 @@
       <image class="top2" src="../img/top2.png" lazy-load='true'></image>
     </view>
     <view class="list">
-      <view class="item" wx:for="{{list}}">
-        <view class="yuan"></view>
+      <view class="item" wx:for="{{list}}" wx:key="index">
+        <view class="{{item.IsOnLine == 0?'yuan':'red'}}"></view>
         <image src="../img/guizi.png"></image>
-        <view class="dizhi">{{item.name}}</view>
-        <view class="btn" bindtap='mydevice'>点击查看</view>
+        <view class="dizhi">{{item.Address}}({{item.MachineName}})</view>
+        <view class="btn" bindtap='mydevice' data-index="{{index}}">点击查看</view>
       </view>
     </view>
   </view>
