@@ -14,15 +14,16 @@
       <text>{{address}}</text>
     </view>
   </view>
-  <view class="item_1">
-  <slide-delete>
-    <view class="item">
-      <view class="list" wx:for="{{toLIst}}" wx:key="index">
-        <view class="left">时间：{{item.Creatime}}</view>
-        <view class="right">计划：要货{{item.CargoNumber}}</view>
+  <view class="item_1" wx:if="{{show}}">
+    <slide-delete>
+      <view class="item">
+        <view class="list" wx:for="{{toLIst}}" wx:key="index">
+          <view class="left">时间：{{item.Creatime}}</view>
+          <view class="right">计划：要货{{item.CargoNumber}}</view>
+        </view>
       </view>
-    </view>
-  </slide-delete>
+    </slide-delete>
   </view>
+  <view wx:if="{{hide}}" class='hide'>啊偶~ 还没找到要货计划</view>
   <image class="jia" src='/pages/img/jia.png' lazy-load='true' bindtap='toyh'></image>
 </view>

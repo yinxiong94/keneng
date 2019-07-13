@@ -118,3 +118,14 @@
   height: 166rpx;
   left: 262rpx;
 }
+
+.hide{
+  color: #8EC31F;
+  font-size: 30rpx;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500rpx;
+}

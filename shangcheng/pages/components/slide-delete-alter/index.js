@@ -130,9 +130,9 @@ Component({
     /**
      * 组件操作事件（此示例只有删除事件，可根据需要增加其他事件）
     //  */
-      // handleAction(e){
+      handleAction(e){
        
-      // },
+      },
   },
 
   ready() {

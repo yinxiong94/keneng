@@ -9,7 +9,10 @@ Page({
   data: {
     inputval:"",
     machineId:"",
-    address:""
+    address:"",
+    toLIst:[],
+    show:false,
+    hide:false
   },
   // 跳转要货计划编辑页面
   toyh:function(){
@@ -23,6 +26,7 @@ Page({
     that.setData({
       inputval: e.detail.value
     })
+    that.tolist()
   },
   // 要货计划列表
   tolist(){
@@ -36,14 +40,27 @@ Page({
       that.setData({
         toLIst: res.Result
       })
+      console.log(that.data.toLIst)
+      if (that.data.toLIst.length == 0){
+        that.setData({
+          show:false,
+          hide:true
+        })
+      }else{
+        that.setData({
+          show:true,
+          hide:false
+        })
+      }
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
     that = this
+    
+    
     // that.tolist()
     that.setData({
       machineId: options.machineid,
