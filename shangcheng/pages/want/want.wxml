@@ -16,7 +16,7 @@
   </view>
   <view class="item_1" wx:if="{{show}}">
   <view wx:for="{{toLIst}}" wx:key="index">
-    <slide-delete  paramAtoB='{{item.MachiId}}'>
+    <slide-delete  paramAtoB='{{item.MachiId}}' machineId="{{machineId}}">
       <view class="item">
         <view class="list">
           <view class="left">时间：{{item.Creatime}}</view>

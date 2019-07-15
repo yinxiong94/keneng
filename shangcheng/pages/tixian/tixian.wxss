@@ -6,19 +6,25 @@
   width: 750rpx;
   height: 350rpx;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
-.db .top image {
-  width: 750rpx;
-  height: 350rpx;
+.db .top .top_bg {
+  width: 634rpx;
+  height: 242rpx;
   margin-left: 8rpx;
+  background: #3A6DC6;
+  border-radius: 20rpx;
 }
 
 .db .top .bg {
   height: 64rpx;
   display: flex;
   position: absolute;
-  top: 71rpx;
+  top: 103rpx;
 }
 
 .db .top .bg image {
@@ -66,8 +72,8 @@
   color: rgba(255, 255, 255, 1);
   line-height: 27rpx;
   position: absolute;
-  top: 148rpx;
-  left: 152rpx;
+  top: 176rpx;
+  left: 191rpx;
 }
 
 .db .pirce {

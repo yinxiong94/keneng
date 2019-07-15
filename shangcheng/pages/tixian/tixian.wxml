@@ -1,8 +1,8 @@
 <view class="db">
   <view class="top">
-    <image src='/pages/img/bdyhk.png'></image>
+    <view class='top_bg'></view>
     <view class="bg">
-      <image src='/pages/img/jianshe.png'></image>
+      <!-- <image src='/pages/img/jianshe.png'></image> -->
       <view class="bank">
         <view class="left">建设银行</view>
         <view class="right">银行卡</view>

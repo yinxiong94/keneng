@@ -58,9 +58,7 @@ Page({
    */
   onLoad: function (options) {
     that = this
-    
-    
-    // that.tolist()
+    // that.tolis()
     that.setData({
       machineId: options.machineid,
       address: options.address

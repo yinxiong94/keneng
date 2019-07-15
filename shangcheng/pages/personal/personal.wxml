@@ -4,7 +4,7 @@
     <view class="name">{{message.ColonelName}}</view>
   </view>
   <view class="bg">
-    <image src='/pages/img/bg2.png'></image>
+    <!-- <image src='/pages/img/bg2.png'></image> -->
     <view class="bg_coco">
       <view class="pirce">账户余额（元）</view>
       <view class="tixian">

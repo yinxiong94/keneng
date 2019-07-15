@@ -31,12 +31,12 @@ Page({
     })
   },
   handJump1: function () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../device/device',
     })
   },
   handJump3: function () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '"../szdpersonal/szdpersonal",',
     })
   },

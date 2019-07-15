@@ -106,3 +106,13 @@
   margin: 0 auto;
   margin-top: 30rpx;
 }
+
+.img{
+  transform: rotate(180deg);
+}
+
+
+
+.img1{
+   transform: rotate(-360deg);
+}

@@ -35,7 +35,8 @@ Component({
       type: Boolean,
       value: true
     },
-    paramAtoB: String
+    paramAtoB: String,
+    machineId: String
   },
   /**
    * 组件的初始数据
@@ -127,26 +128,58 @@ Component({
       })
     },
 
+
+
+    /**
+     * 获取要货计划
+     */
+    tolist(machiid) {
+     var that = this
+      app.postData("GetAgentInfo.ashx", {
+        action: 'RequireGoodsList',
+        userId: app.globalData.userid,
+        // key: that.data.inputval,
+        machineId: machiid
+      }).then(res => {
+        that.setData({
+          toLIst: res.Result
+        })
+        if (that.data.toLIst.length == 0) {
+          that.setData({
+            show: false,
+            hide: true
+          })
+        } else {
+          that.setData({
+            show: true,
+            hide: false
+          })
+        }
+      })
+    },
     /**
      * 组件操作事件（此示例只有删除事件，可根据需要增加其他事件）
     //  */
      
     handleAction(e) {
+      var that = this
       var machiid = e.currentTarget.dataset.machiid;
       // console.log(shoppingid, app.globalData.userid)
       app.postData("GetAgentInfo.ashx", {
-        action: "RequireGoodsDel",
+        action: "RequireGoodsDel", 
         eeId: machiid,
         userId: app.globalData.userid
       }).then(res => {
+        console.log(res)
         wx.showToast({
           title: '删除成功',
           duration: 2000,
           success(res) {
             setTimeout(function () {
-              wx.reLaunch({
-                url: '/pages/want/want',
-              })
+              // wx.redirectTo({
+              //   // url: '/pages/want/want',
+              // })
+              that.tolist(machiid)
             }, 2000)
           }
         })

@@ -26,17 +26,17 @@ Page({
 
 
   handJump1: function () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/Dldindex/Dldindex',
     })
   },
   handJump2: function () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/member/member',
     })
   },
   handJump3: function () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../personal/personal',
     })
   },

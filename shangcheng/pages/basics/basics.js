@@ -8,6 +8,7 @@ Page({
    */
   data: {
     list:[],
+    show:false,
   },
   
   /**
@@ -24,6 +25,13 @@ Page({
       that.setData({
         list: res.Result
       })
+    })
+  },
+
+  control(){
+    that = this
+    that.setData({
+      show:that.data.show == false?true:false
     })
   },
   /**
