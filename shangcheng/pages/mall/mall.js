@@ -12,6 +12,21 @@ Page({
     list: [],
     send: []
   },
+  handHuika:function(){
+    that = this;
+    var falg = that.data.falg;
+    var hide = that.data.hide;
+    // wx.navigateTo({
+    //   url: '../request/request'
+    // })
+    if (falg == true && hide == false){
+      wx.navigateTo({
+        url: '../request/request'
+      })
+    }else{
+      return
+    }
+  },
   handlOpening: function() {
     wx.navigateTo({
       url: '../card/card'
@@ -33,7 +48,7 @@ Page({
       that.setData({
         list: res.Result
       })
-      
+
     })
     app.postData("GetIndexData.ashx", {
       action: "getBanner"
@@ -41,6 +56,32 @@ Page({
       that.setData({
         send: res.Result
       })
+    })
+
+   
+  },
+
+  // 获取会员卡信息
+  initialize() {
+    that = this
+    app.postData("GetGoodsData.ashx", {
+      action: 'GetCard',
+      userid: app.globalData.userid
+    }).then(res => {
+      if (res.Result.IsVip == 0) {
+        that.setData({
+          Result: res.Result,
+          falg: false,
+          hide:true
+        })
+      } else {
+        that.setData({
+          Result: res.Result,
+          falg: true,
+          hide:false
+        })
+       
+      }
     })
   },
 
@@ -55,7 +96,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    that = this;
+    that.initialize();
   },
 
   /**

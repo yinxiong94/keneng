@@ -45,38 +45,34 @@ Page({
       psize: that.data.psize,
       status: that.data.status
     }).then(res => {
+      console.log(res);
       that.setData({
         list: res.Result
       })
     })
   },
 
-
   handPinjia: function (e) {
-    let index = e.currentTarget.dataset.num;
-    let sid = that.data.list[index].OrderId;
+    that = this;
+    let index = e.currentTarget.dataset.goodsid;
     wx.navigateTo({
-      url: '../publish/publish?ccc=' + sid,
+      url: '../publish/publish?ccc=' + index,
     })
   },
-  payment: function () {
-    wx.navigateTo({
-      url: '../tuikuan/tuikuan',
-    })
-  },
+
   handCheng: function () {
     wx.navigateTo({
       url: '../After/After',
     })
   },
+
   cancel: function () {
     wx.navigateTo({
       url: '../logistics/logistics',
     })
   },
-  
+
   handwait: function (e) {
-    console.log(1111);
     that = this;
     let index = e.currentTarget.dataset.index;
     let orderid = that.data.list[index].OrderId;
@@ -85,9 +81,9 @@ Page({
     })
   },
 
+
   // 点击退款
   refund(e) {
-    console.log(e.currentTarget.dataset.orderid)
     var orderid = e.currentTarget.dataset.orderid
     wx.navigateTo({
       url: '../tuikuan/tuikuan?orderid=' + orderid,
@@ -96,7 +92,6 @@ Page({
   // 取消订单
   abolish(e) {
     that = this
-    console.log(e)
     var orderid = e.currentTarget.dataset.orderid
     wx.showModal({
       title: '取消订单',
@@ -107,8 +102,9 @@ Page({
             action: "Cancel",
             orderid: orderid
           }).then(res => {
-            console.log(res)
-            that.beg()
+            if (res.Result > 0) {
+              that.beg()
+            }
           })
         } else if (res.cancel) {
           console.log('用户点击取消')
@@ -120,9 +116,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
 
+
   onLoad: function (options) {
     that = this;
-    console.log(options);
     if (options.off == 'false') {
       that.menuTap();
     } else {
@@ -132,6 +128,8 @@ Page({
       })
       that.menuTap();
     }
+    
+
   },
 
   /**
@@ -147,6 +145,7 @@ Page({
 
   onShow: function () {
     that = this
+    that.beg();
   },
 
   /**
@@ -179,7 +178,7 @@ Page({
     that.setData({
       psize: pagenum, //更新当前页数
     })
-    // that.menuTap()
+    // that.beg()
   },
 
   /**

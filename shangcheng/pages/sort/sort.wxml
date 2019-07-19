@@ -15,10 +15,7 @@
               <text class="menu1 {{menuTapCurrent==index+1?'borders':''}}" data-current="{{index+1}}"  data-typeid="{{item.typeid}}" catchtap="menuTap">{{item.typename}}</text>
               <view class="{{menuTapCurrent==index+1?'icon':''}}" wx:if="{{menuTapCurrent==index+1}}"></view>
             </view>
-            
           </view>
-
-
           <view class='cont1_top'>
             <view class="list" wx:for="{{ListView}}" wx:key="index" bindtap='handDetails' data-goodsid='{{item.goodsid}}'>
                   <image lazy-load='true' src='{{item.pic}}'></image>

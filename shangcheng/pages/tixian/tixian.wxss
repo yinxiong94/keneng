@@ -1,0 +1,152 @@
+.db {
+  width: 750rpx;
+}
+
+.db .top {
+  width: 750rpx;
+  height: 350rpx;
+  position: relative;
+}
+
+.db .top image {
+  width: 750rpx;
+  height: 350rpx;
+  margin-left: 8rpx;
+}
+
+.db .top .bg {
+  height: 64rpx;
+  display: flex;
+  position: absolute;
+  top: 71rpx;
+}
+
+.db .top .bg image {
+  width: 64rpx;
+  height: 64rpx;
+  margin-left: 71rpx;
+}
+
+.db .top .bg .bank {
+  height: 64rpx;
+  display: flex;
+}
+
+.db .top .bg .bank .left {
+  height: 64rpx;
+  line-height: 64rpx;
+  margin-left: 17rpx;
+  font-size: 28rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+.db .top .bg .bank .right {
+  width: 96rpx;
+  height: 33rpx;
+  line-height: 33rpx;
+  text-align: center;
+  font-size: 22rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  margin-left: 13rpx;
+  border: 1px solid rgba(245, 245, 245, 1);
+  opacity: 0.5;
+  border-radius: 5px;
+  margin-top: 15rpx;
+}
+
+.db .top .card {
+  height: 27rpx;
+  font-size: 36rpx;
+  font-family: Roboto-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 27rpx;
+  position: absolute;
+  top: 148rpx;
+  left: 152rpx;
+}
+
+.db .pirce {
+  padding: 0 30rpx;
+  width: 750rpx;
+  box-sizing: border-box;
+  height: 33rpx;
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: bold;
+  color: rgba(166, 171, 181, 1);
+  line-height: 33rpx;
+}
+
+.db .pirce text {
+  font-size: 36rpx;
+  color: #000;
+}
+
+.db .input {
+  height: 70rpx;
+  width: 690rpx;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(142, 195, 31, 1);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 67rpx;
+}
+
+.db .input input {
+  height: 46rpx;
+  font-size: 36rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: #8ec31f;
+  line-height: 36rpx;
+}
+
+.db .input text {
+  height: 27rpx;
+  font-size: 27rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: bold;
+  color: rgba(86, 93, 105, 1);
+  margin-top: 20rpx;
+  line-height: 27rpx;
+}
+
+.db .kop {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+
+.db .kop view {
+  height: 24rpx;
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: bold;
+  color: rgba(162, 162, 162, 1);
+}
+
+.db .kop view:nth-child(2) {
+  color: #8ec31f;
+}
+
+.db .btn {
+  width: 689rpx;
+  height: 89rpx;
+  background: rgba(142, 195, 31, 1);
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 89rpx;
+  font-size: 35rpx;
+  font-family: SourceHanSansCN-Normal;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+  margin: 0 auto;
+  margin-top: 120rpx;
+}

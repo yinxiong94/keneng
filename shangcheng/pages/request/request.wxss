@@ -5,7 +5,6 @@ page {
 .db .from {
   background-color: #fff;
   width: 690rpx;
-  height: 311rpx;
   margin: 0 auto;
   margin-top: 30rpx;
   border-radius: 10rpx;
@@ -80,4 +79,60 @@ page {
   font-family: PingFangSC;
   font-weight: 400;
   color: rgba(255, 255, 255, 1);
+}
+.calculation {
+  width: 150rpx;
+  height: 50rpx;
+  border: 1px solid rgba(217, 217, 217, 1);
+  border-radius: 10rpx;
+  overflow: hidden;
+  display: flex;
+  margin-top: 30rpx;
+}
+.calculation .left {
+  width: 40rpx;
+  height: 50rpx;
+  border-left: 1px solid rgba(217, 217, 217, 1);
+  position: relative;
+}
+
+.calculation .conter {
+  border-left: 1px solid rgba(217, 217, 217, 1);
+  font-size: 24rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  text-align: center;
+  line-height: 50rpx;
+  flex: 1;
+}
+
+.calculation .left:nth-child(1) {
+  border-left: 0;
+}
+
+.calculation .left .jian {
+  width: 20rpx;
+  height: 2rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.calculation .left .jia {
+  width: 20rpx;
+  height: 20rpx;
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+}
+.pirce{
+  display: flex;
+}
+.pirce .pirce_left{
+  width: 475rpx;
+  font-size: 30rpx;
+  margin-top: 36rpx;
 }

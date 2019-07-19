@@ -112,6 +112,7 @@ page {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .upload .upload_img .img {

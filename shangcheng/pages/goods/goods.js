@@ -8,36 +8,69 @@ Page({
    * 页面的初始数据
    */
   data: {
-    off:false,
-    sid:"",
-    list:[],
+    off: false,
+    sid: "",
+    list: [],
     length: '',
-    current:1,
-    count:1,
-    shoplist:[]
+    current: 1,
+    count: 1,
+    shoplist: [],
+    just: [],
+    justOne: [],
+    num: '',
+    amount:1, //购买数量
   },
-  aaa:function(e){
-    that.setData({ current: e.detail.current+=1})
-   
+  aaa: function (e) {
+    that.setData({
+      current: e.detail.current += 1
+    })
+
   },
-
-
+  handWhole: function () {
+    that = this;
+    var sendCoo = [];
+    sendCoo = that.data.just.list;
+    that.setData({
+      justOne: sendCoo
+    })
+  },
+  // 获取购物车商品数量
+  handMun: function () {
+    that = this;
+    var str = '';
+    app.postData("GetShoppingData.ashx", {
+      action: "Query",
+      userid: app.globalData.userid
+    }).then(res => {
+      if (res.Result == null) {
+        that.setData({
+          num: 0
+        })
+      } else {
+        str = res.Result.shoplist.length;
+        that.setData({
+          num: str
+        })
+      }
+    })
+  },
   // 加入购物车
-  handCart:function(){
+  handCart: function () {
     that = this
-    app.postData("GetShoppingData.ashx",{
-      action:"AddShopping",
+    app.postData("GetShoppingData.ashx", {
+      action: "AddShopping",
       goodsid: that.data.sid,
       userid: app.globalData.userid,
-      shoppingnum:1
-    }).then(res =>{
-      if (res.Result==1){
-      wx.showToast({
-        title: '加入购物车成功',
-        icon:'none',
-        duration:2000
-      })
-      }else{
+      shoppingnum: 1
+    }).then(res => {
+      if (res.Result == 1) {
+        wx.showToast({
+          title: '加入购物车成功',
+          icon: 'none',
+          duration: 2000
+        })
+        that.handMun();
+      } else {
         wx.showToast({
           title: '加入购物车失败',
           icon: 'none',
@@ -47,14 +80,52 @@ Page({
     })
   },
   // 立即购买
-  handgm(){
-   wx.navigateTo({
-     url: '/pages/order/order?sid=' + that.data.sid+"&id="+"0",
-   })
+  // handgm() {
+  //   wx.navigateTo({
+  //     url: '/pages/order/order?sid=' + that.data.sid + "&id=" + "0",
+  //   })
+  // },
+
+  // 立即购买
+  handgm() {
+    that = this;
+    that.setData({
+      off: true
+    })
   },
-  handTxdd:function(){
-    wx:wx.navigateTo({
-      url: '../order/order'
+  Delete() {
+    that = this;
+    that.setData({
+      off: false
+    })
+  },
+
+  jian(){
+    that = this
+    if (that.data.amount <= 1) {
+      wx.showToast({
+        title: '购买数量不能少于1',
+        icon: "neno",
+      })
+      return
+    } else {
+      that.setData({
+        amount: that.data.amount-1
+      })
+    }
+  },
+  jia(){
+    that = this
+    that.setData({
+      amount: that.data.amount+1
+    })
+  },
+
+
+  handTxdd: function () {
+    that = this
+   wx.navigateTo({
+     url: '/pages/order/order?sid=' + that.data.sid + "&id=" + "0" + "&amount=" + that.data.amount,
     })
   },
   /**
@@ -65,13 +136,14 @@ Page({
     that.setData({
       sid: options.id
     })
+    // 商品详情
     app.postData("GetIndexData.ashx", {
       action: "GetDetails",
       goodsid: that.data.sid
     }).then(res => {
       that.setData({
         list: res.Result,
-        urlLength:res.Result.piclist.length
+        urlLength: res.Result.piclist.length
       })
       let article = that.data.list.desc;
       WxParse.wxParse('article', 'html', article, that, 5);
@@ -79,7 +151,26 @@ Page({
         length: that.data.list.piclist.length
       })
     })
-  
+
+  },
+  // 评论
+  hnadComment: function () {
+    that = this;
+    var coout = [];
+    app.postData("GetGoodsData.ashx", {
+      action: "GetComments",
+      goodsid: that.data.sid
+    }).then(res => {
+      that.setData({
+        just: res.Result
+      })
+      for (let i = 0; i < 3; i++) {
+        coout.push(res.Result.list[i]);
+      }
+      that.setData({
+        justOne: coout
+      })
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -92,7 +183,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    that = this;
+    that.hnadComment();
+    that.handMun();
   },
 
   /**

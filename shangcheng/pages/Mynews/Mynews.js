@@ -1,5 +1,5 @@
 // pages/Mynews/Mynews.js
-var app = getApp();
+const app = getApp();
 var that;
 Page({
 
@@ -7,24 +7,39 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id:'0',
-    send:0
+    id: '0',
+    send: 0
   },
-  handVip:function(){
+  handDld:function(){
+    wx.navigateTo({
+      url: '/pages/personal/personal',
+    })
+  },
+  handSzd: function () {
+    wx.navigateTo({
+      url: '/pages/szdpersonal/szdpersonal',
+    })
+  },
+  handVip: function () {
     wx.navigateTo({
       url: '/pages/huika/huika?send=0',
     })
   },
-  handSend:function(){
+  handSend: function () {
     wx.navigateTo({
       url: '/pages/administration/administration?send=0',
     })
   },
-  userlogin(){
-    app.postData("GetUserData.ashx",{
-      action:"GetUserInfo",
-      userid:app.globalData.userid
-    }).then(res=>{
+  handDeliverList:function(){
+    wx.navigateTo({
+      url: '../qqps/qqps',
+    })
+  },
+  userlogin() {
+    app.postData("GetUserData.ashx", {
+      action: "GetUserInfo",
+      userid: app.globalData.userid
+    }).then(res => {
       that.setData({
         UserImg: res.Result.UserImg,
         NickName: res.Result.NickName
@@ -35,52 +50,60 @@ Page({
       })
       wx.setStorage({
         key: 'NickName',
-        data: res.Result.NickName,  
+        data: res.Result.NickName,
+      })
+      wx.setStorage({
+        key: 'UserTel',
+        data: res.Result.UserTel,
       })
     })
   },
 
   // 跳转
-  handOut:function(){
+  handOut: function () {
     wx.clearStorageSync();
     wx.showToast({
       title: '退出成功',
       duration: 2000,
-      success(res) { 
-        setTimeout(function(){
+      success(res) {
+        setTimeout(function () {
           wx.redirectTo({
             url: '/pages/index/index',
           })
-        },2000)    
+        }, 2000)
       }
-    })   
+    })
   },
-  handTarget:function(e){
-    console.log(e.currentTarget.dataset.current);
+  handTarget: function (e) {
     this.setData({
       id: e.currentTarget.dataset.current
     })
-    console.log(this.data.id);
     wx.navigateTo({
-      url: '../dingdan/dingdan?id='+ this.data.id,
+      url: '../dingdan/dingdan?id=' + this.data.id,
     })
   },
-  handJump:function(){
+  handJump: function () {
     wx.navigateTo({
       url: '../dingdan/dingdan?id=' + this.data.id + '&off=false',
     })
   },
   handTel: function () {
-    wx.navigateTo({
-      url: '../Myphone/Myphone',
-    })
+    if (wx.getStorageSync('UserTel')){
+      wx.navigateTo({
+        url: '../Myphone/Myphone',
+      })
+    }else{
+      wx.navigateTo({
+        url: '../usedMyphone/usedMyphone',
+      })
+    }
   },
-  handTgm:function(){
+  handTgm: function () {
     wx.navigateTo({
       url: '../spread/spread',
     })
   },
-  handWdqb:function(){
+  handWdqb: function () {
     wx.navigateTo({
       url: '../wallet/wallet',
     })
@@ -104,7 +127,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    that=this;
+    that = this;
     that.userlogin()
   },
 

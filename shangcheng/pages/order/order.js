@@ -12,7 +12,8 @@ Page({
     sid: "",
     sum: 0, //商品总金额
     off: true,
-    ffo: false
+    ffo: false,
+    amount:1
   },
 
   handDizhi: function() {
@@ -24,7 +25,6 @@ Page({
   // 获取地址
   site() {
     that = this
-    
     app.postData("GetShoppingData.ashx", {
       action: "GetAddressList",
       userid: app.globalData.userid
@@ -84,27 +84,30 @@ Page({
       app.postData("GetShoppingData.ashx", {
         action: "Submit",
         userid: app.globalData.userid,
-        goodsid: that.data.sid
+        goodsid: that.data.sid,
+        goodscount: that.data.amount
       }).then(res => {
         that.setData({
           detailsdlist: res.Result
         })
-        that.data.detailsdlist.detailsdlist.forEach(item => {
-          let goodsprice = item.goodsprice
-          let goodsnum = item.goodsnum
-          let sum = goodsprice * goodsnum
-          that.setData({
-            sum: sum
-          })
-        })
+        // that.data.detailsdlist.detailsdlist.forEach(item => {
+        //   let goodsprice = item.goodsprice
+        //   let goodsnum = item.goodsnum
+        //   let sum = goodsprice * goodsnum
+        //   that.setData({
+        //     sum: sum
+        //   })
+        // })
       })
 
     } else {
       app.postData("GetShoppingData.ashx", {
         action: "Submit",
         userid: app.globalData.userid,
-        shopppingid: that.data.shoppingid
+        shopppingid: that.data.shoppingid,
+      
       }).then(res => {
+        console.log(res)
         that.setData({
           detailsdlist: res.Result
         })
@@ -124,7 +127,21 @@ Page({
         usertel: that.data.coco.usertel,
         address: that.data.site
       }).then(res => {
-        console.log(res)
+        // 发起微信支付
+        wx.requestPayment({
+          'timeStamp': res.timeStamp,
+          'nonceStr': res.nonceStr,
+          'package': res.package,
+          'signType': res.signType,
+          'paySign': res.paySign,
+          'success': function (res) {
+            if (res.errMsg == "requestPayment:ok") {
+              wx.navigateTo({
+                url: '../payment/payment'
+              })
+            }
+          },
+        })
         // wx.navigateTo({
         //   url: '../payment/payment'
         // })
@@ -143,13 +160,16 @@ Page({
     that = this
     if (options.id == 0) {
       that.setData({
-        sid: options.sid
+        sid: options.sid,
+        amount: options.amount
       })
     } else {
       that.setData({
-        shoppingid: options.ddd
+        shoppingid: options.ddd,
+      
       })
     }
+ 
   },
 
   /**
@@ -158,11 +178,10 @@ Page({
   onLoad: function(options) {
     that = this;
     that.setData({
-      id: options.id
+      id: options.id,
     })
     that.handgm(options)
     that.loadmore()
-    that.site()
   },
 
   /**
@@ -177,8 +196,7 @@ Page({
    */
   onShow: function() {
     this.site()
-
-    console.log(this.data.addressid)
+   
   },
 
   /**

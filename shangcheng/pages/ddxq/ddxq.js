@@ -9,55 +9,93 @@ Page({
   data: {
     off: false,
     orderStatus: 0,
-    liste: []
+    list: []
   },
   payment: function () {
     console.log("付款按钮被点击了")
   },
+  handPinjia: function (e) {
+    let index = e.currentTarget.dataset.num;
+    let sid = that.data.list.OrderId;
+    wx.navigateTo({
+      url: '../publish/publish?ccc=' + sid,
+    })
+  },
   handCode: function () {
     that = this;
-    console.log(that.data.liste.OrderStatus);
-    if (that.data.liste.OrderStatus == '待付款') {
+    if (that.data.list.OrderStatus == '待付款') {
       that.setData({
         orderStatus: 0
       })
-    } else if (that.data.liste.OrderStatus == '待收货') {
+    } else if (that.data.list.OrderStatus == '待收货') {
       that.setData({
         orderStatus: 1
       })
-    } else if (that.data.liste.OrderStatus == '已收货') {
+    } else if (that.data.list.OrderStatus == '已收货') {
       that.setData({
         orderStatus: 2
       })
-    } else if (that.data.liste.OrderStatus == '待退款') {
+    } else if (that.data.list.OrderStatus == '待退款') {
       that.setData({
         orderStatus: 3
       })
-    } else if (that.data.liste.OrderStatus == '已退货') {
+    } else if (that.data.list.OrderStatus == '已退货') {
       that.setData({
         orderStatus: 4
       })
     }
-    console.log(that.data.orderStatus);
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     that = this;
-    console.log(1);
     app.postData("GetOrderData.ashx", {
       action: "GetOrderDetails",
       orderid: options.id
     }).then(res => {
       that.setData({
-        liste: res.Result
+        list: res.Result
       })
       that.handCode();
     })
 
   },
 
+
+  // 取消订单
+  abolish() {
+    that = this
+    var OrderId = that.data.list.OrderId;
+    wx.showModal({
+      title: '取消订单',
+      content: '您确认取消订单吗？',
+      success(res) {
+        if (res.confirm) {
+          app.postData("GetOrderData.ashx", {
+            action: "Cancel",
+            orderid: OrderId
+          }).then(res => {
+            if (res.Result > 0) {
+              wx.navigateBack({
+                delta: 1
+              })
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+
+  // 拨打电话
+  Tel(){
+    that = this
+    wx.makePhoneCall({
+      phoneNumber:that.data.list.Tel
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
