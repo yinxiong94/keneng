@@ -1,8 +1,8 @@
 <view class="db">
   <view class="top">
-    <image src='/pages/img/bdyhk.png'></image>
+    <view class='top_bg'></view>
     <view class="bg">
-      <image src='/pages/img/jianshe.png'></image>
+      <!-- <image src='/pages/img/jianshe.png'></image> -->
       <view class="bank">
         <view class="left">建设银行</view>
         <view class="right">银行卡</view>
@@ -12,15 +12,15 @@
   </view>
   <view class="pirce">
     可提现金额：
-    <text>12,100.00</text>元
+    <text>{{sum}}</text>元
   </view>
   <view class="input">
-    <input type='text' placeholder='￥10000'></input>
-    <text>全部提现</text>
+    <input type='text' placeholder='￥10000' bindinput='inputVal'></input>
+    <text catchtap='handbtx'>全部提现</text>
   </view>
   <view class="kop">
     <view>每次提现不得少于100元</view>
     <view bindtap='txjl'>查看提现记录</view>
   </view>
-  <view class="btn">确认提现</view>
+  <view class="btn" bindtap='withdraw'>确认提现</view>
 </view>

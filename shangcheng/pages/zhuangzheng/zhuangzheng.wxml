@@ -47,7 +47,7 @@
       </view>
     </view>
   </view>
-  <view class="btn">
+  <view class="btn" bindtap='handBecome'>
     立即申请
   </view>
 </view>

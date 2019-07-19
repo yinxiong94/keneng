@@ -15,7 +15,7 @@
               <text class="menu1 {{menuTapCurrent==index+1?'borders':''}}" data-current="{{index+1}}"  data-typeid="{{item.typeid}}" catchtap="menuTap">{{item.typename}}</text>
               <view class="{{menuTapCurrent==index+1?'icon':''}}" wx:if="{{menuTapCurrent==index+1}}"></view>
             </view>
-          </view>
+          </view>                       
           <view class='cont1_top'>
             <view class="list" wx:for="{{ListView}}" wx:key="index" bindtap='handDetails' data-goodsid='{{item.goodsid}}'>
                   <image lazy-load='true' src='{{item.pic}}'></image>
@@ -25,7 +25,7 @@
                       <view class="text_11">￥
                         <text>{{item.price}}</text>
                       </view>
-                      <view class="text_22">{{item.salesnum}}人付款</view>
+                      <view class="text_22">{{item.salesnum}}人付款</view>        
                     </view>
                     <view class="right">...</view>
                   </view>
@@ -33,7 +33,7 @@
           </view>
            <!-- <view class='cont1_top' wx:elif="{{menuTapCurrent==1}}">
             <view class="list" wx:for="{{7}}" wx:key="index">
-                  <image lazy-load='true' src='/pages/img/yu.png'></image>
+                  <image lazy-load='true' src='/pages/img/yu.png'></image> 
                   <view class="describe">支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉支妈妈香猪肉系列优选优选猪肉</view>
                   <view class="pirce">
                     <view class="left">

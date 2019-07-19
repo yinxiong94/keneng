@@ -67,6 +67,8 @@ App({
     http: "http://mfapi.hncoon.com/API/",
     userid: "",
     code: "",
-    shoppingid:""
+    shoppingid:"",
+    tel:"",
+    address:""
   }
 })

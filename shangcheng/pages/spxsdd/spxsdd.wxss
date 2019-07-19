@@ -37,9 +37,9 @@
 
 .tel {
   font-size: 20rpx;
-  line-height: 88rpx;
+  /* line-height: 88rpx;
   width: 30%;
-  text-align: center;
+  text-align: center; */
 }
 
 .hyxq:nth-child(2n) {
@@ -70,4 +70,19 @@
   font-weight: 500;
   color: rgba(172, 172, 172, 1);
   margin-top: 14rpx;
+}
+
+.MachineId{
+  width:250rpx;
+  overflow:hidden;
+  word-break:keep-all;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.tel1{
+  font-size: 20rpx;
+  color: #C22525;
+  font-weight:bold;
+  /* margin-left: 20rpx; */
 }

@@ -1,24 +1,38 @@
 // pages/member/member.js
+var app = getApp();
+var that;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list: []
+  },
+  // 我的会员接口
+  handMember: function() {
+    that = this;
+    app.postData("GetAgentInfo.ashx", {
+      action: "MyMemberList",
+      userId: app.globalData.userid
+    }).then(res => {
+      that.setData({
+        list: res.Result
+      })
+    })
   },
   handJump1: function() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/Dldindex/Dldindex',
     })
   },
   handJump2: function() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/member/member',
     })
   },
   handJump3: function() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../personal/personal',
     })
   },
@@ -40,7 +54,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    that = this;
+    that.handMember();
   },
 
   /**

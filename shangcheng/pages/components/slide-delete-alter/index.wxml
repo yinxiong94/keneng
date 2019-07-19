@@ -1,0 +1,20 @@
+<view class="wrap">
+  <view class="content {{animate ? 'animate' : ''}}"
+        bindtouchstart="handleTouchStart"
+        bindtouchmove="handleTouchMove"
+        bindtouchend="handleTouchEnd"
+        style="transform: translateX({{translateX * 4}}rpx)"
+  >
+      <slot/>
+  </view>
+  <view class="action-wrap">
+      <view class="action del" bindtap="handleAction" data-MachiId="{{paramAtoB}}" data-machineId='{{machineId}}'>
+          <image src='/pages/img/tu2.png' lazy-load='true'></image>
+      </view>
+  </view>
+  <view class="action-wrap1">
+      <view class="action del">
+          <image src='/pages/img/tu1.png' lazy-load='true'></image>
+      </view>
+  </view>
+</view>

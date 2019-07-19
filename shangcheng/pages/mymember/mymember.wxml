@@ -1,66 +1,23 @@
 <view class="top"></view>
 <view class="input">
   <image src='/pages/img/fdj.png' lazy-load='true'></image>
-  <input type='text' placeholder='请输入搜索内容'></input>
+  <input type='text' placeholder='请输入搜索内容' bindinput='inputVal'></input>
 </view>
 <view class='id'>
-  <view>机器编号</view>
-  <view>商品名称</view>
-  <view>成交时间</view>
+  <view>收货地址</view>
+  <view>会员名称</view>
+  <view>到货时间</view>
 </view>
 
-<view class='hyxq'>
+<view class='hyxq' wx:for="{{list}}" wx:key="index">
   <view class='xm'>
-    <view>九峰小区</view>
-    <view>no.459784213</view>
+    <view>{{item.Address}}</view>
+    <!-- <view></view> -->
   </view>
-  <view class='tel'>泰国正品香米59kg</view>
+  <view class='tel'>{{item.UserName}}</view>
   <view class='xm'>
-    <view>2019-05-21</view>
-    <view>15:56</view>
-  </view>
-</view>
-<view class='hyxq'>
-  <view class='xm'>
-    <view>九峰小区</view>
-    <view>no.459784213</view>
-  </view>
-  <view class='tel'>泰国正品香米59kg</view>
-  <view class='xm'>
-    <view>2019-05-21</view>
-    <view>15:56</view>
+    <view>{{item.Delivertime}}</view>
+    <!-- <view>15:56</view> -->
   </view>
 </view>
-<view class='hyxq'>
-  <view class='xm'>
-    <view>九峰小区</view>
-    <view>no.459784213</view>
-  </view>
-  <view class='tel'>泰国正品香米59kg</view>
-  <view class='xm'>
-    <view>2019-05-21</view>
-    <view>15:56</view>
-  </view>
-</view>
-<view class='hyxq'>
-  <view class='xm'>
-    <view>九峰小区</view>
-    <view>no.459784213</view>
-  </view>
-  <view class='tel'>泰国正品香米59kg</view>
-  <view class='xm'>
-    <view>2019-05-21</view>
-    <view>15:56</view>
-  </view>
-</view>
-<view class='hyxq'>
-  <view class='xm'>
-    <view>九峰小区</view>
-    <view>no.459784213</view>
-  </view>
-  <view class='tel'>泰国正品香米59kg</view>
-  <view class='xm'>
-    <view>2019-05-21</view>
-    <view>15:56</view>
-  </view>
-</view>
+

@@ -1,23 +1,42 @@
+const app = getApp();
+var that;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    iSfacility:[]
   },
+
+  // 设备列表
+  iSfacility(){
+    that = this
+    app.postData("GetMachineInfo.ashx",{
+      action:"GetMachineInfo",
+      userId: app.globalData.userid
+    }).then(res=>{
+        that.setData({
+          iSfacility: res.Result
+        })
+    })
+  },
+
+
+
+
   handJump1: function () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/Dldindex/Dldindex',
     })
   },
   handJump2: function () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/member/member',
     })
   },
   handJump3: function () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../personal/personal',
     })
   },
@@ -25,12 +44,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    that = this
+    that.iSfacility()
   },
+
   // 跳转要货计划
-  toyh:function(){
+  toyh:function(e){
     wx.navigateTo({
-      url: '/pages/want/want',
+      url: '/pages/want/want?machineid=' + e.currentTarget.dataset.machineid + "&address=" + e.currentTarget.dataset.address,
     })
   },
   /**

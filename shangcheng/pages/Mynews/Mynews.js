@@ -12,7 +12,7 @@ Page({
   },
   handDld:function(){
     wx.navigateTo({
-      url: '/pages/personal/personal',
+      url: '/pages/Dldindex/Dldindex',
     })
   },
   handSzd: function () {
@@ -118,6 +118,10 @@ Page({
       url: '../binding/binding',
     })
   },
+
+
+  
+
   handWdtg: function () {
     wx.navigateTo({
       url: '../extension/extension',

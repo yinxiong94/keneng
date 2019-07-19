@@ -72,15 +72,9 @@
 }
 
 .db .vip .vip_nav .nav_l {
-  width: 186rpx;
-  text-align: center;
-  height: 64rpx;
-  box-sizing: border-box;
-  border-bottom: 5px solid #8ec31f;
+  border-bottom: 3px solid #8ec31f; 
   font-size: 30rpx;
-  font-family: PingFang-SC-Medium;
-  font-weight: 500;
-  color: rgba(142, 195, 31, 1);
+  color: rgba(142, 195, 31, 1); 
 }
 
 .db .vip .vip_nav .nav_r {

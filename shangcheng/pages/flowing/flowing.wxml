@@ -3,56 +3,36 @@
   <view class="top">
     <view class="banxin">
       <view class="top_left">
-        <view class="list click">今天</view>
-        <view class="list">本周</view>
-        <view class="list">本月</view>
+        <view class="{{btn == 0 ?'list1':'list'}}" data-index="{{0}}" bindtap='handBtn'>今天</view>
+        <view class="{{btn == 1 ?'list1':'list'}}" data-index="{{1}}" bindtap='handBtn'>本周</view>
+        <view class="{{btn == 2 ?'list1':'list'}}" data-index="{{2}}" bindtap='handBtn'>本月</view>
       </view>
-      <image lazy-load='true' src='../img/rl.png'></image>
+      <!-- <picker mode="date" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <image class="coco" lazy-load='true' src='../img/rl.png'></image>
+      </picker> -->
     </view>
   </view>
   <view class="top1">
     <view class="banxin">
       <view class="left">
         本月设备收益：
-        <text>￥366.86</text>
+        <text>￥{{list.MonthMoney}}</text>
       </view>
       <view class="right">
         今日设备收益：
-        <text>￥50.00</text>
+        <text>￥{{list.TodayMoney}}</text>
       </view>
     </view>
   </view>
   <view class="conter">
-    <view class="item blue">
+    <view class="{{index%2 == 1?'item':'item1'}}" wx:for="{{list.MachineOrderList}}" wx:key="index">
       <view class="banxin">
         <view class="left">
-          <view class="jiaoyi">成交泰国香米10Kg</view>
-          <view class="time">2019-03-01 12:00</view>
+          <view class="jiaoyi">{{item.ProductName}}</view>
+          <view class="time">{{item.PayTime}}</view>
         </view>
         <view class="right">
-          +10.00
-        </view>
-      </view>
-    </view>
-    <view class="item">
-      <view class="banxin">
-        <view class="left">
-          <view class="jiaoyi">成交泰国香米10Kg</view>
-          <view class="time">2019-03-01 12:00</view>
-        </view>
-        <view class="right">
-          +10.00
-        </view>
-      </view>
-    </view>
-    <view class="item blue">
-      <view class="banxin">
-        <view class="left">
-          <view class="jiaoyi">成交泰国香米10Kg</view>
-          <view class="time">2019-03-01 12:00</view>
-        </view>
-        <view class="right">
-          +10.00
+          +{{item.PayMoney}}
         </view>
       </view>
     </view>

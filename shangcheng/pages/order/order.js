@@ -13,7 +13,9 @@ Page({
     sum: 0, //商品总金额
     off: true,
     ffo: false,
-    amount:1
+    amount:1,
+    TotalPrice:0,//商品总金额
+    shifu:0,//实付
   },
 
   handDizhi: function() {
@@ -62,6 +64,7 @@ Page({
               off: false,
               ffo: true
             })
+            
             var site = []
             site.push(item.city)
             site.push(item.province)
@@ -88,18 +91,22 @@ Page({
         goodscount: that.data.amount
       }).then(res => {
         that.setData({
-          detailsdlist: res.Result
+          detailsdlist: res.Result,
+          yunfei: res.Result.yunfei
         })
-        // that.data.detailsdlist.detailsdlist.forEach(item => {
-        //   let goodsprice = item.goodsprice
-        //   let goodsnum = item.goodsnum
-        //   let sum = goodsprice * goodsnum
-        //   that.setData({
-        //     sum: sum
-        //   })
-        // })
+        
+        that.data.detailsdlist.detailsdlist.forEach(item => {
+          let goodsprice = item.goodsprice
+          let goodsnum = item.goodsnum
+          let sum = goodsprice * goodsnum
+          that.setData({
+            // 商品总金额
+            TotalPrice: sum,
+            // 计算运费实付款
+            shifu: sum - that.data.yunfei
+          })
+        })
       })
-
     } else {
       app.postData("GetShoppingData.ashx", {
         action: "Submit",

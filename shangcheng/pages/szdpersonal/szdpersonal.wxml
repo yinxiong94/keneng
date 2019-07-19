@@ -1,19 +1,18 @@
 <view class="db">
   <view class="top"></view>
   <view class='tx'>
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <image class="userinfo-avatar" src="{{list.UserImg}}" mode="cover"></image>
     <view class='xx'>
-      <view class='t1'>{{userInfo.nickName}}</view>
+      <view class='t1'>{{list.ColonelName}}</view>
       <view class='t2'>
-        <image src="/pages/img/phone.png" class='img'></image>{{phone}}</view>
+        <image src="/pages/img/phone.png" class='img'></image>{{tel}}</view>
     </view>
     <image src="/pages/img/vip.png" class='vip'></image>
   </view>
-
   <view class='list'>
     <image src="/pages/img/grzxbg.png" class='bg'></image>
     <view class='t_1'>我的钱包</view>
-    <view class='t_2' bindtap='tofy'>8888.88</view>
+    <view class='t_2' bindtap='tofy'>{{list.BalancePrice}}</view>
     <view class='t_3'>资产总金额（元）</view>
     <view class='t_4' bindtap='totx'>申请提现</view>
   </view>

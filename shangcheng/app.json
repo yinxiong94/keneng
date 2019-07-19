@@ -2,6 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/qqps/qqps",
+    "pages/Mybinding/Mybinding",
+    "pages/card/card",
     "pages/huika/huika",
     "pages/administration/administration",
     "pages/fille/fille",
@@ -16,7 +18,6 @@
     "pages/Myphone/Myphone",
     "pages/usedMyphone/usedMyphone",
     "pages/Complaint/Complaint",
-    "pages/Mybinding/Mybinding",
     "pages/binding/binding",
     "pages/order/order",
     "pages/spread/spread",
@@ -28,7 +29,6 @@
     "pages/tkyy/tkyy",
     "pages/tuikuan/tuikuan",
     "pages/refund/refund",
-    "pages/card/card",
     "pages/logistics/logistics",
     "pages/details/details",
     "pages/evaluation/evaluation",
@@ -48,7 +48,7 @@
     "pages/extension1/extension1",
     "pages/code/code",
     "pages/cash/cash",
-    "pages/commission/commission",
+
     "pages/basics/basics",
     "pages/Dldindex/Dldindex",
     "pages/Dldadministration/Dldadministration",
@@ -65,14 +65,14 @@
     "pages/mydevice/mydevice",
     "pages/device/device",
     "pages/xjtg/xjtg"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
-  },  "tabBar": {
+  },
+  "tabBar": {
     "list": [
       {
         "pagePath": "pages/mall/mall",

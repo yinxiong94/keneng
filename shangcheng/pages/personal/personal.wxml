@@ -1,23 +1,23 @@
 <view class="db">
   <view class="top">
     <image src='/pages/img/tou.png'></image>
-    <view class="name">小浣熊代理</view>
+    <view class="name">{{message.ColonelName}}</view>
   </view>
   <view class="bg">
-    <image src='/pages/img/bg2.png'></image>
+    <!-- <image src='/pages/img/bg2.png'></image> -->
     <view class="bg_coco">
       <view class="pirce">账户余额（元）</view>
       <view class="tixian">
         <view class="left" bindtap='toyj'>
-          1323.89
+          {{message.BalancePrice}}
         </view>
         <view class="right" bindtap='totx'>
           提现
         </view>
       </view>
       <view class="shou" bindtap='toyj'>
-        <view class="right">今日收入1465.87</view>
-        <view class="right">总收入489124</view>
+        <view class="right">今日收入{{message.TodayPrice}}</view>
+        <view class="right">总收入{{message.SumPrice}}</view>
       </view>
     </view>
   </view>

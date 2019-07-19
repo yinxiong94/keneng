@@ -30,28 +30,18 @@
   display: flex;
 }
 
-.db .top .pirce text {
-  font-size: 72rpx;
-  font-family: PingFang-SC-Heavy;
-  font-weight: 800;
-  color: rgba(18, 25, 34, 1);
-  height: 54rpx;
-  line-height: 54rpx;
-}
-
 .db .top .pirce_1 {
   display: flex;
   justify-content: space-between;
   margin-top: 78rpx;
 }
 
-.db .top .pirce_1 text {
-  height: 26rpx;
-  font-size: 28rpx;
+.pirce .send {
+  font-size: 65rpx;
   font-family: PingFang-SC-Medium;
   font-weight: 500;
   color: rgba(124, 131, 141, 1);
-  line-height: 26rpx;
+  display: 1;
 }
 
 .db .top .pirce_1 text:nth-child(2) {
@@ -89,7 +79,7 @@
 }
 
 .db .list .coco .left {
-  width: 50%;
+  width: 25%;
   line-height: 140rpx;
   height: 140rpx;
   font-size: 30rpx;

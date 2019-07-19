@@ -1,57 +1,43 @@
 <view class='container'>
-    <!-- 提现方式 -->
-    <view class='cont_bg'>
-        <view class='cont_bg_text'>体现方式</view>
-        <view class='cont_bg_tx'>
-            <view 
-            class='cont_bg_but {{currentTab == 0 ?"border":""}}'
-            bindtap='on'
-            data-current='0'
-            >
-                <image class="img1" src='../img/weixzhif.png'></image>
-                <text>微信支付</text>
-                <image class='gouxuan' src='../img/gouxuan1.png' wx:if="{{currentTab==0}}"></image>
-            </view>
-
-            <view
-            class='cont_bg_but {{currentTab == 1 ?"border":""}}'
-            bindtap='on'
-            data-current='1'
-             
-            >
-                <image class='img1' src='../img/yingnagka.png'></image>
-                <text>银行卡</text>
-                 <image class='gouxuan' src='../img/gouxuan1.png' wx:if="{{currentTab==1}}"></image>
-            </view>
-        </view>
+  <!-- 提现方式 -->
+  <view class='cont_bg'>
+    <view class='cont_bg_text'>体现方式</view>
+    <view class='cont_bg_tx'>
+      <view class='cont_bg_but {{currentTab == 0 ?"border":""}}' bindtap='on' data-current='0'>
+        <image class="img1" src='../img/weixzhif.png'></image>
+        <text>银行卡</text>
+        <image class='gouxuan' src='../img/gouxuan1.png' wx:if="{{currentTab==0}}"></image>
+      </view>
     </view>
-    <!-- 提现金额 -->
-    <view class='cont_tx_bg'>
-        <view class='cont_tx_b_text'>提现金额</view>
-        <view class='cont_tx_bg_text'>
-          当前余额<text class='cont_tx_bg_colro'>520</text>元，
-          <text class='cont_tx_bg_qb'>全部提现</text>
-        </view>
-        <view class='cont_tx_inpt'>
-            <text>￥</text>
-            <input></input>
-        </view>
-         <!-- 可提现金额 -->
-        <view class='cont_img_text'>
-            <image src='../img/ketix.png'></image>
-            <text>可提现额度为500.00元</text>
-        </view>
+  </view>
+  <!-- 提现金额 -->
+  <view class='cont_tx_bg'>
+    <view class='cont_tx_b_text'>提现金额</view>
+    <view class='cont_tx_bg_text'>
+      当前余额
+      <text class='cont_tx_bg_colro'>520</text>元，
+      <text class='cont_tx_bg_qb'>全部提现</text>
     </view>
-    <view class='cont_text'>
-        <text class='icoc'></text>
-        <text>1-3个工作日之内提现到账，具体以帐户到账时间为准</text>
+    <view class='cont_tx_inpt'>
+      <text>￥</text>
+      <input></input>
     </view>
-    <view class='cont_text'>
-        <text class='icoc'></text>
-        <text>提现状态请查看钱包中的提现记录</text>
+    <!-- 可提现金额 -->
+    <view class='cont_img_text'>
+      <image src='../img/ketix.png'></image>
+      <text>可提现额度为500.00元</text>
     </view>
-    <!-- 按钮 -->
-    <view class='cont_buttext'>
-      <view class='cont_but_text'>确认提现</view>
-    </view>
+  </view>
+  <view class='cont_text'>
+    <text class='icoc'></text>
+    <text>1-3个工作日之内提现到账，具体以帐户到账时间为准</text>
+  </view>
+  <view class='cont_text'>
+    <text class='icoc'></text>
+    <text>提现状态请查看钱包中的提现记录</text>
+  </view>
+  <!-- 按钮 -->
+  <view class='cont_buttext'>
+    <view class='cont_but_text'>确认提现</view>
+  </view>
 </view>

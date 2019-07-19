@@ -37,6 +37,7 @@ Page({
     data.rawData = app.globalData.userData.rawData;
     data.signature = app.globalData.userData.signature;
     app.postData('GetUserData.ashx', data).then(res => {
+      console.log(res)
       app.globalData.userid = res.Result;
       wx.setStorage({
         key: 'login',
@@ -59,9 +60,9 @@ Page({
                 success: res => {
                   app.globalData.userData = res;
                   that.login();
-                  wx.navigateTo({
+                  wx.switchTab({
                     url: '/pages/mall/mall',
-                  })
+                  })     
                 }
               })
           },

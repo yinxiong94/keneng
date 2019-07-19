@@ -3,92 +3,21 @@
   <image src='/pages/img/fdj.png' lazy-load='true'></image>
   <input type='text' placeholder='请输入搜索内容'></input>
 </view>
-<view class="conter">
-  <view class="list_1">
+<view class="conter" catchtap='control'>
+  <view class="list_1" wx:for="{{list}}" wx:key="index">
     <view class="item">
       <view class="quarters">
-        <text>长沙市天心区九峰小区</text>
-        <image src='/pages/img/bottom.png' lazy-load='true'></image>
+        <text>{{item.vilageName}}</text>
+        <image src='/pages/img/bottom.png' lazy-load='true'  class='{{show==false?"img":"img1"}}'></image>
       </view>
-      <view class="machine">共4台机器</view>
+      <view class="machine">共{{item.machineList.length}}台机器</view>
     </view>
-    <view class="list">
+    <view class="list" wx:for="{{item.machineList}}" wx:for-item="twodata" wx:key="index" wx:if="{{show}}">
       <view class="coco">
-        <text class="text_1">A12栋</text>
-        <text class="text_2">6月29日 13:56</text>
+        <text class="text_1">{{twodata.MachineName}}</text>
+        <text class="text_2">{{twodata.MachineState==0?"正常":twodata.MachineState==1?"异常":"维护"}}</text>
       </view>
       <view class="xian"></view>
-    </view>
-    <view class="list">
-      <view class="coco">
-        <text class="text_1">A12栋</text>
-        <text class="text_2">6月29日 13:56</text>
-      </view>
-      <view class="xian"></view>
-    </view>
-    <view class="list">
-      <view class="coco">
-        <text class="text_1">A12栋</text>
-        <text class="text_2">6月29日 13:56</text>
-      </view>
-      <view class="xian"></view>
-    </view>
-  </view>
-  <view class="list_1">
-    <view class="item">
-      <view class="quarters">
-        <text>长沙市天心区九峰小区</text>
-        <image src='/pages/img/bottom.png' lazy-load='true'></image>
-      </view>
-      <view class="machine">共4台机器</view>
-    </view>
-    <view class="list">
-      <view class="coco">
-        <text class="text_1">A12栋</text>
-        <text class="text_2">6月29日 13:56</text>
-      </view>
-      <view class="xian"></view>
-    </view>
-    <view class="list">
-      <view class="coco">
-        <text class="text_1">A12栋</text>
-        <text class="text_2">6月29日 13:56</text>
-      </view>
-      <view class="xian"></view>
-    </view>
-    <view class="list">
-      <view class="coco">
-        <text class="text_1">A12栋</text>
-        <text class="text_2">6月29日 13:56</text>
-      </view>
-      <view class="xian"></view>
-    </view>
-  </view>
-  <view class="list_1">
-    <view class="item">
-      <view class="quarters">
-        <text>长沙市天心区九峰小区</text>
-        <image src='/pages/img/bottom.png' lazy-load='true'></image>
-      </view>
-      <view class="machine">共4台机器</view>
-    </view>
-  </view>
-    <view class="list_1">
-    <view class="item">
-      <view class="quarters">
-        <text>长沙市天心区九峰小区</text>
-        <image src='/pages/img/bottom.png' lazy-load='true'></image>
-      </view>
-      <view class="machine">共4台机器</view>
-    </view>
-  </view>
-    <view class="list_1">
-    <view class="item">
-      <view class="quarters">
-        <text>长沙市天心区九峰小区</text>
-        <image src='/pages/img/bottom.png' lazy-load='true'></image>
-      </view>
-      <view class="machine">共4台机器</view>
     </view>
   </view>
 </view>

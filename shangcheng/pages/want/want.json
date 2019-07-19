@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+ "usingComponents": {
+  "slide-delete": "../components/slide-delete-alter/index"
+},
   "navigationBarTitleText": "要货计划"
 }

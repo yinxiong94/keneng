@@ -146,4 +146,4 @@
   </view>
   <view class='cont_quit' bindtap='handOut'>退出账户</view>
   <view class='cont_high'></view>
-</view>
+</view> 

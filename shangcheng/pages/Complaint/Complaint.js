@@ -1,26 +1,47 @@
 // pages/Complaint/Complaint.js
+const app = getApp();
+var that;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInput:0
+    userInput:0,
+    textConter:''
   },
   bindWordLimit(e){
     // console.log(e.detail.value.length);
     this.setData({
-      userInput: e.detail.value.length
+      userInput: e.detail.value.length,
+      textConter: e.detail.value
     })
   },
-
+  handFeedback:function(){
+    that = this;
+    app.postData("GetUserData.ashx", {
+      action: "FeedBack",
+      userid: app.globalData.userid,
+      content: that.data.textConter
+    }).then(res => {
+      console.log(res.Result);
+      if (res.Result == 1){
+        wx.showToast({
+          title: '提交成功',
+          icon: 'none',
+          duration: 2000
+        })
+      }
+    })
+  },
   bindtaphang(){
+    that = this;
     if(this.data.userInput>0){
-
+      that.handFeedback();
     }else{
       wx.showToast({
         title: '不能为空',
-
+        icon:'none'
       })
     }
   },
