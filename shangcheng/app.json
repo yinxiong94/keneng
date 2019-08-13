@@ -1,10 +1,13 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/evaluation/evaluation",
     "pages/qqps/qqps",
+    "pages/huika/huika",
+    
+    "pages/tuikuan/tuikuan",
     "pages/Mybinding/Mybinding",
     "pages/card/card",
-    "pages/huika/huika",
     "pages/administration/administration",
     "pages/fille/fille",
     "pages/Mynews/Mynews",
@@ -27,11 +30,11 @@
     "pages/extension/extension",
     "pages/sale/sale",
     "pages/tkyy/tkyy",
-    "pages/tuikuan/tuikuan",
+    
     "pages/refund/refund",
     "pages/logistics/logistics",
     "pages/details/details",
-    "pages/evaluation/evaluation",
+   
     "pages/login/login",
     "pages/cart/cart",
     "pages/ddxq/ddxq",

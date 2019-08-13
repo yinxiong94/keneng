@@ -64,7 +64,7 @@ Page({
       }
       that.data.count--
       that.setData({
-        count: that.data.count,
+        // count: that.data.count,
         code: that.data.count < 10 ? `请等待0${that.data.count}s` : `请等待${that.data.count}s`
       })
     }, 1000);

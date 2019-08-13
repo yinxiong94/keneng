@@ -199,7 +199,7 @@ page{
 .db .dami .item .coco .left {
   flex: 1;
   margin-top: 29rpx;
-}
+} 
 
 .db .dami .item .coco .left .list {
   display: flex;
@@ -212,6 +212,7 @@ page{
 
 .db .dami .item .coco .left .list .hui {
   color: #999;
+  width: 160rpx;
 }
 
 .db .dami .item .coco .left .list .hei {

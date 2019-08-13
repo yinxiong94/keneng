@@ -15,6 +15,7 @@
         </view>
         <!-- 二维码 -->
         <view class='cont_img_ma'>
+           
             <image src='{{url}}'></image>
         </view>
         <!-- 保存 -->

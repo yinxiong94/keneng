@@ -8,7 +8,7 @@
       <slot/>
   </view>
   <view class="action-wrap">
-      <view class="action del" bindtap="handleAction" data-MachiId="{{paramAtoB}}" data-machineId='{{machineId}}'>
+      <view class="action del" bindtap="handleAction" data-MachiId="{{paramAtoB}}" data-eeid='{{eeid}}'>
           <image src='/pages/img/tu2.png' lazy-load='true'></image>
       </view>
   </view>

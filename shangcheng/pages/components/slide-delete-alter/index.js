@@ -36,7 +36,7 @@ Component({
       value: true
     },
     paramAtoB: String,
-    machineId: String
+    eeid: String
   },
   /**
    * 组件的初始数据
@@ -163,7 +163,7 @@ Component({
      
     handleAction(e) {
       var that = this
-      var machiid = e.currentTarget.dataset.machiid;
+      var machiid = e.currentTarget.dataset.eeid;
       // console.log(shoppingid, app.globalData.userid)
       app.postData("GetAgentInfo.ashx", {
         action: "RequireGoodsDel", 
@@ -175,12 +175,7 @@ Component({
           title: '删除成功',
           duration: 2000,
           success(res) {
-            setTimeout(function () {
-              // wx.redirectTo({
-              //   // url: '/pages/want/want',
-              // })
               that.tolist(machiid)
-            }, 2000)
           }
         })
       })

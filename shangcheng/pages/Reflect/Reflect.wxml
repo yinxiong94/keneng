@@ -15,17 +15,17 @@
     <view class='cont_tx_b_text'>提现金额</view>
     <view class='cont_tx_bg_text'>
       当前余额
-      <text class='cont_tx_bg_colro'>520</text>元，
+      <text class='cont_tx_bg_colro'>{{Wmoney}}</text>元，
       <text class='cont_tx_bg_qb'>全部提现</text>
     </view>
     <view class='cont_tx_inpt'>
       <text>￥</text>
-      <input></input>
+      <input type='number' bindinput="hopminput"></input>
     </view>
     <!-- 可提现金额 -->
     <view class='cont_img_text'>
       <image src='../img/ketix.png'></image>
-      <text>可提现额度为500.00元</text>
+      <text>可提现额度为{{Wmoney}}元</text>
     </view>
   </view>
   <view class='cont_text'>
@@ -38,6 +38,6 @@
   </view>
   <!-- 按钮 -->
   <view class='cont_buttext'>
-    <view class='cont_but_text'>确认提现</view>
+    <view class='cont_but_text' bindtap="withdrawal">确认提现</view>
   </view>
 </view>

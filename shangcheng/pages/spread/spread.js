@@ -18,7 +18,9 @@ Page({
         })
   },
 
-  // 长按图片保存
+
+
+  //长按图片保存
   saveImg(e){
     let that = this
     let url = e.currentTarget.dataset.url;
@@ -64,6 +66,8 @@ Page({
       }
     })
   },
+
+
   saveImage(url){
     wx.getImageInfo({
       src: url,

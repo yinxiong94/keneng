@@ -12,7 +12,7 @@ Page({
     address:"",
     toLIst:[],
     show:false,
-    hide:false
+    hide:false,
   },
   // 跳转要货计划编辑页面
   toyh:function(){
@@ -38,7 +38,7 @@ Page({
       machineId: that.data.machineId
     }).then(res=>{
       that.setData({
-        toLIst: res.Result
+        toLIst: res.Result,
       })
       if (that.data.toLIst.length == 0){
         that.setData({
