@@ -1,7 +1,7 @@
 <!-- 填写订单 -->
 <view class="db">
   <view class="top">
-    <image class="dizhi" src='/pages/img/dizhi2.png' lazy-load='true'></image>
+    <image class="dizhi" src='/pages/img/dizhi.png' lazy-load='true'></image>
     <view class="right" wx:if="{{ffo}}">
       <view class="right_1">
         <text>{{coco.username}}</text> {{coco.usertel}}</view>
@@ -47,7 +47,7 @@
     <view class="discount">
       <text class="send">运费：</text>
       <view class="the">
-        <text>￥{{detailsdlist.yunfei}}</text>
+        <text>￥{{detailsdlist.yunfei || 0}}</text>
       </view>
     </view>
     <view class="message">

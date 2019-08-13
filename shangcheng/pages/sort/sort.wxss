@@ -116,8 +116,8 @@ page{
 }
 
  .list>image {
-  width: 345rpx;
-  height: 369rpx;
+  width: 332rpx;
+  height: 332rpx;
 }
 
  .list .describe {

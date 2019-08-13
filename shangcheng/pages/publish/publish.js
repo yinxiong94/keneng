@@ -40,7 +40,8 @@ Page({
     goodsid:"",
     obj: [],
     info: [],
-    list1:[]
+    list1:[],
+    lis:[]
   },
   // 上传图片
   uploadimg:function(data){
@@ -56,11 +57,13 @@ Page({
       success: (resp) => {
         success++; //图片上传成功，图片上传成功的变量+1
         var list = that.data.list;
-        console.log(resp.data.Result);
-        list += resp.data.Result + ',';
+        var is = JSON.parse(resp.data)
+        console.log(is)
+        list += is.Result + ',';
         that.setData({
           list: list
         })
+        console.log(that.data.list)
         //这里可能有BUG，失败也会执行这里,所以这里应该是后台返回过来的状态码为成功时，这里的success才+1
       },
       fail: (res) => {
@@ -130,42 +133,7 @@ Page({
     that.setData({
       conter: e.detail.value
     })
-  },
-  handBtn: function() {
-    that = this;
-    that.uploadimg({
-      url: app.globalData.http + "FileUpLoad.ashx",
-      path: that.data.images
-    })
-  },
-
-
-  jijiao:function(){
-    var b = that.data.cop;
-    that = this;
-    b = b.join(',');
-    app.postData("GetOrderData.ashx", {
-      action: "Evaluate",
-      goodsid: that.data.sid,
-      userid: app.globalData.userid,
-      content: that.data.conter,
-      lev: that.data.score,
-      pics: b
-    }).then(res => {
-      if (res.Result == 1) {
-        wx.showToast({
-          title: '发表成功',
-          icon: 'none',
-          duration: 2000
-        })
-      } else {
-        wx.showToast({
-          title: '发表失败',
-          icon: 'none',
-          duration: 2000
-        })
-      }
-    })
+    console.log(that.data.conter)
   },
 
 
@@ -183,13 +151,14 @@ Page({
   },
   // 提交信息
   jijiao: function () {
-    app.postData('FileUpLoad.ashx', {
+    // that.gobtn()
+    app.postData('GetOrderData.ashx', {
       action: 'Evaluate',
       userid: app.globalData.userid,
-      goodsid: that.data.goodsid,
-      content: that.data.obj.manager,
+      goodsid: that.data.sid,
+      content: that.data.conter,
       lev: that.data.score,
-      pic: that.data.list
+      pics: that.data.list
     }).then(res => {
       console.log(res)
       wx.hideLoading();
@@ -275,10 +244,12 @@ Page({
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success(res) {
+        console.log(res)
         const tempFilePaths = res.tempFilePaths;
         that.setData({
           images: that.data.images.concat(res.tempFilePaths),
         })
+        console.log(that.data.images)
         if (that.data.images.length == 3) {
           wx.showToast({
             title: '最多只能上传3张图片',
@@ -298,53 +269,49 @@ Page({
   },
 
 
-  //多张图片上传
-  uploadimg: function(data) {
-    var that = this,
-      i = data.i ? data.i : 0, //当前上传的哪张图片
-      success = data.success ? data.success : 0, //上传成功的个数
-      fail = data.fail ? data.fail : 0; //上传失败的个数
-      var co = that.data.cop
-    wx.uploadFile({
-      url: data.url,
-      filePath: data.path[i],
-      name: 'file',
-      formData: null,
-      success: (resp) => {
-        var obj = JSON.parse(resp.data);
-        co.push(obj.Result);
-        that.setData({
-          cop: co
-        })
-        console.log(co);
-      },
-      fail: (res) => {
-        fail++; //图片上传失败，图片上传失败的变量+1
-        console.log('fail:' + i + "fail:" + fail);
-      },
-      complete: () => {
-        console.log(i);
-        i++; //这个图片执行完上传后，开始上传下一张
-        if (i == data.path.length) { //当图片传完时，停止调用
-          that.jijiao();
-          console.log('执行完毕');
-          console.log()
-          console.log('成功：' + success + " 失败：" + fail);
-        } else { //若图片还没有传完，则继续调用函数
-          console.log(i);
-          data.i = i;
-          data.success = success;
-          data.fail = fail;
-          that.uploadimg(data);
-        }
-      }
-    })
+  // 多张图片上传
+  // uploadimg: function(data) {
+  //   var that = this,
+  //     i = data.i ? data.i : 0, //当前上传的哪张图片
+  //     success = data.success ? data.success : 0, //上传成功的个数
+  //     fail = data.fail ? data.fail : 0; //上传失败的个数
+  //     var co = that.data.cop
+  //   wx.uploadFile({
+  //     url: data.url,
+  //     filePath: data.path[i],
+  //     name: 'file',
+  //     formData: null,
+  //     success: (resp) => {
+  //       var obj = JSON.parse(resp.data);
+  //       co.push(obj.Result);
+  //       that.setData({
+  //         cop: co
+  //       })
+  //       console.log(co);
+  //     },
+  //     fail: (res) => {
+  //       fail++; //图片上传失败，图片上传失败的变量+1
+  //       console.log('fail:' + i + "fail:" + fail);
+  //     },
+  //     complete: () => {
+  //       console.log(i);
+  //       i++; //这个图片执行完上传后，开始上传下一张
+  //       if (i == data.path.length) { //当图片传完时，停止调用
+  //         that.jijiao();
+  //         console.log('执行完毕');
+  //         console.log()
+  //         console.log('成功：' + success + " 失败：" + fail);
+  //       } else { //若图片还没有传完，则继续调用函数
+  //         console.log(i);
+  //         data.i = i;
+  //         data.success = success;
+  //         data.fail = fail;
+  //         that.uploadimg(data);
+  //       }
+  //     }
+  //   })
    
-  },
-
-
-
-
+  // },
   
   // // 删除图片
   clearImg(e) {
@@ -380,6 +347,14 @@ Page({
     that = this;
     that.setData({
       sid: options.ccc
+    })
+    app.postData("GetIndexData.ashx", {
+      action: "GetDetails",
+      goodsid: that.data.sid
+    }).then(res => {
+      that.setData({
+        lis: res.Result
+      })
     })
   },
 

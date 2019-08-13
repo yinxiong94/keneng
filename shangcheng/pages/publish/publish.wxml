@@ -1,5 +1,5 @@
 <view class="top">
-  <image class="tx" src='/pages/img/img1.png'></image>
+  <image class="tx" src='{{lis.piclist[0]}}'></image>
   <view class="right">
     <text class="pin">商品评价</text>
     <view class="item">
@@ -10,7 +10,7 @@
   </view>
 </view>
 <view class="mian">
-  <textarea bindinput="bindinput" placeholder='宝贝满足你的期待吗？说说你的使用心得，分享给想买的他们吧'></textarea>
+  <textarea bindinput="bindinput" placeholder='宝贝满足你的期待吗？说说你的使用心得，分享给想买的他们吧' ></textarea>
   <view class="image">
    <view class='flutter'>
         <view class="zp" wx:for="{{images}}" wx:key="index">
@@ -28,4 +28,4 @@
     </view>
   </view>
 </view>
-<view class="btn" bindtap='handBtn'>发表评论</view>
+<view class="btn" bindtap='gobtn'>发表评论</view>

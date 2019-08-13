@@ -12,7 +12,8 @@ Page({
     count: 60, //倒计时时间
     code: '获取验证码',
     IphoneValue:'',
-    region: ['广东省', '广州市', '海珠区'],
+    region: ['请选择', '请选择', '请选择'],
+    isd:false
   },
   
   // 地址三级联动 并且获取地址
@@ -147,6 +148,8 @@ Page({
       })
       return
     }
+
+    that.setData({isd:true})
     app.postData("GetGoodsData.ashx",{
       action:'BuyCard',
       userid: app.globalData.userid,
@@ -178,7 +181,7 @@ Page({
               off:true
             })
             if (res.errMsg == "requestPayment:ok"){
-              var address = this.data.region[0] + this.data.region[1] + this.data.region[2] + this.data.address;
+              var address = that.data.region[0] + that.data.region[1] + that.data.region[2] + that.data.address;
               wx.navigateTo({
                 url: '../huika/huika'
               })

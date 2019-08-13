@@ -64,11 +64,12 @@ App({
   },
   globalData: {
     userInfo: null,
-    http: "http://mfapi.hncoon.com/API/",
+    http: "https://mfapi.hncoon.com/API/",
     userid: "",
     code: "",
     shoppingid:"",
     tel:"",
-    address:""
+    address:"",
+    suserid:""
   }
 })

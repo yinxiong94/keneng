@@ -15,7 +15,12 @@
   margin-left: 34rpx;
   margin-top: 26rpx;
 }
-
+.indw{
+  width: 100%;
+  font-size: 38rpx;
+  text-align: center;
+  margin-top: 30rpx
+}
 .db .item .item_right {
   margin-left: 31rpx;
   height: 158rpx;

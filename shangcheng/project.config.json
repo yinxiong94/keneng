@@ -16,11 +16,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.7.1",
 	"appid": "wxc1745e0c4fb203fc",
-<<<<<<< HEAD
 	"projectname": "keneng",
-=======
-	"projectname": "shangcheng",
->>>>>>> c4424e49086ae0ff4ee99ab294adc9ecf21f1b16
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

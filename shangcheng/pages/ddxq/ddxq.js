@@ -11,8 +11,44 @@ Page({
     orderStatus: 0,
     list: []
   },
-  payment: function () {
-    console.log("付款按钮被点击了")
+  payment: function (e) {
+    that = this;
+    that = this;
+    let numid = e.currentTarget.dataset.numid;
+    console.log(numid)
+    app.postData("GetOrderData.ashx", {
+      action: "Receive",
+      orderid: numid
+    }).then(res => {
+      console.log(res)
+      if (res.Result == 1) {
+        wx.showToast({
+          title: "收货成功",
+          icon: "none",
+          duration: 2000,
+          success: res => {
+            // that.beg()
+            setTimeout(()=>{
+              wx.navigateBack({
+                delta: 1
+              })
+            },2000)          
+          }
+        });
+      } else {
+        wx.showToast({
+          title: "收货失败",
+          icon: "none",
+          duration: 2000
+        });
+      }
+    })
+  },
+  payment1: function (e) {
+    var OrderNo = e.currentTarget.dataset.oid;
+    wx.navigateTo({
+      url: '/pages/order/order?ddd=' + OrderNo + '&id=' + 2,
+    })
   },
   handPinjia: function (e) {
     let index = e.currentTarget.dataset.num;
@@ -59,7 +95,6 @@ Page({
       })
       that.handCode();
     })
-
   },
 
 

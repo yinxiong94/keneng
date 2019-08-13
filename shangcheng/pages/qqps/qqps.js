@@ -20,6 +20,15 @@ Page({
       deliverid: deliverid
     }).then(res => {
       if (res.Result == 1) {
+        wx.showToast({
+          title: '收货成功',
+          duration:2000,
+          success:res=>{
+            setTimeout(()=>{
+              that.handDeliverList()
+            },2000)      
+          }
+        })
         list[index].isShow = false;
         that.setData({
           list: list

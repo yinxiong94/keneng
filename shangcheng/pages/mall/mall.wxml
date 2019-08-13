@@ -2,10 +2,10 @@
 <view class="db">
   <view class="mian">
     <view class="top">
-      <view class="input">
+      <!-- <view class="input">
         <image src='/pages/img/fdj.png'></image>
         <input type='text' placeholder='搜索关键词'></input>
-      </view>
+      </view> -->
     </view>
     <swiper class="swiper" autoplay indicator-dots>
       <block wx:for="{{send}}" wx:key="index">
@@ -20,18 +20,18 @@
     <view class="text_1">VIP</view>
     <view class="text_2">{{Result.Cardname}}</view>
     <view class="text_3">
-      <view wx:if="{{falg}}">{{Result.Count}}</view>
-      {{Result.Carddesc}}
+      <view wx:if="{{falg}}">剩余{{Result.Count}}次</view>
+      <view  class="text_6" wx:if="{{hide}}">{{Result.Carddesc}}</view>
     </view>
     <view class="text_4" wx:if="{{falg}}">￥{{Result.Cardprice}}</view>
-    
     <view class="kaitong" catchtap='handlOpening' wx:if="{{hide}}">立即开通</view>
   </view>
   <view class="recommended">
     <view class="title">为你
       <text>· 推荐</text>
     </view>
-    <view class="item">
+    <view wx:if="{{list==null}}" class="zw">该地区暂无商品</view>
+    <view class="item" wx:else>
       <view class="list" wx:for='{{list}}' wx:key="{{list.goodsid}}" bindtap='handDetails' data-goodsid='{{item.goodsid}}'>
         <image lazy-load='true' src='{{item.goodspic}}'></image>
         <view class="describe">{{item.goodsname}}</view>
@@ -40,7 +40,7 @@
             <view class="text_11">￥
               <text>{{item.marketprice}}</text>
             </view>
-            <view class="text_22">{{item.salenum}}人付款</view>
+            <view class="text_22">{{item.salenum || 0}}人付款</view>
           </view>
           <view class="right">...</view>
         </view>

@@ -9,7 +9,7 @@ Page({
     iphoneValue: "", //手机号码
     count: 60, //倒计时时间
     code: "获取验证码",
-    cardno1: "请输入银行卡号",
+    cardno1: "",
     cardname1: "",
     cardid: 0,
     off: 0
@@ -34,29 +34,31 @@ Page({
   // 增加银行卡
   handAddYh: function() {
     that = this;
-    if (
-      /^([1-9]{1})(\d{15}|\d{18})$/.test(that.data.cardno1) &&
-      /^[\u4E00-\u9FA5]{1,6}$/.test(that.data.cardname1)
-    ) {
+    if (/^([1-9]{1})(\d{15}|\d{18})$/.test(that.data.cardno1) &&
+      /^[\u4E00-\u9FA5]{1,6}$/.test(that.data.cardname1)){
       wx.showToast({
         title: "提交成功",
         icon: "none",
         duration: 2000
       });
       if (that.data.off == 0) {
-        app
-          .postData("GetUserData.ashx?", {
+        app.postData("GetUserData.ashx", {
             action: "AddBankCard",
             userid: app.globalData.userid,
-            cardno: that.data.cardno,
-            cardname: that.data.cardname
+            cardno: that.data.cardno1,
+            cardname: that.data.cardname1
           })
           .then(res => {
             if (res.Result == 1) {
               wx.showToast({
                 title: "绑定成功",
                 icon: "none",
-                duration: 2000
+                duration: 2000,
+                success: res => {
+                  wx.navigateBack({
+                    delta: 1
+                  })
+                }
               });
             } else {
               wx.showToast({
@@ -78,54 +80,61 @@ Page({
       return;
     }
 
-    if (that.data.off == 0) {
-      app
-        .postData("GetUserData.ashx?", {
-          action: "AddBankCard",
-          userid: app.globalData.userid,
-          cardno: that.data.cardno1,
-          cardname: that.data.cardname1
-        })
-        .then(res => {
-          if (res.Result == 1) {
-            wx.showToast({
-              title: "绑定成功",
-              icon: "none",
-              duration: 2000
-            });
-          } else {
-            wx.showToast({
-              title: "绑定失败",
-              icon: "none",
-              duration: 2000
-            });
-          }
-        });
-    } else {
-      that.handModify();
-    }
+    // if (that.data.off == 0) {
+    //   app
+    //     .postData("GetUserData.ashx", {
+    //       action: "AddBankCard",
+    //       userid: app.globalData.userid,
+    //       cardno: that.data.cardno1,
+    //       cardname: that.data.cardname1
+    //     })
+    //     .then(res => {
+    //       console.log(res)
+    //       if (res.Result == 1) {
+    //         wx.showToast({
+    //           title: "绑定成功",
+    //           icon: "none",
+    //           duration: 2000
+    //         });
+    //       } else {
+    //         wx.showToast({
+    //           title: "绑定失败",
+    //           icon: "none",
+    //           duration: 2000
+    //         });
+    //       }
+    //     });
+    // } else {
+    //   that.handModify();
+    // }
   },
 
   // 修改银行卡
   handModify: function() {
     that = this;
     app
-      .postData("GetUserData.ashx?", {
+      .postData("GetUserData.ashx", {
         action: "AddBankCard",
         userid: app.globalData.userid,
-        cardno: that.data.cardno,
-        cardname: that.data.cardname
+        cardid: that.data.cardid,
+        cardno: that.data.cardno1,
+        cardname: that.data.cardname1
       })
       .then(res => {
         if (res.Result == 1) {
           that.setData({
-            cardname1: that.data.cardname,
-            cardno1: that.data.cardno
+            cardname1: that.data.cardname1,
+            cardno1: that.data.cardno1
           });
           wx.showToast({
             title: "修改成功",
             icon: "none",
-            duration: 2000
+            duration: 2000,
+            success:res=>{
+              wx.navigateBack({
+                delta:1
+              })
+            }
           });
         } else {
           wx.showToast({

@@ -254,6 +254,15 @@ Page({
    */
 
   onShow: function() {
+    that.setData({
+      productPrice: 0.00,
+      a: 0,
+      b: 0,
+      c: false,
+      checked: [],
+      ind: [],
+      d:0
+      })
     that.handCart()
   },
 

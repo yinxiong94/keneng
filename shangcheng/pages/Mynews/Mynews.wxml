@@ -29,7 +29,7 @@
             <text>已收货</text>
           </view>
 
-          <view class='cont_Myorder_list' data-current="3" bindtap='handTarget'>
+          <!-- <view class='cont_Myorder_list' data-current="3" bindtap='handTarget'>
             <image src='../img/pingja.png'></image>
             <text>待退货</text>
           </view>
@@ -37,7 +37,7 @@
           <view class='cont_Myorder_list' data-current="4" bindtap='handTarget'>
             <image src='../img/shouhou.png'></image>
             <text>已退货</text>
-          </view>
+          </view> -->
         </view>
       </view>
     </view>
@@ -46,7 +46,7 @@
   <view class='cont_Signout'>
     <view class='cont_Signout_text1' bindtap='handWdtg'>
       <view class='cont_Signout_text'>
-        <image src='../img/tuiguang .png'></image>
+        <image src='../img/tuiguang.png'></image>
         <text>我的推广</text>
       </view>
       <image src='../img/youjux.png'></image>
@@ -128,7 +128,7 @@
 
   </view>
   <view class='cont_Signout'>
-    <view class='cont_Signout_text1' bindtap='handDld'>
+    <view class='cont_Signout_text1' bindtap='handDld' wx:if="{{list.UserType==4}}">
       <view class='cont_Signout_text'>
         <image src='../img/peisong.png'></image>
         <text>代理端</text>
@@ -136,7 +136,7 @@
       <image src='../img/youjux.png'></image>
     </view>
     <view class='cont_Signout_coso'></view>
-    <view class='cont_Signout_text1' bindtap='handSzd'>
+    <view class='cont_Signout_text1' bindtap='handSzd' wx:if="{{list.UserType==2 || list.UserType==3}}">
       <view class='cont_Signout_text'>
         <image src='../img/tousu1.png'></image>
         <text>社长端</text>

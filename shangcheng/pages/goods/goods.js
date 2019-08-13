@@ -26,13 +26,28 @@ Page({
     })
 
   },
+  // 前往购物车
+  tocart:function(){
+    wx.switchTab({
+      url: '/pages/cart/cart',
+    })
+  },
   handWhole: function () {
     that = this;
     var sendCoo = [];
     sendCoo = that.data.just.list;
+    console.log(sendCoo!=null)
+    if(sendCoo!=null){
     that.setData({
       justOne: sendCoo
-    })
+      })
+    } else {
+      wx.showToast({
+        title: '暂无评论',
+        duration:2000,
+        icon:"none"
+      })
+    }
   },
   // 获取购物车商品数量
   handMun: function () {
@@ -141,6 +156,7 @@ Page({
       action: "GetDetails",
       goodsid: that.data.sid
     }).then(res => {
+      console.log(res)
       that.setData({
         list: res.Result,
         urlLength: res.Result.piclist.length
@@ -161,15 +177,24 @@ Page({
       action: "GetComments",
       goodsid: that.data.sid
     }).then(res => {
+      console.log(res)
+      if(res.Result.list.length!=0){
       that.setData({
         just: res.Result
       })
+        if (res.Result.list.length>3){
       for (let i = 0; i < 3; i++) {
         coout.push(res.Result.list[i]);
+          }
+          that.setData({
+            justOne: coout
+          })
+        } else {
+          that.setData({
+            justOne: res.Result.list
+          })
+        }     
       }
-      that.setData({
-        justOne: coout
-      })
     })
   },
   /**

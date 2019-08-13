@@ -22,9 +22,6 @@ Page({
     })
   },
 
-
-
-
   handJump1: function () {
     wx.redirectTo({
       url: '/pages/Dldindex/Dldindex',

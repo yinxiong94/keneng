@@ -1,12 +1,13 @@
 <!-- 会员卡 -->
 <view class="db">
-  <view class="vip" bindtap='delivery'>
+  <view wx:if="{{Result.IsVip==0}}" class="ind">暂无会员卡</view>
+  <view class="vip" bindtap='delivery' wx:else>
     <image src='{{Result.Cardpic}}'></image>
     <view class="text_1">VIP</view>
     <view class="text_2">{{Result.Cardname}}</view>
     <view class="text_3">
-      <view>{{Result.Count}}</view>次送米
-      <view>{{Result.Carddesc}}</view>
+      <view>{{Result.Count}}次送米</view>
+      <!-- <view>{{Result.Carddesc}}</view> -->
     </view>
     <view class="text_4">￥{{Result.Cardprice}}</view>
   </view>

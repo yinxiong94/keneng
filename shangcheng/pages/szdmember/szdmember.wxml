@@ -1,5 +1,6 @@
 <!-- 我的会员 -->
 <view class="db">
+  <view wx:if="{{list.length==0}}" class="indw">暂无会员</view>
   <view class="item" wx:for="{{list}}" wx:key="index">
     <image src='{{item.UserImg}}'></image>
     <view class="item_right">

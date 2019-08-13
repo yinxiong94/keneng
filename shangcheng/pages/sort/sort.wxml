@@ -1,9 +1,9 @@
 <view class="container">
       <!-- 搜索 -->
-      <view class='cont_input'>
+      <!-- <view class='cont_input'>
           <image class='cont_shousuo' src='../img/sousuo.png'></image>
           <input placeholder='搜索关键词'></input>
-      </view>
+      </view> -->
       <!-- 选项卡 -->
       <view class='cont1'>
           <view class='cont1_title'>
@@ -25,7 +25,7 @@
                       <view class="text_11">￥
                         <text>{{item.price}}</text>
                       </view>
-                      <view class="text_22">{{item.salesnum}}人付款</view>        
+                      <view class="text_22">{{item.salesnum || 0}}人付款</view>        
                     </view>
                     <view class="right">...</view>
                   </view>

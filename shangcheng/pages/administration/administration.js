@@ -85,6 +85,7 @@ Page({
 
   // 获取地址
   scrl(){
+    console.log(1)
     that = this;
     app.postData("GetShoppingData.ashx", {
       action: "GetAddressList",
@@ -102,9 +103,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    that = this;
-   
-    that.scrl()
+    that = this;   
   },
 
   /**
@@ -118,7 +117,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function(options) {
-    this.scrl()
+    that.scrl()
   },
 
   /**

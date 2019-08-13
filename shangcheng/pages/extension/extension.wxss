@@ -20,7 +20,11 @@ page {
   padding: 0 30rpx;
   padding-bottom: 30rpx;
 }
-
+.ddd{
+  font-size: 36rpx;
+  margin-left: 100rpx;
+  margin-top: 50rpx
+}
 .item .img1 {
   width: 100rpx;
   height: 100rpx;

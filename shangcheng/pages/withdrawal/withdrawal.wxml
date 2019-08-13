@@ -7,10 +7,11 @@
     </view>
     <view class="pirce_1">
       <text class="left">账户余额：￥{{yu}}</text>
-      <text class="right">提现记录</text>
+      <!-- <text class="right">提现记录</text> -->
     </view>
   </view>
   <view class="input" bindtap='handWithdrawal'>提现到微信</view>
+  <view wx:if="{{list.length==0}}" class="indd">暂无记录</view>
   <view class="list">
     <view class="coco" wx:for="{{list}}" wx:key="{{index}}">
       <view class="left">

@@ -1,13 +1,14 @@
 // pages/payment/payment.js
+var that;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    shifu: ''
   },
-  handIndex:function(){
+  handIndex: function () {
     wx.switchTab({
       url: '../mall/mall',
     })
@@ -16,9 +17,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options);
+    that = this;
+    that.setData({
+      shifu: options.shifu
+    })
   },
-
+  handCkdd: function () {
+    wx.navigateTo({
+      url: '../dingdan/dingdan?off='+ 'false',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

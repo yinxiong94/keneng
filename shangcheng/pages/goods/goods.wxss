@@ -78,7 +78,7 @@ page {
 
 .coco {
   width: 690rpx;
-  height: 80rpx;
+  /* height: 80rpx; */
   margin: 0 auto;
   margin-top: 30rpx;
   font-size: 32rpx;

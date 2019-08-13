@@ -6,7 +6,7 @@
     <view class="wait" wx:if="{{orderStatus==1}}">卖家已发货</view>
     <view class="wait" wx:if="{{orderStatus==2}}">交易成功</view>
   </view>
-  <view class="package" wx:if="{{orderStatus>=1}}">
+  <!-- <view class="package" wx:if="{{orderStatus>=1}}">
     <view class="package_a">
       <image class="fahuo" src='/pages/img/fahuo.png' lazy-load='true'></image>
       <view class="right">
@@ -15,10 +15,10 @@
       </view>
       <image src='/pages/img/right.png' lazy-load='true' class="jiantou"></image>
     </view>
-  </view>
-  <view class="mian">
+  </view> -->
+  <view class="mian" wx:if='{{list.TakeName!=""}}'>
     <view class="mian_a">
-      <image src='/pages/img/dizhi2.png' lazy-load='true'></image>
+      <image src='/pages/img/dizhi.png' lazy-load='true'></image>
       <view class="right">
         <view class="name">{{list.TakeName}}
           <text>{{list.Tel}}</text>
@@ -101,11 +101,11 @@
   </view> -->
   <view class="send" wx:if="{{orderStatus==0}}">
     <view class="send_btn" catchtap="abolish">取消订单</view>
-    <view class="send_btn_1" bindtap='payment'>付款</view>
+    <view class="send_btn_1" bindtap='payment1' data-oid='{{list.OrderId}}'>付款</view>
   </view>
   <view class="send" wx:if="{{orderStatus == 1}}">
     <view class="send_btn">查看物流</view>
-    <view class="send_btn_1" bindtap='payment'>确认收货</view>
+    <view class="send_btn_1" bindtap='payment' data-numid='{{list.OrderId}}'>确认收货</view>
   </view>
   <view class="send" wx:if="{{orderStatus == 2}}">
     <view class="send_btn_1" catchtap='handPinjia' data-num="{{index}}">评价</view>

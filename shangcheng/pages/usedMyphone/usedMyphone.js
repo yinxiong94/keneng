@@ -109,7 +109,12 @@ Page({
             wx.showToast({
               title: '修改成功',
               icon: "none",
-              duration: 2000
+              duration: 2000,
+              success:res=>{
+                wx.switchTab({
+                  url: '/pages/Mynews/Mynews',
+                })
+              }
             })
           }else{
             wx.showToast({
