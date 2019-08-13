@@ -28,7 +28,6 @@ Page({
       for (let i = 0; i < res.Result.length; i++) {
         res.Result[i].off = false;
       }
-      console.log(res.Result);
       that.setData({
         list: res.Result
       })

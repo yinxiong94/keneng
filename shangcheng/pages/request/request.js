@@ -14,13 +14,15 @@ Page({
     Address:"", //地址
     UserName:"",//姓名
     UserTel:"",//手机号码
+    CardCount:"",
+    isd:false
   },
   jian: function (e) {
     that = this;
     var share = that.data.share;
-    if (share < 1) {
+    if (share <= 1) {
       wx.showToast({
-        title: '份额不能为少于0',
+        title: '份额不能为少于1',
         icon: 'none',
         duration: 2000
       })
@@ -55,6 +57,14 @@ Page({
 
   handlQqps: function() {
     that = this;
+    that.setData({isd:true})
+    if (that.data.share > that.data.CardCount){
+      wx.showToast({
+        title: '可用次数不够',
+        duration:2000,
+        icon:"none"
+      })
+    } else {
     app.postData("GetGoodsData.ashx", {
       action: "RequestDeliver",
       userid: app.globalData.userid,
@@ -72,7 +82,8 @@ Page({
           duration: 2000
         })
       }
-    })
+        })
+    }
   },
 
   // 获取会员信息
@@ -92,6 +103,7 @@ Page({
         Address:list1,
         UserName: res.Result.UserName,
         UserTel: res.Result.UserTel,
+        CardCount: res.Result.CardCount
       })
       
     })
@@ -100,7 +112,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-   
   },
 
   /**
@@ -115,6 +126,7 @@ Page({
    */
   onShow: function() {
     that = this;
+    that.setData({isd:false})
     that.handuerl()
   },
 

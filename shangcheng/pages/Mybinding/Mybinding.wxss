@@ -21,6 +21,9 @@
   color: #8EC31F;
   font-size: 22rpx;
 }
+input{
+  width: 50%
+}
 .cont_name{
   background: #fff;
   height:80rpx;

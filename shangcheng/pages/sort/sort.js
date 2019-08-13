@@ -9,7 +9,7 @@ Page({
   data: {
     menuTapCurrent:0,  //默认选择第1个
     list:[],
-    pagenum: 2, //初始页默认值为1
+    pagenum: 400, //初始页默认值为1
   },
 
   /**
@@ -130,12 +130,34 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    var that = this;
-    var pagenum = that.data.pagenum + 4; //获取当前页数并+1
-    that.setData({
-      pagenum: pagenum, //更新当前页数
-    })
-    // that.menuTap()
+    // var that = this;
+    // var pagenum = that.data.pagenum + 4; //获取当前页数并+1
+    // that.setData({
+    //   pagenum: pagenum, //更新当前页数
+    // })
+    // // that.menuTap()
+    // if (that.data.menuTapCurrent != 0) {
+    //   app.postData("GetGoodsData.ashx", {
+    //     action: "GetGoodsList",
+    //     typeid: that.data.typeid,
+    //     Pid: 1,
+    //     pagesize: that.data.pagenum
+    //   }).then(res => {
+    //     that.setData({
+    //       ListView: res.Result
+    //     })
+    //   })
+    // } else {
+    //   app.postData("GetGoodsData.ashx", {
+    //     action: "GetGoodsList",
+    //     Pid: 1,
+    //     pagesize: that.data.pagenum
+    //   }).then(res => {
+    //     that.setData({
+    //       ListView: res.Result
+    //     })
+    //   })
+    // }
   },
 
   /**

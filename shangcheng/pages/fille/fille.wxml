@@ -25,7 +25,7 @@
     </picker>
 
 
-    <view class="total">
+    <view class="total tot">
       <view class="left">
         <text>详细地址：</text>
       </view>

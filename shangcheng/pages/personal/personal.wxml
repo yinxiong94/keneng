@@ -1,7 +1,7 @@
 <view class="db">
   <view class="top">
-    <image src='/pages/img/tou.png'></image>
-    <view class="name">{{message.ColonelName}}</view>
+    <image src='{{message.UserImg}}' class="img123"></image>
+    <view class="name">{{message.NickName}}</view>
   </view>
   <view class="bg">
     <!-- <image src='/pages/img/bg2.png'></image> -->
@@ -46,10 +46,10 @@
           <image src='/pages/img/nav4.png'></image>
           <view class="nav_1">推广拓扑图</view>
         </view>
-        <view class="list_2" bindtap='wdtj'>
+        <!-- <view class="list_2" bindtap='wdtj'>
           <image src='/pages/img/nav5.png'></image>
           <view class="nav_1">我的推荐码</view>
-        </view>
+        </view> -->
       </view>
     </view>
   </view>

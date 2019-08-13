@@ -11,7 +11,12 @@ page{
   width: 738rpx;
   height: 330rpx;
 }
-
+.ind{
+  margin: auto;
+  font-size: 38rpx;
+  width: 100%;
+  text-align: center
+}
 .vip .text_1 {
   font-size: 80rpx;
   font-family: PingFangSC;

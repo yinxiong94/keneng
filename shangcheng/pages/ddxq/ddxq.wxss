@@ -125,11 +125,11 @@ page {
 }
 
 .whole_item .freight_1 .pirce {
-  height: 22rpx;
+  /* height: 22rpx; */
   font-size: 28rpx;
   font-family: PingFangSC;
   font-weight: 400;
-  line-height: 22rpx;
+  /* line-height: 22rpx; */
   color: rgba(255, 83, 60, 1);
 }
 
@@ -215,12 +215,12 @@ page {
 }
 
 .whole .t_2 .t_2_list .right .right_footer .left {
-  height: 28rpx;
+  /* height: 28rpx; */
   font-size: 36rpx;
   font-family: PingFangSC;
   font-weight: 400;
   color: rgba(255, 83, 60, 1);
-  line-height: 28rpx;
+  /* line-height: 28rpx; */
 }
 
 .whole .t_2 .t_2_list .right .right_footer .right {

@@ -1,6 +1,6 @@
 <view class="db">
-  <image src='/pages/img/tou.png' lazy-load='true'></image>
-  <view class="name">大米</view>
-  <button class="btn" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">微信登陆</button>
-  <view class="login" bindtap='handlTel'>手机号登录/注册</view>
+  <image src='https://mfapi.hncoon.com/images/logo2.png' lazy-load='true'></image>
+  <view class="name">米香惠</view>
+  <button class="btn" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">微信登录</button>
+  <!-- <view class="login" bindtap='handlTel'>手机号登录/注册</view> -->
 </view>

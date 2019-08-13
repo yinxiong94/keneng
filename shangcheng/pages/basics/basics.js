@@ -9,17 +9,18 @@ Page({
   data: {
     list:[],
     show:false,
+    key:""
   },
   
   /**
    * 获取社区基本信息
    */
-  ismessage(key){
+  ismessage(){
     that = this
     app.postData("GetAgentInfo.ashx",{
       action:"CommunityInfo",
       userId: app.globalData.userid,
-      key: key == undefined?"":key
+      key:that.data.key
     }).then(res=>{
       console.log(res)
       that.setData({
@@ -27,7 +28,9 @@ Page({
       })
     })
   },
-
+  shuru:function(e){
+    this.setData({ key: e.detail.value})
+    },
   control(){
     that = this
     that.setData({

@@ -1,6 +1,7 @@
 <!-- 我的推广 -->
 <view class="db">
-  <view class="list" wx:for="{{list}}" wx:key="index">
+  <view wx:if="{{list.length==0}}" class="ddd">暂无推广人员</view>
+  <view class="list"  wx:for="{{list}}" wx:key="index">
     <view class="item">
       <image class="img1" src='{{item.UserImg}}'></image>
       <view class="conter">

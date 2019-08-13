@@ -4,7 +4,7 @@
     <swiper class="swiper" bindchange="aaa">
       <block wx:for="{{list.piclist}}" wx:key="index">
         <swiper-item>
-          <image class="img_11" src='{{item.url}}' data-index="{{index}}" lazy-load='true'></image>
+          <image class="img_11" src='{{item}}' data-index="{{index}}" lazy-load='true'></image>
         </swiper-item>
       </block>
     </swiper>
@@ -20,20 +20,20 @@
     {{list.goodsname}}
   </view>
   <view class="pin">
-    月销{{list.salesnnum}}笔
+    总销{{list.salesnnum}}笔
   </view>
   <view class="hhh"></view>
   <view class="service">
     服务
-    <text>7天无理由 · 新品 · 72小时内发货</text>
+    <text>{{list.jieshao}}</text>
   </view>
   <view class="hhh"></view>
   <view class="evaluation">
     <view class="title">
-      <view class="left">评价（{{just.count}}）</view>
+      <view class="left">评价（{{just.count || 0}}）</view>
       <view class="right">
-        <image class="img" src='/pages/img/xing.png' lazy-load='true'></image>
-        <text>{{just.avg}}</text>
+        <!-- <image class="img" src='/pages/img/xing.png' lazy-load='true'></image> -->
+        <!-- <text>{{just.avg}}星</text> -->
         <image class="img1" src='/pages/img/right.png' lazy-load='true'></image>
       </view>
     </view>
@@ -47,15 +47,15 @@
           </view>
         </view>
         <view class="right">
-          <image src='/pages/img/xing.png' lazy-load='true'></image>
-          <text>{{item.Lev}}</text>
+          <!-- <image src='/pages/img/xing.png' lazy-load='true'></image> -->
+          <text>{{item.Lev}}星</text>
         </view>
       </view>
       <view class="sentence">{{item.Cotent}}</view>
       <view class="i_1">
         <image wx:for="{{item.piclist}}" wx:for-item="sai" wx:key="{{index}}" lazy-load='true' src='{{sai.url}}'></image>
       </view>
-      <view class="t_1">碧根果190ｇ／袋</view>
+      <!-- <view class="t_1">碧根果190ｇ／袋</view> -->
       <!-- <view class="h_1">
         回复：谢谢您的惠顾您的满意是我们最大的动力谢谢您的惠顾！您的满意是我们最大的动力！
       </view> -->
@@ -97,8 +97,8 @@
     </view>
   </view>
   <view class="footer">
-    <view class="footer_1">
-      <image src='/pages/img/gouwu.png' lazy-load='true'></image>
+    <view class="footer_1" bindtap="tocart"> 
+      <image src='/pages/img/cart.png' lazy-load='true'></image>
       <view class="diso">购物车</view>
       <view class="coot">{{num}}</view>
     </view>
@@ -110,10 +110,10 @@
   <view class="zzc" wx:if="{{off}}">
     <view class="zzc_mian">
       <view class="zzc_d">
-        <image src='/pages/img/zzc.png' lazy-load='true'></image>
+        <image src='{{list.piclist[0]}}' lazy-load='true'></image>
         <view class="zzc_pirce">
           <view class="zzc_t1">￥{{list.saleprice}}</view>
-          <view class="zzc_t2">库存：{{list.kucun}}</view>
+          <!-- <view class="zzc_t2">库存：{{list.kucun || 0}}</view> -->
           <image src='/pages/img/quxiao.png' lazy-load='true' catchtap='Delete'></image>
         </view>
       </view>

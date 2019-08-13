@@ -27,6 +27,11 @@
   background: #fdf6e0;
 }
 
+.ind{
+  width: 100%;
+  text-align: center;
+  font: 38rpx
+}
 .xm {
   font-size: 24rpx;
   text-align: center;

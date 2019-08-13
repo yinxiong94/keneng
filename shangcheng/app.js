@@ -69,6 +69,7 @@ App({
     code: "",
     shoppingid:"",
     tel:"",
-    address:""
+    address:"",
+    suserid:""
   }
 })

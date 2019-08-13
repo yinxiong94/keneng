@@ -35,6 +35,12 @@ Page({
           duration: 2000,
           icon: "none"
         })
+      } else {
+        wx.showToast({
+          title: res.Msg,
+          duration:2000,
+          icon:"none"
+        })
       }
     })
   },

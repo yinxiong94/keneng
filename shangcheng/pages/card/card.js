@@ -1,11 +1,13 @@
 // pages/card/card.js
+var app = getApp();
+var that;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    Result:[]
   },
   immediately:function(){
     wx:wx.navigateTo({
@@ -16,7 +18,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    that=this;
+    app.postData("GetGoodsData.ashx", {
+      action: "GetCard",
+      userid: app.globalData.userid
+    }).then(res => {
+          that.setData({
+            Result: res.Result,
+          })
+          })
   },
 
   /**

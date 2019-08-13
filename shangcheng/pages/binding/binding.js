@@ -27,14 +27,15 @@ Page({
       action: "GetUserCard",
       userid: app.globalData.userid
     }).then(res => {
-      if (res.BankCardId == undefined || null){
-        that.setData({
-          off: 0
-        })
-      }else{
+      console.log(res.Result.BankCardId)
+      if (res.Result.BankCardId!=null){
         that.setData({
           off: 1,
           list: res.Result
+        })
+      }else{       
+        that.setData({
+          off: 0
         })
       }
     })

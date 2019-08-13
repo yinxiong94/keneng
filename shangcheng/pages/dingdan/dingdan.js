@@ -16,8 +16,12 @@ Page({
     foo: 1
   },
 
-  // 获取用户订单信息
-
+  payment1:function(e){
+    var OrderNo=e.currentTarget.dataset.oid;
+   wx.navigateTo({
+     url: '/pages/order/order?ddd=' + OrderNo + '&id=' + 2,
+   })
+  },
   // 选项卡
   menuTap: function (e) {
     that = this;
@@ -128,7 +132,7 @@ Page({
       })
       that.menuTap();
     }
-    
+
 
   },
 
@@ -147,21 +151,46 @@ Page({
     that = this
     that.beg();
   },
-
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
 
   },
-
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
 
   },
-
+  payment: function (e) {
+    that = this;
+    that = this;
+    let numid = e.currentTarget.dataset.numid;
+    console.log(numid)
+    app.postData("GetOrderData.ashx", {
+      action: "Receive",
+      orderid: numid
+    }).then(res => {
+      console.log(res)
+      if (res.Result == 1) {
+        wx.showToast({
+          title: "收货成功",
+          icon: "none",
+          duration: 2000,
+          success:res=>{
+            that.beg()
+          }
+        });
+      } else {
+        wx.showToast({
+          title: "收货失败",
+          icon: "none",
+          duration: 2000
+        });
+      }
+    })
+  },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */

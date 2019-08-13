@@ -29,7 +29,9 @@ page {
 .xinxi .total:nth-child(1) {
   border-top: 0;
 }
-
+.tot{
+  height: 120rpx !important
+}
 .xinxi .total .left {
   width: 150rpx;
   font-size: 28rpx;

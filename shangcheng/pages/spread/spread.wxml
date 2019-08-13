@@ -20,7 +20,7 @@
         </view>
         <!-- 保存 -->
         <view class='cont_bnt' data-url='{{url}}' bindlongpress="saveImg">
-              <view class='cont_bnt_text'>长按保存至相册</view>
+              <button class='cont_bnt_text' open-type = "share">转发给朋友</button>
         </view>
     </view>
 </view>

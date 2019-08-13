@@ -9,7 +9,7 @@ Page({
     falg: false,
     isshow: 0,
     list: [],
-    send: []
+    send: [],
   },
   handHuika: function() {
     that = this;
@@ -32,7 +32,7 @@ Page({
     });
   },
   handDetails: function(e) {
-    wx.navigateTo({ 
+    wx.navigateTo({
       url: "../goods/goods?id=" + e.currentTarget.dataset.goodsid
     });
   },
@@ -41,36 +41,17 @@ Page({
    */
   onLoad: function(options) {
     that = this;
-    app
-      .postData("GetIndexData.ashx", {
-        action: "GetIndexGoods"
-      })
-      .then(res => {
-        that.setData({
-          list: res.Result
-        });
-      });
-    app
-      .postData("GetIndexData.ashx", {
-        action: "getBanner"
-      })
-      .then(res => {
-        that.setData({
-          send: res.Result
-        });
-      });
+    
   },
 
   // 获取会员卡信息
   initialize() {
     that = this;
-    app
-      .postData("GetGoodsData.ashx", {
+    app.postData("GetGoodsData.ashx", {
         action: "GetCard",
         userid: app.globalData.userid
       })
       .then(res => {
-        console.log(res);
         if (res.Result.IsVip == 0) {
           that.setData({
             Result: res.Result,
@@ -97,7 +78,27 @@ Page({
    */
   onShow: function() {
     that = this;
-    that.initialize();
+    app
+      .postData("GetIndexData.ashx", {
+        action: "GetIndexGoods"
+      })
+      .then(res => {
+        that.setData({
+          list: res.Result
+        });
+      });
+    app
+      .postData("GetIndexData.ashx", {
+        action: "getBanner"
+      })
+      .then(res => {
+        that.setData({
+          send: res.Result
+        });
+      });
+    setTimeout(() => {
+      that.initialize();
+    }, 1000)
   },
 
   /**

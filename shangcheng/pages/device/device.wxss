@@ -28,7 +28,12 @@
   height: 30rpx;
   margin-top: 10rpx;
 }
-
+.indq{
+  width: 100%;
+  text-align: center;
+  font-size: 38rpx;
+  margin-top: 90rpx
+}
 .db .header .top .top2 {
   width: 37rpx;
   height: 40rpx;

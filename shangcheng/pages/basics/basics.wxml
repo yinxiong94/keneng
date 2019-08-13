@@ -1,7 +1,7 @@
 <view class="top"></view>
 <view class="input">
   <image src='/pages/img/fdj.png' lazy-load='true'></image>
-  <input type='text' placeholder='请输入搜索内容'></input>
+  <input type='text' placeholder='请输入搜索内容' value="{{key}}" bindinput="shuru"></input>
 </view>
 <view class="conter" catchtap='control'>
   <view class="list_1" wx:for="{{list}}" wx:key="index">

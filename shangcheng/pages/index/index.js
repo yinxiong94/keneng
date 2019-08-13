@@ -36,6 +36,7 @@ Page({
     data.encryptedData = app.globalData.userData.encryptedData;
     data.rawData = app.globalData.userData.rawData;
     data.signature = app.globalData.userData.signature;
+    data.suserid = app.globalData.suserid
     app.postData('GetUserData.ashx', data).then(res => {
       console.log(res)
       app.globalData.userid = res.Result;
@@ -49,6 +50,9 @@ Page({
   * 生命周期函数--监听页面加载
   */
   onLoad: function (options) {
+    if (options.suserid != undefined) {
+      app.globalData.suserid = options.suserid
+    }
     that = this;
     wx.login({
       success: res => {

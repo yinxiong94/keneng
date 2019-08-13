@@ -29,7 +29,14 @@ Page({
         wx.showToast({
           title: '提交成功',
           icon: 'none',
-          duration: 2000
+          duration: 2000,
+          success:res=>{
+            setTimeout(()=>{
+              wx.switchTab({
+                url: '/pages/Mynews/Mynews',
+              })
+            },2000)           
+          }
         })
       }
     })

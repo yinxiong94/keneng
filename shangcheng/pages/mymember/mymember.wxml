@@ -3,7 +3,8 @@
   <image src='/pages/img/fdj.png' lazy-load='true'></image>
   <input type='text' placeholder='请输入搜索内容' bindinput='inputVal'></input>
 </view>
-<view class='id'>
+<view wx:if="{{list.length==0}}" class="ind">暂无送货计划</view>
+<view class='id' wx:else>
   <view>收货地址</view>
   <view>会员名称</view>
   <view>到货时间</view>

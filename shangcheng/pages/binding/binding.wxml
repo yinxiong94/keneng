@@ -9,7 +9,7 @@
 </view>
 <view class='container'wx:if="{{off == 1}}">
   <view class="top">
-    <image src='/pages/img/bdyhk.png'></image>
+    <image src='https://mfapi.hncoon.com/images/back.png'></image>
     <view class="bg">
       <view class="soni"></view>
       <view class="bank">

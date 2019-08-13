@@ -17,6 +17,10 @@ page{
   height: 172rpx;
 }
 
+.db .dami .item .coco .left .list .hui {
+  color: #999;
+  width: 160rpx;
+}
 .db .input_1 {
   width: 712rpx;
   display: flex;

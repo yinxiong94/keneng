@@ -74,16 +74,16 @@ Component({
       this.moveX = this.touchMoveX - this.touchStartX
 
       // 竖直移动距离超过了左右移动距离
-      if(Math.abs(this.touchMoveY - this.touchStartY) > Math.abs(this.moveX)) {
+      if (Math.abs(this.touchMoveY - this.touchStartY) > Math.abs(this.moveX)) {
         this.direction = 'Y'
         return
       }
       this.direction = 'X'
 
       // 以下两种情况不进行移动：1. 在最右边时向右滑动; 2. 在最左边时向左滑动
-      if((this.startX === 0 && this.moveX > 0) || (this.startX === -this.actionWidth && this.moveX < 0)) {
+      if ((this.startX === 0 && this.moveX > 0) || (this.startX === -this.actionWidth && this.moveX < 0)) {
         return
-      } else if(Math.abs(this.moveX) >= this.actionWidth) {
+      } else if (Math.abs(this.moveX) >= this.actionWidth) {
         // 移动超出删除按钮的宽度时取按钮宽度作为移动距离
         this.moveX = this.moveX < 0 ? -this.actionWidth : this.actionWidth
         this.setData({
@@ -101,17 +101,17 @@ Component({
      */
     handleTouchEnd: function (e) {
       // 非左右滑动时不进行任何操作
-      if(this.direction !== 'X') {
+      if (this.direction !== 'X') {
         return
       }
       let translateX = 0
       // 移动超出右滑最大位移
-      if(this.moveX + this.startX >= 0) {
+      if (this.moveX + this.startX >= 0) {
         translateX = 0
-      } else if(this.moveX + this.startX <= -this.actionWidth) {
+      } else if (this.moveX + this.startX <= -this.actionWidth) {
         // 移动超出左滑最大位移
         translateX = -this.actionWidth
-      } else if((this.startX === 0 && Math.abs(this.moveX) < this.actionWidth / 2) || (this.startX === -this.actionWidth && Math.abs(this.moveX) > this.actionWidth / 2)) {
+      } else if ((this.startX === 0 && Math.abs(this.moveX) < this.actionWidth / 2) || (this.startX === -this.actionWidth && Math.abs(this.moveX) > this.actionWidth / 2)) {
         // 以下两种情况都滑动到右边起点（即删除按钮隐藏的状态）：
         // 1. 从右边起点左滑但未超过最大位移的一半，回退到右边起点
         // 2. 从左边起点右滑且超过最大位移的一半，继续滑到到右边起点
@@ -120,11 +120,11 @@ Component({
         translateX = -this.actionWidth
       }
       this.setData({
-          animate: true
+        animate: true
       }, () => {
-          this.setData({
-              translateX
-          })
+        this.setData({
+          translateX
+        })
       })
     },
 
@@ -134,7 +134,7 @@ Component({
      * 获取要货计划
      */
     tolist(machiid) {
-     var that = this
+      var that = this
       app.postData("GetAgentInfo.ashx", {
         action: 'RequireGoodsList',
         userId: app.globalData.userid,
@@ -160,13 +160,13 @@ Component({
     /**
      * 组件操作事件（此示例只有删除事件，可根据需要增加其他事件）
     //  */
-     
+
     handleAction(e) {
       var that = this
       var machiid = e.currentTarget.dataset.eeid;
       // console.log(shoppingid, app.globalData.userid)
       app.postData("GetAgentInfo.ashx", {
-        action: "RequireGoodsDel", 
+        action: "RequireGoodsDel",
         eeId: machiid,
         userId: app.globalData.userid
       }).then(res => {
@@ -175,14 +175,18 @@ Component({
           title: '删除成功',
           duration: 2000,
           success(res) {
+<<<<<<< HEAD
               that.tolist(machiid)
+=======
+            that.tolist(machiid)
+>>>>>>> 895a1cba28dfb58122187a1685ec8dddeba08633
           }
         })
       })
     },
   },
 
-  
+
 
   ready() {
     this.actionWidth = 60

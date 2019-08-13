@@ -13,7 +13,7 @@
       <view class="right">{{UserTel}}</view>
     </view>
     <view class="remaining">剩余
-      <text>11</text>次送米
+      <text>{{CardCount}}</text>次送米
     </view>
     <view class="pirce">
       <view class="pirce_left">
@@ -30,5 +30,5 @@
       </view>
     </view>
   </view>
-  <view class="btn" bindtap='handlQqps'>提交请求</view>
+  <button class="btn" bindtap='handlQqps' disabled="{{isd}}">提交请求</button>
 </view>

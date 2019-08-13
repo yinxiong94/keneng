@@ -51,7 +51,7 @@ page {
   width: 738rpx;
   height: 330rpx;
   position: relative;
-  margin-top: 90rpx;
+  margin-top: 45rpx;
   margin-left: 6rpx;
 }
 
@@ -103,6 +103,24 @@ page {
   justify-content: center;
 }
 
+.vip .text_6 {
+  font-size: 36rpx !important;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 0rpx;
+  width: 100%;
+  text-align: center;
+  line-height: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+.zw{
+  font-size: 36rpx;
+  margin: auto;
+  margin-top: 50rpx;
+}
 .vip .text_3 view {
   font-size: 70rpx;
   margin-right: 20rpx;
@@ -306,7 +324,7 @@ page {
   height: 300rpx;
   position: absolute;
   overflow: hidden;
-  top: 108rpx;
+  top: 35rpx;
   left: 20rpx;
   border-radius: 10rpx;
 }

@@ -8,7 +8,9 @@ Page({
    */
   data: {
     id: '0',
-    send: 0
+    send: 0,
+    list:{},
+    Result:[]
   },
   handDld:function(){
     wx.navigateTo({
@@ -41,6 +43,7 @@ Page({
       userid: app.globalData.userid
     }).then(res => {
       that.setData({
+        list:res.Result,
         UserImg: res.Result.UserImg,
         NickName: res.Result.NickName
       })
@@ -119,12 +122,20 @@ Page({
     })
   },
 
-
-  
-
   handWdtg: function () {
     wx.navigateTo({
       url: '../extension/extension',
+    })
+  },
+  initialize() {
+    that = this
+    app.postData("GetGoodsData.ashx", {
+      action: 'GetCard',
+      userid: app.globalData.userid
+    }).then(res => {
+      that.setData({
+        Result: res.Result
+      })
     })
   },
   /**
@@ -132,7 +143,7 @@ Page({
    */
   onLoad: function (options) {
     that = this;
-    that.userlogin()
+    
   },
 
   /**
@@ -146,7 +157,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    that.userlogin();
+    that.initialize()
   },
 
   /**

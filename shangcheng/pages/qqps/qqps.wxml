@@ -10,7 +10,7 @@
   <view class="from" wx:for="{{list}}" wx:key="{{index}}">
     <view class="s">
       <view class="left">会员名称：{{item.UserName}}</view>
-      <view class="right">预计{{item.CreateDate}}送到</view>
+      <!-- <view class="right">预计{{item.CreateDate}}送到</view> -->
     </view>
     <view class="s1">
       <image src='/pages/img/dizhilv.png' lazy-load='true'></image>
@@ -31,7 +31,7 @@
     <view class="btn">
       <view class="pin" bindtap='handlPin' data-DeliverId='{{item.DeliverId}}'
 >评价</view>
-      <view class="shou" data-index="{{item.DeliverId}}" data-coco="{{index}}" bindtap='handReceiving' wx:if="{{item.isShow}}">确认收货</view>
+      <view class="shou" data-index="{{item.DeliverId}}" data-coco="{{index}}" bindtap='handReceiving' wx:if="{{item.Status!='已收货'}}">确认收货</view>
     </view>
   </view>
 </view>    

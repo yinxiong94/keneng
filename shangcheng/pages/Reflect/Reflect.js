@@ -7,10 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
+<<<<<<< HEAD
     currentTab:0,
     value:0
+=======
+    currentTab: 0,
+    value: 0
+>>>>>>> 895a1cba28dfb58122187a1685ec8dddeba08633
   },
-  on:function(e){
+  on: function (e) {
     this.setData({
       currentTab: e.currentTarget.dataset.current
     })
@@ -25,16 +30,26 @@ Page({
       key: 'Wmoney',
       success(res) {
         console.log(res.data)
+<<<<<<< HEAD
       that.setData({
         Wmoney: res.data
       })
+=======
+        that.setData({
+          Wmoney: res.data
+        })
+>>>>>>> 895a1cba28dfb58122187a1685ec8dddeba08633
       }
     })
   },
   /**
    * 获取输入框的值
    */
+<<<<<<< HEAD
   hopminput(e){
+=======
+  hopminput(e) {
+>>>>>>> 895a1cba28dfb58122187a1685ec8dddeba08633
     that = this
     that.setData({
       value: e.detail.value
@@ -43,16 +58,25 @@ Page({
   /**
    * 确认提现
    */
+<<<<<<< HEAD
   withdrawal(){
     that = this
     if (that.data.value==""){
       wx.showToast({
         title: '提现金额不能为空',
+=======
+  withdrawal() {
+    that = this
+    if (that.data.value == "") {
+      wx.showToast({
+        title: '金额不能为空',
+>>>>>>> 895a1cba28dfb58122187a1685ec8dddeba08633
         icon: 'none',
         duration: 2000
       })
       return
     }
+<<<<<<< HEAD
     
     app.postData("GetAgentInfo.ashx",{
       action:"WithdrawAdd",
@@ -60,11 +84,27 @@ Page({
         money: that.data.value
     }).then(res=>{
       if (res.Msg == "可提现金额不足"){
+=======
+    if (that.data.value > that.data.Wmoney) {
+      wx.showToast({
+        title: '大于可提现金额',
+        icon: 'none',
+        duration: 2000
+      })
+      return
+    }
+    app.postData("GetAgentInfo.ashx", {
+      action: "WithdrawAdd",
+      userId: app.globalData.userid,
+      money: that.data.value
+    }).then(res => {
+>>>>>>> 895a1cba28dfb58122187a1685ec8dddeba08633
         wx.showToast({
           title: res.Msg,
           icon: 'none',
           duration: 2000
         })
+<<<<<<< HEAD
       }else{
         wx.showToast({
           title: '提现成功',
@@ -72,6 +112,8 @@ Page({
           duration: 2000
         })
       }
+=======
+>>>>>>> 895a1cba28dfb58122187a1685ec8dddeba08633
     })
   },
   /**
