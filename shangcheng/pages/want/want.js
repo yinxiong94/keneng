@@ -58,7 +58,10 @@ Page({
    */
   onLoad: function (options) {
     that = this
-    // that.tolis()
+    wx.setStorage({
+      key: 'machineid',
+      data: options.machineid,
+    })
     that.setData({
       machineId: options.machineid,
       address: options.address

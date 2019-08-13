@@ -9,7 +9,8 @@ Page({
   data: {
     machineIdval:"",
     createTimeval:"",
-    cargoNumberval:""
+    cargoNumberval:"",
+    machineid:""
   },
   /**
    * 机器编码
@@ -29,6 +30,12 @@ Page({
       createTimeval: e.detail.value
     })
   },
+
+  bindPickerChange(e){
+    this.setData({
+      createTimeval: e.detail.value
+    })
+  },
   /**
    * 要货数量
    */
@@ -43,13 +50,7 @@ Page({
    */
   present(){
     that = this
-    if (that.data.machineIdval.length<5){
-      wx.showToast({
-        title: '机器编码不对',
-        icon:'none'
-      })
-      return
-    }
+   
     if (that.data.createTimeval.length<5){
       wx.showToast({
         title: '要货日期不对',
@@ -67,7 +68,7 @@ Page({
     app.postData("GetAgentInfo.ashx",{
       action:'RequireGoodsAdd',
       userId: app.globalData.userid,
-      machineId: that.data.machineIdval,
+      machineId: that.data.machineid,
       cargoNumber: that.data.cargoNumberval,
       createTime: that.data.createTimeval
     }).then(res=>{
@@ -83,9 +84,9 @@ Page({
           duration: 2000,
         })
         setTimeout(function () {
-          wx.navigateTo({
-            url: '/pages/cash/cash',
-          })
+         wx.navigateBack({
+           delta:1
+         })
         }, 2500)
       }
     })
@@ -94,7 +95,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    that = this 
+      wx.getStorage({
+        key: 'machineid',
+        success: function(res) {
+          that.setData({
+            machineid:res.data
+          })
+        },
+      })
   },
 
   /**

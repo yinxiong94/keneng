@@ -41,10 +41,13 @@ page{
   width: 640rpx;
   height: 104rpx;
   border-bottom: 1px solid #ccc;
-  margin: 0 auto;
   display: flex;
+  align-items: center;
 }
-
+.itemrq{
+  font-size: 29rpx;
+   color: rgba(121, 121, 121, 1);
+}
 .db .from .item .left {
   width: 190rpx;
   font-size: 29rpx;

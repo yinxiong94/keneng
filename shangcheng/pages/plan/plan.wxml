@@ -5,12 +5,15 @@
   <view class="from">
     <view class="item">
       <view class="left">机器编码：</view>
-      <input type='text' placeholder='请在这里输入这台机器编码' bindinput='machineId'></input>
+      <input type='text' placeholder='请在这里输入这台机器编码' bindinput='machineId' value="{{machineid}}"  disabled="true"></input>
     </view>
-    <view class="item">
-      <view class="left">要货日期：</view>
-      <input type='text' placeholder='2019-5-1' bindinput='createTime'></input>
-    </view>
+    <picker mode="date" bindchange="bindPickerChange">
+      <view class="item">
+        <view class="left">要货日期：</view>
+        <!-- <input type='text' placeholder='2019-5-1' bindinput='createTime'></input> -->
+        <text class="itemrq">{{createTimeval}}</text>
+      </view>
+    </picker>
     <view class="item">
       <view class="left">要货重量：</view>
       <input type='text' placeholder='50KG' bindinput='cargoNumber'></input>
